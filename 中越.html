@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="YoYo 領隊整理的中越峴港、會安行前攻略，包含簽證、換匯、交通、飲食、景點、伴手禮、回台注意事項與常見問題。">
+<meta name="theme-color" content="#C8392B">
+<title>🇻🇳 YoYo 帶你玩中越｜峴港・會安古鎮</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --red: #C8392B;
+  --red-dark: #A02E22;
+  --yellow: #F0C040;
+  --yellow-light: #FDF3C8;
+  --cream: #FDFAF4;
+  --warm: #F7F0E4;
+  --text: #1C1C1C;
+  --text-sub: #666;
+  --border: #E8DFC8;
+  --white: #FFFFFF;
+  --green: #2E7D5E;
+  --shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--cream); font-family: 'Noto Sans TC', sans-serif; color: var(--text); font-size: 15px; }
+
+/* HERO */
+.hero {
+  background: var(--red);
+  padding: 0; position: relative; overflow: hidden;
+  min-height: 240px; display: flex; flex-direction: column; justify-content: flex-end;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 80% 20%, rgba(240,192,64,0.25) 0%, transparent 50%),
+              radial-gradient(ellipse at 10% 80%, rgba(0,0,0,0.2) 0%, transparent 50%);
+}
+.hero-pattern {
+  position: absolute; inset: 0; opacity: 0.06;
+  background-image: repeating-linear-gradient(45deg, #fff 0px, #fff 1px, transparent 1px, transparent 12px);
+}
+.hero-content { position: relative; padding: 36px 20px 32px; }
+.hero-flag { font-size: 42px; margin-bottom: 10px; display: block; }
+.hero-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 30px; font-weight: 900; color: #fff; line-height: 1.3; margin-bottom: 8px;
+}
+.hero-title span { color: var(--yellow); }
+.hero-sub { font-size: 14px; color: rgba(255,255,255,0.75); font-weight: 300; letter-spacing: 0.05em; margin-bottom: 16px; }
+.hero-badge {
+  display: inline-block; background: var(--yellow); color: var(--red-dark);
+  font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px;
+  margin-bottom: 12px; letter-spacing: 0.05em;
+}
+.gold-line { width: 40px; height: 2px; background: var(--yellow); border-radius: 2px; margin-top: 16px; }
+.update-meta {
+  display: inline-block; margin-top: 14px; color: rgba(255,255,255,0.72);
+  font-size: 12px; line-height: 1.6;
+}
+
+/* INFO BAR */
+.info-bar {
+  background: var(--red-dark); display: flex; overflow-x: auto;
+  scrollbar-width: none; padding: 0 8px;
+}
+.info-bar::-webkit-scrollbar { display: none; }
+.info-item {
+  flex-shrink: 0; padding: 10px 16px; text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+.info-item:last-child { border-right: none; }
+.info-icon { font-size: 15px; display: block; margin-bottom: 2px; }
+.info-label { font-size: 10px; color: rgba(255,255,255,0.55); display: block; }
+.info-val { font-size: 12px; color: #fff; font-weight: 500; white-space: nowrap; }
+
+/* NAV */
+.nav {
+  background: var(--white); border-bottom: 2px solid var(--border);
+  display: flex; overflow-x: auto; scrollbar-width: none;
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.nav::-webkit-scrollbar { display: none; }
+.nav-btn {
+  flex-shrink: 0; padding: 14px 15px; border: none; background: transparent;
+  font-family: 'Noto Sans TC', sans-serif; font-size: 12px; color: var(--text-sub);
+  cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px;
+  transition: all 0.2s; white-space: nowrap;
+}
+.nav-btn.active { color: var(--red); border-bottom-color: var(--red); font-weight: 700; }
+.nav-btn:hover { color: var(--red); }
+
+/* CONTENT */
+.content { max-width: 680px; margin: 0 auto; padding: 0 16px 80px; }
+.section { display: none; animation: fadeUp 0.3s ease; }
+.section.active { display: block; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* SECTION HEADER */
+.sec-head { padding: 28px 0 20px; }
+.sec-emoji { font-size: 30px; margin-bottom: 8px; display: block; }
+.sec-title {
+  font-family: 'Noto Serif TC', serif; font-size: 24px; font-weight: 700;
+  color: var(--red); margin-bottom: 6px;
+}
+.sec-desc { font-size: 13px; color: var(--text-sub); line-height: 1.7; }
+
+/* CARD */
+.card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 16px; padding: 20px 22px; margin-bottom: 14px;
+  position: relative; overflow: hidden; box-shadow: var(--shadow);
+}
+.card-accent {
+  position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+  background: var(--red); border-radius: 4px 0 0 4px;
+}
+.card-accent.yellow { background: var(--yellow); }
+.card-accent.green { background: var(--green); }
+.card-title {
+  font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 10px;
+  display: flex; align-items: center; gap: 6px;
+}
+.card-body { font-size: 14px; line-height: 2; color: var(--text); }
+.card-body strong { color: var(--red); font-weight: 700; }
+.card-body .note { font-size: 12px; color: var(--text-sub); font-style: italic; }
+
+/* WARN / TIP */
+.warn-box {
+  background: #FFF3F2; border: 1px solid #F5C6C2; border-radius: 14px;
+  padding: 16px 18px; margin-bottom: 14px; display: flex; gap: 12px; align-items: flex-start;
+  box-shadow: var(--shadow);
+}
+.warn-icon { font-size: 22px; flex-shrink: 0; margin-top: 1px; }
+.warn-text { font-size: 13px; line-height: 1.9; color: #8B2020; }
+.warn-text strong { font-weight: 700; }
+.tip-box {
+  background: var(--yellow-light); border: 1px solid #E8D080; border-radius: 14px;
+  padding: 16px 18px; margin-bottom: 14px; font-size: 13px; line-height: 1.9;
+  color: #6B4F10; box-shadow: var(--shadow);
+}
+.tip-box strong { font-weight: 700; color: #4A3500; }
+.mini-tip { margin: 12px 0 10px; box-shadow: none; }
+.save-box {
+  background: #FFFFFF; border: 2px solid var(--yellow); border-radius: 16px;
+  padding: 18px 20px; margin-bottom: 14px; box-shadow: var(--shadow);
+}
+.save-title {
+  font-size: 15px; font-weight: 700; color: var(--red); margin-bottom: 12px;
+  display: flex; align-items: center; gap: 6px;
+}
+.save-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.save-item {
+  background: var(--cream); border: 1px solid var(--border); border-radius: 12px;
+  padding: 10px 12px; font-size: 13px; line-height: 1.5;
+}
+.save-label { color: var(--text-sub); font-size: 11px; display: block; margin-bottom: 2px; }
+.save-value { color: var(--text); font-weight: 700; }
+
+/* PLACE TAG */
+.place-tag {
+  display: inline-block; background: var(--red); color: #fff;
+  font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px;
+  margin-bottom: 12px; margin-top: 4px; letter-spacing: 0.03em;
+}
+.place-tag.alt { background: var(--green); }
+
+/* LIST */
+.yoyo-list { list-style: none; padding: 0; }
+.yoyo-list li {
+  padding: 10px 0; border-bottom: 1px dashed var(--border);
+  font-size: 14px; line-height: 1.8; display: flex; gap: 8px;
+}
+.yoyo-list li:last-child { border-bottom: none; }
+.yoyo-list li::before { content: '→'; color: var(--red); font-weight: 700; flex-shrink: 0; }
+
+/* SHOP GRID */
+.shop-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 8px 0; }
+.shop-card {
+  background: var(--yellow-light); border: 1px solid #E8D080;
+  border-radius: 12px; padding: 14px 8px; text-align: center;
+}
+.shop-emoji { font-size: 32px; display: block; margin-bottom: 6px; }
+.shop-name { font-size: 13px; font-weight: 700; color: var(--text); }
+.shop-desc { font-size: 11px; color: var(--text-sub); margin-top: 3px; line-height: 1.4; }
+
+/* IMAGES */
+.img-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 14px 0; }
+.img-grid.single { grid-template-columns: 1fr; }
+.img-grid.three { grid-template-columns: 1fr 1fr 1fr; }
+.img-wrap { border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); background: #eee; }
+.img-wrap img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  cursor: pointer; transition: transform 0.25s;
+  aspect-ratio: 4/3;
+}
+.img-wrap.tall img { aspect-ratio: 3/4; }
+.img-wrap img:hover { transform: scale(1.03); }
+.img-caption { font-size: 11px; color: var(--text-sub); text-align: center; margin-top: 4px; margin-bottom: 10px; }
+.img-label {
+  background: rgba(0,0,0,0.55); color: #fff; font-size: 11px;
+  text-align: center; padding: 5px 8px; font-weight: 500;
+}
+
+/* DIVIDER */
+.divider { display: flex; align-items: center; gap: 10px; margin: 22px 0; }
+.divider-line { flex: 1; height: 1px; background: var(--border); }
+.divider-star { color: var(--yellow); font-size: 14px; }
+
+/* LIGHTBOX */
+.lightbox {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.92); z-index: 999;
+  align-items: center; justify-content: center; padding: 20px;
+}
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 100%; max-height: 90vh; border-radius: 8px; object-fit: contain; }
+.lightbox-close {
+  position: absolute; top: 16px; right: 20px; color: #fff; font-size: 32px;
+  cursor: pointer; background: none; border: none; line-height: 1;
+}
+
+/* FOOTER */
+.footer {
+  background: var(--red); text-align: center;
+  padding: 32px 20px; color: rgba(255,255,255,0.7); font-size: 13px; line-height: 2;
+}
+.footer strong { color: #fff; font-size: 15px; }
+
+/* ABOUT YOYO */
+.about-hero {
+  background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
+  border-radius: 20px; padding: 28px 24px; margin-bottom: 16px;
+  display: flex; gap: 20px; align-items: center;
+  box-shadow: 0 4px 20px rgba(200,57,43,0.25);
+}
+.about-avatar {
+  width: 108px; height: 108px; border-radius: 50%;
+  border: 3px solid var(--yellow); flex-shrink: 0;
+  background: rgba(255,255,255,0.15);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 42px; overflow: hidden;
+}
+.about-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 52%; }
+.about-name { color: #fff; font-size: 22px; font-weight: 900; font-family: 'Noto Serif TC', serif; }
+.about-role { color: var(--yellow); font-size: 13px; font-weight: 700; margin: 4px 0; }
+.about-tagline { color: rgba(255,255,255,0.8); font-size: 12px; line-height: 1.6; }
+
+.trust-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+.trust-item {
+  background: var(--white); border: 1px solid var(--border); border-radius: 14px;
+  padding: 16px 10px; text-align: center; box-shadow: var(--shadow);
+}
+.trust-num { font-size: 26px; font-weight: 900; color: var(--red); display: block; font-family: 'Noto Serif TC', serif; }
+.trust-label { font-size: 11px; color: var(--text-sub); margin-top: 4px; line-height: 1.4; display: block; }
+
+.contact-card {
+  background: var(--yellow-light); border: 2px solid var(--yellow);
+  border-radius: 16px; padding: 20px 22px; margin-bottom: 14px; box-shadow: var(--shadow);
+}
+.contact-title { font-size: 15px; font-weight: 700; color: #4A3500; margin-bottom: 14px; display: flex; align-items: center; gap: 6px; }
+.contact-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px dashed #E8D080; font-size: 14px; }
+.contact-row:last-child { border-bottom: none; padding-bottom: 0; }
+.contact-icon { font-size: 20px; flex-shrink: 0; }
+.contact-info { flex: 1; }
+.contact-label { font-size: 11px; color: #6B4F10; display: block; }
+.contact-val { font-weight: 700; color: var(--text); font-size: 15px; }
+
+.emergency-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+.emergency-item {
+  background: #FFF3F2; border: 1px solid #F5C6C2; border-radius: 12px;
+  padding: 12px 14px;
+}
+.emergency-num { font-size: 20px; font-weight: 900; color: var(--red); display: block; letter-spacing: 0.05em; }
+.emergency-label { font-size: 11px; color: #8B2020; margin-top: 2px; display: block; }
+
+/* TIMELINE */
+.timeline { margin: 0 0 14px; }
+.tl-day {
+  display: flex; gap: 14px; margin-bottom: 4px;
+}
+.tl-dot-col { display: flex; flex-direction: column; align-items: center; width: 36px; flex-shrink: 0; }
+.tl-dot { width: 36px; height: 36px; border-radius: 50%; background: var(--red); color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.tl-line { flex: 1; width: 2px; background: var(--border); }
+.tl-body { flex: 1; padding-bottom: 18px; }
+.tl-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.tl-items { font-size: 13px; color: var(--text-sub); line-height: 2; }
+
+/* BUDGET BOX */
+.budget-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px dashed var(--border); font-size: 13px; }
+.budget-row:last-child { border-bottom: none; }
+.budget-item { color: var(--text-sub); }
+.budget-price { font-weight: 700; color: var(--text); }
+
+/* FOOTER CONTACT */
+.footer-contacts { display: flex; justify-content: center; gap: 24px; margin: 12px 0; flex-wrap: wrap; }
+.footer-contact-item { display: flex; align-items: center; gap: 6px; font-size: 13px; color: rgba(255,255,255,0.85); }
+.footer-contact-icon { font-size: 16px; }
+
+
+/* 2026 refresh */
+body { background: linear-gradient(180deg, #FFF8EA 0%, #FDFAF4 36%, #F3F8F4 100%); }
+a { color: inherit; }
+.hero { min-height: clamp(340px, 58vh, 520px); background: #7E2118; }
+.hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.46; filter: saturate(1.08) contrast(1.04); }
+.hero-bg { z-index: 1; background: linear-gradient(180deg, rgba(35,18,12,0.18) 0%, rgba(126,33,24,0.78) 68%, rgba(126,33,24,0.96) 100%); }
+.hero-pattern { z-index: 2; opacity: 0.04; }
+.hero-content { z-index: 3; width: 100%; max-width: 720px; margin: 0 auto; padding: 88px 20px 34px; }
+.hero-badge { border-radius: 999px; box-shadow: 0 8px 22px rgba(0,0,0,0.16); }
+.hero-title { font-size: clamp(34px, 8vw, 56px); letter-spacing: 0; text-shadow: 0 4px 22px rgba(0,0,0,0.24); }
+.hero-sub { font-size: 15px; color: rgba(255,255,255,0.88); }
+.update-meta { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.18); border-radius: 8px; padding: 8px 10px; backdrop-filter: blur(8px); }
+.info-bar { justify-content: center; background: #893025; }
+.nav { justify-content: center; }
+.nav-btn { min-height: 48px; }
+.nav-btn:focus { outline: none; }
+.nav-btn:focus-visible { outline: 2px solid var(--yellow); outline-offset: -4px; }
+.content { max-width: 760px; }
+.card, .warn-box, .tip-box, .save-box, .shop-card, .img-wrap, .contact-card, .trust-item, .emergency-item, .about-hero, .faq-item, .source-card { border-radius: 8px; }
+.card, .warn-box, .tip-box, .save-box, .contact-card { box-shadow: 0 10px 30px rgba(87, 54, 22, 0.08); }
+.card-title { font-size: 16px; }
+.check-list { list-style: none; padding: 0; margin: 0; }
+.check-list li { position: relative; padding: 8px 0 8px 28px; border-bottom: 1px dashed var(--border); line-height: 1.75; }
+.check-list li:last-child { border-bottom: none; }
+.check-list li::before { content: '✓'; position: absolute; left: 0; top: 8px; width: 18px; height: 18px; border-radius: 50%; background: var(--green); color: #fff; font-size: 12px; line-height: 18px; text-align: center; font-weight: 700; }
+.faq-list { display: grid; gap: 10px; margin-bottom: 14px; }
+.faq-item { background: var(--white); border: 1px solid var(--border); box-shadow: var(--shadow); overflow: hidden; }
+.faq-item summary { cursor: pointer; list-style: none; padding: 16px 18px; font-weight: 700; color: var(--text); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: '+'; flex: 0 0 auto; width: 22px; height: 22px; border-radius: 50%; background: var(--yellow-light); color: #7A4C00; display: grid; place-items: center; font-size: 16px; line-height: 1; }
+.faq-item[open] summary::after { content: '-'; }
+.faq-item p { padding: 0 18px 16px; font-size: 14px; line-height: 1.9; color: var(--text-sub); }
+.source-card { background: #F3F8F4; border: 1px solid #C9DDCF; padding: 18px; margin-bottom: 14px; }
+.source-title { font-size: 15px; font-weight: 700; color: var(--green); margin-bottom: 10px; }
+.source-card a { display: block; font-size: 13px; line-height: 1.8; color: #245E48; text-decoration: underline; text-underline-offset: 3px; }
+.source-card p { margin-top: 10px; font-size: 12px; line-height: 1.7; color: var(--text-sub); }
+.trust-num { font-size: 22px; }
+.footer { background: linear-gradient(135deg, #8D281F 0%, #C8392B 100%); }
+
+@media (max-width: 760px) {
+  .info-bar { justify-content: flex-start; }
+  .nav { justify-content: flex-start; }
+  .content { padding-left: 14px; padding-right: 14px; }
+  .hero-content { padding-top: 74px; }
+  .sec-head { padding-top: 24px; }
+  .card, .warn-box, .tip-box, .save-box, .contact-card { padding: 16px; }
+  .about-hero { align-items: flex-start; padding: 20px 16px; }
+  .about-avatar { width: 88px; height: 88px; font-size: 34px; }
+  .trust-grid, .emergency-grid, .save-grid { grid-template-columns: 1fr; }
+  .shop-grid { grid-template-columns: 1fr 1fr; }
+  .img-grid, .img-grid.three { grid-template-columns: 1fr; }
+  .budget-row { align-items: flex-start; gap: 12px; }
+  .budget-price { text-align: right; }
+}
+
+@media (max-width: 420px) {
+  body { font-size: 14px; }
+  .hero-title { font-size: 34px; }
+  .hero-flag { font-size: 36px; }
+  .nav-btn { padding: 13px 12px; }
+  .shop-grid { grid-template-columns: 1fr; }
+  .contact-row { align-items: flex-start; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <img class="hero-photo" src="assets/中越/hoian1.jpg" alt="會安古鎮燈籠街景">
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <span class="hero-badge">YoYo 帶你玩</span>
+    <span class="hero-flag">🇻🇳</span>
+    <h1 class="hero-title">中越 <span>峴港・會安</span></h1>
+    <p class="hero-sub">行前全攻略 · 當地實用指南</p>
+    <div class="gold-line"></div>
+    <span class="update-meta">最後更新：2026 年 5 月 10 日<br>簽證與入境規定仍以旅行社行前通知為準</span>
+  </div>
+</div>
+
+<!-- QUICK INFO BAR -->
+<div class="info-bar">
+  <div class="info-item"><span class="info-icon">🕐</span><span class="info-label">時差</span><span class="info-val">慢台灣 1 小時</span></div>
+  <div class="info-item"><span class="info-icon">💰</span><span class="info-label">貨幣</span><span class="info-val">越南盾 VND</span></div>
+  <div class="info-item"><span class="info-icon">🔌</span><span class="info-label">電壓</span><span class="info-val">220V / 轉接頭</span></div>
+  <div class="info-item"><span class="info-icon">🌧️</span><span class="info-label">雨季</span><span class="info-val">10 月－2 月</span></div>
+  <div class="info-item"><span class="info-icon">📝</span><span class="info-label">簽證</span><span class="info-val">依行前通知</span></div>
+</div>
+
+<!-- NAV -->
+<nav class="nav" aria-label="中越攻略分類">
+  <button class="nav-btn active" onclick="show('s7',this)">👋 認識 YoYo</button>
+  <button class="nav-btn" onclick="show('s0',this)">📋 出發前</button>
+  <button class="nav-btn" onclick="show('s1',this)">🚗 帶你搭</button>
+  <button class="nav-btn" onclick="show('s2',this)">🙏 提醒你</button>
+  <button class="nav-btn" onclick="show('s3',this)">🍜 帶你吃</button>
+  <button class="nav-btn" onclick="show('s4',this)">🗺️ 走跳行程</button>
+  <button class="nav-btn" onclick="show('s5',this)">🛍️ 帶你買</button>
+  <button class="nav-btn" onclick="show('s6',this)">✈️ 回台前</button>
+  <button class="nav-btn" onclick="show('s8',this)">❓ 常見問題</button>
+</nav>
+
+<div class="content">
+
+
+  <!-- 認識 YoYo -->
+  <div class="section active" id="s7">
+    <div class="sec-head">
+      <span class="sec-emoji">👋</span>
+      <h2 class="sec-title">認識你的領隊 YoYo</h2>
+      <p class="sec-desc">出發前先認識我，旅途中你就會更安心！</p>
+    </div>
+
+    <div class="about-hero">
+      <div class="about-avatar"><img src="assets/中越/yoyo-avatar.jpg" alt="劉又銘 YoYo 大頭照"></div>
+      <div>
+        <div class="about-name">劉又銘 YoYo</div>
+        <div class="about-role">可樂旅遊 ｜ 國際短程線領隊</div>
+        <div class="about-tagline">Yo 在東南亞，帶團，也在過生活<br>把行程裡沒寫的細節，整理給你安心出發。</div>
+      </div>
+    </div>
+
+    <div class="trust-grid">
+      <div class="trust-item">
+        <span class="trust-num">短程</span>
+        <span class="trust-label">國際線帶團視角</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num">行前</span>
+        <span class="trust-label">整理好出發重點</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num">途中</span>
+        <span class="trust-label">提醒與支援</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-accent yellow"></div>
+      <div class="card-title">✨ YoYo 的帶團理念</div>
+      <div class="card-body">
+        我相信旅行最重要的是<strong>放鬆心情、留下回憶</strong>。<br><br>
+        不管是行前準備、當地疑難雜症，還是想推薦好吃好玩的私房景點，我都在。旅途中有任何問題，<strong>隨時來找 YoYo</strong>！<br><br>
+        跟著我，把該注意的先整理好，剩下的就好好玩、好好留下回憶。
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-accent green"></div>
+      <div class="card-title">🌟 YoYo 私心推薦（這趟必體驗！）</div>
+      <div class="card-body">
+        <ul class="yoyo-list" style="margin-top:4px">
+          <li><div><strong>會安古鎮傍晚時分</strong><br><span style="font-size:13px;color:#666">黃昏後燈籠亮起，整條街瞬間變得夢幻，是一天中最美的時刻。</span></div></li>
+          <li><div><strong>巴拿山佛手橋早上去</strong><br><span style="font-size:13px;color:#666">下午雲霧多，早上天氣清晰、拍出來的照片最漂亮！</span></div></li>
+          <li><div><strong>Marou 巧克力現場試吃</strong><br><span style="font-size:13px;color:#666">買之前一定要試吃，每個口味都不一樣，我自己最愛 72% 的。</span></div></li>
+          <li><div><strong>Mót 飲料消暑必喝</strong><br><span style="font-size:13px;color:#666">天氣很熱，這家是我帶每個團必停的一間，喝了之後整個人清涼起來。</span></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-title">📲 聯絡 YoYo</div>
+      <div class="contact-row">
+        <span class="contact-icon">💬</span>
+        <div class="contact-info">
+          <span class="contact-label">LINE / 行程群組</span>
+          <span class="contact-val">以行前通知為準</span>
+        </div>
+      </div>
+      <div class="contact-row">
+        <span class="contact-icon">📱</span>
+        <div class="contact-info">
+          <span class="contact-label">手機（出發後可直撥）</span>
+          <span class="contact-val">請參考旅行社行前通知</span>
+        </div>
+      </div>
+      <div class="contact-row">
+        <span class="contact-icon">📷</span>
+        <div class="contact-info">
+          <span class="contact-label">Instagram（旅遊日常）</span>
+          <span class="contact-val">@yoyo.touring</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <strong>💌 旅途結束後</strong><br>
+      如果這趟玩得開心，歡迎在 Google 幫我留下評價，對我幫助非常大！<br>
+      也可以 tag 我的 IG，讓更多人看到你在越南美美的照片。
+    </div>
+  </div>
+
+
+  <!-- 出發前 -->
+  <div class="section" id="s0">
+    <div class="sec-head">
+      <span class="sec-emoji">📋</span>
+      <h2 class="sec-title">出發前找 YoYo</h2>
+      <p class="sec-desc">簽證、換匯、行李準備，出門前把這頁看完就對了！</p>
+    </div>
+
+    <div class="warn-box">
+      <span class="warn-icon">📌</span>
+      <div class="warn-text">
+        <strong>YoYo 嚴格叮嚀｜東南亞通用</strong><br>
+        護照效期須 <strong>6 個月以上</strong>，出發前務必確認。<br>
+        越南自 2025 年起已禁止電子菸、加熱菸的生產、交易、進口、儲存、運輸與使用；本團提醒：<strong>請勿攜帶入越南，也不要從越南購買或攜回台灣</strong>。<br>
+        台灣入境規定也會調整，最安全的做法就是整趟旅程都不要帶。
+      </div>
+    </div>
+
+    <div class="save-box">
+      <div class="save-title">⭐ 一鍵收藏版</div>
+      <div class="save-grid">
+        <div class="save-item"><span class="save-label">護照</span><span class="save-value">效期 6 個月以上</span></div>
+        <div class="save-item"><span class="save-label">簽證</span><span class="save-value">團體公文簽</span></div>
+        <div class="save-item"><span class="save-label">貨幣</span><span class="save-value">越南盾 VND</span></div>
+        <div class="save-item"><span class="save-label">插座</span><span class="save-value">建議帶轉接頭</span></div>
+        <div class="save-item"><span class="save-label">雨季</span><span class="save-value">10 月至 2 月</span></div>
+        <div class="save-item"><span class="save-label">回台禁帶</span><span class="save-value">肉類、新鮮水果</span></div>
+      </div>
+    </div>
+
+    <div class="card checklist-card">
+      <div class="card-accent green"></div>
+      <div class="card-title">✅ 出發前 3 分鐘確認</div>
+      <div class="card-body">
+        <ul class="check-list">
+          <li>護照效期至少 6 個月以上，護照照片頁再拍一張存在手機。</li>
+          <li>白底兩寸大頭貼、現金、信用卡、個人藥品放在容易拿的位置。</li>
+          <li>Grab 先在台灣完成註冊，抵達後才不用卡簡訊驗證。</li>
+          <li>巴拿山溫差大，薄外套與好走的鞋子一定要帶。</li>
+          <li>肉類、新鮮水果、電子菸與加熱菸，這趟都先不要帶。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-accent"></div>
+      <div class="card-title">🪪 簽證</div>
+      <div class="card-body">
+        本團使用旅行社事先辦理的<strong>團體公文簽</strong>，旅客不需自行申請越南簽證。<br>
+        只需準備好 <strong>兩張白底兩寸大頭貼</strong> 帶著就好。<br>
+        <span class="note">⚠️ 實際依出發團體與旅行社行前通知為準。14 歲以下兒童若無父母同行，需備有法定監護人證明才可入境。</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-accent yellow"></div>
+      <div class="card-title">💵 當地消費與換匯提醒</div>
+      <div class="card-body">
+        越南使用 <strong>越南盾（VND）</strong>，幣值相對大，第一次拿到鈔票很容易多看幾個 0。<br>
+        抵達當地後，<strong>可依行程安排協助換匯</strong>，實際匯率以現場為準。<br><br>
+        可依個人消費習慣準備當地可能花費；<strong>一般團員可先準備台幣 3,000 – 8,000 元左右</strong>作為當地零用與自費消費，若有購物、按摩、加點飲品或買伴手禮習慣，可再自行增加。<br><br>
+        <div class="budget-row"><span class="budget-item">路邊小吃 / 飲料</span><span class="budget-price">25–65 元台幣</span></div>
+        <div class="budget-row"><span class="budget-item">越式三明治 Bánh Mì</span><span class="budget-price">約 35 元台幣</span></div>
+        <div class="budget-row"><span class="budget-item">椰子咖啡</span><span class="budget-price">約 65–120 元台幣</span></div>
+        <div class="budget-row"><span class="budget-item">Grab 叫車（市區）</span><span class="budget-price">約 50–150 元台幣</span></div>
+        <div class="tip-box mini-tip"><strong>越南盾小提醒</strong><br>當地口語常省略後面 3 個 0，例如店家說 <strong>30</strong>，多半是指 <strong>30,000 VND</strong>；但還是要看標價、情境或直接再次確認。</div>
+        <span class="note">以上為參考值，實際匯率依現場為準。信用卡在百貨及大店可使用，小攤位建議備現金。</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-accent"></div>
+      <div class="card-title">🔌 電壓與插座</div>
+      <div class="card-body">
+        越南電壓為 <strong>220V</strong>，與台灣（110V）不同。<br>
+        手機、相機、筆電充電器通常支援 <strong>100V-240V</strong>，多半只要轉接頭即可。<br>
+        吹風機、電捲棒、掛燙機請先確認是否支援 <strong>220V</strong>；不支援就需要變壓器，否則不要使用。<br>
+        插座常見為雙孔歐規，飯店通常備有萬用插頭，但建議自備 <strong>1-2 個轉接頭</strong> 備用。
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-accent green"></div>
+      <div class="card-title">👗 穿搭建議</div>
+      <div class="card-body">
+        中越適合穿美美的衣服拍照！<br>
+        若行程有安排 <strong>巴拿山</strong>，山上溫度較低，<strong>務必攜帶外套</strong>。<br>
+        10 月至 2 月為雨季，記得帶<strong>雨具</strong>。
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-accent"></div>
+      <div class="card-title">🆘 緊急聯絡資訊</div>
+      <div class="card-body">
+        萬一遇到緊急狀況，請優先聯絡 <strong>YoYo</strong>，以下也請存起來備用。<br>
+        <div class="emergency-grid" style="margin-top:12px">
+          <div class="emergency-item"><span class="emergency-num">113</span><span class="emergency-label">越南警察</span></div>
+          <div class="emergency-item"><span class="emergency-num">115</span><span class="emergency-label">越南救護車</span></div>
+          <div class="emergency-item"><span class="emergency-num">114</span><span class="emergency-label">越南消防</span></div>
+          <div class="emergency-item"><span class="emergency-num" style="font-size:14px">+886-800-085-095</span><span class="emergency-label">旅外急難救助</span></div>
+        </div>
+        <span class="note" style="margin-top:10px;display:block">海外急難救助（外交部）：+886-800-085-095（免費）</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 帶你搭 -->
+  <div class="section" id="s1">
+    <div class="sec-head">
+      <span class="sec-emoji">🚗</span>
+      <h2 class="sec-title">YoYo 帶你搭</h2>
+      <p class="sec-desc">交通怎麼玩、Grab 怎麼叫、避坑小技巧全在這。</p>
+    </div>
+
+    <div class="tip-box">
+      <strong>✨ 中越的節奏</strong><br>
+      中越行程相對輕鬆，最重要的就是放慢腳步、好好感受當地的氛圍。不要趕，好好玩！
+    </div>
+
+    <div class="card">
+      <div class="card-accent yellow"></div>
+      <div class="card-title">📱 叫車神器 Grab</div>
+      <div class="card-body">
+        晚上想出去玩，用 <strong>Grab</strong> 叫車最安全又方便。<br>
+        <strong>重要：請在台灣就先申辦完成！</strong><br>
+        <span class="note">在國外可能收不到台灣的簡訊認證碼，到了當地才要申辦會很麻煩。</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-accent"></div>
+      <div class="card-title">🚌 交通文化小知識</div>
+      <div class="card-body">
+        在越南，<strong>按喇叭 = 安全提醒</strong>，不是在生氣。<br>
+        聽到喇叭聲不用驚慌，這是當地正常的交通習慣。
+      </div>
+    </div>
+
+    <div class="warn-box">
+      <span class="warn-icon">⚠️</span>
+      <div class="warn-text">
+        <strong>避坑警告</strong><br>
+        晚上出門請注意安全。<strong>不知名的按摩店或洗頭店千萬不要進去</strong>，非常容易被騙，請務必謹慎！
+      </div>
+    </div>
+  </div>
+
+  <!-- 提醒你 -->
+  <div class="section" id="s2">
+    <div class="sec-head">
+      <span class="sec-emoji">🙏</span>
+      <h2 class="sec-title">YoYo 提醒你</h2>
+      <p class="sec-desc">文化、禁忌、習俗，讓你融入當地不踩雷。</p>
+    </div>
+
+    <div class="card">
+      <div class="card-accent"></div>
+      <div class="card-title">🛕 宗教與社會</div>
+      <div class="card-body">
+        越南宗教信仰以 <strong>佛教為大宗</strong>，進入廟宇請注意穿著，避免太暴露的服裝。<br><br>
+        政治體制為 <strong>共產主義</strong>，當地有許多規定需要配合，請旅客務必遵守當地規範，不要輕易評論政治。
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-accent yellow"></div>
+      <div class="card-title">👘 越南傳統服飾欣賞</div>
+      <div class="card-body">
+        <strong>奧黛（Áo dài）</strong> 是越南代表性的傳統服飾，線條優雅、色彩也很有越南文化特色。<br>
+        在會安古鎮散步時，可以留意街景、建築與服飾之間的搭配，欣賞當地美感就很好。
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-accent green"></div>
+      <div class="card-title">💸 小費文化</div>
+      <div class="card-body">
+        東南亞大多有小費習慣，越南也不例外。<br>
+        <strong>床頭小費、行李小費、按摩或洗頭服務小費</strong>，都是對服務人員的肯定。<br>
+        建議準備一些<strong>小面額鈔票</strong>備用。
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <strong>🤔 YoYo 冷知識</strong><br>
+      越南的城市節奏很有趣，喇叭聲、機車流、街邊小攤都是日常風景。過馬路時不要突然衝刺，跟著人流、穩定速度會更安全。<br><br>
+      另外，越南出境安檢有時需要<strong>脫鞋</strong>，記得穿好穿脫的鞋子！
+    </div>
+  </div>
+
+  <!-- 帶你吃 -->
+  <div class="section" id="s3">
+    <div class="sec-head">
+      <span class="sec-emoji">🍜</span>
+      <h2 class="sec-title">YoYo 帶你吃</h2>
+      <p class="sec-desc">必吃料理、推薦市場、飲食注意事項全整理好了。</p>
+    </div>
+
+    <div class="warn-box">
+      <span class="warn-icon">🍦</span>
+      <div class="warn-text">
+        <strong>飲食安全提醒</strong><br>
+        路邊攤少吃，冰塊飲料也要小心，腸胃不好的貴賓特別注意，以免影響後面的行程！
+      </div>
+    </div>
+
+    
+    <div class="card">
+      <div class="card-accent"></div>
+      <div class="card-title">💧 飲水安全</div>
+      <div class="card-body">
+        全程請喝<strong>瓶裝水</strong>或飯店提供的<strong>煮沸水</strong>。<br><br>
+        ❌ 避免喝生水<br>
+        ❌ 路邊現打的冰飲料（包含加冰的果汁、咖啡）<br>
+        ❌ 冰塊也要特別小心<br><br>
+        <span class="note">腸胃不適會影響整趟行程的品質，保護自己的胃就是保護這趟旅行！</span>
+      </div>
+    </div>
+
+    <span class="place-tag">📍 峴港</span>
+    <ul class="yoyo-list">
+      <li><div><strong>Vincom Plaza Đà Nẵng</strong><br><span style="font-size:13px;color:#666">當地大型百貨公司，吹冷氣逛街的好去處</span></div></li>
+      <li><div><strong>GO! Đà Nẵng</strong> <span style="background:#C8392B;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;vertical-align:middle">YoYo 必去</span><br><span style="font-size:13px;color:#666">大型超市，買零食、伴手禮一次搞定，芒果乾和腰果在這裡最划算！</span></div></li>
+      <li><div><strong>Maison Marou Flagship Da Nang</strong> <span style="background:#F0C040;color:#6B4F10;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;vertical-align:middle">私心推薦</span><br><span style="font-size:13px;color:#666">越南在地精品巧克力，包裝漂亮、口味獨特，買來送禮超加分！</span></div></li>
+      <li><div><strong>山茶夜市</strong> <span style="background:#C8392B;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;vertical-align:middle">YoYo 必去</span><br><span style="font-size:13px;color:#666">晚上必去！熱鬧的夜市，吃美食、尋寶都超好玩，是峴港最生活感的地方</span></div></li>
+    </ul>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-star">★</div><div class="divider-line"></div></div>
+
+    <span class="place-tag alt">📍 會安古鎮</span>
+    <ul class="yoyo-list">
+      <li><div><strong>Bánh Mì Phượng</strong> <span style="background:#C8392B;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;vertical-align:middle">必吃第一名</span><br><span style="font-size:13px;color:#666">越式三明治名店，Anthony Bourdain 來越南也特別來這吃！餡料超豐富，一顆不夠，記得買兩顆。</span></div></li>
+      <li><div><strong>Hadi Coffee — 椰子咖啡</strong> <span style="background:#2E7D5E;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;vertical-align:middle">打卡必去</span><br><span style="font-size:13px;color:#666">當地網紅咖啡廳，椰子咖啡超好喝，坐在店裡拍古鎮景色也很美</span></div></li>
+      <li><div><strong>Mót 消暑飲品</strong> <span style="background:#F0C040;color:#6B4F10;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;vertical-align:middle">私心推薦</span><br><span style="font-size:13px;color:#666">YoYo 每團必帶來的一間！天氣很熱，喝了馬上消暑，全團都說讚。</span></div></li>
+    </ul>
+  </div>
+
+  <!-- 走跳行程 -->
+  <div class="section" id="s4">
+    <div class="sec-head">
+      <span class="sec-emoji">🗺️</span>
+      <h2 class="sec-title">YoYo 帶你走跳</h2>
+      <p class="sec-desc">這趟旅程的精華，YoYo 幫你整理好了。</p>
+    </div>
+
+    <div class="tip-box">
+      <strong>✨ 中越的旅遊主軸</strong><br>
+      來到中越，主打的就是一場迷人的<strong>復古之旅</strong>！行程相對輕鬆，非常適合放慢腳步好好感受。
+    </div>
+
+
+    <span class="place-tag">📍 巴拿山</span>
+
+    <div class="card">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        搭乘纜車上山，可以欣賞到著名的<strong>佛手橋</strong>，非常壯觀！<br><br>
+        山上還有迷人的<strong>小歐洲世界</strong>，一秒讓你有置身歐洲的氛圍感。<br><br>
+        另外有<strong>巴拿山泡泡馬特</strong>以及山頂星巴克，拍照打卡一次滿足。<br><br>
+        <span style="color:#C8392B;font-weight:700;">⚠️ 山上溫度較低，出發前一定要帶外套！</span>
+      </div>
+    </div>
+
+
+    <div class="tip-box">
+      <strong>🏔️ 巴拿山｜建議遊玩重點</strong><br><br>
+      <strong>📸 戶外必拍打卡點</strong><br>
+      → <strong>黃金佛手橋（Golden Bridge）</strong>——最經典的打卡點，必拍！<br>
+      → <strong>小歐洲法國村（French Village）</strong>——歐式建築超好拍，一秒到歐洲<br>
+      → <strong>山頂星巴克</strong>——特色咖啡廳，景色絕美<br>
+      → <strong>泡泡馬特旗艦店</strong>——潮流打卡，周邊花園也很美
+    </div>
+
+    <div class="img-grid">
+      <div class="img-wrap tall">
+        <img data-img="bana_bridge" alt="巴拿山佛手橋">
+        <div class="img-label">佛手橋</div>
+      </div>
+      <div class="img-wrap">
+        <img data-img="bana_park" alt="巴拿山園區">
+        <div class="img-label">小歐洲園區</div>
+      </div>
+    </div>
+    <div class="img-grid three">
+      <div class="img-wrap">
+        <img data-img="bana_starbucks" alt="巴拿山星巴克">
+        <div class="img-label">星巴克</div>
+      </div>
+      <div class="img-wrap">
+        <img data-img="bana_popmart" alt="巴拿山泡泡馬特">
+        <div class="img-label">泡泡馬特</div>
+      </div>
+      <div class="img-wrap">
+        <img data-img="bana_map" alt="巴拿山地圖">
+        <div class="img-label">園區地圖</div>
+      </div>
+    </div>
+
+    <div class="divider"><div class="divider-line"></div><div class="divider-star">★</div><div class="divider-line"></div></div>
+
+    <span class="place-tag alt">📍 會安古鎮</span>
+
+    <div class="card">
+      <div class="card-accent green"></div>
+      <div class="card-body">
+        擁有濃厚歷史氣息與美麗的<strong>黃色建築</strong>，是整趟旅程最有氛圍的地方。<br><br>
+        來到會安，最適合放慢腳步欣賞古城街景、河岸燈籠和老屋細節；傍晚到入夜的光線最迷人，散步就很有記憶點。
+      </div>
+    </div>
+
+    <div class="img-grid">
+      <div class="img-wrap tall">
+        <img data-img="hoian1" alt="會安古鎮街道">
+        <div class="img-label">古鎮街道夜景</div>
+      </div>
+      <div class="img-wrap tall">
+        <img data-img="hoian2" alt="會安古鎮燈籠">
+        <div class="img-label">河邊燈籠小船</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 帶你買 -->
+  <div class="section" id="s5">
+    <div class="sec-head">
+      <span class="sec-emoji">🛍️</span>
+      <h2 class="sec-title">YoYo 帶你買</h2>
+      <p class="sec-desc">必買伴手禮，回台灣前一定要帶走這些！</p>
+    </div>
+
+    <div class="card">
+      <div class="card-accent yellow"></div>
+      <div class="card-title">🎁 中越必買清單</div>
+      <div class="shop-grid">
+        <div class="shop-card">
+          <span class="shop-emoji">🥭</span>
+          <div class="shop-name">芒果乾</div>
+          <div class="shop-desc">便宜又好吃，多買幾包不後悔</div>
+        </div>
+        <div class="shop-card">
+          <span class="shop-emoji">🥜</span>
+          <div class="shop-name">腰果</div>
+          <div class="shop-desc">品質超好，價格划算</div>
+        </div>
+        <div class="shop-card">
+          <span class="shop-emoji">☕</span>
+          <div class="shop-name">越南咖啡</div>
+          <div class="shop-desc">送禮自用兩相宜</div>
+        </div>
+        <div class="shop-card">
+          <span class="shop-emoji">🍫</span>
+          <div class="shop-name">Marou 巧克力</div>
+          <div class="shop-desc">精品巧克力，包裝精美</div>
+        </div>
+        <div class="shop-card">
+          <span class="shop-emoji">👘</span>
+          <div class="shop-name">奧黛</div>
+          <div class="shop-desc">傳統服飾，最佳紀念品</div>
+        </div>
+        <div class="shop-card">
+          <span class="shop-emoji">🏮</span>
+          <div class="shop-name">燈籠</div>
+          <div class="shop-desc">會安古鎮特色紀念品</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <strong>💡 購物小提示</strong><br>
+      超市（GO! Đà Nẵng）買零食最划算，芒果乾、腰果、咖啡都可以在這裡一次買齊！
+    </div>
+  </div>
+
+  <!-- 回台前 -->
+  <div class="section" id="s6">
+    <div class="sec-head">
+      <span class="sec-emoji">✈️</span>
+      <h2 class="sec-title">回台灣前問 YoYo</h2>
+      <p class="sec-desc">這些東西不能帶回台灣，打包前確認一下！</p>
+    </div>
+
+    <div class="warn-box">
+      <span class="warn-icon">🐷</span>
+      <div class="warn-text">
+        <strong>非洲豬瘟疫區警告</strong><br>
+        越南屬於非洲豬瘟疫區，<strong>所有含肉類的商品一律禁止攜帶入台</strong>，包含肉乾、肉鬆、香腸等加工品，海關查到會開罰，千萬注意！
+      </div>
+    </div>
+
+    <div class="warn-box">
+      <span class="warn-icon">🍎</span>
+      <div class="warn-text">
+        <strong>水果禁止攜帶入台</strong><br>
+        新鮮水果不可帶回台灣，有疑問的商品出發前先問 YoYo！
+      </div>
+    </div>
+
+    <div class="img-grid single">
+      <div class="img-wrap">
+        <img data-img="no_carry" alt="入台不能攜帶物品" style="aspect-ratio:4/3">
+        <div class="img-label">⚠️ 機場展示的禁止攜帶入台商品</div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <strong>✅ 可以帶回台灣的</strong><br>
+      芒果乾、腰果、咖啡、巧克力、餅乾類零食——這些都沒問題，放心買！<br><br>
+      有任何不確定的商品，在當地直接問 YoYo 就好。
+    </div>
+  </div>
+
+
+  <!-- 常見問題 -->
+  <div class="section" id="s8">
+    <div class="sec-head">
+      <span class="sec-emoji">❓</span>
+      <h2 class="sec-title">中越常見問題</h2>
+      <p class="sec-desc">把團員最常問的問題先整理起來，出發前滑一下就安心很多。</p>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>要先在台灣換越南盾嗎？</summary>
+        <p>不用急著先換很多。越南盾面額大，第一次拿會有點混亂；建議先帶台幣現金，到當地依 YoYo 或旅行社安排換匯，再留一點小鈔買飲料、零食與小費。</p>
+      </details>
+      <details class="faq-item">
+        <summary>Grab 一定要先註冊嗎？</summary>
+        <p>很建議。因為人在國外時不一定收得到台灣簡訊，到了當地才註冊可能會卡住。晚上自由活動要叫車時，已經註冊好會安心很多。</p>
+      </details>
+      <details class="faq-item">
+        <summary>巴拿山真的需要帶外套嗎？</summary>
+        <p>需要。巴拿山海拔較高，天氣變化快，山上可能比峴港市區涼很多，也可能遇到霧氣或短暫降雨。薄外套、好走防滑的鞋子都很重要。</p>
+      </details>
+      <details class="faq-item">
+        <summary>會安古鎮什麼時間最好拍？</summary>
+        <p>傍晚到入夜最漂亮。天還有一點亮度時可以拍街景與古城氛圍，燈籠亮起後再拍夜景，照片會比較有層次。</p>
+      </details>
+      <details class="faq-item">
+        <summary>水果、肉乾、含肉泡麵可以帶回台灣嗎？</summary>
+        <p>不要帶。新鮮水果與來自非洲豬瘟相關地區的豬肉或豬肉製品都可能違規，包含肉乾、香腸、肉鬆、含肉餡食品與部分泡麵調理包。不確定時先問 YoYo，或直接不要買。</p>
+      </details>
+      <details class="faq-item">
+        <summary>電子菸、加熱菸可以帶嗎？</summary>
+        <p>不要帶。越南自 2025 年起禁止電子菸、加熱菸的生產、交易、進口、儲存、運輸與使用；本團提醒不要攜帶入越南，也不要從越南購買或攜回台灣。</p>
+      </details>
+    </div>
+
+    <div class="source-card">
+      <div class="source-title">🔎 這頁已查證的提醒</div>
+      <a href="https://www.boca.gov.tw/cp-53-378-353fb-1.html" target="_blank" rel="noopener">外交部緊急聯絡中心</a>
+      <a href="https://www.aphia.gov.tw/ws.php?id=10719" target="_blank" rel="noopener">農業部防檢署：入境旅客不可攜帶清單</a>
+      <a href="https://www.tobaccocontrollaws.org/legislation/viet-nam/e-cigarettes" target="_blank" rel="noopener">Tobacco Control Laws：越南電子菸政策</a>
+      <a href="https://assets.tobaccocontrollaws.org/uploads/legislation/Viet%20Nam/Viet-Nam-Resolution-No.-173-2024-QH15.pdf" target="_blank" rel="noopener">越南 Resolution No. 173/2024/QH15</a>
+      <a href="https://web.customs.gov.tw/taipei/singlehtml/3392?cntId=cus2_3392_3392_1344" target="_blank" rel="noopener">台灣關務署：入境菸酒與加熱菸規定</a>
+      <a href="https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=4705&pid=17013" target="_blank" rel="noopener">國民健康署：電子菸 / 加熱菸入境提醒</a>
+      <a href="https://vietnamdaily.ca/language/numbers-in-vietnamese-how-to-count-1-to-1-billion/" target="_blank" rel="noopener">越南盾口語金額說明</a>
+      <p>簽證、入境、航班與實際行程仍以旅行社行前通知為準。</p>
+    </div>
+  </div>
+
+
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLB()">
+  <button class="lightbox-close" onclick="closeLB()">✕</button>
+  <img id="lb-img" src="" alt="">
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <strong>🇻🇳 YoYo 帶你玩中越</strong><br>
+  劉又銘 YoYo · 可樂旅遊 國際短程線<br>
+  <div class="footer-contacts">
+    <div class="footer-contact-item"><span class="footer-contact-icon">💬</span> LINE：以行前通知為準</div>
+    <div class="footer-contact-item"><span class="footer-contact-icon">📷</span> IG：@yoyo.touring</div>
+  </div>
+  <span style="font-size:11px;opacity:0.6">有任何問題，出發前到當地都可以先看這頁，再直接找 YoYo 確認。</span>
+</div>
+
+<script>
+const IMGS = {
+  hoian1: "assets/中越/hoian1.jpg",
+  hoian2: "assets/中越/hoian2.jpg",
+  bana_bridge: "assets/中越/bana_bridge.jpg",
+  bana_park: "assets/中越/bana_park.jpg",
+  bana_map: "assets/中越/bana_map.jpg",
+  bana_starbucks: "assets/中越/bana_starbucks.jpg",
+  bana_popmart: "assets/中越/bana_popmart.jpg",
+  no_carry: "assets/中越/no_carry.jpg",
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('[data-img]').forEach(el => {
+    const key = el.getAttribute('data-img');
+    if (IMGS[key]) {
+      el.src = IMGS[key];
+      el.onclick = (e) => { e.stopPropagation(); openLB(IMGS[key]); };
+    }
+  });
+});
+
+function show(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function openLB(src) {
+  document.getElementById('lb-img').src = src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLB() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+</script>
+</body>
+</html>
