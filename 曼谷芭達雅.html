@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="YoYo 領隊整理給團員看的曼谷芭達雅行前收藏版，包含 TDAC、出發前準備、當地文化、交通、必吃、走跳行程、Big C 採買與回台打包提醒。">
+<meta name="theme-color" content="#0D6F73">
+<title>YoYo 帶你玩曼谷芭達雅｜行前攻略重點收藏版</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal: #0D6F73;
+  --teal-dark: #084E55;
+  --lotus: #B94F6A;
+  --coral: #D8563C;
+  --gold: #E7B44E;
+  --green: #2E7D5E;
+  --cream: #FFF9EF;
+  --paper: #FFFFFF;
+  --ink: #1E2528;
+  --muted: #657276;
+  --line: #E7D8BF;
+  --mint: #EAF6F2;
+  --shadow: 0 10px 30px rgba(65, 47, 23, 0.09);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: linear-gradient(180deg, #FFF9EF 0%, #F5FBF8 42%, #FFF7EC 100%);
+  color: var(--ink);
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+}
+button, input { font: inherit; }
+a { color: inherit; }
+.hero {
+  position: relative;
+  min-height: clamp(320px, 54vh, 500px);
+  overflow: hidden;
+  background: linear-gradient(135deg, #0B6269 0%, #0D6F73 42%, #B94F6A 100%);
+  display: flex;
+  align-items: flex-end;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  background:
+    radial-gradient(circle at 22% 18%, rgba(255,255,255,.92), transparent 0 7px, transparent 8px 100%),
+    radial-gradient(circle at 78% 70%, rgba(255,224,138,.9), transparent 0 6px, transparent 7px 100%),
+    repeating-linear-gradient(45deg, rgba(255,255,255,.75) 0 1px, transparent 1px 19px);
+}
+.hero::after {
+  content: "BKK";
+  position: absolute;
+  right: clamp(16px, 9vw, 92px);
+  bottom: clamp(74px, 14vw, 120px);
+  color: rgba(255,255,255,.09);
+  font-size: clamp(76px, 18vw, 180px);
+  font-weight: 900;
+  letter-spacing: 0;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(860px, 100%);
+  margin: 0 auto;
+  padding: 86px 20px 34px;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gold);
+  color: #593500;
+  border-radius: 999px;
+  padding: 5px 13px;
+  font-size: 12px;
+  font-weight: 900;
+  margin-bottom: 14px;
+}
+.hero-title {
+  color: #fff;
+  font-family: 'Noto Serif TC', serif;
+  font-size: clamp(36px, 8vw, 66px);
+  font-weight: 900;
+  line-height: 1.12;
+  text-shadow: 0 8px 28px rgba(0,0,0,.22);
+}
+.hero-title span { color: #FFE08A; }
+.hero-sub {
+  color: rgba(255,255,255,.9);
+  font-size: 15px;
+  margin-top: 14px;
+}
+.update-meta {
+  display: inline-block;
+  margin-top: 18px;
+  color: rgba(255,255,255,.84);
+  border: 1px solid rgba(255,255,255,.24);
+  background: rgba(255,255,255,.12);
+  border-radius: 8px;
+  padding: 8px 11px;
+  font-size: 12px;
+  backdrop-filter: blur(8px);
+}
+.info-bar {
+  background: var(--teal-dark);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.info-bar::-webkit-scrollbar, .nav::-webkit-scrollbar { display: none; }
+.info-item {
+  min-width: 118px;
+  padding: 11px 15px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,.12);
+}
+.info-icon { display: block; font-size: 17px; margin-bottom: 2px; }
+.info-label { display: block; color: rgba(255,255,255,.62); font-size: 11px; line-height: 1.4; }
+.info-val { display: block; color: #fff; font-size: 12px; font-weight: 800; line-height: 1.5; white-space: nowrap; }
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  background: rgba(255,255,255,.96);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 4px 14px rgba(40,32,18,.06);
+}
+.nav-btn {
+  flex: 0 0 auto;
+  min-height: 48px;
+  padding: 13px 13px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.nav-btn.active {
+  color: var(--teal);
+  border-bottom-color: var(--green);
+  font-weight: 900;
+}
+.nav-btn:focus { outline: none; }
+.nav-btn:focus-visible { outline: 2px solid var(--green); outline-offset: -4px; }
+.content {
+  width: min(780px, 100%);
+  margin: 0 auto;
+  padding: 0 18px 80px;
+}
+.section { display: none; animation: fade .22s ease; }
+.section.active { display: block; }
+@keyframes fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.sec-head { padding: 30px 0 18px; }
+.sec-emoji { display: block; font-size: 30px; margin-bottom: 6px; }
+.sec-title {
+  color: var(--teal);
+  font-family: 'Noto Serif TC', serif;
+  font-size: 26px;
+  font-weight: 900;
+  line-height: 1.35;
+}
+.sec-desc { color: var(--muted); font-size: 13px; margin-top: 4px; }
+.card, .note-card, .about-hero, .fact-box, .placeholder, .source-card, .faq-item, .image-card, .reserve-card {
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+.card {
+  position: relative;
+  overflow: hidden;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 19px 20px;
+  margin-bottom: 14px;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--teal);
+}
+.card.gold::before { background: var(--gold); }
+.card.coral::before { background: var(--coral); }
+.card.lotus::before { background: var(--lotus); }
+.card.green::before { background: var(--green); }
+.card-title {
+  font-size: 16px;
+  font-weight: 900;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.card-body { color: var(--ink); font-size: 14px; line-height: 1.9; }
+.card-body strong { color: var(--teal); font-weight: 900; }
+.muted { color: var(--muted); font-size: 12px; line-height: 1.65; }
+.about-hero {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px;
+  margin-bottom: 14px;
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+  color: #fff;
+}
+.about-avatar {
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  border: 3px solid var(--gold);
+  overflow: hidden;
+  flex: 0 0 auto;
+  background: rgba(255,255,255,.12);
+}
+.about-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 52%; display: block; }
+.about-name {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 25px;
+  font-weight: 900;
+}
+.about-role { color: #FFE08A; font-weight: 900; font-size: 13px; margin: 4px 0; }
+.about-tagline { color: rgba(255,255,255,.88); font-size: 13px; line-height: 1.65; }
+.trust-grid, .compare-grid, .spot-grid, .food-grid, .shop-grid, .placeholder-grid, .image-grid {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.trust-grid { grid-template-columns: repeat(3, 1fr); }
+.trust-item {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px 10px;
+  text-align: center;
+}
+.trust-num {
+  display: block;
+  color: var(--coral);
+  font-family: 'Noto Serif TC', serif;
+  font-size: 24px;
+  font-weight: 900;
+}
+.trust-label { display: block; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.compare-wrap {
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  padding: 18px;
+  margin-bottom: 14px;
+  background: rgba(255,255,255,.72);
+}
+.compare-title {
+  color: var(--teal);
+  font-size: 17px;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+.compare-grid { grid-template-columns: 1fr 1fr; margin-bottom: 0; }
+.fact-box {
+  background: rgba(255,249,239,.78);
+  border: 1px solid var(--line);
+  padding: 13px 14px;
+}
+.fact-kicker { display: block; color: var(--muted); font-size: 12px; margin-bottom: 2px; }
+.fact-box strong { display: block; font-size: 14px; line-height: 1.7; }
+.note-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--gold);
+  padding: 22px;
+  margin-bottom: 14px;
+}
+.note-title { font-size: 18px; font-weight: 900; margin-bottom: 10px; }
+.placeholder-grid { grid-template-columns: 1fr 1fr; }
+.placeholder {
+  min-height: 170px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 24px;
+  border: 1px dashed #CDB98F;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(13,111,115,.10), transparent 36%),
+    radial-gradient(circle at 85% 90%, rgba(216,86,60,.10), transparent 32%),
+    #FBF8F0;
+}
+.placeholder strong { color: var(--teal); display: block; margin-bottom: 8px; }
+.placeholder span { color: var(--muted); font-size: 13px; line-height: 1.7; }
+.save-box {
+  background: #fff;
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  padding: 18px;
+  margin-bottom: 14px;
+}
+.save-title { color: var(--teal); font-weight: 900; margin-bottom: 12px; }
+.save-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.save-item {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+.save-label { color: var(--muted); display: block; font-size: 11px; }
+.save-value { font-weight: 900; font-size: 13px; }
+.country-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 8px 0 12px;
+  background: var(--teal);
+  color: #fff;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 900;
+}
+.country-label.alt { background: var(--lotus); }
+.food-grid, .shop-grid { grid-template-columns: repeat(3, 1fr); }
+.mini-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 15px 11px;
+  text-align: center;
+}
+.mini-card .emoji { display: block; font-size: 29px; margin-bottom: 7px; }
+.mini-card strong { display: block; font-size: 13px; margin-bottom: 3px; }
+.mini-card span { display: block; color: var(--muted); font-size: 11px; line-height: 1.5; }
+.rec-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.rec-card {
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+.rec-card.warning { border-color: #F2C6B8; background: #FFF8F4; }
+.rec-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: var(--cream);
+  cursor: zoom-in;
+}
+.rec-content { padding: 13px 14px 15px; }
+.rec-kicker {
+  display: inline-flex;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+}
+.rec-title {
+  color: var(--teal);
+  font-size: 16px;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+.rec-card.warning .rec-title { color: #873223; }
+.rec-copy {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.75;
+}
+.warn-box {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: #FFF2EC;
+  color: #873223;
+  border: 1px solid #F2C6B8;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+.warn-icon { font-size: 23px; flex: 0 0 auto; }
+.warn-text { font-size: 13px; line-height: 1.85; }
+.warn-text strong { color: #6E2318; }
+.tip-box {
+  background: #F2F8F6;
+  border: 1px solid #C9DED8;
+  border-left: 5px solid var(--teal);
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  color: #254C4C;
+  font-size: 13px;
+  line-height: 1.85;
+}
+.tip-box strong { color: var(--teal); font-weight: 900; }
+.check-list {
+  padding-left: 20px;
+  margin: 0;
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.9;
+}
+.check-list li { margin-bottom: 4px; }
+.image-grid { grid-template-columns: repeat(3, 1fr); }
+.image-grid.single { grid-template-columns: minmax(240px, 360px); justify-content: center; }
+.image-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+.image-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  cursor: zoom-in;
+  background: var(--cream);
+}
+.image-caption {
+  padding: 10px 12px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.faq-list { display: grid; gap: 10px; margin-bottom: 14px; }
+.faq-item {
+  background: #fff;
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 15px 17px;
+  font-weight: 900;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+";
+  color: var(--teal);
+  font-size: 18px;
+  line-height: 1;
+}
+.faq-item[open] summary::after { content: "-"; }
+.faq-item p {
+  color: var(--muted);
+  padding: 0 17px 16px;
+  font-size: 13px;
+  line-height: 1.85;
+}
+.source-card {
+  background: #EFF7F4;
+  border: 1px solid #C9DED8;
+  padding: 17px;
+}
+.source-title { color: var(--teal); font-weight: 900; margin-bottom: 8px; }
+.source-card a {
+  display: block;
+  color: #1F675F;
+  font-size: 12px;
+  line-height: 1.8;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 60;
+  padding: 20px;
+  background: rgba(0,0,0,.82);
+}
+.lightbox.open { display: flex; }
+.lightbox img {
+  max-width: min(92vw, 720px);
+  max-height: 88vh;
+  border-radius: 8px;
+  box-shadow: 0 24px 70px rgba(0,0,0,.34);
+}
+.lightbox-close {
+  position: fixed;
+  right: 18px;
+  top: 18px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,.9);
+  color: var(--ink);
+  font-weight: 900;
+  cursor: pointer;
+}
+.footer {
+  background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+  color: rgba(255,255,255,.76);
+  text-align: center;
+  padding: 34px 20px;
+  font-size: 13px;
+}
+.footer strong { color: #fff; font-size: 15px; }
+.footer-contact { margin-top: 8px; color: rgba(255,255,255,.9); }
+@media (max-width: 760px) {
+  .info-bar, .nav { justify-content: flex-start; }
+  .content { padding-left: 14px; padding-right: 14px; }
+  .about-hero { align-items: flex-start; padding: 18px 16px; }
+  .about-avatar { width: 88px; height: 88px; }
+  .compare-grid, .placeholder-grid, .save-grid, .food-grid, .shop-grid, .trust-grid, .image-grid, .rec-grid { grid-template-columns: 1fr; }
+  .hero-content { padding-top: 74px; }
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-content">
+    <span class="hero-badge">YoYo 帶你玩</span>
+    <h1 class="hero-title">曼谷芭達雅 <span>重點收藏版</span></h1>
+    <p class="hero-sub">出發前先把重點收好，旅途中想不起來也可以打開看。</p>
+    <span class="update-meta">最後更新：2026 年 7 月 3 日<br>入境、海關、航班與行李規定會更新，出發前 YoYo 會再依官方公告提醒大家。</span>
+  </div>
+</header>
+
+<div class="info-bar">
+  <div class="info-item"><span class="info-icon">💱</span><span class="info-label">貨幣</span><span class="info-val">泰銖 THB</span></div>
+  <div class="info-item"><span class="info-icon">🕐</span><span class="info-label">時差</span><span class="info-val">慢台灣 1 小時</span></div>
+  <div class="info-item"><span class="info-icon">🔌</span><span class="info-label">插座</span><span class="info-val">多為兩孔 / 萬用</span></div>
+  <div class="info-item"><span class="info-icon">🌦️</span><span class="info-label">氣候</span><span class="info-val">濕熱 / 陣雨</span></div>
+  <div class="info-item"><span class="info-icon">🧳</span><span class="info-label">節奏</span><span class="info-val">城市＋海濱</span></div>
+</div>
+
+<nav class="nav" aria-label="曼谷芭達雅攻略分類">
+  <button class="nav-btn active" onclick="show('s0',this)">👋 認識 YoYo</button>
+  <button class="nav-btn" onclick="show('s1',this)">📋 出發前</button>
+  <button class="nav-btn" onclick="show('s2',this)">🚗 帶你搭</button>
+  <button class="nav-btn" onclick="show('s3',this)">🙏 提醒你</button>
+  <button class="nav-btn" onclick="show('s4',this)">🍜 帶你吃</button>
+  <button class="nav-btn" onclick="show('s5',this)">🗺️ 走跳行程</button>
+  <button class="nav-btn" onclick="show('s6',this)">🛍️ 帶你買</button>
+  <button class="nav-btn" onclick="show('s7',this)">✈️ 回台前</button>
+  <button class="nav-btn" onclick="show('s8',this)">❓ FAQ</button>
+</nav>
+
+<main class="content">
+  <section class="section active" id="s0">
+    <div class="sec-head">
+      <span class="sec-emoji">👋</span>
+      <h2 class="sec-title">認識你的領隊 YoYo</h2>
+      <p class="sec-desc">出發前先認識我，旅途中你就會更安心。</p>
+    </div>
+
+    <div class="about-hero">
+      <div class="about-avatar"><img src="assets/曼谷芭達雅/yoyo-avatar.jpg" alt="劉又銘 YoYo 大頭照"></div>
+      <div>
+        <div class="about-name">劉又銘 YoYo</div>
+        <div class="about-role">可樂旅遊｜國際短程線領隊</div>
+        <div class="about-tagline">Yo 在東南亞，帶團，也在過生活。<br>有些事，不會寫在行程裡，但我會先幫你整理好。</div>
+      </div>
+    </div>
+
+    <div class="trust-grid">
+      <div class="trust-item"><span class="trust-num">行前</span><span class="trust-label">先整理好重點</span></div>
+      <div class="trust-item"><span class="trust-num">途中</span><span class="trust-label">提醒集合與安全</span></div>
+      <div class="trust-item"><span class="trust-num">回台</span><span class="trust-label">打包前再檢查</span></div>
+    </div>
+
+    <div class="compare-wrap">
+      <div class="compare-title">這趟曼谷芭達雅，先抓這幾個重點</div>
+      <div class="compare-grid">
+        <div class="fact-box"><span class="fact-kicker">曼谷</span><strong>商場大、人潮多、很好逛；集合點先拍起來，逛街才不會緊張。</strong></div>
+        <div class="fact-box"><span class="fact-kicker">芭達雅</span><strong>海邊節奏比較放鬆，夜晚更熱鬧；自由活動時手機和包包要顧好。</strong></div>
+        <div class="fact-box"><span class="fact-kicker">入境</span><strong>TDAC、護照、住宿資料先準備好，通關會順很多。</strong></div>
+        <div class="fact-box"><span class="fact-kicker">回台前</span><strong>好買歸好買，含肉食品、水果和行動電源打包前要先整理。</strong></div>
+      </div>
+    </div>
+
+    <div class="note-card">
+      <div class="note-title">✨ YoYo 的一句話提醒</div>
+      <p>泰國好玩的地方，是它很熱鬧、很好買，也很容易讓人放鬆；但越熱鬧的地方，越要先把集合地點、錢包手機和回台禁帶物記清楚。</p>
+      <p style="margin-top:12px">我把大家最常問、最容易忘的重點先整理在這裡。出發前滑一下，旅途中就能把注意力留給吃、拍照和好好玩。</p>
+    </div>
+
+    <div class="rec-grid">
+      <div class="rec-card">
+        <img src="assets/曼谷芭達雅/bigc-entrance.jpg" alt="Big C 賣場入口" onclick="openLB(this.src)">
+        <div class="rec-content">
+          <span class="rec-kicker">曼谷採買感</span>
+          <div class="rec-title">Big C</div>
+          <div class="rec-copy">到了 Big C 真的很容易越逛越想買。先把想買的零食、伴手禮和小物抓好，集合點也先拍起來，買完才不會一邊找人一邊慌。</div>
+        </div>
+      </div>
+      <div class="rec-card">
+        <img src="assets/曼谷芭達雅/pattaya-city-view.jpg" alt="芭達雅海景與 Pattaya City 字樣" onclick="openLB(this.src)">
+        <div class="rec-content">
+          <span class="rec-kicker">芭達雅海景</span>
+          <div class="rec-title">Pattaya City</div>
+          <div class="rec-copy">看到海邊和 Pattaya 字樣，就很有芭達雅的度假感。這裡的節奏比曼谷放鬆，但人潮和財物還是要顧好。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="s1">
+    <div class="sec-head">
+      <span class="sec-emoji">📋</span>
+      <h2 class="sec-title">出發前重點</h2>
+      <p class="sec-desc">泰國好玩，但入境資料、現金、電子菸和寺廟穿著要先準備。</p>
+    </div>
+
+    <div class="save-box">
+      <div class="save-title">⭐ 一鍵收藏版</div>
+      <div class="save-grid">
+        <div class="save-item"><span class="save-label">護照</span><span class="save-value">建議效期 6 個月以上</span></div>
+        <div class="save-item"><span class="save-label">TDAC</span><span class="save-value">抵泰前 3 天內線上填寫</span></div>
+        <div class="save-item"><span class="save-label">現金</span><span class="save-value">備泰銖小鈔與財力證明</span></div>
+        <div class="save-item"><span class="save-label">電子菸</span><span class="save-value">不要帶、不要買、不要用</span></div>
+        <div class="save-item"><span class="save-label">穿著</span><span class="save-value">寺廟避免短褲、無袖、過短裙</span></div>
+        <div class="save-item"><span class="save-label">天氣</span><span class="save-value">濕熱、室內冷氣強，可帶薄外套</span></div>
+      </div>
+    </div>
+
+    <div class="warn-box">
+      <span class="warn-icon">⚠️</span>
+      <div class="warn-text">
+        <strong>TDAC 請用官方網站</strong><br>
+        TDAC 是泰國電子入境卡，入境前要先線上填寫。請認明官方網站，不要隨便點來路不明的付費代辦連結；出發前 YoYo 會提醒大家填寫時間和要準備的資料。
+      </div>
+    </div>
+
+    <div class="card gold">
+      <div class="card-title">🪪 護照、回程、住宿與現金</div>
+      <div class="card-body">
+        出發前先確認護照效期、回程資料、飯店資料和基本現金。泰銖建議準備一點小鈔，買水、上廁所、夜市小店會方便很多。<br>
+        <span class="muted">免簽入境仍可能被要求出示回程、住宿或財力資料，先備好就不緊張。</span>
+      </div>
+    </div>
+
+    <div class="card coral">
+      <div class="card-title">🚭 電子菸與加熱菸</div>
+      <div class="card-body">
+        泰國對電子菸、相關設備與煙油管制嚴格。團員版最安全的做法是：<strong>不要攜帶入境、不要在當地購買、不要在當地使用</strong>。<br>
+        <span class="muted">這個真的不要賭，出發前直接從包包拿掉，整趟旅行會安心很多。</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔌 插座、網卡與個人藥品</div>
+      <div class="card-body">
+        泰國飯店常見兩孔或萬用插座，建議帶萬用轉接頭。網卡或 eSIM 可以先準備，台灣 SIM 卡收好。腸胃藥、止痛藥、感冒藥、OK 繃與個人常用藥，也請依自身狀況放進隨身包。
+      </div>
+    </div>
+
+    <div class="image-grid">
+      <div class="image-card"><img src="assets/曼谷芭達雅/thailand-before-trip-web.jpg" alt="泰國出發前溫馨提醒圖" onclick="openLB(this.src)"><div class="image-caption">出發前先看這張，幫你快速抓重點。</div></div>
+      <div class="image-card"><img src="assets/曼谷芭達雅/thailand-local-reminder-web.jpg" alt="泰國當地別踩雷提醒圖" onclick="openLB(this.src)"><div class="image-caption">當地文化和安全提醒，先知道就比較不會踩雷。</div></div>
+      <div class="image-card"><img src="assets/曼谷芭達雅/thailand-souvenir-no-bring-web.jpg" alt="泰國伴手禮禁帶提醒圖" onclick="openLB(this.src)"><div class="image-caption">買伴手禮前先看，回台打包會更有方向。</div></div>
+    </div>
+  </section>
+
+  <section class="section" id="s2">
+    <div class="sec-head">
+      <span class="sec-emoji">🚗</span>
+      <h2 class="sec-title">交通與自由活動</h2>
+      <p class="sec-desc">曼谷看商場與人潮，芭達雅看自由活動與短程移動。先記集合，玩起來最穩。</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🚌 團體移動</div>
+      <div class="card-body">
+        曼谷和芭達雅的交通很看塞車、人潮和天氣。下車時先把集合時間、集合點、車牌或明顯地標記起來，再去拍照、上廁所或買東西，玩起來會安心很多。
+      </div>
+    </div>
+
+    <div class="card gold">
+      <div class="card-title">📱 叫車神器 Grab</div>
+      <div class="card-body">
+        晚上自由活動想出去，用 <strong>Grab</strong> 叫車會比路邊臨時攔車更安心。很重要的是：<strong>請在台灣就先註冊好</strong>，人在國外有時候收不到簡訊，到了當地才辦會很卡。<br>
+        <span class="muted">上車前看清楚車牌、車型、司機資訊和上車點；要回集合點或飯店，也記得多留一點塞車時間。</span>
+      </div>
+    </div>
+
+    <div class="card gold">
+      <div class="card-title">🚕 曼谷自由活動</div>
+      <div class="card-body">
+        曼谷的商場、天橋和路口都很大，出口一多就容易走到不同方向。自由活動前先把集合點拍下來，記住樓層、入口或旁邊地標，回來時也幫自己多留一點找路時間。
+      </div>
+    </div>
+
+    <div class="card lotus">
+      <div class="card-title">🛻 芭達雅雙條車</div>
+      <div class="card-body">
+        芭達雅路上很常看到雙條車，短程移動會用得到。自由活動想搭的話，先講好目的地和價格再上車；晚上不要自己走太遠，也不要單獨去太偏的位置。
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <strong>YoYo 自由活動提醒</strong><br>
+      先把集合點存起來，再開始逛。人多的地方手機和包包放前面，現金分開放；如果想臨時改路線，記得先跟我說一聲，我才知道大家在哪裡。
+    </div>
+  </section>
+
+  <section class="section" id="s3">
+    <div class="sec-head">
+      <span class="sec-emoji">🙏</span>
+      <h2 class="sec-title">當地提醒</h2>
+      <p class="sec-desc">在泰國玩得舒服，關鍵是尊重、避開麻煩，也照顧好自己。</p>
+    </div>
+
+    <div class="card coral">
+      <div class="card-title">👑 皇室與政治話題</div>
+      <div class="card-body">
+        在泰國，王室相關事物要非常尊重。不要評論、開玩笑、模仿或轉傳相關內容；鈔票、照片、肖像和公共場所看到的王室畫面，也都不要拿來搞笑拍照。<br>
+        <span class="muted">簡單記：王室、政治、抗議活動這類話題，少評論、不開玩笑、不轉傳。</span>
+      </div>
+    </div>
+
+    <div class="card gold">
+      <div class="card-title">🛕 寺廟穿著</div>
+      <div class="card-body">
+        有寺廟或宗教場所時，請避開短褲、無袖、過短裙和太暴露的穿著。女生可以準備披肩或薄外套，男生也盡量穿得整齊一點，進到信仰場所會比較得體。
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🙏 四面佛參拜</div>
+      <div class="card-body">
+        四面佛是曼谷很代表性的信仰地標，常見參拜方式會從正面開始、順時鐘方向拜。參拜時放慢腳步、跟著動線走，拍照也保留一點距離，不要把信仰場所只當成背景。
+      </div>
+    </div>
+
+    <div class="card coral">
+      <div class="card-title">🌧️ 天氣與室內冷氣</div>
+      <div class="card-body">
+        泰國戶外很容易又熱又悶，但商場和車上冷氣又可能很強。好走的鞋、防曬、雨具、薄外套和小水瓶都很實用，尤其行程走一整天，體力要留著慢慢玩。
+      </div>
+    </div>
+
+    <div class="warn-box">
+      <span class="warn-icon">📱</span>
+      <div class="warn-text"><strong>人潮多的地方，手機不要離手</strong><br>商場、景點和自由活動點都很熱鬧。拍完照記得把手機收好，包包拉鍊關上，現金也不要全部放同一個位置。</div>
+    </div>
+  </section>
+
+  <section class="section" id="s4">
+    <div class="sec-head">
+      <span class="sec-emoji">🍜</span>
+      <h2 class="sec-title">YoYo 帶你吃</h2>
+      <p class="sec-desc">我先放幾個容易遇到，也比較有泰國記憶點的味道。看到喜歡的，就可以試試看。</p>
+    </div>
+
+    <span class="country-label">YoYo 這次先放入口袋的味道</span>
+    <div class="rec-grid">
+      <div class="rec-card">
+        <img src="assets/曼谷芭達雅/karun-thai-tea.jpg" alt="Karun 泰式奶茶" onclick="openLB(this.src)">
+        <div class="rec-content">
+          <span class="rec-kicker">泰式奶茶</span>
+          <div class="rec-title">Karun</div>
+          <div class="rec-copy">Central World 可以喝到，算是泰奶界比較精緻的路線。杯子漂亮、味道也有層次，想拍照又想喝泰奶的人可以收進口袋。</div>
+        </div>
+      </div>
+      <div class="rec-card">
+        <img src="assets/曼谷芭達雅/cha-tra-mue.jpg" alt="手標泰式奶茶" onclick="openLB(this.src)">
+        <div class="rec-content">
+          <span class="rec-kicker">泰奶經典</span>
+          <div class="rec-title">手標 ChaTraMue</div>
+          <div class="rec-copy">手標是很多人想到泰奶會先想到的牌子，可以調整甜度。YoYo 自己通常喝 30%，比較不會甜到後面受不了。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="food-grid">
+      <div class="mini-card"><span class="emoji">🥥</span><strong>必喝椰子</strong><span>天氣熱時很解暑，戶外走跳後喝起來特別舒服。</span></div>
+      <div class="mini-card"><span class="emoji">🧋</span><strong>KOI Thé</strong><span>台灣 50 嵐海外店，有熟悉感，也適合不想冒險的人。</span></div>
+      <div class="mini-card"><span class="emoji">🌶️</span><strong>泰式料理</strong><span>冬陰功、打拋這類香辣料理，怕辣的人先問辣度。</span></div>
+    </div>
+
+    <span class="country-label">在地美食</span>
+    <div class="rec-grid">
+      <div class="rec-card">
+        <img src="assets/曼谷芭達雅/thai-blood-noodle-soup.jpg" alt="泰式米粉湯" onclick="openLB(this.src)">
+        <div class="rec-content">
+          <span class="rec-kicker">在地味道</span>
+          <div class="rec-title">泰式米粉湯</div>
+          <div class="rec-copy">湯底常見豬血或牛血，味道很濃、很在地。敢吃的人可以試試看；不吃內臟或血類的人，點餐前先問一下湯底。</div>
+        </div>
+      </div>
+    </div>
+
+    <span class="country-label alt">甜點與小點</span>
+    <div class="rec-grid">
+      <div class="rec-card">
+        <img src="assets/曼谷芭達雅/pandan-roll.jpg" alt="斑斕捲餅" onclick="openLB(this.src)">
+        <div class="rec-content">
+          <span class="rec-kicker">路上小點</span>
+          <div class="rec-title">斑斕捲餅 / 斑斕蛋糕</div>
+          <div class="rec-copy">斑斕香氣很有東南亞感，看到可以買來嚐嚐。甜度通常不低，適合大家分著吃，比較不會一下子太膩。</div>
+        </div>
+      </div>
+      <div class="rec-card">
+        <img src="assets/曼谷芭達雅/mango-sticky-rice.jpg" alt="芒果糯米飯" onclick="openLB(this.src)">
+        <div class="rec-content">
+          <span class="rec-kicker">泰國甜點</span>
+          <div class="rec-title">芒果糯米飯</div>
+          <div class="rec-copy">芒果、糯米和椰奶是經典組合。份量看起來不大，但吃起來滿有飽足感，當飯後甜點剛剛好。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card lotus">
+      <div class="card-title">🧋 飲料冰塊與甜度</div>
+      <div class="card-body">
+        泰國飲料常常冰塊放得比較多，甜度也可能比台灣習慣更明顯。怕冰、喉嚨敏感或不喝太甜的人，點餐時可以先跟店家說少冰、不要冰或減甜。<br>
+        <span class="muted">自由活動點飲料時，先講需求會比較順，不然拿到後才發現太冰、太甜就可惜了。</span>
+      </div>
+    </div>
+
+    <div class="warn-box">
+      <span class="warn-icon">💧</span>
+      <div class="warn-text"><strong>飲食安全提醒</strong><br>建議以瓶裝水為主。自由活動買冰飲、海鮮或路邊攤時，請照自己的腸胃狀況來，不要為了嘗鮮影響後面行程。</div>
+    </div>
+
+  </section>
+
+  <section class="section" id="s5">
+    <div class="sec-head">
+      <span class="sec-emoji">🗺️</span>
+      <h2 class="sec-title">YoYo 帶你走跳</h2>
+      <p class="sec-desc">這裡先把曼谷、芭達雅常見會走到的點整理起來；遇到哪一站，就知道它好逛在哪裡、要注意什麼。</p>
+    </div>
+
+    <div class="tip-box">
+      <strong>先跟大家說一下</strong><br>
+      每團停留點會不太一樣，這頁先當作旅途小抄。真的走到現場，我會再提醒大家怎麼拍、怎麼逛、什麼時間回來。
+    </div>
+
+    <span class="country-label">曼谷 Bangkok</span>
+    <div class="card gold">
+      <div class="card-title">🏬 Central World</div>
+      <div class="card-body">
+        Central World 是曼谷很適合自由活動的大型商場，吃飯、逛街、買飲料、躲雨吹冷氣都方便。商場很大，建議先把集合點拍起來，逛起來會比較安心。
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🙏 四面佛</div>
+      <div class="card-body">
+        四面佛是曼谷很代表性的信仰地標，香火很旺，也常被旅人安排順路參拜。來到這裡放慢一點腳步，尊重信仰，也把隨身物品顧好。
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🐘 象神 Ganesha</div>
+      <div class="card-body">
+        象神是很多人會注意到的信仰點，常被聯想到智慧、學業、工作和新的開始。若路線有經過，可以停下來感受一下曼谷商圈裡很特別的信仰氛圍。
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🪷 吉祥天女 Lakshmi</div>
+      <div class="card-body">
+        吉祥天女常被旅人視為祈求幸運、美好與人緣的信仰點。這裡拍起來很漂亮，但也要記得保持安靜、尊重現場，不要只把它當拍照背景。
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🛒 Big C</div>
+      <div class="card-body">
+        Big C 是很多人泰國採買的第一站，零食、泡麵、伴手禮、日用品都很好逛。建議先想好清單，不然很容易越買越多，最後行李箱塞到懷疑人生。
+      </div>
+    </div>
+
+    <span class="country-label alt">芭達雅 Pattaya</span>
+    <div class="card lotus">
+      <div class="card-title">✈️ 飛機夜市</div>
+      <div class="card-body">
+        飛機夜市的特色就是主題感明顯，很適合拍照、吃小吃、感受芭達雅夜晚的熱鬧。晚上人多，邊逛邊拍也要記得顧好手機。
+      </div>
+    </div>
+
+    <div class="card lotus">
+      <div class="card-title">🛫 航站 21 Pattaya</div>
+      <div class="card-body">
+        航站 21 Pattaya 每層樓都有不同國家主題，適合拍照、吃東西、逛街，也很適合當作吹冷氣休息點。商場動線大，集合點一樣先拍起來。
+      </div>
+    </div>
+
+    <div class="card lotus">
+      <div class="card-title">🛶 水上市場</div>
+      <div class="card-body">
+        水上市場是芭達雅很有地方特色的走跳點，可以看水邊攤販、拍照、買小吃小物。天氣熱的時候記得補水、防曬，貴重物品也放好。
+      </div>
+    </div>
+
+    <div class="card lotus">
+      <div class="card-title">🌊 OCEAN SKY 海天盛宴</div>
+      <div class="card-body">
+        OCEAN SKY 海天盛宴是芭達雅夜晚氣氛很強的一站，結合國際自助餐、人妖公主與男模表演，燈光、海景和舞台都很有記憶點。建議手機先充好電，精彩畫面很多。
+      </div>
+    </div>
+
+    <div class="card lotus">
+      <div class="card-title">🌃 步行街 Walking Street</div>
+      <div class="card-body">
+        越晚越熱鬧，霓虹燈、人潮和音樂感都很強。自由活動時要跟緊同行的人，手機包包顧好，不要單獨走太遠。
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="s6">
+    <div class="sec-head">
+      <span class="sec-emoji">🛍️</span>
+      <h2 class="sec-title">YoYo 帶你買</h2>
+      <p class="sec-desc">買泰國伴手禮很容易失手，先抓好買、好分、好帶，回台也要能過關。</p>
+    </div>
+
+    <span class="country-label">Big C 可以先看這三類</span>
+    <div class="shop-grid">
+      <div class="mini-card"><span class="emoji">🍜</span><strong>零食泡麵</strong><span>媽媽牌船麵、鹹蛋黃泡麵、洋芋片、小熊餅乾。</span></div>
+      <div class="mini-card"><span class="emoji">🥭</span><strong>伴手禮</strong><span>芒果乾、KUNNA 果乾、椰子奶油蛋捲。</span></div>
+      <div class="mini-card"><span class="emoji">🧴</span><strong>實用小物</strong><span>鼻通、青草膏、防曬、牙膏、防蚊用品。</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🛒 Big C 採買提醒</div>
+      <div class="card-body">
+        Big C 真的很好逛，建議先抓「零食泡麵、伴手禮、實用小物」三大類。食品、醬料、肉類或海鮮類商品要多看成分；看不懂或不確定能不能帶回台灣，就先不要買太特殊的品項。
+      </div>
+    </div>
+
+    <span class="country-label">YoYo 拍下來的採買小抄</span>
+    <div class="rec-grid">
+      <div class="rec-card">
+        <img src="assets/曼谷芭達雅/bigc-entrance.jpg" alt="Big C 賣場入口" onclick="openLB(this.src)">
+        <div class="rec-content">
+          <span class="rec-kicker">補貨站</span>
+          <div class="rec-title">Big C</div>
+          <div class="rec-copy">泰國採買很容易從「我只買一點」變成一整籃。建議先列清單再進去，不然很容易越買越多，行李箱直接爆開。</div>
+        </div>
+      </div>
+      <div class="rec-card">
+        <img src="assets/曼谷芭達雅/salted-egg-chips.jpg" alt="鹹蛋黃洋芋片" onclick="openLB(this.src)">
+        <div class="rec-content">
+          <span class="rec-kicker">零食</span>
+          <div class="rec-title">鹹蛋黃洋芋片</div>
+          <div class="rec-copy">泰國很常見、也很有記憶點的口味。</div>
+        </div>
+      </div>
+      <div class="rec-card">
+        <img src="assets/曼谷芭達雅/thai-flavor-chips.jpg" alt="泰式風味洋芋片" onclick="openLB(this.src)">
+        <div class="rec-content">
+          <span class="rec-kicker">零食</span>
+          <div class="rec-title">泰式風味洋芋片</div>
+          <div class="rec-copy">想買有泰國感的零食，可以看這種酸辣、香料感比較明顯的口味。</div>
+        </div>
+      </div>
+      <div class="rec-card">
+        <img src="assets/曼谷芭達雅/watermelon-mint.jpg" alt="西瓜涼糖" onclick="openLB(this.src)">
+        <div class="rec-content">
+          <span class="rec-kicker">小物</span>
+          <div class="rec-title">西瓜涼糖</div>
+          <div class="rec-copy">這個 YoYo 自己超愛，每次都會買很多。天氣熱、走路走到有點累時，清涼感很舒服。</div>
+        </div>
+      </div>
+      <div class="rec-card">
+        <img src="assets/曼谷芭達雅/herbal-inhaler.jpg" alt="草藥鼻通" onclick="openLB(this.src)">
+        <div class="rec-content">
+          <span class="rec-kicker">實用小物</span>
+          <div class="rec-title">草藥鼻通</div>
+          <div class="rec-copy">有白色跟綠色款式，喜歡都可以買。搭車、天氣悶熱或想提神時，很多人會覺得很實用。</div>
+        </div>
+      </div>
+      <div class="rec-card warning">
+        <img src="assets/曼谷芭達雅/pork-floss-cracker.jpg" alt="肉鬆餅乾" onclick="openLB(this.src)">
+        <div class="rec-content">
+          <span class="rec-kicker">回台注意</span>
+          <div class="rec-title">肉鬆餅乾</div>
+          <div class="rec-copy">這款 YoYo 自己很喜歡，但因為含肉鬆、肉類成分，記得在泰國吃完，不要帶回台灣。只要看到肉鬆、肉乾、肉類字樣，打包前都要特別小心。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card gold">
+      <div class="card-title">💱 換錢與刷卡</div>
+      <div class="card-body">
+        百貨、超市和部分餐廳可以刷卡，但市集、小店、洗手間或臨時消費，身上還是要留一點泰銖小鈔。換錢不用急著亂換，跟著當天動線和提醒走會比較順。
+      </div>
+    </div>
+
+  </section>
+
+  <section class="section" id="s7">
+    <div class="sec-head">
+      <span class="sec-emoji">✈️</span>
+      <h2 class="sec-title">回台前整理</h2>
+      <p class="sec-desc">最後一天不要只忙著把戰利品塞進行李，禁帶物和行動電源要先整理。</p>
+    </div>
+
+    <div class="warn-box">
+      <span class="warn-icon">🥩</span>
+      <div class="warn-text"><strong>肉類、含肉食品不要帶回台灣</strong><br>肉乾、香腸、肉鬆、含肉泡麵調理包、飛機餐沒吃完的肉類食品，都不要放進行李。看不懂成分時，最安全就是不要買、不要帶、不要寄。</div>
+    </div>
+
+    <div class="warn-box">
+      <span class="warn-icon">🍎</span>
+      <div class="warn-text"><strong>新鮮水果與植物類商品要特別小心</strong><br>新鮮水果不要帶回台灣。植物、種子、新鮮農產品或看不出成分的商品，也不要隨便放進行李；真的不確定就先問我。</div>
+    </div>
+
+    <div class="card gold">
+      <div class="card-title">🔋 行動電源與鋰電池</div>
+      <div class="card-body">
+        行動電源請放隨身行李，不要放托運。現在飛安規定更明確：每位旅客限帶 2 個，飛行途中不要使用，也不要在機上充電。外殼容量標示要留清楚；破損、膨脹或看不出容量的，就不要帶上飛機。
+      </div>
+    </div>
+
+    <div class="save-box">
+      <div class="save-title">🔋 行動電源快速記</div>
+      <div class="save-grid">
+        <div class="save-item"><span class="save-label">位置</span><span class="save-value">放隨身，不放托運</span></div>
+        <div class="save-item"><span class="save-label">數量</span><span class="save-value">每人限帶 2 個</span></div>
+        <div class="save-item"><span class="save-label">飛行途中</span><span class="save-value">不可使用 / 充電</span></div>
+        <div class="save-item"><span class="save-label">打包前</span><span class="save-value">容量標示要清楚</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🧳 回台前整理清單</div>
+      <div class="card-body">
+        <ul class="check-list">
+          <li>護照、手機、錢包、房卡、充電器、保險箱先檢查。</li>
+          <li>行動電源限帶 2 個，放手提，不要放托運行李。</li>
+          <li>液體、免稅品、易碎品分開整理。</li>
+          <li>食品、菸酒、藥品與需申報物品不確定就先問。</li>
+          <li>抵達桃園後，確認行李件數與外觀再離開。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="image-grid single">
+      <div class="image-card"><img src="assets/曼谷芭達雅/thailand-souvenir-no-bring-web.jpg" alt="泰國伴手禮禁帶提醒圖" onclick="openLB(this.src)"><div class="image-caption">打包前可以先看這張，避免買了不能帶。</div></div>
+    </div>
+  </section>
+
+  <section class="section" id="s8">
+    <div class="sec-head">
+      <span class="sec-emoji">❓</span>
+      <h2 class="sec-title">常見問題</h2>
+      <p class="sec-desc">把團員最常問的問題先整理起來，出發前滑一下就安心很多。</p>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item" open><summary>泰國現在要填 TDAC 嗎？</summary><p>要。TDAC 是泰國電子入境卡，入境前要線上填寫。請認明官方網站，出發前 YoYo 也會提醒大家填寫時間和需要準備的資料。</p></details>
+      <details class="faq-item"><summary>台灣護照去泰國需要簽證嗎？</summary><p>目前台灣護照可用免簽方式入境泰國短期旅遊，但護照、回程、住宿、財力資料和 TDAC 還是要準備好。出發前我會再依官方公告提醒大家。</p></details>
+      <details class="faq-item"><summary>電子菸可以帶去泰國嗎？</summary><p>不要帶。電子菸、煙油和相關設備在泰國管制很嚴，最安全就是出發前從包包拿掉，也不要在當地買或使用。</p></details>
+      <details class="faq-item"><summary>Grab 需要先在台灣註冊嗎？</summary><p>很建議先註冊好。人在國外有時候收不到台灣簡訊，到了當地才辦會很卡。自由活動叫車前，也要確認車牌、車型、司機資訊和上車點。</p></details>
+      <details class="faq-item"><summary>Big C 有什麼推薦買？</summary><p>可以先看三類：零食泡麵、伴手禮、實用小物。像媽媽牌船麵、洋芋片、小熊餅乾、芒果乾、KUNNA 果乾、鼻通和青草膏都常被問到。食品類回台前要看成分，看不懂就先不要買太特殊的。</p></details>
+      <details class="faq-item"><summary>四面佛怎麼拜？</summary><p>常見方式是從正面開始，順時鐘方向參拜。到信仰場所放慢腳步、尊重現場，不要只顧拍照，也記得把隨身物品放好。</p></details>
+      <details class="faq-item"><summary>芭達雅雙條車可以自己搭嗎？</summary><p>自由活動若要搭，先講好目的地和價格再上車。不要上車後才談價格，晚上也不要單獨去太偏的位置。</p></details>
+      <details class="faq-item"><summary>水果、肉乾、含肉泡麵可以帶回台灣嗎？</summary><p>不建議帶。新鮮水果、肉類、含肉食品和來源不明的食品都容易出問題；不確定時先問 YoYo，或直接不要買。</p></details>
+      <details class="faq-item"><summary>肉鬆餅乾可以買回台灣嗎？</summary><p>不要帶回台灣。這款 YoYo 自己很喜歡，但因為含肉鬆、肉類成分，建議在泰國吃完。只要看到肉鬆、肉乾、肉類字樣，打包前都要特別小心。</p></details>
+      <details class="faq-item"><summary>行動電源可以放托運嗎？</summary><p>不可以。行動電源要放隨身行李，不要放托運；目前規定每人限帶 2 個，飛行途中不可使用或充電。外殼容量標示要清楚，破損、膨脹或看不出容量的就不要帶。</p></details>
+    </div>
+
+    <div class="source-card">
+      <div class="source-title">🔎 官方資料放這裡</div>
+      <a href="https://www.boca.gov.tw/sp-foof-countrycp-01-24-dec45-1.html" target="_blank" rel="noopener">外交部領事事務局：泰國簽證及入境須知</a>
+      <a href="https://tdac.immigration.go.th/manual/en/index.html" target="_blank" rel="noopener">Thailand Immigration Bureau：Thailand Digital Arrival Card</a>
+      <a href="https://www.mofa.gov.tw/CountryInfo.aspx?CASN=5&n=5&s=186&sms=33&tabs=FB09C9C041E34414" target="_blank" rel="noopener">中華民國外交部：泰王國國家資訊與 TDAC 提醒</a>
+      <a href="https://thaiembassy.se/en/ban-on-electronic-cigarettes-in-thailand/" target="_blank" rel="noopener">Royal Thai Embassy Stockholm：Ban on Electronic Cigarettes in Thailand</a>
+      <a href="https://web.customs.gov.tw/taipei/singlehtml/3130?cntId=cus2_177199_3130" target="_blank" rel="noopener">臺北關：旅客攜帶肉製品與含肉泡麵入境提醒</a>
+      <a href="https://www.tca.gov.tw/cht/index.php?code=list&ids=209" target="_blank" rel="noopener">交通部民航局臺中航空站：鋰電池上機規定</a>
+      <a href="https://www.gov.uk/foreign-travel-advice/thailand/safety-and-security" target="_blank" rel="noopener">GOV.UK：Thailand safety and security travel advice</a>
+      <p class="muted">入境、簽證、海關、行李和營業資訊都可能更新。這些連結先放著，出發前 YoYo 會再依官方公告幫大家確認一次。</p>
+    </div>
+
+  </section>
+</main>
+
+<div class="lightbox" id="lightbox" onclick="closeLB()">
+  <button class="lightbox-close" onclick="closeLB()">×</button>
+  <img id="lb-img" src="assets/曼谷芭達雅/thailand-before-trip-web.jpg" alt="圖片放大預覽">
+</div>
+
+<footer class="footer">
+  <strong>YoYo 帶你玩曼谷芭達雅</strong><br>
+  劉又銘 YoYo · 可樂旅遊 國際短程線<br>
+  <div class="footer-contact">IG：@yoyo.touring ｜ 出發前有問題，也可以在行程群組問我</div>
+</footer>
+
+<script>
+function show(id, btn) {
+  document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(button => button.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function openLB(src) {
+  document.getElementById('lb-img').src = src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLB() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+</script>
+</body>
+</html>
