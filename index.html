@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="YO! 旅行班團員行前入口，從地球導覽選擇目的地，查看各國行前提醒、通關重點、上機行李與回台整理。">
+  <title>YO! 旅行班｜地球導覽入口</title>
+  <style>
+    :root {
+      --bg: #111326;
+      --bg-2: #18132d;
+      --ink: #f7fbff;
+      --soft: rgba(247, 251, 255, 0.72);
+      --muted: rgba(247, 251, 255, 0.56);
+      --panel: rgba(255, 255, 255, 0.1);
+      --panel-strong: rgba(255, 255, 255, 0.16);
+      --line: rgba(255, 255, 255, 0.18);
+      --paper: #f6fbff;
+      --paper-ink: #1e2d42;
+      --paper-muted: #64748b;
+      --aqua: #5ee7df;
+      --coral: #ff7468;
+      --pink: #ff8db8;
+      --violet: #a690ff;
+      --gold: #ffc576;
+      --mint: #77e0cc;
+      --shadow: 0 26px 80px rgba(0, 0, 0, 0.3);
+      --radius: 8px;
+      --content: min(1180px, calc(100% - 36px));
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: ui-rounded, -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 18% 10%, rgba(94, 231, 223, 0.2), transparent 28%),
+        radial-gradient(circle at 82% 16%, rgba(255, 116, 104, 0.2), transparent 26%),
+        radial-gradient(circle at 55% 86%, rgba(166, 144, 255, 0.16), transparent 34%),
+        linear-gradient(145deg, var(--bg), var(--bg-2) 54%, #101b2e);
+      line-height: 1.65;
+      letter-spacing: 0;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.42;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,0.9) 0 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(119,224,204,0.55) 0 1px, transparent 1.5px);
+      background-size: 72px 72px, 118px 118px;
+      background-position: 0 0, 36px 18px;
+      mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,0.72) 72%, transparent 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .site {
+      position: relative;
+      z-index: 1;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid var(--line);
+      background: rgba(17, 19, 38, 0.72);
+      backdrop-filter: blur(18px);
+    }
+
+    .topbar-inner {
+      width: var(--content);
+      min-height: 70px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      color: #102333;
+      background: linear-gradient(135deg, var(--aqua), var(--gold));
+      font-size: 14px;
+      font-weight: 950;
+      box-shadow: 0 12px 28px rgba(94, 231, 223, 0.18);
+      flex: 0 0 auto;
+    }
+
+    .brand-title {
+      display: block;
+      overflow: hidden;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 950;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .brand-sub {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .search {
+      position: relative;
+      width: min(280px, 34vw);
+      min-width: 180px;
+    }
+
+    .search input {
+      width: 100%;
+      height: 42px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 0 12px;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.08);
+      outline: none;
+    }
+
+    .search input::placeholder {
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .search input:focus {
+      border-color: rgba(94, 231, 223, 0.78);
+      box-shadow: 0 0 0 3px rgba(94, 231, 223, 0.14);
+    }
+
+    .control-btn {
+      min-height: 42px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 8px 12px;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .control-btn:hover,
+    .control-btn:focus-visible {
+      border-color: rgba(255, 255, 255, 0.44);
+      outline: none;
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .hero {
+      width: var(--content);
+      margin: 0 auto;
+      padding: 58px 0 24px;
+    }
+
+    .eyebrow {
+      width: fit-content;
+      margin: 0 0 14px;
+      padding: 7px 10px;
+      border: 1px solid rgba(255, 197, 118, 0.28);
+      border-radius: var(--radius);
+      color: #ffe1a9;
+      background: rgba(255, 197, 118, 0.1);
+      font-size: 13px;
+      font-weight: 950;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(38px, 6vw, 74px);
+      line-height: 1.06;
+      letter-spacing: 0;
+    }
+
+    .gradient-text {
+      color: transparent;
+      background: linear-gradient(90deg, var(--aqua), var(--gold) 45%, var(--coral));
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .hero-copy {
+      max-width: 720px;
+      margin: 18px 0 0;
+      color: var(--soft);
+      font-size: 18px;
+    }
+
+    .quick-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .quick-chip {
+      min-height: 36px;
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 7px 10px;
+      color: rgba(255,255,255,0.86);
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .workspace {
+      width: var(--content);
+      margin: 18px auto 0;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 390px;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .globe-card,
+    .info-panel,
+    .classic-panel,
+    .luggage-card,
+    .source-box {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(255,255,255,0.13), rgba(255,255,255,0.07));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .globe-card {
+      min-height: 640px;
+      position: relative;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    .globe-card::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border-radius: var(--radius);
+      opacity: 0.42;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(94, 231, 223, 0.2), transparent 26%),
+        radial-gradient(circle at 72% 24%, rgba(255, 141, 184, 0.16), transparent 22%),
+        linear-gradient(180deg, rgba(255,255,255,0.04), transparent);
+      pointer-events: none;
+    }
+
+    .meteor {
+      position: absolute;
+      width: 160px;
+      height: 2px;
+      top: 12%;
+      left: -20%;
+      opacity: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.85), transparent);
+      transform: rotate(-18deg);
+      animation: meteor 8s ease-in-out infinite;
+    }
+
+    .meteor:nth-child(2) {
+      top: 34%;
+      animation-delay: 3.2s;
+      animation-duration: 10s;
+    }
+
+    @keyframes meteor {
+      0%, 76% { opacity: 0; transform: translate3d(0,0,0) rotate(-18deg); }
+      82% { opacity: 0.9; }
+      100% { opacity: 0; transform: translate3d(920px, 220px, 0) rotate(-18deg); }
+    }
+
+    .globe-stage {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 600px;
+      min-height: 560px;
+      overflow: visible;
+    }
+
+    .orbit-ring {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: min(78%, 640px);
+      aspect-ratio: 1 / 0.62;
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 50%;
+      transform: translate(-50%, -50%) rotate(-18deg);
+      pointer-events: none;
+    }
+
+    .orbit-ring.second {
+      width: min(64%, 510px);
+      transform: translate(-50%, -50%) rotate(20deg);
+      border-color: rgba(94, 231, 223, 0.16);
+    }
+
+    .globe {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: clamp(190px, 30vw, 300px);
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+      isolation: isolate;
+      box-shadow:
+        0 0 72px rgba(94, 231, 223, 0.34),
+        0 18px 48px rgba(3, 13, 33, 0.46);
+      background: #07162e;
+      animation: globePulse 5s ease-in-out infinite;
+    }
+
+    .globe::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 34% 21%, rgba(255,255,255,0.14), transparent 30%),
+        radial-gradient(circle at 50% 56%, transparent 48%, rgba(2, 10, 27, 0.35) 100%);
+      pointer-events: none;
+    }
+
+    .globe-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.04);
+    }
+
+    @keyframes globePulse {
+      0%, 100% { filter: saturate(1); }
+      50% { filter: saturate(1.18) brightness(1.05); }
+    }
+
+    .country-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+    }
+
+    .country-node {
+      position: absolute;
+      width: 116px;
+      min-height: 126px;
+      transform: translate(-50%, -50%);
+      transition: opacity 160ms ease;
+    }
+
+    .country-node.dimmed {
+      opacity: 0.34;
+    }
+
+    .node-button {
+      width: 116px;
+      min-height: 126px;
+      display: grid;
+      place-items: center;
+      gap: 6px;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      padding: 10px 8px;
+      color: #ffffff;
+      background: transparent;
+      box-shadow: none;
+      transition: transform 180ms ease, filter 180ms ease;
+    }
+
+    .node-button:hover,
+    .node-button:focus-visible,
+    .country-node.active .node-button {
+      transform: translateY(-4px) scale(1.04);
+      outline: none;
+      background: transparent;
+      box-shadow: none;
+      filter: drop-shadow(0 0 12px color-mix(in srgb, var(--accent) 55%, transparent));
+    }
+
+    .country-orb {
+      position: relative;
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,0.44);
+      border-radius: 50%;
+      color: #ffffff;
+      background:
+        radial-gradient(circle at 30% 25%, rgba(255,255,255,0.48), transparent 26%),
+        linear-gradient(135deg, var(--accent), rgba(255,255,255,0.12));
+      box-shadow: 0 14px 26px rgba(0,0,0,0.26);
+      font-size: 24px;
+    }
+
+    .country-code {
+      position: absolute;
+      right: -8px;
+      bottom: -4px;
+      min-width: 30px;
+      height: 22px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,0.48);
+      border-radius: 999px;
+      color: #102333;
+      background: #ffffff;
+      font-size: 10px;
+      font-weight: 950;
+    }
+
+    .country-name {
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 950;
+    }
+
+    .country-count {
+      color: rgba(255,255,255,0.65);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .satellite-orbit {
+      position: absolute;
+      inset: -22px;
+      pointer-events: none;
+      animation: spin 9s linear infinite;
+    }
+
+    .satellite {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,0.6);
+      border-radius: 50%;
+      color: #102333;
+      background: var(--accent);
+      font-size: 11px;
+      font-weight: 950;
+      transform: rotate(var(--angle)) translate(76px) rotate(calc(-1 * var(--angle)));
+      box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+      pointer-events: auto;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    body.paused .globe,
+    body.paused .satellite-orbit,
+    body.paused .meteor {
+      animation-play-state: paused;
+    }
+
+    .info-panel {
+      min-height: 640px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .panel-kicker {
+      margin: 0 0 8px;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 950;
+    }
+
+    .panel-title {
+      margin: 0;
+      color: #ffffff;
+      font-size: 30px;
+      line-height: 1.18;
+      font-weight: 950;
+    }
+
+    .panel-copy {
+      margin: 12px 0 0;
+      color: var(--soft);
+      font-size: 15px;
+    }
+
+    .panel-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .small-btn {
+      min-height: 36px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 7px 10px;
+      color: #ffffff;
+      background: rgba(255,255,255,0.08);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .link-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .panel-link,
+    .empty-link {
+      display: block;
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: var(--radius);
+      padding: 14px;
+      background: rgba(255,255,255,0.08);
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .panel-link:hover,
+    .panel-link:focus-visible {
+      transform: translateY(-2px);
+      outline: none;
+      border-color: rgba(94, 231, 223, 0.45);
+      background: rgba(255,255,255,0.13);
+    }
+
+    .empty-link {
+      opacity: 0.58;
+    }
+
+    .link-name {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: #ffffff;
+      font-weight: 950;
+    }
+
+    .link-desc {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .link-country {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .classic-panel {
+      width: var(--content);
+      margin: 18px auto 0;
+      display: none;
+      padding: 18px;
+    }
+
+    body.classic-active .workspace {
+      display: none;
+    }
+
+    body.classic-active .classic-panel {
+      display: block;
+    }
+
+    .classic-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .classic-country {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 15px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .classic-country h3 {
+      margin: 0 0 10px;
+      color: #ffffff;
+      font-size: 20px;
+    }
+
+    .classic-country p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .content-section {
+      width: var(--content);
+      margin: 22px auto 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+
+    .section-kicker {
+      margin: 0 0 6px;
+      color: var(--coral);
+      font-size: 13px;
+      font-weight: 950;
+    }
+
+    h2 {
+      margin: 0;
+      color: #ffffff;
+      font-size: 32px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .section-note {
+      max-width: 430px;
+      margin: 0;
+      color: var(--soft);
+      font-size: 15px;
+    }
+
+    .luggage-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .luggage-card {
+      min-height: 154px;
+      padding: 16px;
+    }
+
+    .luggage-card strong {
+      display: block;
+      color: #ffffff;
+      font-size: 16px;
+      line-height: 1.35;
+    }
+
+    .luggage-card span {
+      display: block;
+      margin-top: 8px;
+      color: var(--soft);
+      font-size: 14px;
+    }
+
+    .source-box {
+      margin-top: 14px;
+      padding: 16px;
+    }
+
+    .source-title {
+      margin: 0 0 10px;
+      color: #ffffff;
+      font-weight: 950;
+    }
+
+    .source-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .source-links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 6px 10px;
+      color: #ffffff;
+      background: rgba(255,255,255,0.08);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .footer {
+      width: var(--content);
+      margin: 34px auto 0;
+      padding: 26px 0 38px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px 0;
+      }
+
+      .controls {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .search {
+        width: min(100%, 360px);
+      }
+
+      .workspace {
+        grid-template-columns: 1fr;
+      }
+
+      .info-panel {
+        min-height: auto;
+      }
+
+      .classic-grid,
+      .luggage-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      :root {
+        --content: min(100% - 28px, 1180px);
+      }
+
+      .brand-title {
+        max-width: 230px;
+      }
+
+      .controls {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .search {
+        grid-column: 1 / -1;
+        width: 100%;
+      }
+
+      .control-btn {
+        width: 100%;
+      }
+
+      .hero {
+        padding-top: 40px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .hero-copy {
+        font-size: 16px;
+      }
+
+      .globe-card {
+        min-height: 560px;
+        padding: 12px;
+      }
+
+      .globe-stage {
+        height: 520px;
+        min-height: 500px;
+      }
+
+      .country-node {
+        width: 96px;
+        min-height: 108px;
+      }
+
+      .node-button {
+        width: 96px;
+        min-height: 108px;
+        padding: 8px 6px;
+      }
+
+      .country-map {
+        width: 42px;
+        height: 42px;
+      }
+
+      .country-orb {
+        width: 46px;
+        height: 46px;
+        font-size: 21px;
+      }
+
+      .country-name {
+        font-size: 14px;
+      }
+
+      .satellite {
+        transform: rotate(var(--angle)) translate(62px) rotate(calc(-1 * var(--angle)));
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-note {
+        margin-top: 8px;
+      }
+
+      .classic-grid,
+      .luggage-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="#top" aria-label="回到地球導覽入口">
+          <span class="brand-mark">YO</span>
+          <span>
+            <span class="brand-title">YO! 旅行班</span>
+            <span class="brand-sub">團員行前入口</span>
+          </span>
+        </a>
+
+        <div class="controls" aria-label="導覽工具">
+          <label class="search">
+            <span class="sr-only">搜尋目的地與提醒</span>
+            <input id="searchInput" type="search" placeholder="搜尋國家、城市、提醒" autocomplete="off">
+          </label>
+          <button class="control-btn" id="pauseBtn" type="button">暫停動態</button>
+          <button class="control-btn" id="modeBtn" type="button">清單模式</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="pageTitle">
+        <p class="eyebrow">YO! TOURING ATLAS</p>
+        <h1 id="pageTitle"><span class="gradient-text">下一站</span>，從這裡開始</h1>
+        <p class="hero-copy">選一個國家，先看行前重點、通關提醒、上機行李和回台整理。出發前先抓方向，旅途中就更安心。</p>
+        <div class="quick-row" aria-label="常用入口">
+          <a class="quick-chip" href="#luggage">上機與行李小抄</a>
+          <a class="quick-chip" href="#sources">查證來源</a>
+          <button class="quick-chip" type="button" data-select-country="th">泰國</button>
+          <button class="quick-chip" type="button" data-select-country="vn">越南</button>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="地球目的地導覽">
+        <div class="globe-card">
+          <div class="meteor"></div>
+          <div class="meteor"></div>
+          <div class="globe-stage" id="globeStage" aria-label="互動式地球與目的地">
+            <div class="orbit-ring"></div>
+            <div class="orbit-ring second"></div>
+            <div class="globe" aria-hidden="true">
+              <img class="globe-image" src="assets/YO旅行班/earth-southeast-asia-v1.png" alt="">
+            </div>
+            <div class="country-layer" id="countryLayer"></div>
+          </div>
+        </div>
+
+        <aside class="info-panel" id="infoPanel" aria-live="polite"></aside>
+      </section>
+
+      <section class="classic-panel" id="classicPanel" aria-label="目的地清單"></section>
+
+      <section class="content-section" id="luggage" aria-labelledby="luggageTitle">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">BOARDING CHECK</p>
+            <h2 id="luggageTitle">出門前 3 分鐘，先檢查這 8 件事。</h2>
+          </div>
+          <p class="section-note">這張是通用小抄。各國入境、簽證和特殊禁帶物，仍以目的地頁與行前通知為準。</p>
+        </div>
+
+        <div class="luggage-grid">
+          <article class="luggage-card"><strong>護照與證件</strong><span>護照、機票資料、入境表或簽證資料放隨身，不要放托運。</span></article>
+          <article class="luggage-card"><strong>隨身包</strong><span>手機、錢包、護照、藥品、充電線和貴重物品放同一包。</span></article>
+          <article class="luggage-card"><strong>托運行李</strong><span>大瓶液體、剪刀刀具和不急用物品放托運；行李外觀可先拍照。</span></article>
+          <article class="luggage-card"><strong>行動電源</strong><span>限帶 2 個，放隨身不托運；飛行途中不要使用，也不要在機上充電。</span></article>
+          <article class="luggage-card"><strong>液體與免稅品</strong><span>隨身液體容器不超過 100 ml，放進 1 公升透明夾鏈袋。</span></article>
+          <article class="luggage-card"><strong>常備藥</strong><span>個人藥品建議保留原包裝或醫囑資料；現金、首飾、相機不要托運。</span></article>
+          <article class="luggage-card"><strong>回台禁帶物</strong><span>肉類、含肉食品、新鮮水果、植物和種子最容易出問題。</span></article>
+          <article class="luggage-card"><strong>抵達後確認</strong><span>拿到行李先確認件數、外觀和輪子拉桿；有破損先在機場處理。</span></article>
+        </div>
+
+        <div class="source-box" id="sources">
+          <p class="source-title">出發前可再確認</p>
+          <ul class="source-links">
+            <li><a href="https://www.motc.gov.tw/ch/app/data/view?id=14&module=news&serno=c4831fc1-d527-40d0-af27-657cb0fce824" target="_blank" rel="noopener">交通部：行動電源新規</a></li>
+            <li><a href="https://www.taoyuan-airport.com/security_check" target="_blank" rel="noopener">桃園機場：出境安檢</a></li>
+            <li><a href="https://web.customs.gov.tw/taipei/singlehtml/3130?cntId=cus2_177199_3130" target="_blank" rel="noopener">臺北關：肉製品與含肉泡麵</a></li>
+            <li><a href="https://www.aphia.gov.tw/ws.php?id=10719" target="_blank" rel="noopener">防檢署：出國必看不買清單</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      YO! 旅行班 ｜ IG：@yoyo.touring ｜ 最後更新：2026-07-11（台北時間）
+    </footer>
+  </div>
+
+  <script>
+    const countries = [
+      {
+        id: "th",
+        name: "泰國",
+        short: "THAILAND",
+        code: "TH",
+        flag: "🇹🇭",
+        accent: "#ff8db8",
+        mapPath: "M47 6 C58 10 61 20 54 28 C62 34 65 44 55 52 C59 62 54 73 45 76 C48 85 42 94 33 88 C26 84 28 75 34 70 C26 63 27 53 35 48 C30 40 34 31 42 29 C37 20 38 10 47 6 Z",
+        copy: "先看入境資料、電子菸提醒、採買節奏和回台整理。曼谷與芭達雅很熱鬧，集合時間和行李規定先記好。",
+        links: [
+          { name: "曼谷芭達雅重點收藏版", url: "曼谷芭達雅.html", desc: "TDAC、當地提醒、自由活動、Big C 採買與回台打包。" },
+          { name: "上機與行李小抄", url: "#luggage", desc: "護照、行動電源、液體、托運與回台前整理。" }
+        ]
+      },
+      {
+        id: "vn",
+        name: "越南",
+        short: "VIETNAM",
+        code: "VN",
+        flag: "🇻🇳",
+        accent: "#77e0cc",
+        mapPath: "M58 5 C48 9 50 18 43 25 C36 32 42 41 51 39 C45 48 36 53 39 63 C42 74 56 71 58 82 C60 91 70 94 76 87 C66 81 66 70 60 62 C54 55 65 48 61 39 C57 30 68 22 63 14 C62 10 61 7 58 5 Z",
+        copy: "中越的重點是天氣、換匯、車程與景點節奏。峴港、會安和巴拿山各有不同玩法，出發前先抓方向。",
+        links: [
+          { name: "中越峴港・會安", url: "中越.html", desc: "出發前準備、換匯、交通、飲食、景點、伴手禮與回台提醒。" },
+          { name: "上機與行李小抄", url: "#luggage", desc: "通用行李與登機提醒，出發前快速確認。" }
+        ]
+      },
+      {
+        id: "my",
+        name: "馬來西亞",
+        short: "MALAYSIA",
+        code: "MY",
+        flag: "🇲🇾",
+        accent: "#a690ff",
+        mapPath: "M11 48 C22 39 34 42 39 51 C45 61 35 72 22 69 C12 67 6 58 11 48 Z M58 45 C70 36 88 39 93 51 C98 65 83 78 68 72 C56 67 49 53 58 45 Z",
+        copy: "馬來西亞文化感豐富、移動時間較長。跨境、集合、行李是否下車，現場口令要聽清楚。",
+        links: [
+          { name: "新馬重點收藏版", url: "新馬.html", desc: "新加坡與馬來西亞差異、通關流程、購物回台與常見問題。" },
+          { name: "上機與行李小抄", url: "#luggage", desc: "行動電源、液體、托運、回台禁帶物快速看。" }
+        ]
+      },
+      {
+        id: "sg",
+        name: "新加坡",
+        short: "SINGAPORE",
+        code: "SG",
+        flag: "🇸🇬",
+        accent: "#ffc576",
+        mapPath: "M20 53 C33 43 60 40 78 48 C84 51 82 60 73 63 C53 70 28 66 18 60 C12 57 14 55 20 53 Z",
+        copy: "新加坡城市乾淨、規矩明確，景點集中但集合點要聽清楚。入境資料和自由活動提醒可先看。",
+        links: [
+          { name: "新馬重點收藏版", url: "新馬.html", desc: "新加坡與馬來西亞行前重點、通關提醒與自由活動注意。" },
+          { name: "上機與行李小抄", url: "#luggage", desc: "登機前與回台前都能快速確認。" }
+        ]
+      }
+    ];
+
+    const state = {
+      selectedId: "",
+      paused: false,
+      classic: false,
+      query: "",
+      orbit: 0,
+      reduceMotion: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    };
+
+    const stage = document.getElementById("globeStage");
+    const layer = document.getElementById("countryLayer");
+    const panel = document.getElementById("infoPanel");
+    const classicPanel = document.getElementById("classicPanel");
+    const searchInput = document.getElementById("searchInput");
+    const pauseBtn = document.getElementById("pauseBtn");
+    const modeBtn = document.getElementById("modeBtn");
+
+    function createCountryNode(country) {
+      const node = document.createElement("div");
+      node.className = "country-node";
+      node.dataset.id = country.id;
+      node.style.setProperty("--accent", country.accent);
+      node.innerHTML = `
+        <button class="node-button" type="button" aria-label="查看${country.name}">
+          <span class="country-orb" aria-hidden="true">${country.flag}<span class="country-code">${country.code}</span></span>
+          <span class="country-name">${country.name}</span>
+          <span class="country-count">${country.links.length} 個入口</span>
+        </button>
+      `;
+      node.querySelector("button").addEventListener("click", () => selectCountry(country.id));
+      return node;
+    }
+
+    function renderCountries() {
+      layer.innerHTML = "";
+      countries.forEach(country => layer.appendChild(createCountryNode(country)));
+      updateSearchDimming();
+      updateSatellites();
+      positionCountries();
+    }
+
+    function positionCountries() {
+      const rect = stage.getBoundingClientRect();
+      const w = rect.width;
+      const h = rect.height;
+      const cx = w / 2;
+      const cy = h / 2;
+      const rx = Math.min(w * 0.36, 300);
+      const ry = Math.min(h * 0.34, 210);
+      const nodeSize = w < 640 ? 96 : 116;
+
+      countries.forEach((country, index) => {
+        const node = layer.querySelector(`[data-id="${country.id}"]`);
+        const angle = state.orbit + index * Math.PI / 2 - Math.PI / 5;
+        const x = cx + Math.cos(angle) * rx;
+        const y = cy + Math.sin(angle) * ry;
+        node.style.left = `${Math.max(nodeSize / 2, Math.min(w - nodeSize / 2, x))}px`;
+        node.style.top = `${Math.max(64, Math.min(h - 66, y))}px`;
+      });
+    }
+
+    function animationLoop() {
+      if (!state.paused && !state.reduceMotion) {
+        state.orbit += 0.0022;
+        positionCountries();
+      }
+      requestAnimationFrame(animationLoop);
+    }
+
+    function selectCountry(id) {
+      state.selectedId = id;
+      state.query = "";
+      searchInput.value = "";
+      layer.querySelectorAll(".country-node").forEach(node => {
+        node.classList.toggle("active", node.dataset.id === id);
+      });
+      updateSearchDimming();
+      updateSatellites();
+      renderPanel();
+    }
+
+    function clearSelection() {
+      state.selectedId = "";
+      layer.querySelectorAll(".country-node").forEach(node => node.classList.remove("active"));
+      updateSatellites();
+      renderPanel();
+    }
+
+    function updateSatellites() {
+      layer.querySelectorAll(".satellite-orbit").forEach(item => item.remove());
+      if (!state.selectedId) return;
+      const country = countries.find(item => item.id === state.selectedId);
+      const node = layer.querySelector(`[data-id="${country.id}"]`);
+      country.links.forEach((link, index) => {
+        const orbit = document.createElement("div");
+        orbit.className = "satellite-orbit";
+        orbit.style.animationDuration = `${9 + index * 2}s`;
+        orbit.innerHTML = `<span class="satellite" title="${link.name}" style="--angle:${index * 135}deg">${index + 1}</span>`;
+        node.appendChild(orbit);
+      });
+    }
+
+    function linkMarkup(link, countryName = "") {
+      const body = `
+        <span class="link-name">
+          <span>${link.name}</span>
+          ${countryName ? `<span class="link-country">${countryName}</span>` : ""}
+        </span>
+        <span class="link-desc">${link.desc}</span>
+      `;
+      if (!link.url) return `<div class="empty-link">${body}</div>`;
+      return `<a class="panel-link" href="${link.url}">${body}</a>`;
+    }
+
+    function getSearchResults() {
+      const query = state.query.trim().toLowerCase();
+      if (!query) return [];
+      const results = [];
+      countries.forEach(country => {
+        country.links.forEach(link => {
+          const haystack = `${country.name} ${country.short} ${country.copy} ${link.name} ${link.desc}`.toLowerCase();
+          if (haystack.includes(query)) results.push({ country, link });
+        });
+      });
+      return results;
+    }
+
+    function renderPanel() {
+      if (state.query.trim()) {
+        const results = getSearchResults();
+        panel.innerHTML = `
+          <p class="panel-kicker">搜尋結果</p>
+          <h2 class="panel-title">${results.length ? "找到這些入口" : "先換個關鍵字試試"}</h2>
+          <p class="panel-copy">${results.length ? "點開需要的目的地或提醒。" : "可以搜尋泰國、越南、新馬、上機、行李、通關、回台。"}</p>
+          <div class="link-list">
+            ${results.map(({ country, link }) => linkMarkup(link, country.name)).join("")}
+          </div>
+        `;
+        return;
+      }
+
+      const country = countries.find(item => item.id === state.selectedId);
+      if (!country) {
+        panel.innerHTML = `
+          <p class="panel-kicker">目的地導覽</p>
+          <h2 class="panel-title">先選一個國家。</h2>
+          <p class="panel-copy">點地球旁邊的國家節點，就能看到這趟旅程可以先看的行前重點。</p>
+          <div class="panel-actions">
+            ${countries.map(item => `<button class="small-btn" type="button" data-panel-country="${item.id}">${item.name}</button>`).join("")}
+          </div>
+          <div class="link-list">
+            ${linkMarkup({ name: "上機與行李小抄", url: "#luggage", desc: "出發前先確認護照、行動電源、液體、托運和回台禁帶物。" })}
+          </div>
+        `;
+      } else {
+        panel.innerHTML = `
+          <p class="panel-kicker">${country.short}</p>
+          <h2 class="panel-title">${country.name}</h2>
+          <p class="panel-copy">${country.copy}</p>
+          <div class="panel-actions">
+            <button class="small-btn" type="button" id="clearBtn">回到地球</button>
+          </div>
+          <div class="link-list">
+            ${country.links.map(link => linkMarkup(link)).join("")}
+          </div>
+        `;
+      }
+
+      panel.querySelectorAll("[data-panel-country]").forEach(btn => {
+        btn.addEventListener("click", () => selectCountry(btn.dataset.panelCountry));
+      });
+      const clearBtn = panel.querySelector("#clearBtn");
+      if (clearBtn) clearBtn.addEventListener("click", clearSelection);
+    }
+
+    function renderClassic() {
+      const query = state.query.trim().toLowerCase();
+      classicPanel.innerHTML = `
+        <div class="classic-grid">
+          ${countries.map(country => {
+            const links = country.links.filter(link => {
+              if (!query) return true;
+              return `${country.name} ${country.short} ${country.copy} ${link.name} ${link.desc}`.toLowerCase().includes(query);
+            });
+            return `
+              <section class="classic-country" style="--accent:${country.accent}">
+                <h3>${country.name}</h3>
+                <p>${country.copy}</p>
+                <div class="link-list">
+                  ${links.length ? links.map(link => linkMarkup(link)).join("") : `<div class="empty-link"><span class="link-name"><span>沒有符合的入口</span></span><span class="link-desc">可以換個關鍵字再試一次。</span></div>`}
+                </div>
+              </section>
+            `;
+          }).join("")}
+        </div>
+      `;
+    }
+
+    function updateSearchDimming() {
+      const query = state.query.trim().toLowerCase();
+      layer.querySelectorAll(".country-node").forEach(node => {
+        const country = countries.find(item => item.id === node.dataset.id);
+        const match = !query || `${country.name} ${country.short} ${country.copy} ${country.links.map(link => `${link.name} ${link.desc}`).join(" ")}`.toLowerCase().includes(query);
+        node.classList.toggle("dimmed", !match);
+      });
+    }
+
+    searchInput.addEventListener("input", event => {
+      state.query = event.target.value;
+      if (state.query.trim()) {
+        state.selectedId = "";
+        layer.querySelectorAll(".country-node").forEach(node => node.classList.remove("active"));
+        updateSatellites();
+      }
+      updateSearchDimming();
+      renderPanel();
+      renderClassic();
+    });
+
+    pauseBtn.addEventListener("click", () => {
+      state.paused = !state.paused;
+      document.body.classList.toggle("paused", state.paused);
+      pauseBtn.textContent = state.paused ? "繼續動態" : "暫停動態";
+    });
+
+    modeBtn.addEventListener("click", () => {
+      state.classic = !state.classic;
+      document.body.classList.toggle("classic-active", state.classic);
+      modeBtn.textContent = state.classic ? "地球模式" : "清單模式";
+      renderClassic();
+    });
+
+    document.querySelectorAll("[data-select-country]").forEach(btn => {
+      btn.addEventListener("click", () => selectCountry(btn.dataset.selectCountry));
+    });
+
+    window.addEventListener("resize", positionCountries);
+
+    renderCountries();
+    renderPanel();
+    renderClassic();
+    requestAnimationFrame(animationLoop);
+  </script>
+</body>
+</html>

@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="YoYo 領隊整理的新加坡與馬來西亞行前攻略重點收藏版，包含兩國差異、通關提醒、經典景點、美食特色、伴手禮、回台前整理與常見問題。">
+<meta name="theme-color" content="#0D6F73">
+<title>🇸🇬🇲🇾 YoYo 帶你玩新馬｜行前攻略重點收藏版</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal: #0D6F73;
+  --teal-dark: #084E55;
+  --coral: #D8563C;
+  --gold: #E7B44E;
+  --mint: #EAF6F2;
+  --cream: #FFF9EF;
+  --paper: #FFFFFF;
+  --ink: #1E2528;
+  --muted: #657276;
+  --line: #E7D8BF;
+  --soft: #F8EFE2;
+  --shadow: 0 10px 30px rgba(65, 47, 23, 0.09);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: linear-gradient(180deg, #FFF9EF 0%, #F6FBF8 42%, #FFF9EF 100%);
+  color: var(--ink);
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+}
+button, input { font: inherit; }
+a { color: inherit; }
+.hero {
+  position: relative;
+  min-height: clamp(320px, 54vh, 500px);
+  overflow: hidden;
+  background: linear-gradient(135deg, #0B6269 0%, #0D6F73 42%, #9E3F2E 100%);
+  display: flex;
+  align-items: flex-end;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.14;
+  background:
+    linear-gradient(120deg, transparent 0 24%, rgba(255,255,255,.7) 24% 25%, transparent 25% 100%),
+    repeating-linear-gradient(45deg, rgba(255,255,255,.7) 0 1px, transparent 1px 18px);
+}
+.hero::after {
+  content: "SG × MY";
+  position: absolute;
+  right: clamp(16px, 8vw, 80px);
+  bottom: clamp(74px, 14vw, 120px);
+  color: rgba(255,255,255,.08);
+  font-size: clamp(68px, 16vw, 160px);
+  font-weight: 900;
+  letter-spacing: 0;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(860px, 100%);
+  margin: 0 auto;
+  padding: 86px 20px 34px;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gold);
+  color: #593500;
+  border-radius: 999px;
+  padding: 5px 13px;
+  font-size: 12px;
+  font-weight: 900;
+  margin-bottom: 14px;
+}
+.hero-title {
+  color: #fff;
+  font-family: 'Noto Serif TC', serif;
+  font-size: clamp(38px, 8vw, 66px);
+  font-weight: 900;
+  line-height: 1.12;
+  text-shadow: 0 8px 28px rgba(0,0,0,.22);
+}
+.hero-title span { color: #FFE08A; }
+.hero-sub {
+  color: rgba(255,255,255,.9);
+  font-size: 15px;
+  margin-top: 14px;
+}
+.update-meta {
+  display: inline-block;
+  margin-top: 18px;
+  color: rgba(255,255,255,.82);
+  border: 1px solid rgba(255,255,255,.22);
+  background: rgba(255,255,255,.12);
+  border-radius: 8px;
+  padding: 8px 11px;
+  font-size: 12px;
+  backdrop-filter: blur(8px);
+}
+.info-bar {
+  background: var(--teal-dark);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.info-bar::-webkit-scrollbar, .nav::-webkit-scrollbar { display: none; }
+.info-item {
+  min-width: 118px;
+  padding: 11px 15px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,.12);
+}
+.info-icon { display: block; font-size: 17px; margin-bottom: 2px; }
+.info-label { display: block; color: rgba(255,255,255,.62); font-size: 11px; line-height: 1.4; }
+.info-val { display: block; color: #fff; font-size: 12px; font-weight: 800; line-height: 1.5; white-space: nowrap; }
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  background: rgba(255,255,255,.96);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 4px 14px rgba(40,32,18,.06);
+}
+.nav-btn {
+  flex: 0 0 auto;
+  min-height: 48px;
+  padding: 13px 13px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.nav-btn.active {
+  color: var(--teal);
+  border-bottom-color: var(--gold);
+  font-weight: 900;
+}
+.nav-btn:focus { outline: none; }
+.nav-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: -4px; }
+.content {
+  width: min(780px, 100%);
+  margin: 0 auto;
+  padding: 0 18px 80px;
+}
+.section { display: none; animation: fade .22s ease; }
+.section.active { display: block; }
+@keyframes fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.sec-head { padding: 30px 0 18px; }
+.sec-emoji { display: block; font-size: 30px; margin-bottom: 6px; }
+.sec-title {
+  color: var(--teal);
+  font-family: 'Noto Serif TC', serif;
+  font-size: 26px;
+  font-weight: 900;
+  line-height: 1.35;
+}
+.sec-desc { color: var(--muted); font-size: 13px; margin-top: 4px; }
+.card, .note-card, .about-hero, .fact-box, .placeholder, .source-card, .faq-item, .photo-card {
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+.card {
+  position: relative;
+  overflow: hidden;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 19px 20px;
+  margin-bottom: 14px;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--teal);
+}
+.card.gold::before { background: var(--gold); }
+.card.coral::before { background: var(--coral); }
+.card-title {
+  font-size: 16px;
+  font-weight: 900;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.card-body { color: var(--ink); font-size: 14px; line-height: 1.9; }
+.card-body strong { color: var(--teal); font-weight: 900; }
+.muted { color: var(--muted); font-size: 12px; line-height: 1.65; }
+.about-hero {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px;
+  margin-bottom: 14px;
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+  color: #fff;
+}
+.about-avatar {
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  border: 3px solid var(--gold);
+  overflow: hidden;
+  flex: 0 0 auto;
+  background: rgba(255,255,255,.12);
+}
+.about-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 52%; display: block; }
+.about-name {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 25px;
+  font-weight: 900;
+}
+.about-role { color: #FFE08A; font-weight: 900; font-size: 13px; margin: 4px 0; }
+.about-tagline { color: rgba(255,255,255,.88); font-size: 13px; line-height: 1.65; }
+.trust-grid, .compare-grid, .spot-grid, .food-grid, .shop-grid, .placeholder-grid, .photo-grid {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.trust-grid { grid-template-columns: repeat(3, 1fr); }
+.trust-item {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px 10px;
+  text-align: center;
+}
+.trust-num {
+  display: block;
+  color: var(--coral);
+  font-family: 'Noto Serif TC', serif;
+  font-size: 24px;
+  font-weight: 900;
+}
+.trust-label { display: block; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.compare-wrap {
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  padding: 18px;
+  margin-bottom: 14px;
+  background: rgba(255,255,255,.7);
+}
+.compare-title {
+  color: var(--teal);
+  font-size: 17px;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+.compare-grid { grid-template-columns: 1fr 1fr; margin-bottom: 0; }
+.fact-box {
+  background: rgba(255,249,239,.78);
+  border: 1px solid var(--line);
+  padding: 13px 14px;
+}
+.fact-kicker { display: block; color: var(--muted); font-size: 12px; margin-bottom: 2px; }
+.fact-box strong { display: block; font-size: 14px; line-height: 1.7; }
+.note-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--gold);
+  padding: 22px;
+  margin-bottom: 14px;
+}
+.note-title { font-size: 18px; font-weight: 900; margin-bottom: 10px; }
+.placeholder-grid { grid-template-columns: 1fr 1fr; }
+.placeholder {
+  min-height: 170px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 24px;
+  border: 1px dashed #CDB98F;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(13,111,115,.10), transparent 36%),
+    radial-gradient(circle at 85% 90%, rgba(216,86,60,.10), transparent 32%),
+    #FBF8F0;
+}
+.placeholder strong { color: var(--teal); display: block; margin-bottom: 8px; }
+.placeholder span { color: var(--muted); font-size: 13px; line-height: 1.7; }
+.photo-grid {
+  grid-template-columns: repeat(2, 1fr);
+  margin: 2px 0 16px;
+}
+.photo-card {
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+.photo-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: var(--cream);
+}
+.photo-caption {
+  padding: 10px 12px 12px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.photo-caption strong {
+  display: block;
+  color: var(--teal);
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+.save-box {
+  background: #fff;
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  padding: 18px;
+  margin-bottom: 14px;
+}
+.save-title { color: var(--teal); font-weight: 900; margin-bottom: 12px; }
+.save-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.save-item {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+.save-label { color: var(--muted); display: block; font-size: 11px; }
+.save-value { font-weight: 900; font-size: 13px; }
+.plug-demo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 12px 0;
+}
+.plug-sample {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px 12px;
+  text-align: center;
+}
+.plug-face {
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 10px;
+  border-radius: 8px;
+  background: #fff;
+  border: 2px solid #D8C19B;
+  position: relative;
+  box-shadow: inset 0 0 0 6px rgba(231,180,78,.10);
+}
+.plug-face.g-type::before,
+.plug-face.g-type::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 24px;
+  background: var(--teal);
+  border-radius: 3px;
+  top: 42px;
+}
+.plug-face.g-type::before { left: 22px; }
+.plug-face.g-type::after { right: 22px; }
+.plug-face.g-type span {
+  position: absolute;
+  left: 50%;
+  top: 15px;
+  width: 13px;
+  height: 24px;
+  transform: translateX(-50%);
+  background: var(--teal);
+  border-radius: 3px;
+}
+.plug-face.eu-type {
+  border-radius: 50%;
+}
+.plug-face.eu-type::before,
+.plug-face.eu-type::after {
+  content: "";
+  position: absolute;
+  top: 33px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--coral);
+}
+.plug-face.eu-type::before { left: 22px; }
+.plug-face.eu-type::after { right: 22px; }
+.plug-name {
+  display: block;
+  color: var(--teal);
+  font-weight: 900;
+  font-size: 13px;
+}
+.plug-note {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+  margin-top: 3px;
+}
+.country-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 8px 0 12px;
+  background: var(--teal);
+  color: #fff;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 900;
+}
+.country-label.my { background: var(--coral); }
+.spot-grid { grid-template-columns: 1fr; }
+.spot-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 17px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  align-items: start;
+}
+.spot-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--mint);
+  font-size: 23px;
+}
+.spot-name { font-weight: 900; font-size: 16px; margin-bottom: 4px; }
+.spot-copy { color: var(--muted); font-size: 13px; line-height: 1.75; }
+.food-grid, .shop-grid { grid-template-columns: repeat(3, 1fr); }
+.mini-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 15px 11px;
+  text-align: center;
+}
+.mini-card .emoji { display: block; font-size: 29px; margin-bottom: 7px; }
+.mini-card strong { display: block; font-size: 13px; margin-bottom: 3px; }
+.mini-card span { display: block; color: var(--muted); font-size: 11px; line-height: 1.5; }
+.warn-box {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: #FFF2EC;
+  color: #873223;
+  border: 1px solid #F2C6B8;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+.warn-icon { font-size: 23px; flex: 0 0 auto; }
+.warn-text { font-size: 13px; line-height: 1.85; }
+.warn-text strong { color: #6E2318; }
+.tip-box {
+  background: #F2F8F6;
+  border: 1px solid #C9DED8;
+  border-left: 5px solid var(--teal);
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  color: #254C4C;
+  font-size: 13px;
+  line-height: 1.85;
+}
+.tip-box strong { color: var(--teal); font-weight: 900; }
+.flow-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.flow-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.flow-card img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: var(--cream);
+  cursor: zoom-in;
+}
+.flow-label {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  padding: 9px 11px;
+  text-align: center;
+}
+.check-list {
+  padding-left: 20px;
+  margin: 0;
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.9;
+}
+.check-list li { margin-bottom: 4px; }
+.faq-list { display: grid; gap: 10px; margin-bottom: 14px; }
+.faq-item {
+  background: #fff;
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 15px 17px;
+  font-weight: 900;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+";
+  color: var(--teal);
+  font-size: 18px;
+  line-height: 1;
+}
+.faq-item[open] summary::after { content: "-"; }
+.faq-item p {
+  color: var(--muted);
+  padding: 0 17px 16px;
+  font-size: 13px;
+  line-height: 1.85;
+}
+.source-card {
+  background: #EFF7F4;
+  border: 1px solid #C9DED8;
+  padding: 17px;
+}
+.source-title { color: var(--teal); font-weight: 900; margin-bottom: 8px; }
+.source-card a {
+  display: block;
+  color: #1F675F;
+  font-size: 12px;
+  line-height: 1.8;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.footer {
+  background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+  color: rgba(255,255,255,.76);
+  text-align: center;
+  padding: 34px 20px;
+  font-size: 13px;
+}
+.footer strong { color: #fff; font-size: 15px; }
+.footer-contact { margin-top: 8px; color: rgba(255,255,255,.9); }
+@media (max-width: 760px) {
+  .info-bar, .nav { justify-content: flex-start; }
+  .content { padding-left: 14px; padding-right: 14px; }
+  .about-hero { align-items: flex-start; padding: 18px 16px; }
+  .about-avatar { width: 88px; height: 88px; }
+  .compare-grid, .placeholder-grid, .save-grid, .food-grid, .shop-grid, .trust-grid, .plug-demo, .photo-grid { grid-template-columns: 1fr; }
+  .spot-card { grid-template-columns: 1fr; }
+  .flow-grid { grid-template-columns: 1fr; }
+  .hero-content { padding-top: 74px; }
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-content">
+    <span class="hero-badge">YoYo 帶你玩</span>
+    <h1 class="hero-title">新馬 <span>重點收藏版</span></h1>
+    <p class="hero-sub">新加坡 × 馬來西亞，先抓差異，再安心出發。</p>
+    <span class="update-meta">最後更新：2026 年 5 月 28 日<br>不論新進馬出或馬進新出，都可以先用這頁抓重點；實際安排以行程說明會公告為主</span>
+  </div>
+</header>
+
+<div class="info-bar">
+  <div class="info-item"><span class="info-icon">💱</span><span class="info-label">貨幣</span><span class="info-val">SGD / MYR</span></div>
+  <div class="info-item"><span class="info-icon">🕐</span><span class="info-label">時差</span><span class="info-val">同台灣</span></div>
+  <div class="info-item"><span class="info-icon">🔌</span><span class="info-label">插座</span><span class="info-val">英規 G 型</span></div>
+  <div class="info-item"><span class="info-icon">🌦️</span><span class="info-label">氣候</span><span class="info-val">熱 / 陣雨</span></div>
+  <div class="info-item"><span class="info-icon">🧳</span><span class="info-label">節奏</span><span class="info-val">兩國切換</span></div>
+</div>
+
+<nav class="nav" aria-label="新馬攻略分類">
+  <button class="nav-btn active" onclick="show('s0',this)">👋 認識 YoYo</button>
+  <button class="nav-btn" onclick="show('s1',this)">📋 出發前</button>
+  <button class="nav-btn" onclick="show('s2',this)">🛂 通關提醒</button>
+  <button class="nav-btn" onclick="show('s3',this)">🇸🇬 新加坡</button>
+  <button class="nav-btn" onclick="show('s4',this)">🇲🇾 馬來西亞</button>
+  <button class="nav-btn" onclick="show('s5',this)">🍽️ 美食特色</button>
+  <button class="nav-btn" onclick="show('s6',this)">🛍️ 購物回台</button>
+  <button class="nav-btn" onclick="show('s7',this)">🙏 提醒你</button>
+  <button class="nav-btn" onclick="show('s8',this)">❓ FAQ</button>
+</nav>
+
+<main class="content">
+  <section class="section active" id="s0">
+    <div class="sec-head">
+      <span class="sec-emoji">👋</span>
+      <h2 class="sec-title">認識你的領隊 YoYo</h2>
+      <p class="sec-desc">出發前先認識我，旅途中你就會更安心。</p>
+    </div>
+
+    <div class="about-hero">
+      <div class="about-avatar"><img src="assets/新馬/yoyo-avatar.jpg" alt="劉又銘 YoYo 大頭照"></div>
+      <div>
+        <div class="about-name">劉又銘 YoYo</div>
+        <div class="about-role">可樂旅遊｜國際短程線領隊</div>
+        <div class="about-tagline">Yo 在東南亞，帶團，也在過生活。<br>有些事，不會寫在行程裡，但我會先幫你整理好。</div>
+      </div>
+    </div>
+
+    <div class="trust-grid">
+      <div class="trust-item"><span class="trust-num">短程</span><span class="trust-label">國際線帶團視角</span></div>
+      <div class="trust-item"><span class="trust-num">行前</span><span class="trust-label">整理好出發重點</span></div>
+      <div class="trust-item"><span class="trust-num">途中</span><span class="trust-label">提醒與支援</span></div>
+    </div>
+
+    <div class="compare-wrap">
+      <div class="compare-title">這趟新馬可以先這樣理解</div>
+      <div class="compare-grid">
+        <div class="fact-box"><span class="fact-kicker">新加坡</span><strong>城市乾淨、規矩明確、景點集中，集合點要聽清楚。</strong></div>
+        <div class="fact-box"><span class="fact-kicker">馬來西亞</span><strong>文化感豐富、車程較長，景點之間要保留體力。</strong></div>
+        <div class="fact-box"><span class="fact-kicker">通關</span><strong>不管新進馬出或馬進新出，行李是否下車都聽 YoYo 現場口令。</strong></div>
+        <div class="fact-box"><span class="fact-kicker">自由活動</span><strong>商場、夜市、人潮都多，集合時間和地點先記好。</strong></div>
+      </div>
+    </div>
+
+    <div class="note-card">
+      <div class="note-title">✨ YoYo 的一句話提醒</div>
+      <p>新馬好玩的地方，在於你會很快感覺到兩個國家的差異。新加坡像一座節奏精準的城市，馬來西亞則有更多文化、夜市、街區和長車程的旅行感。</p>
+      <p style="margin-top:12px">出發前先知道規矩，旅途中就能把注意力留給風景、拍照和吃東西。</p>
+    </div>
+
+    <div class="photo-grid">
+      <div class="photo-card"><img src="assets/新馬/merlion.jpg" alt="新加坡魚尾獅"><div class="photo-caption"><strong>魚尾獅 Merlion</strong>新加坡最經典的到此一遊畫面。</div></div>
+      <div class="photo-card"><img src="assets/新馬/petronas-twin-towers.jpg" alt="馬來西亞雙子星大樓"><div class="photo-caption"><strong>雙子星大樓</strong>吉隆坡最有代表性的城市地標。</div></div>
+    </div>
+  </section>
+
+  <section class="section" id="s1">
+    <div class="sec-head">
+      <span class="sec-emoji">📋</span>
+      <h2 class="sec-title">出發前重點</h2>
+      <p class="sec-desc">新馬是兩個國家，最容易搞混的是貨幣、通關和集合節奏。</p>
+    </div>
+
+    <div class="save-box">
+      <div class="save-title">⭐ 一鍵收藏版</div>
+      <div class="save-grid">
+        <div class="save-item"><span class="save-label">貨幣</span><span class="save-value">新幣 SGD / 馬幣 MYR 分開放</span></div>
+        <div class="save-item"><span class="save-label">插座</span><span class="save-value">英規 G 型為主，可備歐規兩孔</span></div>
+        <div class="save-item"><span class="save-label">天氣</span><span class="save-value">悶熱、常有午後雨，雨具要帶</span></div>
+        <div class="save-item"><span class="save-label">通關</span><span class="save-value">新馬 / 馬新都聽集合與行李提醒</span></div>
+        <div class="save-item"><span class="save-label">消費</span><span class="save-value">新加坡較貴，馬來西亞較好買</span></div>
+        <div class="save-item"><span class="save-label">穿搭</span><span class="save-value">好走鞋、薄外套、防曬都實用</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔌 插座與轉接頭</div>
+      <div class="card-body">
+        新加坡與馬來西亞多為 <strong>英規 G 型</strong>，建議直接帶萬用轉接頭。歐規兩孔圓形也可以備用，但不要硬插；不確定怎麼用，就找 YoYo 或領隊示範。
+        <div class="plug-demo" aria-label="插座示意圖">
+          <div class="plug-sample">
+            <div class="plug-face g-type"><span></span></div>
+            <span class="plug-name">英規 G 型</span>
+            <span class="plug-note">新馬較常見，建議優先準備</span>
+          </div>
+          <div class="plug-sample">
+            <div class="plug-face eu-type"></div>
+            <span class="plug-name">歐規兩孔圓形</span>
+            <span class="plug-note">可備用，不確定就先問</span>
+          </div>
+        </div>
+        <span class="muted">手機、相機、筆電充電器通常支援 100V-240V；吹風機、電捲棒、掛燙機要先確認電壓規格。</span>
+      </div>
+    </div>
+
+    <div class="card gold">
+      <div class="card-title">💳 刷卡與換匯</div>
+      <div class="card-body">
+        新加坡刷卡很方便，商場、餐廳和大型店家多半能使用信用卡，但熟食中心或小攤仍建議留一點新幣現金。<br>
+        <span class="muted">馬來西亞夜市、小店、洗手間零錢和部分自由活動比較常用現金；若行程中需要換馬幣，YoYo 會再提醒大家適合的時間點。</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🛂 入境表與證件</div>
+      <div class="card-body">
+        新加坡旅客通常需要在抵達前 3 天內提交 <strong>SG Arrival Card</strong>；馬來西亞旅客也可能需要填寫 <strong>MDAC</strong>。實際是否由旅行社統一提醒或協助，請以行前通知為準。<br>
+        <span class="muted">護照效期、簽證與入境規定會變動，出發前 YoYo 會再依官方與旅行社資訊確認。</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">💱 兩種錢不要混在一起</div>
+      <div class="card-body">
+        新加坡使用新幣，馬來西亞使用馬幣。兩種鈔票大小、顏色和幣值都不同，建議用兩個夾層或兩個小袋子分開放。<br>
+        <span class="muted">付錢前先看幣別，不要在排隊時慌慌張張拿錯鈔票。</span>
+      </div>
+    </div>
+
+    <div class="warn-box">
+      <span class="warn-icon">⚠️</span>
+      <div class="warn-text"><strong>通關和上下車聽現場口令</strong><br>新馬或馬新跨境時，行李是否需要下車、人在何處集合、通關後在哪裡等車，都會依照當天安排提醒大家。先不要自己衝，跟著 YoYo 的口令走最穩。</div>
+    </div>
+  </section>
+
+  <section class="section" id="s2">
+    <div class="sec-head">
+      <span class="sec-emoji">🛂</span>
+      <h2 class="sec-title">新馬通關提醒（馬新也適用）</h2>
+      <p class="sec-desc">不管是新進馬出，還是馬進新出，團員先抓這幾個原則就好。哪一段拿行李、哪一段集合，YoYo 會依當天路線提醒大家。</p>
+    </div>
+
+    <div class="warn-box">
+      <span class="warn-icon">⚠️</span>
+      <div class="warn-text">
+        <strong>通關時最重要的 3 件事</strong><br>
+        護照拿好、不要拍照錄影、不要自己脫隊。新加坡與馬來西亞規定不同，請不要用上一段通關經驗去猜下一段。
+      </div>
+    </div>
+
+    <div class="save-box">
+      <div class="save-title">通關現場先記這幾個重點</div>
+      <div class="save-grid">
+        <div class="save-item"><span class="save-label">護照</span><span class="save-value">拿在手上，不要放大行李。</span></div>
+        <div class="save-item"><span class="save-label">拍照</span><span class="save-value">通關區不要拍照或錄影。</span></div>
+        <div class="save-item"><span class="save-label">行李</span><span class="save-value">要不要下車，聽現場口令。</span></div>
+        <div class="save-item"><span class="save-label">集合</span><span class="save-value">過關後先找 YoYo，不要自己走遠。</span></div>
+      </div>
+    </div>
+
+    <div class="card gold">
+      <div class="card-title">🧳 行李什麼時候要下車？</div>
+      <div class="card-body">
+        新馬（馬新）陸地通關最容易混亂的地方，就是「這一段到底要不要拿大行李」。團員不用自己判斷，請直接聽 YoYo 現場口令。<br>
+        <span class="muted">聽到「只帶護照和貴重物品」就不要多拿；聽到「全部行李下車」就把大行李一起帶下去。</span>
+      </div>
+    </div>
+
+    <div class="card coral">
+      <div class="card-title">🚭 香菸、電子菸、加熱菸與口香糖</div>
+      <div class="card-body">
+        新加坡對香菸、菸草、電子菸 / vaporiser 與加熱菸規定嚴格，菸草類也沒有免稅額度；團員版最安全的做法是不要攜帶。<br>
+        <span class="muted">一般口香糖在新加坡也屬管制品，建議不要帶。這類規定會更新，請以官方資訊、旅行社行前通知與現場海關判定為準。</span>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <strong>廁所提醒很重要</strong><br>
+      通關、轉場、上車前後，YoYo 如果提醒先去廁所，請把握時間。新馬移動時有些下一站不會那麼快到，先準備好會比較舒服。
+    </div>
+  </section>
+
+  <section class="section" id="s3">
+    <div class="sec-head">
+      <span class="sec-emoji">🇸🇬</span>
+      <h2 class="sec-title">新加坡重點景點</h2>
+      <p class="sec-desc">這裡先放新加坡常見亮點，實際會走哪些點，以行程說明會公告的行程為主。</p>
+    </div>
+
+    <div class="tip-box">
+      <strong>先跟大家說一下</strong><br>
+      每團安排會不太一樣。這頁先讓大家知道常見亮點長什麼樣子、好拍在哪裡；真的走到現場，YoYo 會再提醒集合時間和拍照動線。
+    </div>
+
+    <div class="country-label">新加坡常見亮點</div>
+    <div class="spot-grid">
+      <div class="spot-card"><div class="spot-icon">🦁</div><div><div class="spot-name">魚尾獅 Merlion</div><div class="spot-copy">第一次來新加坡最經典的地標。拍照時可以把濱海灣天際線一起收進畫面，照片會更有「我到新加坡了」的感覺。</div></div></div>
+      <div class="spot-card"><div class="spot-icon">🏙️</div><div><div class="spot-name">金沙酒店 Marina Bay Sands</div><div class="spot-copy">新加坡天際線代表。它不只是飯店，也是大家認識濱海灣的視覺記憶點，白天和夜晚各有不同氣氛。</div></div></div>
+      <div class="spot-card"><div class="spot-icon">🌳</div><div><div class="spot-name">未來樹 Supertree Grove</div><div class="spot-copy">位在濱海灣花園，白天像城市森林，晚上燈光亮起更有未來感。若行程有夜間安排，記得把手機電量留給這裡。</div></div></div>
+    </div>
+
+    <div class="photo-grid">
+      <div class="photo-card"><img src="assets/新馬/merlion.jpg" alt="新加坡魚尾獅"><div class="photo-caption"><strong>魚尾獅 Merlion</strong>經典角度可以把水灣和城市天際線一起拍進去。</div></div>
+      <div class="photo-card"><img src="assets/新馬/marina-bay-sands.jpg" alt="新加坡金沙酒店"><div class="photo-caption"><strong>金沙酒店 Marina Bay Sands</strong>濱海灣最有辨識度的天際線。</div></div>
+      <div class="photo-card"><img src="assets/新馬/supertree-grove.jpg" alt="新加坡未來樹夜景"><div class="photo-caption"><strong>未來樹 Supertree Grove</strong>夜晚燈光亮起時，很有新加坡的未來城市感。</div></div>
+      <div class="photo-card"><img src="assets/新馬/jewel-changi.jpg" alt="星耀樟宜室內瀑布"><div class="photo-caption"><strong>星耀樟宜 Jewel</strong>室內瀑布和玻璃穹頂，是很容易留下記憶點的一站。</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🛫 補充亮點｜星耀樟宜 Jewel</div>
+      <div class="card-body">如果航班或行程安排有經過，Jewel 的室內瀑布和商場動線很適合當作新加坡第一印象。自由活動前先記集合點，因為機場和商場都很容易走到不同樓層。</div>
+    </div>
+
+    <div class="tip-box">
+      <strong>新加坡城市規矩感</strong><br>
+      新加坡很多地方乾淨、秩序清楚，但也代表規定比較明確。遊覽車、商場、景點、通關區都有各自規範；不確定能不能做的事，先問最穩。
+    </div>
+
+  </section>
+
+  <section class="section" id="s4">
+    <div class="sec-head">
+      <span class="sec-emoji">🇲🇾</span>
+      <h2 class="sec-title">馬來西亞重點景點</h2>
+      <p class="sec-desc">馬來西亞的亮點不是只有城市，也有貿易港、文化和老建築的層次；實際景點仍以行程說明會公告為主。</p>
+    </div>
+
+    <div class="tip-box">
+      <strong>景點安排提醒</strong><br>
+      馬來西亞路線變化比較多，有些團走吉隆坡，有些團重點在馬六甲或其他城市。這裡先放常見亮點，真正會去哪些地方，請以行程說明會公布的地點為主。
+    </div>
+
+    <div class="country-label my">馬來西亞常見亮點</div>
+    <div class="spot-grid">
+      <div class="spot-card"><div class="spot-icon">🏛️</div><div><div class="spot-name">馬六甲 UNESCO 老城</div><div class="spot-copy">馬六甲和檳城喬治市共同列入 UNESCO 世界文化遺產。重點不是只看老屋，而是看見東西方貿易、殖民歷史和多元族群留下的城市紋理。</div></div></div>
+      <div class="spot-card"><div class="spot-icon">🏢</div><div><div class="spot-name">雙子星大樓 Petronas Twin Towers</div><div class="spot-copy">吉隆坡最具代表性的城市地標。適合拍城市夜景，也很適合作為「馬來西亞現代城市感」的第一張照片。</div></div></div>
+      <div class="spot-card"><div class="spot-icon">📚</div><div><div class="spot-name">迷宮書店 BookXcess @ REXKL</div><div class="spot-copy">由老戲院改造而成的書店空間，樓層、書架和轉角很有迷宮感。它不只是書店，也很像吉隆坡年輕文化的一個入口。</div></div></div>
+    </div>
+
+    <div class="photo-grid">
+      <div class="photo-card"><img src="assets/新馬/petronas-twin-towers.jpg" alt="馬來西亞雙子星大樓"><div class="photo-caption"><strong>雙子星大樓 Petronas Twin Towers</strong>吉隆坡最有代表性的城市地標，白天拍起來也很有氣勢。</div></div>
+    </div>
+
+    <div class="card gold">
+      <div class="card-title">🌺 補充亮點｜大紅花酒店</div>
+      <div class="card-body">Lexis Hibiscus Port Dickson 是很有辨識度的水上 Villa 飯店，空拍看起來像一朵大紅花。如果行程有安排入住，可以把它當成放鬆與拍照亮點；沒有安排也不用擔心，每一團本來就會依路線設計不同的重點。</div>
+    </div>
+
+    <div class="tip-box">
+      <strong>YoYo 小提醒</strong><br>
+      馬來西亞景點之間常有車程，早上不要把自己弄得太累；水、薄外套、簡單零食和常備藥可以放在隨身包裡。
+    </div>
+
+  </section>
+
+  <section class="section" id="s5">
+    <div class="sec-head">
+      <span class="sec-emoji">🍽️</span>
+      <h2 class="sec-title">美食特色</h2>
+      <p class="sec-desc">每國先記幾個代表味道，實際吃什麼仍看行程、自由活動時間與個人口味。</p>
+    </div>
+
+    <span class="country-label">新加坡 3 樣</span>
+    <div class="food-grid">
+      <div class="mini-card"><span class="emoji">🍗</span><strong>海南雞飯</strong><span>清爽但細節很多，醬料是靈魂。</span></div>
+      <div class="mini-card"><span class="emoji">🍞</span><strong>咖椰吐司</strong><span>早餐代表，配半熟蛋和咖啡很在地。</span></div>
+      <div class="mini-card"><span class="emoji">🍜</span><strong>叻沙</strong><span>椰香、辣味和湯頭厚度很有南洋味。</span></div>
+    </div>
+
+    <span class="country-label my">馬來西亞 3 樣</span>
+    <div class="food-grid">
+      <div class="mini-card"><span class="emoji">🍛</span><strong>椰漿飯</strong><span>椰香米飯、參巴醬和配料是重點。</span></div>
+      <div class="mini-card"><span class="emoji">🍢</span><strong>沙嗲</strong><span>炭香、花生醬和夜市感很強。</span></div>
+      <div class="mini-card"><span class="emoji">🍲</span><strong>肉骨茶</strong><span>馬來西亞常見藥材湯感，適合慢慢喝。</span></div>
+    </div>
+
+    <div class="card coral">
+      <div class="card-title">🥢 YoYo 小提醒</div>
+      <div class="card-body">新馬很多食物名字看起來熟悉，但味道會因地區、族群和店家不同而變化。熟食中心、夜市和街區，本身也是很值得感受的旅行風景。</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🌙 夜市與熟食中心怎麼逛</div>
+      <div class="card-body">
+        新加坡可以留意熟食中心與商場美食街，馬來西亞若有安排夜市或街區自由活動，重點是感受熱鬧、看小吃、拍氛圍。<br>
+        <span class="muted">人多時包包和手機要顧好；腸胃敏感的人，冰飲、生食、太刺激的醬料可以保守一點。</span>
+      </div>
+    </div>
+
+    <div class="warn-box">
+      <span class="warn-icon">💧</span>
+      <div class="warn-text"><strong>飲食安全提醒</strong><br>建議以瓶裝水為主。自由活動時如果要買冰飲、生食或路邊攤，請依自己的腸胃狀況判斷，不要第一天就挑戰太刺激。</div>
+    </div>
+  </section>
+
+  <section class="section" id="s6">
+    <div class="sec-head">
+      <span class="sec-emoji">🛍️</span>
+      <h2 class="sec-title">購物與回台前提醒</h2>
+      <p class="sec-desc">伴手禮不用多，買到好帶、好分、好保存最重要；回台前也要先整理好行李和禁帶物。</p>
+    </div>
+
+    <span class="country-label">伴手禮 6 款</span>
+    <div class="shop-grid">
+      <div class="mini-card"><span class="emoji">☕</span><strong>Bacha Coffee</strong><span>包裝漂亮，送禮辨識度高。</span></div>
+      <div class="mini-card"><span class="emoji">🫖</span><strong>TWG</strong><span>茶包、茶罐都適合伴手禮。</span></div>
+      <div class="mini-card"><span class="emoji">🍍</span><strong>果乾</strong><span>好分、好帶，口味選擇也多。</span></div>
+      <div class="mini-card"><span class="emoji">☕</span><strong>白咖啡</strong><span>好買好分，超市就能補貨。</span></div>
+      <div class="mini-card"><span class="emoji">🍫</span><strong>Beryl’s 巧克力</strong><span>馬來西亞常見巧克力品牌。</span></div>
+      <div class="mini-card"><span class="emoji">🍲</span><strong>肉骨茶包</strong><span>方便帶回家煮，但注意不要買含肉製品。</span></div>
+    </div>
+
+    <div class="warn-box">
+      <span class="warn-icon">🧳</span>
+      <div class="warn-text"><strong>回台前先看成分</strong><br>肉類、新鮮水果、植物類商品要特別小心。榴槤零食可依包裝判斷，新鮮榴槤不要帶回台灣；不確定就先問 YoYo。</div>
+    </div>
+
+    <div class="card gold">
+      <div class="card-title">🧴 機場液體與免稅品</div>
+      <div class="card-body">
+        機場安檢與登機門前檢查規定，依現場和航空公司為準。免稅液態商品如果有封裝袋，請不要自行拆開；一般飲料不要帶進需要再次安檢的候機區。
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">✈️ 回台前整理清單</div>
+      <div class="card-body">
+        <ul class="check-list">
+          <li>護照、手機、錢包、房卡、充電器、保險箱先檢查。</li>
+          <li>行動電源放手提，不要放托運行李。</li>
+          <li>液體、免稅品、易碎品分開整理。</li>
+          <li>食品、菸酒、藥品與需申報物品不確定就先問。</li>
+          <li>抵達桃園後，確認行李件數與外觀再離開。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="s7">
+    <div class="sec-head">
+      <span class="sec-emoji">🙏</span>
+      <h2 class="sec-title">YoYo 提醒你</h2>
+      <p class="sec-desc">新馬都好玩，但規矩和文化節奏不一樣。</p>
+    </div>
+
+    <div class="card coral">
+      <div class="card-title">🇸🇬 新加坡｜規定比較明確</div>
+      <div class="card-body">新加坡公共規範比較細，垃圾、抽菸區、口香糖、電子菸 / vaporiser、加熱菸、榴槤上大眾交通等都要留意。不要抱著「應該沒關係」的心態，先看標示、聽現場提醒最安全。</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🇲🇾 馬來西亞｜多元文化要尊重</div>
+      <div class="card-body">馬來西亞有馬來、華人、印度與多元宗教文化。進入宗教場所注意穿著，清真餐廳不一定供應酒類或豬肉，拍照前也要看現場規定。</div>
+    </div>
+
+    <div class="card gold">
+      <div class="card-title">🚌 長車程｜先把體力留好</div>
+      <div class="card-body">馬來西亞城市之間移動距離較長，車上可以補眠、補水、整理照片。上洗手間和買飲料要跟著集合時間走，這會讓整團節奏順很多。</div>
+    </div>
+  </section>
+
+  <section class="section" id="s8">
+    <div class="sec-head">
+      <span class="sec-emoji">❓</span>
+      <h2 class="sec-title">新馬常見問題</h2>
+      <p class="sec-desc">出發前先看一遍，旅途中會少很多慌張。</p>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item" open><summary>新馬通關時，馬新也適用嗎？</summary><p>適用。新進馬出或馬進新出，都不用自己判斷要不要拿大行李。陸地通關每一段規定和現場狀況不同，請直接聽 YoYo 口令，該拿大行李時會提醒。</p></details>
+      <details class="faq-item"><summary>新馬要換幾種錢？</summary><p>兩種。新加坡用新幣 SGD，馬來西亞用馬幣 MYR。建議分開放，避免付款時拿錯。</p></details>
+      <details class="faq-item"><summary>新加坡可以刷卡嗎？</summary><p>大多商場、餐廳和店家刷卡方便，但熟食中心或小攤仍可能需要現金或指定電子支付。團員版建議還是留一點現金。</p></details>
+      <details class="faq-item"><summary>馬來西亞需要現金嗎？</summary><p>需要。夜市、小店、部分自由活動或洗手間零錢都可能用得到馬幣現金；若現場需要換馬幣，可依當團安排詢問導遊。</p></details>
+      <details class="faq-item"><summary>兩國插座一樣嗎？</summary><p>新加坡和馬來西亞常見英規 G 型插座，建議帶萬用轉接頭。歐規兩孔圓形可以備用，但不要硬插，不確定就找 YoYo 或領隊示範。</p></details>
+      <details class="faq-item"><summary>新馬會很熱嗎？</summary><p>會，且常有短暫陣雨。建議帶好走鞋、薄外套、防曬、雨具和可以快速補水的小水壺。</p></details>
+      <details class="faq-item"><summary>夜市或自由活動要注意什麼？</summary><p>先記集合時間和地點，再開始逛。人多的地方手機、包包和錢包要顧好；腸胃敏感的人，冰飲和路邊食物可以保守一點。</p></details>
+      <details class="faq-item"><summary>可以帶榴槤回台嗎？</summary><p>新鮮榴槤不要帶回台灣。榴槤零食也要看包裝與成分，不確定就先問 YoYo 或以海關、防檢規定為準。</p></details>
+    </div>
+
+    <div class="source-card">
+      <div class="source-title">🔎 這頁查證參考</div>
+      <a href="https://www.ica.gov.sg/enter-transit-depart/entering-singapore" target="_blank" rel="noopener">Singapore ICA：Entering Singapore / SG Arrival Card</a>
+      <a href="https://www.hsa.gov.sg/tobacco-regulation/" target="_blank" rel="noopener">Singapore HSA：Tobacco and Vaporisers Control</a>
+      <a href="https://www.hsa.gov.sg/tobacco-regulation/vaping-enforcement/" target="_blank" rel="noopener">Singapore HSA：Vaping enforcement</a>
+      <a href="https://www.customs.gov.sg/at-customs/arriving-in-singapore/duty-free-concession-gst-relief/" target="_blank" rel="noopener">Singapore Customs：Duty-Free Concession and GST Import Relief</a>
+      <a href="https://www.customs.gov.sg/businesses/importing-goods/import-procedures/controlled-prohibited-goods/" target="_blank" rel="noopener">Singapore Customs：Controlled and Prohibited Goods</a>
+      <a href="https://www.imi.gov.my/index.php/en/pengumuman/malaysia-digital-arrival-card-mdac/" target="_blank" rel="noopener">馬來西亞移民局：Malaysia Digital Arrival Card (MDAC)</a>
+      <a href="https://whc.unesco.org/en/list/1223" target="_blank" rel="noopener">UNESCO：Melaka and George Town, Historic Cities of the Straits of Malacca</a>
+      <a href="https://www.gardensbythebay.com.sg/en/things-to-do/attractions/supertree-grove.html" target="_blank" rel="noopener">Gardens by the Bay：Supertree Grove</a>
+      <a href="https://www.bookxcess.com/pages/rex-kl" target="_blank" rel="noopener">BookXcess：REX KL</a>
+      <a href="https://www.lexis.my/hotels-resorts/lexis-hibiscus-port-dickson" target="_blank" rel="noopener">Lexis Hotel Group：Lexis Hibiscus Port Dickson</a>
+      <p class="muted">入境、通關、票價、營業時間與行程安排仍以官方資訊與旅行社行前通知為準。</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <strong>🇸🇬🇲🇾 YoYo 帶你玩新馬</strong><br>
+  劉又銘 YoYo · 可樂旅遊 國際短程線<br>
+  <div class="footer-contact">IG：@yoyo.touring ｜ LINE / 行程群組以行前通知為準</div>
+</footer>
+
+<script>
+function show(id, btn) {
+  document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(button => button.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
