@@ -542,6 +542,7 @@
       padding: 22px;
       display: flex;
       flex-direction: column;
+      scroll-margin-top: 18px;
     }
 
     .panel-kicker {
@@ -563,6 +564,11 @@
       margin: 12px 0 0;
       color: var(--soft);
       font-size: 15px;
+    }
+
+    .mobile-guide-hint,
+    .mobile-panel-instruction {
+      display: none;
     }
 
     .panel-actions {
@@ -798,6 +804,19 @@
         min-height: auto;
       }
 
+      .mobile-guide-hint,
+      .mobile-panel-instruction {
+        display: block;
+        margin: 14px 0 0;
+        padding: 10px 12px;
+        border: 1px solid rgba(94, 231, 223, 0.28);
+        border-radius: 12px;
+        color: var(--soft);
+        background: rgba(94, 231, 223, 0.08);
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
       .classic-grid,
       .luggage-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -958,7 +977,7 @@
           </div>
         </div>
 
-        <aside class="info-panel" id="infoPanel" aria-live="polite"></aside>
+        <aside class="info-panel" id="infoPanel" aria-live="polite" tabindex="-1"></aside>
       </section>
 
       <section class="classic-panel" id="classicPanel" aria-label="目的地清單"></section>
@@ -1140,6 +1159,14 @@
       updateSearchDimming();
       updateSatellites();
       renderPanel();
+      if (window.matchMedia("(max-width: 980px)").matches) {
+        requestAnimationFrame(() => {
+          panel.scrollIntoView({
+            behavior: state.reduceMotion ? "auto" : "smooth",
+            block: "start"
+          });
+        });
+      }
     }
 
     function clearSelection() {
@@ -1208,6 +1235,7 @@
           <p class="panel-kicker">目的地導覽</p>
           <h2 class="panel-title">先選一個國家。</h2>
           <p class="panel-copy">點地球旁邊的國家節點，就能看到這趟旅程可以先看的行前重點。</p>
+          <p class="mobile-guide-hint">手機版提示：點選上方國家後，頁面會自動帶你到這裡。</p>
           <div class="panel-actions">
             ${countries.map(item => `<button class="small-btn" type="button" data-panel-country="${item.id}">${item.name}</button>`).join("")}
           </div>
@@ -1217,9 +1245,10 @@
         `;
       } else {
         panel.innerHTML = `
-          <p class="panel-kicker">${country.short}</p>
+          <p class="panel-kicker">已選擇｜${country.short}</p>
           <h2 class="panel-title">${country.name}</h2>
           <p class="panel-copy">${country.copy}</p>
+          <p class="mobile-panel-instruction">下一步：從下方選擇你想看的內容。</p>
           <div class="panel-actions">
             <button class="small-btn" type="button" id="clearBtn">回到地球</button>
           </div>
