@@ -34,6 +34,14 @@ body {
 }
 button, input { font: inherit; }
 a { color: inherit; }
+.guide-back {
+  position: absolute; top: 18px; left: max(16px, calc((100% - 820px) / 2)); z-index: 10;
+  display: inline-flex; align-items: center; min-height: 38px; padding: 8px 12px;
+  border: 1px solid rgba(255,255,255,0.38); border-radius: 6px;
+  background: rgba(18,18,18,0.22); color: #fff; font-size: 12px; font-weight: 700;
+  text-decoration: none; backdrop-filter: blur(8px);
+}
+.guide-back:hover { background: rgba(18,18,18,0.38); }
 .hero {
   position: relative;
   min-height: clamp(320px, 54vh, 500px);
@@ -533,6 +541,7 @@ a { color: inherit; }
 </style>
 </head>
 <body>
+<a class="guide-back" href="index.html">← 回到地球導覽</a>
 <header class="hero">
   <div class="hero-content">
     <span class="hero-badge">YoYo 帶你玩</span>
