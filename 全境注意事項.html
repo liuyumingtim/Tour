@@ -122,7 +122,7 @@
       }
     };
 
-    const key = new URLSearchParams(window.location.search).get("country") || "vn";
+    const key = new URLSearchParams(window.location.search).get("country") || "th";
     const country = countryData[key] || countryData.th;
     document.title = `${country.flag} YO! 旅行班｜${country.name}`;
     document.getElementById("title").textContent = `${country.flag} ${country.name}`;

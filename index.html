@@ -118,6 +118,118 @@
       gap: 18px;
     }
 
+    .country-picker-bar {
+      border-bottom: 1px solid var(--line);
+      background: rgba(17, 19, 38, 0.5);
+    }
+
+    .country-picker-inner {
+      width: var(--content);
+      min-height: 58px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .country-picker-label {
+      flex: 0 0 auto;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 950;
+    }
+
+    .country-picker-copy {
+      flex: 0 0 auto;
+      color: var(--soft);
+      font-size: 14px;
+      font-weight: 850;
+    }
+
+    .country-picker-actions {
+      display: flex;
+      min-width: 0;
+      gap: 7px;
+      overflow-x: auto;
+      padding: 7px 0;
+      scrollbar-width: none;
+    }
+
+    .country-picker-actions::-webkit-scrollbar {
+      display: none;
+    }
+
+    .country-picker-button {
+      flex: 0 0 auto;
+      min-height: 32px;
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: var(--radius);
+      padding: 5px 9px;
+      color: rgba(255,255,255,0.84);
+      background: rgba(255,255,255,0.06);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .country-picker-button:hover,
+    .country-picker-button:focus-visible,
+    .country-picker-button.active {
+      border-color: transparent;
+      color: #182238;
+      outline: none;
+      background: var(--gold);
+    }
+
+    .luggage-quick-bar {
+      width: 100%;
+      border: 0;
+      border-bottom: 1px solid rgba(255, 116, 104, 0.32);
+      padding: 0;
+      color: inherit;
+      background: rgba(255, 116, 104, 0.1);
+      text-align: left;
+    }
+
+    .luggage-quick-inner {
+      width: var(--content);
+      min-height: 46px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .luggage-quick-title {
+      flex: 0 0 auto;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 950;
+    }
+
+    .luggage-quick-summary {
+      min-width: 0;
+      overflow: hidden;
+      color: var(--soft);
+      font-size: 13px;
+      font-weight: 800;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .luggage-quick-action {
+      flex: 0 0 auto;
+      margin-left: auto;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 950;
+    }
+
+    .luggage-quick-bar:hover,
+    .luggage-quick-bar:focus-visible {
+      background: rgba(255, 116, 104, 0.18);
+      outline: none;
+    }
+
     .brand {
       display: inline-flex;
       align-items: center;
@@ -280,6 +392,13 @@
       font-weight: 900;
     }
 
+    .quick-chip:hover,
+    .quick-chip:focus-visible {
+      border-color: rgba(255,255,255,0.44);
+      outline: none;
+      background: rgba(255,255,255,0.14);
+    }
+
     .workspace {
       width: var(--content);
       margin: 18px auto 0;
@@ -287,6 +406,14 @@
       grid-template-columns: minmax(0, 1fr) 390px;
       gap: 18px;
       align-items: stretch;
+    }
+
+    .workspace:not(.country-selected) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .workspace:not(.country-selected) .info-panel {
+      display: none;
     }
 
     .globe-card,
@@ -317,7 +444,7 @@
       background:
         radial-gradient(circle at 20% 20%, rgba(119, 224, 204, 0.25), transparent 26%),
         radial-gradient(circle at 72% 24%, rgba(255, 197, 118, 0.2), transparent 22%),
-        linear-gradient(180deg, rgba(255,255,255,0.04), transparent);
+        linear-gradient(180deg, rgba(255,255,255,0.08), transparent);
       pointer-events: none;
     }
 
@@ -713,6 +840,144 @@
       font-weight: 900;
     }
 
+    .panel-link.panel-button {
+      width: 100%;
+      color: inherit;
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .country-view-tabs {
+      display: flex;
+      gap: 8px;
+      margin-top: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .country-view-tab {
+      min-height: 36px;
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: var(--radius);
+      padding: 7px 10px;
+      color: rgba(255,255,255,0.72);
+      background: rgba(255,255,255,0.06);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .country-view-tab.active,
+    .country-view-tab:hover,
+    .country-view-tab:focus-visible {
+      color: #152338;
+      border-color: transparent;
+      outline: none;
+      background: var(--gold);
+    }
+
+    .country-detail {
+      min-height: 0;
+      margin-top: 14px;
+    }
+
+    .country-detail-scroll {
+      max-height: 412px;
+      overflow: auto;
+      padding-right: 5px;
+      scrollbar-color: rgba(255,255,255,0.32) transparent;
+      scrollbar-width: thin;
+    }
+
+    .country-detail-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .country-detail-scroll::-webkit-scrollbar-thumb {
+      border-radius: 6px;
+      background: rgba(255,255,255,0.3);
+    }
+
+    .country-section + .country-section {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .country-section-kicker {
+      margin: 0 0 3px;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 950;
+      letter-spacing: 0.08em;
+    }
+
+    .country-section-title {
+      margin: 0;
+      color: #ffffff;
+      font-size: 19px;
+      line-height: 1.3;
+      font-weight: 950;
+    }
+
+    .country-card-grid {
+      display: grid;
+      gap: 9px;
+      margin-top: 10px;
+    }
+
+    .country-note-card {
+      padding: 12px 13px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-left: 3px solid var(--accent);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.065);
+    }
+
+    .country-note-card.secondary {
+      border-left-color: var(--aqua);
+    }
+
+    .country-note-card h4 {
+      margin: 0 0 4px;
+      color: #ffffff;
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .country-note-card p {
+      margin: 0;
+      color: var(--soft);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .country-source-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 12px;
+    }
+
+    .country-source-list a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: var(--radius);
+      padding: 5px 9px;
+      color: #ffffff;
+      background: rgba(255,255,255,0.07);
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .country-source-list a:hover,
+    .country-source-list a:focus-visible {
+      border-color: var(--aqua);
+      outline: none;
+    }
+
     .classic-panel {
       width: var(--content);
       margin: 18px auto 0;
@@ -846,6 +1111,91 @@
       font-weight: 900;
     }
 
+    .luggage-dialog {
+      width: min(1040px, calc(100% - 32px));
+      max-width: none;
+      max-height: min(820px, calc(100dvh - 36px));
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: var(--radius);
+      padding: 0;
+      color: var(--ink);
+      background: #19243a;
+      box-shadow: 0 28px 90px rgba(0,0,0,0.5);
+    }
+
+    .luggage-dialog::backdrop {
+      background: rgba(7, 14, 26, 0.72);
+      backdrop-filter: blur(5px);
+    }
+
+    .luggage-dialog-inner {
+      max-height: min(820px, calc(100dvh - 36px));
+      overflow: auto;
+      padding: 26px;
+      scrollbar-color: rgba(255,255,255,0.34) transparent;
+      scrollbar-width: thin;
+    }
+
+    .luggage-dialog-head {
+      position: relative;
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+      padding-right: 48px;
+    }
+
+    .luggage-dialog-kicker {
+      margin: 0 0 5px;
+      color: var(--coral);
+      font-size: 13px;
+      font-weight: 950;
+    }
+
+    .luggage-dialog-title {
+      margin: 0;
+      color: #ffffff;
+      font-size: 32px;
+      line-height: 1.2;
+      font-weight: 950;
+    }
+
+    .luggage-dialog-note {
+      max-width: 370px;
+      margin: 7px 0 0;
+      color: var(--soft);
+      font-size: 14px;
+    }
+
+    .dialog-close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 0;
+      color: #ffffff;
+      background: rgba(255,255,255,0.08);
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 500;
+    }
+
+    .dialog-close:hover,
+    .dialog-close:focus-visible {
+      border-color: rgba(255,255,255,0.44);
+      outline: none;
+      background: rgba(255,255,255,0.16);
+    }
+
+    .luggage-dialog .luggage-card {
+      min-height: 126px;
+    }
+
     .footer {
       width: var(--content);
       margin: 34px auto 0;
@@ -860,6 +1210,28 @@
         align-items: flex-start;
         flex-direction: column;
         padding: 14px 0;
+      }
+
+      .country-picker-inner {
+        min-height: 50px;
+        gap: 8px;
+      }
+
+      .country-picker-label {
+        display: none;
+      }
+
+      .country-picker-copy {
+        font-size: 13px;
+      }
+
+      .luggage-quick-inner {
+        min-height: 43px;
+        gap: 8px;
+      }
+
+      .luggage-quick-summary {
+        font-size: 12px;
       }
 
       .controls {
@@ -879,6 +1251,12 @@
         min-height: auto;
       }
 
+      .country-detail-scroll {
+        max-height: none;
+        overflow: visible;
+        padding-right: 0;
+      }
+
       .mobile-guide-hint,
       .mobile-panel-instruction {
         display: block;
@@ -895,6 +1273,11 @@
       .classic-grid,
       .luggage-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .luggage-dialog-head {
+        align-items: start;
+        flex-direction: column;
       }
     }
 
@@ -985,6 +1368,20 @@
       .luggage-grid {
         grid-template-columns: 1fr;
       }
+
+      .luggage-dialog {
+        width: min(100% - 20px, 620px);
+        max-height: calc(100dvh - 20px);
+      }
+
+      .luggage-dialog-inner {
+        max-height: calc(100dvh - 20px);
+        padding: 20px 16px;
+      }
+
+      .luggage-dialog-title {
+        font-size: 26px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1025,19 +1422,32 @@
       </div>
     </header>
 
+    <nav class="country-picker-bar" aria-label="選擇目的地">
+      <div class="country-picker-inner">
+        <span class="country-picker-label">目的地導覽</span>
+        <span class="country-picker-copy">想去哪裡？</span>
+        <div class="country-picker-actions">
+          <button class="country-picker-button" type="button" data-select-country="th">泰國</button>
+          <button class="country-picker-button" type="button" data-select-country="vn">越南</button>
+          <button class="country-picker-button" type="button" data-select-country="my">馬來西亞</button>
+          <button class="country-picker-button" type="button" data-select-country="sg">新加坡</button>
+        </div>
+      </div>
+    </nav>
+
+    <button class="luggage-quick-bar" type="button" data-open-luggage>
+      <span class="luggage-quick-inner">
+        <span class="luggage-quick-title">上機與行李小抄</span>
+        <span class="luggage-quick-summary">出發前先看 8 件事：護照、行動電源、液體與回台禁帶物</span>
+        <span class="luggage-quick-action">查看</span>
+      </span>
+    </button>
+
     <main id="top">
       <section class="hero" aria-labelledby="pageTitle">
         <p class="eyebrow">YO! TOURING ATLAS</p>
         <h1 id="pageTitle"><span class="gradient-text">下一站</span>，從這裡開始</h1>
         <p class="hero-copy">選一個國家，先看行前重點、通關提醒、上機行李和回台整理。出發前先抓方向，旅途中就更安心。</p>
-        <div class="quick-row" aria-label="常用入口">
-          <a class="quick-chip" href="#luggage">上機與行李小抄</a>
-          <a class="quick-chip" href="#sources">查證來源</a>
-          <button class="quick-chip" type="button" data-select-country="th">泰國</button>
-          <button class="quick-chip" type="button" data-select-country="vn">越南</button>
-          <button class="quick-chip" type="button" data-select-country="my">馬來西亞</button>
-          <button class="quick-chip" type="button" data-select-country="sg">新加坡</button>
-        </div>
       </section>
 
       <section class="workspace" aria-label="地球目的地導覽">
@@ -1060,14 +1470,17 @@
       </section>
 
       <section class="classic-panel" id="classicPanel" aria-label="目的地清單"></section>
+    </main>
 
-      <section class="content-section" id="luggage" aria-labelledby="luggageTitle">
-        <div class="section-head">
+    <dialog class="luggage-dialog" id="luggageDialog" aria-labelledby="luggageTitle">
+      <div class="luggage-dialog-inner">
+        <div class="luggage-dialog-head">
           <div>
-            <p class="section-kicker">BOARDING CHECK</p>
-            <h2 id="luggageTitle">出門前 3 分鐘，先檢查這 8 件事。</h2>
+            <p class="luggage-dialog-kicker">BOARDING CHECK</p>
+            <h2 class="luggage-dialog-title" id="luggageTitle">出門前 3 分鐘，先檢查這 8 件事。</h2>
+            <p class="luggage-dialog-note">這張是通用小抄。各國入境、簽證和特殊禁帶物，仍以目的地頁與行前通知為準。</p>
           </div>
-          <p class="section-note">這張是通用小抄。各國入境、簽證和特殊禁帶物，仍以目的地頁與行前通知為準。</p>
+          <button class="dialog-close" type="button" data-close-luggage aria-label="關閉上機與行李小抄">&times;</button>
         </div>
 
         <div class="luggage-grid">
@@ -1081,7 +1494,7 @@
           <article class="luggage-card"><strong>抵達後確認</strong><span>拿到行李先確認件數、外觀和輪子拉桿；有破損先在機場處理。</span></article>
         </div>
 
-        <div class="source-box" id="sources">
+        <div class="source-box" id="luggageSources">
           <p class="source-title">出發前可再確認</p>
           <ul class="source-links">
             <li><a href="https://www.motc.gov.tw/ch/app/data/view?id=14&module=news&serno=c4831fc1-d527-40d0-af27-657cb0fce824" target="_blank" rel="noopener">交通部：行動電源新規</a></li>
@@ -1090,11 +1503,11 @@
             <li><a href="https://www.aphia.gov.tw/ws.php?id=10719" target="_blank" rel="noopener">防檢署：出國必看不買清單</a></li>
           </ul>
         </div>
-      </section>
-    </main>
+      </div>
+    </dialog>
 
     <footer class="footer">
-      YO! 旅行班 ｜ IG：@yoyo.touring ｜ 最後更新：2026-07-11（台北時間）
+      YO! 旅行班 ｜ IG：@yoyo.touring ｜ 最後更新：2026-07-27（台北時間）
     </footer>
   </div>
 
@@ -1108,10 +1521,34 @@
         flag: "🇹🇭",
         accent: "#ff8db8",
         mapPath: "M47 6 C58 10 61 20 54 28 C62 34 65 44 55 52 C59 62 54 73 45 76 C48 85 42 94 33 88 C26 84 28 75 34 70 C26 63 27 53 35 48 C30 40 34 31 42 29 C37 20 38 10 47 6 Z",
-        copy: "先看入境資料、電子菸提醒、採買節奏和回台整理。曼谷與芭達雅很熱鬧，集合時間和行李規定先記好。",
-        links: [
-          { name: "曼谷芭達雅重點收藏版", url: "曼谷芭達雅.html", desc: "TDAC、當地提醒、自由活動、Big C 採買與回台打包。" },
-          { name: "上機與行李小抄", url: "#luggage", desc: "護照、行動電源、液體、托運與回台前整理。" }
+        copy: "把泰國共用的入境、生活提醒與回台整理放在一起；選好目的地後，再看當地的旅行指南。",
+        note: {
+          title: "泰國全境注意事項",
+          intro: "適用於曼谷、芭達雅、清邁、清萊等地。",
+          url: "全境注意事項.html?country=th",
+          sections: [
+            { kicker: "ENTRY", title: "入境與證件", cards: [
+              { title: "TDAC 電子入境卡", text: "非泰國籍旅客入境前要填寫 TDAC。官方目前要求在抵達前 72 小時內提交，且不收費；護照、航班與住宿資料先準備好。", tone: "accent" },
+              { title: "護照與短期旅遊", text: "台灣護照短期旅遊目前多以免簽方式入境，每次不超過 60 日；護照、回程或續程資料、住宿資料都放隨身包。", tone: "secondary" },
+              { title: "財力證明", text: "依官方近期資訊，每人至少備妥 2 萬泰銖現金或等值貨幣；信用卡不作為財力證明。最終入境仍由移民官決定。" }
+            ]},
+            { kicker: "ON THE GROUND", title: "生活與當地禮儀", cards: [
+              { title: "電子菸別帶", text: "電子菸、煙油與相關設備在泰國屬非法物品。最省事的做法是出發前就全部從行李拿掉。", tone: "accent" },
+              { title: "現金、插座與網路", text: "夜市、小店與短程消費常用現金；泰國使用 220V，帶萬用轉接頭較穩。網卡、eSIM 或漫遊可先在台灣處理。" },
+              { title: "寺廟與自由活動", text: "進寺廟以遮肩、過膝為原則，依現場規定脫鞋。叫車先核對車牌與司機資料，回程時間多留一點。", tone: "secondary" }
+            ]},
+            { kicker: "RETURN TO TAIWAN", title: "回台前整理", cards: [
+              { title: "行李與伴手禮", text: "行動電源放隨身、不放托運。新鮮水果、植物、種子與土壤先排除；食品、醬料、肉類與海鮮類商品先看成分。", tone: "accent" }
+            ]}
+          ],
+          sources: [
+            { label: "TDAC 官方入口", url: "https://tdac.immigration.go.th/" },
+            { label: "泰國入境須知", url: "https://www.boca.gov.tw/sp-foof-countrycp-03-24-dec45-02-1.html" },
+            { label: "電子菸禁令", url: "https://london.thaiembassy.org/en/publicservice/86207-prohibition-of-e-cigarettes" }
+          ]
+        },
+        guides: [
+          { name: "曼谷・芭達雅旅遊指南", url: "曼谷芭達雅.html", desc: "曼谷與芭達雅的景點、吃什麼與買什麼。" }
         ]
       },
       {
@@ -1122,11 +1559,34 @@
         flag: "🇻🇳",
         accent: "#77e0cc",
         mapPath: "M58 5 C48 9 50 18 43 25 C36 32 42 41 51 39 C45 48 36 53 39 63 C42 74 56 71 58 82 C60 91 70 94 76 87 C66 81 66 70 60 62 C54 55 65 48 61 39 C57 30 68 22 63 14 C62 10 61 7 58 5 Z",
-        copy: "先看越南全境共用提醒，再進入中越的地區攻略。簽證、換匯、交通、飲食與回台整理分層放，出發前比較好找。",
-        links: [
-          { name: "越南全境注意事項", url: "越南注意事項.html", desc: "中越、北越與未來南越都能共用的行前、生活、交通與回台提醒。" },
-          { name: "中越峴港・會安", url: "中越.html", desc: "出發前準備、換匯、交通、飲食、景點、伴手禮與回台提醒。" },
-          { name: "上機與行李小抄", url: "#luggage", desc: "通用行李與登機提醒，出發前快速確認。" }
+        copy: "先把越南各地共用的規定看清楚，再進入中越與之後的北越旅行指南。",
+        note: {
+          title: "越南全境注意事項",
+          intro: "適用於中越、北越與未來的越南各地行程。",
+          url: "全境注意事項.html?country=vn",
+          sections: [
+            { kicker: "ENTRY", title: "入境與證件", cards: [
+              { title: "護照與簽證", text: "台灣護照前往越南一般需要有效簽證或其他有效入境文件。電子簽證可由官方系統申請；護照建議保留至少 6 個月效期。", tone: "accent" },
+              { title: "PAI 入境前資料申報", text: "越南目前試辦 PAI，官方鼓勵國際旅客在入境前 3 日填寫並保存 QR Code；它不宜寫成所有機場、所有旅客都強制。", tone: "secondary" },
+              { title: "證件收納", text: "護照正本、電子機票、簽證與入境資料都放隨身包。填寫後再核對英文姓名、護照號碼和入境日期。" }
+            ]},
+            { kicker: "ON THE GROUND", title: "生活與移動", cards: [
+              { title: "電子菸與加熱菸", text: "越南已禁止電子菸與加熱菸的生產、交易及使用。設備、煙油與相關用品都不要攜帶。", tone: "accent" },
+              { title: "越南盾、插座與網路", text: "付款時先看清楚越南盾面額；小店可備小額現金。常見 220V，萬用轉接頭最穩，網卡或 eSIM 可先處理。" },
+              { title: "交通與自由活動", text: "過馬路保持穩定速度，不要突然停下或折返。叫車先確認車牌、車型與司機資料，手機與錢包在人多處放前面。", tone: "secondary" }
+            ]},
+            { kicker: "RETURN TO TAIWAN", title: "回台前整理", cards: [
+              { title: "伴手禮與打包", text: "咖啡、腰果、巧克力與完整包裝零食是常見選擇。新鮮水果、植物、種子、肉類與含肉食品先排除；行動電源放隨身。", tone: "accent" }
+            ]}
+          ],
+          sources: [
+            { label: "越南電子簽證", url: "https://evisa.immigration.gov.vn/" },
+            { label: "PAI 官方入口", url: "https://prearrival.immigration.gov.vn/" },
+            { label: "越南入境須知", url: "https://www.boca.gov.tw/sp-foof-countrycp-02-8-f4a19-02-1.html" }
+          ]
+        },
+        guides: [
+          { name: "中越｜峴港・會安旅遊指南", url: "中越.html", desc: "中越的景點、吃什麼與買什麼。" }
         ]
       },
       {
@@ -1137,10 +1597,35 @@
         flag: "🇲🇾",
         accent: "#a690ff",
         mapPath: "M11 48 C22 39 34 42 39 51 C45 61 35 72 22 69 C12 67 6 58 11 48 Z M58 45 C70 36 88 39 93 51 C98 65 83 78 68 72 C56 67 49 53 58 45 Z",
-        copy: "馬來西亞文化感豐富、移動時間較長。跨境、集合、行李是否下車，現場口令要聽清楚。",
-        links: [
-          { name: "新馬重點收藏版", url: "新馬.html", desc: "新加坡與馬來西亞差異、通關流程、購物回台與常見問題。" },
-          { name: "上機與行李小抄", url: "#luggage", desc: "行動電源、液體、托運、回台禁帶物快速看。" }
+        copy: "先看馬來西亞全境注意事項，再依想去的地方進旅遊指南；跨到新加坡時，另看新馬跨境旅行指南。",
+        note: {
+          title: "馬來西亞全境注意事項",
+          intro: "適用於馬來西亞各地的入境與旅行提醒。",
+          url: "全境注意事項.html?country=my",
+          sections: [
+            { kicker: "ENTRY", title: "入境與證件", cards: [
+              { title: "MDAC 數位入境卡", text: "外國旅客入境馬來西亞通常要完成 MDAC。官方系統註明行程日期須落在提交日起 3 日內；以移民局官方系統確認是否適用。", tone: "accent" },
+              { title: "護照與短期入境", text: "台灣護照短期入境多以免簽方式處理。護照建議保留至少 6 個月效期，回程或續程資料與住宿資訊放隨身。", tone: "secondary" },
+              { title: "資料填寫", text: "MDAC 填完先核對護照英文姓名、護照號碼與抵達日期。不透過不明付費代辦。" }
+            ]},
+            { kicker: "ON THE GROUND", title: "生活與文化尊重", cards: [
+              { title: "令吉、插座與網路", text: "大型商場多可刷卡，小店或夜市建議備小額現金。常見英規 Type G 插座，帶萬用轉接頭；新幣與令吉別混在一起。" },
+              { title: "宗教場所", text: "進清真寺、寺廟等宗教場所，依現場規定穿著與脫鞋；保持安靜，也不要擋住禮拜動線。", tone: "secondary" },
+              { title: "菸品與電子菸", text: "海關稅費與進口規定細節較多，不適合用一句話判定。攜帶前請看馬來西亞海關最新規定；不確定就不要帶。", tone: "accent" }
+            ]},
+            { kicker: "RETURN TO TAIWAN", title: "回台前整理", cards: [
+              { title: "伴手禮與跨境", text: "新鮮水果、植物、種子、肉類與含肉食品先排除；行動電源放隨身。若下一站是新加坡，兩國入境卡、貨幣與規定要分開看。", tone: "accent" }
+            ]}
+          ],
+          sources: [
+            { label: "MDAC 官方入口", url: "https://imigresen-online.imi.gov.my/mdac/register" },
+            { label: "MDAC 公告", url: "https://www.imi.gov.my/index.php/en/pengumuman/malaysia-digital-arrival-card-mdac/" },
+            { label: "馬來西亞海關指南", url: "https://www.customs.gov.my/en/individu/pengembara/travelers-guide" }
+          ]
+        },
+        guides: [
+          { name: "馬來西亞旅遊指南", url: "馬來西亞.html", desc: "馬來西亞的景點、吃什麼與買什麼。" },
+          { name: "新馬跨境旅行指南", url: "新馬跨境.html", desc: "兩國切換與跨境移動的共用內容。" }
         ]
       },
       {
@@ -1151,16 +1636,42 @@
         flag: "🇸🇬",
         accent: "#ffc576",
         mapPath: "M20 53 C33 43 60 40 78 48 C84 51 82 60 73 63 C53 70 28 66 18 60 C12 57 14 55 20 53 Z",
-        copy: "新加坡城市乾淨、規矩明確，景點集中但集合點要聽清楚。入境資料和自由活動提醒可先看。",
-        links: [
-          { name: "新馬重點收藏版", url: "新馬.html", desc: "新加坡與馬來西亞行前重點、通關提醒與自由活動注意。" },
-          { name: "上機與行李小抄", url: "#luggage", desc: "登機前與回台前都能快速確認。" }
+        copy: "先看新加坡注意事項，再進新加坡旅遊指南；跨到馬來西亞時，另看新馬跨境旅行指南。",
+        note: {
+          title: "新加坡注意事項",
+          intro: "適用於新加坡行程的入境與城市旅行提醒。",
+          url: "全境注意事項.html?country=sg",
+          sections: [
+            { kicker: "ENTRY", title: "入境與證件", cards: [
+              { title: "SG Arrival Card", text: "入境新加坡旅客原則上要提交 SG Arrival Card，轉機不入境等少數情況除外。可在抵達前 3 日內填寫，包含抵達當日，官方系統免費。", tone: "accent" },
+              { title: "護照與短期旅遊", text: "新加坡簽證需求名單未列出台灣護照。短期旅客仍要持有效護照、後續或回程資料，最終入境由移民官決定。", tone: "secondary" },
+              { title: "資料確認", text: "SGAC 不是簽證。填完核對姓名、護照號碼與抵達日期，只使用 ICA 官方網站或 MyICA App。" }
+            ]},
+            { kicker: "ON THE GROUND", title: "城市旅行與公共規矩", cards: [
+              { title: "電子菸完全別帶", text: "電子菸與相關產品在新加坡禁止進口、持有、購買與使用。設備、煙彈和煙油都不要放進行李。", tone: "accent" },
+              { title: "付款、插座與網路", text: "刷卡與行動支付普及，小額現金仍可備一些。常用英規 Type G 插座，帶萬用轉接頭；eSIM、漫遊或當地 SIM 都可以。" },
+              { title: "大眾運輸與自由活動", text: "搭車先排隊、讓車內乘客先下；垃圾依規定處理。商場、地鐵站出口很多，集合點、出口編號或地標先存進手機。", tone: "secondary" }
+            ]},
+            { kicker: "RETURN TO TAIWAN", title: "回台前整理", cards: [
+              { title: "帶回台灣前", text: "新鮮水果、植物、種子、肉類與含肉食品先排除；行動電源放隨身。跨國行程要看最後離境地與台灣檢疫規定。", tone: "accent" }
+            ]}
+          ],
+          sources: [
+            { label: "ICA 入境規定", url: "https://www.ica.gov.sg/enter-transit-depart/entering-singapore" },
+            { label: "SG Arrival Card", url: "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/sg-arrival-card" },
+            { label: "電子菸執法資訊", url: "https://www.hsa.gov.sg/tobacco-regulation/vaping-enforcement/" }
+          ]
+        },
+        guides: [
+          { name: "新加坡旅遊指南", url: "新加坡.html", desc: "新加坡的景點、吃什麼與買什麼。" },
+          { name: "新馬跨境旅行指南", url: "新馬跨境.html", desc: "兩國切換與跨境移動的共用內容。" }
         ]
       }
     ];
 
     const state = {
       selectedId: "",
+      selectedView: "overview",
       paused: false,
       classic: false,
       query: "",
@@ -1169,12 +1680,14 @@
     };
 
     const stage = document.getElementById("globeStage");
+    const workspace = document.querySelector(".workspace");
     const layer = document.getElementById("countryLayer");
     const panel = document.getElementById("infoPanel");
     const classicPanel = document.getElementById("classicPanel");
     const searchInput = document.getElementById("searchInput");
     const pauseBtn = document.getElementById("pauseBtn");
     const modeBtn = document.getElementById("modeBtn");
+    const luggageDialog = document.getElementById("luggageDialog");
 
     function createCountryNode(country) {
       const node = document.createElement("div");
@@ -1185,7 +1698,7 @@
         <button class="node-button" type="button" aria-label="查看${country.name}">
           <span class="country-orb" aria-hidden="true">${country.flag}<span class="country-code">${country.code}</span></span>
           <span class="country-name">${country.name}</span>
-          <span class="country-count">${country.links.length} 個入口</span>
+          <span class="country-count">全境注意・指南</span>
         </button>
       `;
       node.querySelector("button").addEventListener("click", () => selectCountry(country.id));
@@ -1228,12 +1741,16 @@
       requestAnimationFrame(animationLoop);
     }
 
-    function selectCountry(id) {
+    function selectCountry(id, view = "overview") {
       state.selectedId = id;
+      state.selectedView = view;
       state.query = "";
       searchInput.value = "";
       layer.querySelectorAll(".country-node").forEach(node => {
         node.classList.toggle("active", node.dataset.id === id);
+      });
+      document.querySelectorAll("[data-select-country]").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.selectCountry === id);
       });
       updateSearchDimming();
       updateSatellites();
@@ -1250,7 +1767,9 @@
 
     function clearSelection() {
       state.selectedId = "";
+      state.selectedView = "overview";
       layer.querySelectorAll(".country-node").forEach(node => node.classList.remove("active"));
+      document.querySelectorAll("[data-select-country]").forEach(btn => btn.classList.remove("active"));
       updateSatellites();
       renderPanel();
     }
@@ -1260,7 +1779,7 @@
       if (!state.selectedId) return;
       const country = countries.find(item => item.id === state.selectedId);
       const node = layer.querySelector(`[data-id="${country.id}"]`);
-      country.links.forEach((link, index) => {
+      country.guides.forEach((link, index) => {
         const orbit = document.createElement("div");
         orbit.className = "satellite-orbit";
         orbit.style.animationDuration = `${9 + index * 2}s`;
@@ -1277,6 +1796,8 @@
         </span>
         <span class="link-desc">${link.desc}</span>
       `;
+      if (link.countryAction) return `<button class="panel-link panel-button" type="button" data-country-action="${link.countryAction}" data-country-view="${link.countryView || "overview"}">${body}</button>`;
+      if (link.action === "luggage") return `<button class="panel-link panel-button" type="button" data-open-luggage>${body}</button>`;
       if (!link.url) return `<div class="empty-link">${body}</div>`;
       return `<a class="panel-link" href="${link.url}">${body}</a>`;
     }
@@ -1286,59 +1807,98 @@
       if (!query) return [];
       const results = [];
       countries.forEach(country => {
-        country.links.forEach(link => {
-          const haystack = `${country.name} ${country.short} ${country.copy} ${link.name} ${link.desc}`.toLowerCase();
-          if (haystack.includes(query)) results.push({ country, link });
-        });
+        const noteText = country.note.sections.flatMap(section => section.cards.map(card => `${section.title} ${card.title} ${card.text}`)).join(" ");
+        const haystack = `${country.name} ${country.short} ${country.copy} ${country.note.title} ${country.note.intro} ${noteText} ${country.guides.map(link => `${link.name} ${link.desc}`).join(" ")}`.toLowerCase();
+        if (haystack.includes(query)) results.push({ country, link: { name: country.name, desc: "選擇全境指南或目前已整理好的地區內容。", countryAction: country.id } });
       });
       return results;
     }
 
+    function countryOverviewMarkup(country) {
+      return `
+        <div class="country-detail-scroll">
+          <section class="country-section">
+            <p class="country-section-kicker">CHOOSE YOUR GUIDE</p>
+            <h3 class="country-section-title">這趟想先看什麼？</h3>
+            <p class="panel-copy">先選全境共用提醒，或直接進目前已整理好的目的地指南。</p>
+            <div class="link-list">
+              ${linkMarkup(country.note.url ? { name: country.note.title, desc: country.note.intro, url: country.note.url } : { name: country.note.title, desc: country.note.intro, countryAction: country.id, countryView: "note" })}
+              ${country.guides.map(link => linkMarkup(link)).join("")}
+              ${linkMarkup({ name: "上機與行李小抄", action: "luggage", desc: "護照、行動電源、液體、托運與回台前整理。" })}
+            </div>
+          </section>
+        </div>
+      `;
+    }
+
+    function countryNoteMarkup(country) {
+      return `
+        <div class="country-detail-scroll">
+          ${country.note.sections.map(section => `
+            <section class="country-section">
+              <p class="country-section-kicker">${section.kicker}</p>
+              <h3 class="country-section-title">${section.title}</h3>
+              <div class="country-card-grid">
+                ${section.cards.map(card => `
+                  <article class="country-note-card ${card.tone || ""}">
+                    <h4>${card.title}</h4>
+                    <p>${card.text}</p>
+                  </article>
+                `).join("")}
+              </div>
+            </section>
+          `).join("")}
+          <section class="country-section">
+            <p class="country-section-kicker">OFFICIAL SOURCES</p>
+            <h3 class="country-section-title">出發前再確認</h3>
+            <div class="country-source-list">
+              ${country.note.sources.map(source => `<a href="${source.url}" target="_blank" rel="noopener">${source.label}</a>`).join("")}
+            </div>
+          </section>
+        </div>
+      `;
+    }
+
     function renderPanel() {
+      const hasPanelContent = Boolean(state.query.trim() || state.selectedId);
+      workspace.classList.toggle("country-selected", hasPanelContent);
+
       if (state.query.trim()) {
         const results = getSearchResults();
         panel.innerHTML = `
           <p class="panel-kicker">搜尋結果</p>
           <h2 class="panel-title">${results.length ? "找到這些入口" : "先換個關鍵字試試"}</h2>
           <p class="panel-copy">${results.length ? "點開需要的目的地或提醒。" : "可以搜尋泰國、越南、新馬、上機、行李、通關、回台。"}</p>
-          <div class="link-list">
-            ${results.map(({ country, link }) => linkMarkup(link, country.name)).join("")}
-          </div>
+          <div class="link-list">${results.map(({ country, link }) => linkMarkup(link, country.name)).join("")}</div>
         `;
         return;
       }
 
       const country = countries.find(item => item.id === state.selectedId);
       if (!country) {
-        panel.innerHTML = `
-          <p class="panel-kicker">目的地導覽</p>
-          <h2 class="panel-title">先選一個國家。</h2>
-          <p class="panel-copy">點地球旁邊的國家節點，就能看到這趟旅程可以先看的行前重點。</p>
-          <p class="mobile-guide-hint">手機版提示：點選上方國家後，頁面會自動帶你到這裡。</p>
-          <div class="panel-actions">
-            ${countries.map(item => `<button class="small-btn" type="button" data-panel-country="${item.id}">${item.name}</button>`).join("")}
-          </div>
-          <div class="link-list">
-            ${linkMarkup({ name: "上機與行李小抄", url: "#luggage", desc: "出發前先確認護照、行動電源、液體、托運和回台禁帶物。" })}
-          </div>
-        `;
+        panel.innerHTML = "";
       } else {
+        const isOverview = state.selectedView === "overview";
         panel.innerHTML = `
-          <p class="panel-kicker">已選擇｜${country.short}</p>
-          <h2 class="panel-title">${country.name}</h2>
-          <p class="panel-copy">${country.copy}</p>
-          <p class="mobile-panel-instruction">下一步：從下方選擇你想看的內容。</p>
+          <p class="panel-kicker">${isOverview ? "COUNTRY GUIDE" : `已選擇｜${country.short}`}</p>
+          <h2 class="panel-title">${isOverview ? country.name : country.note.title}</h2>
+          <p class="panel-copy">${isOverview ? country.copy : country.note.intro}</p>
           <div class="panel-actions">
+            ${isOverview ? "" : `<button class="small-btn" type="button" data-country-view="overview">回到${country.name}選單</button>`}
             <button class="small-btn" type="button" id="clearBtn">回到地球</button>
           </div>
-          <div class="link-list">
-            ${country.links.map(link => linkMarkup(link)).join("")}
-          </div>
+          <div class="country-detail">${isOverview ? countryOverviewMarkup(country) : countryNoteMarkup(country)}</div>
         `;
       }
 
-      panel.querySelectorAll("[data-panel-country]").forEach(btn => {
-        btn.addEventListener("click", () => selectCountry(btn.dataset.panelCountry));
+      panel.querySelectorAll("[data-country-action]").forEach(btn => {
+        btn.addEventListener("click", () => selectCountry(btn.dataset.countryAction, btn.dataset.countryView));
+      });
+      panel.querySelectorAll("[data-country-view]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          state.selectedView = btn.dataset.countryView;
+          renderPanel();
+        });
       });
       const clearBtn = panel.querySelector("#clearBtn");
       if (clearBtn) clearBtn.addEventListener("click", clearSelection);
@@ -1349,29 +1909,40 @@
       classicPanel.innerHTML = `
         <div class="classic-grid">
           ${countries.map(country => {
-            const links = country.links.filter(link => {
+            const links = country.guides.filter(link => {
               if (!query) return true;
-              return `${country.name} ${country.short} ${country.copy} ${link.name} ${link.desc}`.toLowerCase().includes(query);
+              const noteText = country.note.sections.flatMap(section => section.cards.map(card => `${section.title} ${card.title} ${card.text}`)).join(" ");
+              return `${country.name} ${country.short} ${country.copy} ${country.note.title} ${noteText} ${link.name} ${link.desc}`.toLowerCase().includes(query);
             });
             return `
               <section class="classic-country" style="--accent:${country.accent}">
                 <h3>${country.name}</h3>
                 <p>${country.copy}</p>
                 <div class="link-list">
-                  ${links.length ? links.map(link => linkMarkup(link)).join("") : `<div class="empty-link"><span class="link-name"><span>沒有符合的入口</span></span><span class="link-desc">可以換個關鍵字再試一次。</span></div>`}
+                  ${linkMarkup({ name: `選擇${country.name}內容`, desc: "查看注意事項與目前已整理好的旅遊指南。", countryAction: country.id })}
+                  ${links.length ? links.map(link => linkMarkup(link)).join("") : ""}
                 </div>
               </section>
             `;
           }).join("")}
         </div>
       `;
+      classicPanel.querySelectorAll("[data-country-action]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          state.classic = false;
+          document.body.classList.remove("classic-active");
+          modeBtn.textContent = "清單模式";
+          selectCountry(btn.dataset.countryAction, btn.dataset.countryView);
+        });
+      });
     }
 
     function updateSearchDimming() {
       const query = state.query.trim().toLowerCase();
       layer.querySelectorAll(".country-node").forEach(node => {
         const country = countries.find(item => item.id === node.dataset.id);
-        const match = !query || `${country.name} ${country.short} ${country.copy} ${country.links.map(link => `${link.name} ${link.desc}`).join(" ")}`.toLowerCase().includes(query);
+        const noteText = country.note.sections.flatMap(section => section.cards.map(card => `${section.title} ${card.title} ${card.text}`)).join(" ");
+        const match = !query || `${country.name} ${country.short} ${country.copy} ${country.note.title} ${noteText} ${country.guides.map(link => `${link.name} ${link.desc}`).join(" ")}`.toLowerCase().includes(query);
         node.classList.toggle("dimmed", !match);
       });
     }
@@ -1381,6 +1952,7 @@
       if (state.query.trim()) {
         state.selectedId = "";
         layer.querySelectorAll(".country-node").forEach(node => node.classList.remove("active"));
+        document.querySelectorAll("[data-select-country]").forEach(btn => btn.classList.remove("active"));
         updateSatellites();
       }
       updateSearchDimming();
@@ -1403,6 +1975,23 @@
 
     document.querySelectorAll("[data-select-country]").forEach(btn => {
       btn.addEventListener("click", () => selectCountry(btn.dataset.selectCountry));
+    });
+
+    function openLuggageDialog() {
+      if (!luggageDialog.open) luggageDialog.showModal();
+    }
+
+    document.addEventListener("click", event => {
+      const luggageTrigger = event.target.closest("[data-open-luggage]");
+      if (luggageTrigger) {
+        event.preventDefault();
+        openLuggageDialog();
+      }
+    });
+
+    document.querySelector("[data-close-luggage]").addEventListener("click", () => luggageDialog.close());
+    luggageDialog.addEventListener("click", event => {
+      if (event.target === luggageDialog) luggageDialog.close();
     });
 
     window.addEventListener("resize", positionCountries);
