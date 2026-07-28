@@ -39,6 +39,10 @@
       scroll-behavior: smooth;
     }
 
+    main#top {
+      scroll-margin-top: 180px;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
@@ -1507,7 +1511,7 @@
     </dialog>
 
     <footer class="footer">
-      YO! 旅行班 ｜ IG：@yoyo.touring ｜ 最後更新：2026-07-27（台北時間）
+      YO! 旅行班 ｜ IG：@yoyo.touring ｜ 最後更新：2026-07-28（台北時間）
     </footer>
   </div>
 
@@ -1525,30 +1529,10 @@
         note: {
           title: "泰國全境注意事項",
           intro: "適用於曼谷、芭達雅、清邁、清萊等地。",
-          url: "全境注意事項.html?country=th",
-          sections: [
-            { kicker: "ENTRY", title: "入境與證件", cards: [
-              { title: "TDAC 電子入境卡", text: "非泰國籍旅客入境前要填寫 TDAC。官方目前要求在抵達前 72 小時內提交，且不收費；護照、航班與住宿資料先準備好。", tone: "accent" },
-              { title: "護照與短期旅遊", text: "台灣護照短期旅遊目前多以免簽方式入境，每次不超過 60 日；護照、回程或續程資料、住宿資料都放隨身包。", tone: "secondary" },
-              { title: "財力證明", text: "依官方近期資訊，每人至少備妥 2 萬泰銖現金或等值貨幣；信用卡不作為財力證明。最終入境仍由移民官決定。" }
-            ]},
-            { kicker: "ON THE GROUND", title: "生活與當地禮儀", cards: [
-              { title: "電子菸別帶", text: "電子菸、煙油與相關設備在泰國屬非法物品。最省事的做法是出發前就全部從行李拿掉。", tone: "accent" },
-              { title: "現金、插座與網路", text: "夜市、小店與短程消費常用現金；泰國使用 220V，帶萬用轉接頭較穩。網卡、eSIM 或漫遊可先在台灣處理。" },
-              { title: "寺廟與自由活動", text: "進寺廟以遮肩、過膝為原則，依現場規定脫鞋。叫車先核對車牌與司機資料，回程時間多留一點。", tone: "secondary" }
-            ]},
-            { kicker: "RETURN TO TAIWAN", title: "回台前整理", cards: [
-              { title: "行李與伴手禮", text: "行動電源放隨身、不放托運。新鮮水果、植物、種子與土壤先排除；食品、醬料、肉類與海鮮類商品先看成分。", tone: "accent" }
-            ]}
-          ],
-          sources: [
-            { label: "TDAC 官方入口", url: "https://tdac.immigration.go.th/" },
-            { label: "泰國入境須知", url: "https://www.boca.gov.tw/sp-foof-countrycp-03-24-dec45-02-1.html" },
-            { label: "電子菸禁令", url: "https://london.thaiembassy.org/en/publicservice/86207-prohibition-of-e-cigarettes" }
-          ]
+          url: "全境注意事項.html?country=th"
         },
         guides: [
-          { name: "曼谷・芭達雅旅遊指南", url: "曼谷芭達雅.html", desc: "曼谷與芭達雅的景點、吃什麼與買什麼。" }
+          { name: "曼谷・芭達雅旅遊指南", url: "../../曼谷芭達雅_景吃買預覽_20260727/曼谷芭達雅/曼谷芭達雅.html", desc: "曼谷與芭達雅的景點、吃什麼與買什麼。" }
         ]
       },
       {
@@ -1563,30 +1547,10 @@
         note: {
           title: "越南全境注意事項",
           intro: "適用於中越、北越與未來的越南各地行程。",
-          url: "全境注意事項.html?country=vn",
-          sections: [
-            { kicker: "ENTRY", title: "入境與證件", cards: [
-              { title: "護照與簽證", text: "台灣護照前往越南一般需要有效簽證或其他有效入境文件。電子簽證可由官方系統申請；護照建議保留至少 6 個月效期。", tone: "accent" },
-              { title: "PAI 入境前資料申報", text: "越南目前試辦 PAI，官方鼓勵國際旅客在入境前 3 日填寫並保存 QR Code；它不宜寫成所有機場、所有旅客都強制。", tone: "secondary" },
-              { title: "證件收納", text: "護照正本、電子機票、簽證與入境資料都放隨身包。填寫後再核對英文姓名、護照號碼和入境日期。" }
-            ]},
-            { kicker: "ON THE GROUND", title: "生活與移動", cards: [
-              { title: "電子菸與加熱菸", text: "越南已禁止電子菸與加熱菸的生產、交易及使用。設備、煙油與相關用品都不要攜帶。", tone: "accent" },
-              { title: "越南盾、插座與網路", text: "付款時先看清楚越南盾面額；小店可備小額現金。常見 220V，萬用轉接頭最穩，網卡或 eSIM 可先處理。" },
-              { title: "交通與自由活動", text: "過馬路保持穩定速度，不要突然停下或折返。叫車先確認車牌、車型與司機資料，手機與錢包在人多處放前面。", tone: "secondary" }
-            ]},
-            { kicker: "RETURN TO TAIWAN", title: "回台前整理", cards: [
-              { title: "伴手禮與打包", text: "咖啡、腰果、巧克力與完整包裝零食是常見選擇。新鮮水果、植物、種子、肉類與含肉食品先排除；行動電源放隨身。", tone: "accent" }
-            ]}
-          ],
-          sources: [
-            { label: "越南電子簽證", url: "https://evisa.immigration.gov.vn/" },
-            { label: "PAI 官方入口", url: "https://prearrival.immigration.gov.vn/" },
-            { label: "越南入境須知", url: "https://www.boca.gov.tw/sp-foof-countrycp-02-8-f4a19-02-1.html" }
-          ]
+          url: "全境注意事項.html?country=vn"
         },
         guides: [
-          { name: "中越｜峴港・會安旅遊指南", url: "中越.html", desc: "中越的景點、吃什麼與買什麼。" }
+          { name: "中越｜峴港・會安旅遊指南", url: "../../中越_景吃買預覽_20260727/中越/中越.html", desc: "中越的景點、吃什麼與買什麼。" }
         ]
       },
       {
@@ -1601,31 +1565,11 @@
         note: {
           title: "馬來西亞全境注意事項",
           intro: "適用於馬來西亞各地的入境與旅行提醒。",
-          url: "全境注意事項.html?country=my",
-          sections: [
-            { kicker: "ENTRY", title: "入境與證件", cards: [
-              { title: "MDAC 數位入境卡", text: "外國旅客入境馬來西亞通常要完成 MDAC。官方系統註明行程日期須落在提交日起 3 日內；以移民局官方系統確認是否適用。", tone: "accent" },
-              { title: "護照與短期入境", text: "台灣護照短期入境多以免簽方式處理。護照建議保留至少 6 個月效期，回程或續程資料與住宿資訊放隨身。", tone: "secondary" },
-              { title: "資料填寫", text: "MDAC 填完先核對護照英文姓名、護照號碼與抵達日期。不透過不明付費代辦。" }
-            ]},
-            { kicker: "ON THE GROUND", title: "生活與文化尊重", cards: [
-              { title: "令吉、插座與網路", text: "大型商場多可刷卡，小店或夜市建議備小額現金。常見英規 Type G 插座，帶萬用轉接頭；新幣與令吉別混在一起。" },
-              { title: "宗教場所", text: "進清真寺、寺廟等宗教場所，依現場規定穿著與脫鞋；保持安靜，也不要擋住禮拜動線。", tone: "secondary" },
-              { title: "菸品與電子菸", text: "海關稅費與進口規定細節較多，不適合用一句話判定。攜帶前請看馬來西亞海關最新規定；不確定就不要帶。", tone: "accent" }
-            ]},
-            { kicker: "RETURN TO TAIWAN", title: "回台前整理", cards: [
-              { title: "伴手禮與跨境", text: "新鮮水果、植物、種子、肉類與含肉食品先排除；行動電源放隨身。若下一站是新加坡，兩國入境卡、貨幣與規定要分開看。", tone: "accent" }
-            ]}
-          ],
-          sources: [
-            { label: "MDAC 官方入口", url: "https://imigresen-online.imi.gov.my/mdac/register" },
-            { label: "MDAC 公告", url: "https://www.imi.gov.my/index.php/en/pengumuman/malaysia-digital-arrival-card-mdac/" },
-            { label: "馬來西亞海關指南", url: "https://www.customs.gov.my/en/individu/pengembara/travelers-guide" }
-          ]
+          url: "全境注意事項.html?country=my"
         },
         guides: [
-          { name: "馬來西亞旅遊指南", url: "馬來西亞.html", desc: "馬來西亞的景點、吃什麼與買什麼。" },
-          { name: "新馬跨境旅行指南", url: "新馬跨境.html", desc: "兩國切換與跨境移動的共用內容。" }
+          { name: "馬來西亞旅遊指南", url: "../../馬來西亞_旅遊指南預覽_20260727/馬來西亞/馬來西亞.html", desc: "馬來西亞的景點、吃什麼與買什麼。" },
+          { name: "新馬跨境旅行指南", url: "../../新馬跨境旅行指南_預覽_20260727/新馬跨境/新馬跨境.html", desc: "兩國切換與跨境移動的共用內容。" }
         ]
       },
       {
@@ -1640,31 +1584,11 @@
         note: {
           title: "新加坡注意事項",
           intro: "適用於新加坡行程的入境與城市旅行提醒。",
-          url: "全境注意事項.html?country=sg",
-          sections: [
-            { kicker: "ENTRY", title: "入境與證件", cards: [
-              { title: "SG Arrival Card", text: "入境新加坡旅客原則上要提交 SG Arrival Card，轉機不入境等少數情況除外。可在抵達前 3 日內填寫，包含抵達當日，官方系統免費。", tone: "accent" },
-              { title: "護照與短期旅遊", text: "新加坡簽證需求名單未列出台灣護照。短期旅客仍要持有效護照、後續或回程資料，最終入境由移民官決定。", tone: "secondary" },
-              { title: "資料確認", text: "SGAC 不是簽證。填完核對姓名、護照號碼與抵達日期，只使用 ICA 官方網站或 MyICA App。" }
-            ]},
-            { kicker: "ON THE GROUND", title: "城市旅行與公共規矩", cards: [
-              { title: "電子菸完全別帶", text: "電子菸與相關產品在新加坡禁止進口、持有、購買與使用。設備、煙彈和煙油都不要放進行李。", tone: "accent" },
-              { title: "付款、插座與網路", text: "刷卡與行動支付普及，小額現金仍可備一些。常用英規 Type G 插座，帶萬用轉接頭；eSIM、漫遊或當地 SIM 都可以。" },
-              { title: "大眾運輸與自由活動", text: "搭車先排隊、讓車內乘客先下；垃圾依規定處理。商場、地鐵站出口很多，集合點、出口編號或地標先存進手機。", tone: "secondary" }
-            ]},
-            { kicker: "RETURN TO TAIWAN", title: "回台前整理", cards: [
-              { title: "帶回台灣前", text: "新鮮水果、植物、種子、肉類與含肉食品先排除；行動電源放隨身。跨國行程要看最後離境地與台灣檢疫規定。", tone: "accent" }
-            ]}
-          ],
-          sources: [
-            { label: "ICA 入境規定", url: "https://www.ica.gov.sg/enter-transit-depart/entering-singapore" },
-            { label: "SG Arrival Card", url: "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/sg-arrival-card" },
-            { label: "電子菸執法資訊", url: "https://www.hsa.gov.sg/tobacco-regulation/vaping-enforcement/" }
-          ]
+          url: "全境注意事項.html?country=sg"
         },
         guides: [
-          { name: "新加坡旅遊指南", url: "新加坡.html", desc: "新加坡的景點、吃什麼與買什麼。" },
-          { name: "新馬跨境旅行指南", url: "新馬跨境.html", desc: "兩國切換與跨境移動的共用內容。" }
+          { name: "新加坡旅遊指南", url: "../../新加坡_旅遊指南預覽_20260727/新加坡/新加坡.html", desc: "新加坡的景點、吃什麼與買什麼。" },
+          { name: "新馬跨境旅行指南", url: "../../新馬跨境旅行指南_預覽_20260727/新馬跨境/新馬跨境.html", desc: "兩國切換與跨境移動的共用內容。" }
         ]
       }
     ];
@@ -1807,8 +1731,7 @@
       if (!query) return [];
       const results = [];
       countries.forEach(country => {
-        const noteText = country.note.sections.flatMap(section => section.cards.map(card => `${section.title} ${card.title} ${card.text}`)).join(" ");
-        const haystack = `${country.name} ${country.short} ${country.copy} ${country.note.title} ${country.note.intro} ${noteText} ${country.guides.map(link => `${link.name} ${link.desc}`).join(" ")}`.toLowerCase();
+        const haystack = `${country.name} ${country.short} ${country.copy} ${country.note.title} ${country.note.intro} ${country.guides.map(link => `${link.name} ${link.desc}`).join(" ")}`.toLowerCase();
         if (haystack.includes(query)) results.push({ country, link: { name: country.name, desc: "選擇全境指南或目前已整理好的地區內容。", countryAction: country.id } });
       });
       return results;
@@ -1833,28 +1756,12 @@
 
     function countryNoteMarkup(country) {
       return `
-        <div class="country-detail-scroll">
-          ${country.note.sections.map(section => `
-            <section class="country-section">
-              <p class="country-section-kicker">${section.kicker}</p>
-              <h3 class="country-section-title">${section.title}</h3>
-              <div class="country-card-grid">
-                ${section.cards.map(card => `
-                  <article class="country-note-card ${card.tone || ""}">
-                    <h4>${card.title}</h4>
-                    <p>${card.text}</p>
-                  </article>
-                `).join("")}
-              </div>
-            </section>
-          `).join("")}
-          <section class="country-section">
-            <p class="country-section-kicker">OFFICIAL SOURCES</p>
-            <h3 class="country-section-title">出發前再確認</h3>
-            <div class="country-source-list">
-              ${country.note.sources.map(source => `<a href="${source.url}" target="_blank" rel="noopener">${source.label}</a>`).join("")}
-            </div>
-          </section>
+        <div class="country-detail-scroll country-note-redirect">
+          <p>各國提醒只維護在獨立的 8 格卡片頁，避免同一規定出現兩個版本。</p>
+          <a class="panel-link" href="${country.note.url}">
+            <span class="link-name"><span>開啟${country.note.title}</span><small>${country.note.intro}</small></span>
+            <span class="link-arrow" aria-hidden="true">↗</span>
+          </a>
         </div>
       `;
     }
@@ -1911,8 +1818,7 @@
           ${countries.map(country => {
             const links = country.guides.filter(link => {
               if (!query) return true;
-              const noteText = country.note.sections.flatMap(section => section.cards.map(card => `${section.title} ${card.title} ${card.text}`)).join(" ");
-              return `${country.name} ${country.short} ${country.copy} ${country.note.title} ${noteText} ${link.name} ${link.desc}`.toLowerCase().includes(query);
+              return `${country.name} ${country.short} ${country.copy} ${country.note.title} ${country.note.intro} ${link.name} ${link.desc}`.toLowerCase().includes(query);
             });
             return `
               <section class="classic-country" style="--accent:${country.accent}">
@@ -1941,8 +1847,7 @@
       const query = state.query.trim().toLowerCase();
       layer.querySelectorAll(".country-node").forEach(node => {
         const country = countries.find(item => item.id === node.dataset.id);
-        const noteText = country.note.sections.flatMap(section => section.cards.map(card => `${section.title} ${card.title} ${card.text}`)).join(" ");
-        const match = !query || `${country.name} ${country.short} ${country.copy} ${country.note.title} ${noteText} ${country.guides.map(link => `${link.name} ${link.desc}`).join(" ")}`.toLowerCase().includes(query);
+        const match = !query || `${country.name} ${country.short} ${country.copy} ${country.note.title} ${country.note.intro} ${country.guides.map(link => `${link.name} ${link.desc}`).join(" ")}`.toLowerCase().includes(query);
         node.classList.toggle("dimmed", !match);
       });
     }
