@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#13223a">
+  <title>YO! 旅行班｜全境注意事項</title>
+  <style>
+    :root {
+      --ink: #13223a;
+      --paper: #f5f7fb;
+      --white: #ffffff;
+      --line: #d8deea;
+      --muted: #5f6d84;
+      --accent: #0e9b93;
+      --soft: #e6f8f5;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", sans-serif; }
+    .shell { width: min(1180px, 100%); margin: 0 auto; padding: 22px 24px 30px; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+    .brand { font-size: 15px; font-weight: 900; letter-spacing: 0; }
+    .back { color: var(--muted); font-size: 13px; text-decoration: none; }
+    .back:hover { color: var(--accent); }
+    .hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 24px; padding: 25px 28px; border: 1px solid var(--ink); border-radius: 8px; background: var(--ink); color: var(--white); }
+    .eyebrow { margin: 0 0 8px; color: #a5ead9; font-size: 12px; font-weight: 900; letter-spacing: 0; }
+    h1 { margin: 0; font-size: clamp(28px, 4vw, 42px); line-height: 1.15; letter-spacing: 0; }
+    .hero p { max-width: 680px; margin: 10px 0 0; color: #c9d4e6; font-size: 14px; line-height: 1.6; }
+    .updated { margin: 0; color: #aebcd2; font-size: 12px; white-space: nowrap; }
+    .priority { display: none; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 18px; border: 1px solid #9acfc9; border-radius: 8px; background: #edf9f7; overflow: hidden; }
+    .priority.is-visible { display: grid; }
+    .priority-item { min-height: 75px; display: flex; align-items: center; gap: 11px; padding: 13px 16px; }
+    .priority-item + .priority-item { border-left: 1px solid #b3dcd7; }
+    .priority-icon { width: 34px; height: 34px; display: grid; flex: 0 0 auto; place-items: center; border-radius: 50%; color: #126961; background: #ffffff; }
+    .priority-icon svg { width: 18px; height: 18px; stroke-width: 2.4; }
+    .priority-item strong { display: block; font-size: 14px; line-height: 1.3; }
+    .priority-item small { display: block; margin-top: 2px; color: #467674; font-size: 12px; font-weight: 700; line-height: 1.35; }
+    .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 18px; }
+    .card { min-height: 184px; padding: 17px; border: 1px solid var(--line); border-radius: 8px; background: var(--white); }
+    .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+    .card-icon { width: 36px; height: 36px; display: grid; flex: 0 0 auto; place-items: center; border: 1px solid #bde4df; border-radius: 7px; color: #11766f; background: #f0fbf9; }
+    .card-icon svg { width: 19px; height: 19px; stroke-width: 2.25; }
+    .number { color: var(--accent); font-size: 12px; font-weight: 900; letter-spacing: 0; }
+    h2 { margin: 8px 0 7px; font-size: 17px; line-height: 1.3; letter-spacing: 0; }
+    .card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.58; }
+    .card p .warning { display: block; margin-top: 8px; color: #c4413a; font-weight: 900; }
+    .sources { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 18px; padding: 16px 18px; border: 1px solid #8edbd4; border-radius: 8px; background: var(--soft); }
+    .sources strong { font-size: 14px; }
+    .sources span { display: block; margin-top: 3px; color: #37696b; font-size: 12px; line-height: 1.45; }
+    .source-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+    .source-links a { padding: 8px 10px; border: 1px solid #77c8c1; border-radius: 6px; color: #176c68; font-size: 12px; font-weight: 800; text-decoration: none; white-space: nowrap; }
+    .source-links a:hover { background: #d2f1ec; }
+    @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .card { min-height: 156px; } }
+    @media (max-width: 600px) { .shell { padding: 16px 12px 24px; } .hero { grid-template-columns: 1fr; gap: 10px; padding: 22px 18px; } .updated { white-space: normal; } .priority { grid-template-columns: 1fr; } .priority-item { min-height: 62px; padding: 11px 13px; } .priority-item + .priority-item { border-top: 1px solid #b3dcd7; border-left: 0; } .sources { align-items: flex-start; flex-direction: column; } .source-links { justify-content: flex-start; } }
+  </style>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+    <symbol id="icon-contact" viewBox="0 0 24 24"><path d="M16 2v2"/><path d="M7 22v-2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/><path d="M8 2v2"/><circle cx="12" cy="11" r="3"/><rect x="3" y="4" width="18" height="18" rx="2"/></symbol>
+    <symbol id="icon-scan-line" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/></symbol>
+    <symbol id="icon-luggage" viewBox="0 0 24 24"><path d="M6 20a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2"/><path d="M8 18V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v14"/><path d="M10 20h4"/><circle cx="16" cy="20" r="2"/><circle cx="8" cy="20" r="2"/></symbol>
+    <symbol id="icon-cigarette-off" viewBox="0 0 24 24"><path d="M12 12H3a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h13"/><path d="M18 8c0-2.5-2-2.5-2-5"/><path d="m2 2 20 20"/><path d="M21 12a1 1 0 0 1 1 1v2a1 1 0 0 1-.5.866"/><path d="M22 8c0-2.5-2-2.5-2-5"/><path d="M7 12v4"/></symbol>
+    <symbol id="icon-wallet-cards" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2"/><path d="M3 11h3c.8 0 1.6.3 2.1.9l1.1.9c1.6 1.6 4.1 1.6 5.7 0l1.1-.9c.5-.5 1.3-.9 2.1-.9H21"/></symbol>
+    <symbol id="icon-plug-zap" viewBox="0 0 24 24"><path d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z"/><path d="m2 22 3-3"/><path d="M7.5 13.5 10 11"/><path d="M10.5 16.5 13 14"/><path d="m18 3-4 4h6l-4 4"/></symbol>
+    <symbol id="icon-landmark" viewBox="0 0 24 24"><path d="M10 18v-7"/><path d="M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/></symbol>
+    <symbol id="icon-map" viewBox="0 0 24 24"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></symbol>
+  </svg>
+  <main class="shell">
+    <div class="topbar">
+      <div class="brand">YO! 旅行班</div>
+      <a class="back" href="index.html">回到地球導覽</a>
+    </div>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">COUNTRY CHECK</p>
+        <h1 id="title"></h1>
+        <p id="intro"></p>
+      </div>
+      <p class="updated">最後整理：2026 年 7 月 28 日<br>易變動規定以官方與行前通知為準。</p>
+    </section>
+    <section class="priority" id="priority" aria-label="泰國出發前三件事"></section>
+    <section class="grid" id="grid" aria-label="全境注意事項八格重點"></section>
+    <section class="sources">
+      <div><strong>出發前再確認</strong><span>入境、簽證、海關與航空規定可能調整，請以官方系統及行前通知為準。</span></div>
+      <div class="source-links" id="sourceLinks"></div>
+    </section>
+  </main>
+  <script>
+    const countryData = {
+      th: {
+        flag: "🇹🇭", name: "泰國全境注意事項", intro: "出發前先用 8 格確認；曼谷、芭達雅、清邁與清萊等行程都能先看這一頁。",
+        priority: [
+          ["scan-line", "TDAC", "入境前 72 小時申請"],
+          ["map", "行程表", "機票與住宿以行程表為主"],
+          ["cigarette-off", "電子菸", "主機、煙彈、煙油都不要帶"]
+        ],
+        cards: [
+          ["contact", "護照與入境", "護照、回程或續程資料與住宿資訊先備好。<span class=\"warning\">財力證明可能抽查：建議每人準備等值 20,000 泰銖、每個家庭等值 40,000 泰銖現金。</span>可持泰銖或等值外幣；信用卡、電子支付與帳戶餘額不能代替現金，最終由移民官現場判定。"],
+          ["scan-line", "TDAC 數位入境卡", "外國旅客入境泰國前，請在入境前 72 小時申請 TDAC。它不是簽證，官方系統免費。"],
+          ["luggage", "行李與回台", "托運與隨身行李先照航空公司規定整理；肉類、新鮮植物與不確定食品，先不要帶回台灣。"],
+          ["cigarette-off", "電子菸與菸品", "電子菸、煙油與相關設備不要帶；菸酒與其他管制品請以最新規定與行前通知為準。"],
+          ["wallet-cards", "貨幣與付款", "泰銖小額現金在市集與小店仍實用；信用卡與電子支付是否可用，依店家和地區而不同。"],
+          ["plug-zap", "插座與充電", "泰國常見插座大多可直接使用台灣的兩扁腳插頭；重點是 220V／50Hz，使用前先確認充電器或電器支援 100–240V。"],
+          ["landmark", "文化與寺廟", "有袖上衣、過膝下著與包覆式鞋子較穩妥；進佛殿依現場規則脫鞋，拍照先看告示。"],
+          ["map", "行程表為主", "景點、交通與住宿以當團行程表為主；自由活動前先記好集合資訊，重要物品分開確認。"]
+        ],
+        sources: [["TDAC 官方", "https://tdac.immigration.go.th/"], ["泰國移民局說明", "https://tdac.immigration.go.th/manual/en/"], ["入境財力官方提醒", "https://www.tatnews.org/2026/07/thailand-entry-reminder-on-proof-of-funds-for-foreign-visitors/"]]
+      },
+      vn: {
+        flag: "🇻🇳", name: "越南全境注意事項", intro: "中越、北越與未來越南行程都可以先從這 8 格快速確認。",
+        priority: [
+          ["scan-line", "簽證與 PAI", "團體公文簽；自由行 eVisa＋PAI"],
+          ["map", "行程表", "交通與住宿以行程表為主"],
+          ["luggage", "回台行李", "不確定食品與動植物不要帶"]
+        ],
+        cards: [
+          ["contact", "護照與入境", "持有效期 6 個月以上的護照即可。"],
+          ["scan-line", "簽證與 PAI 入境資料", "旅行社團體依公文簽辦理；自由行請線上申請 eVisa。入境前 72 小時申請 PAI，完成後保存 QR Code。"],
+          ["luggage", "行李與禁帶物", "行動電源、液體與托運規定先依航空公司整理；不確定的動植物、肉類與食品不要帶回台灣。"],
+          ["wallet-cards", "現金與付款", "越盾面額大，付款前先看清楚金額；刷卡與行動支付在不同城市、店家間的使用情況不同。"],
+          ["plug-zap", "插座與網路", "常見兩孔插座，帶萬用轉接頭較方便；eSIM、漫遊與當地 SIM 都可依行程和用量選擇。"],
+          ["map", "交通與移動", "過馬路時請特別小心，當地車流與機車多，喇叭聲也很常見。"],
+          ["landmark", "文化與服裝", "進宗教場所或古蹟，服裝與拍攝方式尊重現場規範；遇到不確定的情況先問再做。"],
+          ["luggage", "回台前整理", "護照、房卡、手機、錢包與行動電源分開確認；伴手禮看不懂成分或來源時，先不要帶。"]
+        ],
+        sources: [["越南 eVisa 官方", "https://evisa.gov.vn/"], ["越南入境前資料官方入口", "https://prearrival.immigration.gov.vn/"]]
+      },
+      sg: {
+        flag: "🇸🇬", name: "新加坡注意事項", intro: "新加坡行程先用這 8 格確認，城市旅行需要的重點都收在這裡。",
+        priority: [
+          ["scan-line", "SG Arrival Card", "抵達日前 3 天內提交"],
+          ["cigarette-off", "電子菸", "主機、煙彈、煙油都不要帶"],
+          ["map", "行程表", "交通與住宿以行程表為主"]
+        ],
+        cards: [
+          ["contact", "護照與入境", "入境時準備個人有效旅行證件、回程或續程資料；外國旅客護照通常需保留至少 6 個月效期。"],
+          ["scan-line", "SG Arrival Card", "抵達日前 3 天內可提交 SG Arrival Card，包含抵達當日。官方 e-Service 與 MyICA App 免費，SGAC 不是簽證。"],
+          ["luggage", "行李與禁帶物", "托運與隨身行李先照航空公司規定整理；肉類、植物與不確定食品不要帶回台灣。"],
+          ["cigarette-off", "電子菸", "電子菸、煙彈、煙油與相關產品都不要帶進新加坡；當地禁止進口、持有與使用，不確定的管制物出發前先查官方規定。"],
+          ["wallet-cards", "貨幣與付款", "刷卡與行動支付普及，小額現金仍可備一些；付款時注意幣別、服務費與店家標示。"],
+          ["plug-zap", "插座與網路", "常見英規 Type G 插座，帶萬用轉接頭最方便；網路可選 eSIM、漫遊或當地 SIM。"],
+          ["landmark", "城市規矩", "大眾運輸、商場與景點都有清楚規範；排隊、垃圾處理與拍攝都以現場告示為準。"],
+          ["map", "行程表為主", "景點、交通與住宿以當團行程表為主；自由活動前先記好集合資訊，重要物品分開確認。"]
+        ],
+        sources: [["SG Arrival Card 官方", "https://eservices.ica.gov.sg/sgarrivalcard/"], ["ICA 入境資訊", "https://www.ica.gov.sg/enter-transit-depart/entering-singapore"]]
+      },
+      my: {
+        flag: "🇲🇾", name: "馬來西亞全境注意事項", intro: "吉隆坡、馬六甲與未來馬來西亞各地行程，都能先用這 8 格快速確認。",
+        priority: [
+          ["scan-line", "MDAC", "抵達日前 3 天內完成"],
+          ["plug-zap", "英規插座", "Type G，記得帶萬用轉接頭"],
+          ["map", "行程表", "交通與住宿以行程表為主"]
+        ],
+        cards: [
+          ["contact", "護照與入境", "護照、回程或續程資料與住宿資訊先備好；入境資格與最終許可仍以移民官判定為準。"],
+          ["scan-line", "MDAC 數位入境卡", "外國旅客入境前，通常需在抵達日前 3 天內完成 MDAC。填寫前先核對護照英文姓名、號碼與抵達日期。"],
+          ["luggage", "行李與禁帶物", "托運與隨身行李先照航空公司規定整理；肉類、新鮮植物與不確定食品，先不要帶回台灣。"],
+          ["cigarette-off", "電子菸與管制物", "電子菸相關法律與州別規定變動大，最安全做法是不攜帶入境；若後續去新加坡，更不可放進行李。菸酒與其他管制物請先查官方說明。"],
+          ["wallet-cards", "令吉與付款", "夜市、傳統市場與小店先準備一些令吉現金；商場和餐廳多半可刷卡，付款前看清楚金額即可。"],
+          ["plug-zap", "插座與網路", "常見英規 Type G 插座，帶萬用轉接頭較方便；網路可依行程與用量選 eSIM、漫遊或當地 SIM。"],
+          ["landmark", "文化與宗教", "進清真寺、寺廟等場所時，依現場服裝、脫鞋與拍攝規範行動，保持尊重與安靜。"],
+          ["map", "行程表為主", "景點、交通與住宿以當團行程表為主；自由活動前先記好集合資訊，重要物品分開確認。"]
+        ],
+        sources: [["MDAC 官方入口", "https://imigresen-online.imi.gov.my/mdac/main"], ["馬來西亞海關旅客指南", "https://www.customs.gov.my/en/individu/pengembara/travelers-guide"]]
+      }
+    };
+
+    const key = new URLSearchParams(window.location.search).get("country") || "th";
+    const country = countryData[key] || countryData.th;
+    const iconMarkup = icon => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#icon-${icon}"></use></svg>`;
+    document.title = `${country.flag} YO! 旅行班｜${country.name}`;
+    document.getElementById("title").textContent = `${country.flag} ${country.name}`;
+    document.getElementById("intro").textContent = country.intro;
+    const priority = document.getElementById("priority");
+    if (country.priority) {
+      priority.classList.add("is-visible");
+      priority.innerHTML = country.priority.map(([icon, title, text]) => `
+        <div class="priority-item"><span class="priority-icon">${iconMarkup(icon)}</span><span><strong>${title}</strong><small>${text}</small></span></div>
+      `).join("");
+    }
+    document.getElementById("grid").innerHTML = country.cards.map((card, index) => {
+      const [icon, title, text] = card.length === 3 ? card : [null, ...card];
+      const iconElement = icon ? `<span class="card-icon">${iconMarkup(icon)}</span>` : "";
+      return `<article class="card"><div class="card-top"><div class="number">${String(index + 1).padStart(2, "0")}</div>${iconElement}</div><h2>${title}</h2><p>${text}</p></article>`;
+    }).join("");
+    document.getElementById("sourceLinks").innerHTML = country.sources.map(([label, url]) => `<a href="${url}" target="_blank" rel="noopener">${label}</a>`).join("");
+  </script>
+</body>
+</html>
