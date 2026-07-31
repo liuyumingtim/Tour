@@ -97,7 +97,7 @@ a { color: inherit; }
   line-height: 1.12;
   text-shadow: 0 8px 28px rgba(0,0,0,.22);
 }
-.hero-title span { color: #FFE08A; }
+.hero-title span { display: block; color: #FFE08A; }
 .hero-sub {
   color: rgba(255,255,255,.9);
   font-size: 15px;
@@ -123,6 +123,13 @@ a { color: inherit; }
   scrollbar-width: none;
 }
 .info-bar::-webkit-scrollbar, .nav::-webkit-scrollbar { display: none; }
+.country-check {
+  display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;
+  padding: 10px 16px; background: #fff8e8; border-bottom: 1px solid var(--line);
+  color: var(--ink); font-size: 13px; font-weight: 800;
+}
+.country-check span { color: var(--muted); }
+.country-check a { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
 .info-item {
   min-width: 118px;
   padding: 11px 15px;
@@ -393,6 +400,35 @@ a { color: inherit; }
   font-size: 13px;
   line-height: 1.75;
 }
+.collection-intro {
+  margin-bottom: 16px;
+  padding: 16px 18px;
+  border-left: 4px solid var(--gold);
+  background: #FFF1CC;
+  color: #674B12;
+  font-size: 14px;
+  line-height: 1.85;
+}
+.collection-intro strong { color: #4D3300; }
+.collection-card {
+  overflow: hidden;
+  margin-bottom: 16px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+.collection-photo { height: 216px; overflow: hidden; background: var(--cream); }
+.collection-photo img { display: block; width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; transition: transform .28s ease; }
+.collection-photo img:hover { transform: scale(1.03); }
+.collection-photo img.bigc-logo-photo { object-position: center top; }
+.collection-body { padding: 19px 20px 20px; }
+.collection-kicker { margin-bottom: 6px; color: var(--lotus); font-size: 12px; font-weight: 900; }
+.collection-title { margin-bottom: 8px; color: var(--ink); font-family: 'Noto Serif TC', serif; font-size: 21px; font-weight: 900; line-height: 1.4; }
+.collection-copy { color: var(--muted); font-size: 14px; line-height: 1.85; }
+.collection-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 12px; }
+.collection-tag { border: 1px solid #D6E5DC; background: var(--mint); color: #1E665A; padding: 4px 9px; font-size: 11px; font-weight: 900; }
+.collection-tip { margin-top: 13px; padding-top: 12px; border-top: 1px dashed var(--line); color: #4D5D5E; font-size: 13px; line-height: 1.8; }
+.collection-tip strong { color: var(--teal); }
 .warn-box {
   display: flex;
   gap: 12px;
@@ -546,8 +582,8 @@ a { color: inherit; }
   <div class="hero-content">
     <span class="hero-badge">YoYo 帶你玩</span>
     <h1 class="hero-title">曼谷芭達雅 <span>旅遊收藏版</span></h1>
-    <p class="hero-sub">曼谷與芭達雅的景點、吃什麼、買什麼，都收在這一頁。</p>
-    <span class="update-meta">最後整理：2026 年 7 月 27 日<br>景點、吃與買的旅行靈感。</span>
+    <p class="hero-sub">從曼谷的熱鬧，到芭達雅的夜晚，先收幾段會想回看的畫面。</p>
+    <span class="update-meta">最後整理：2026 年 7 月 29 日<br>YoYo 的泰國旅行收藏。</span>
   </div>
 </header>
 
@@ -563,7 +599,7 @@ a { color: inherit; }
     <div class="sec-head">
       <span class="sec-emoji">👋</span>
       <h2 class="sec-title">認識你的領隊 YoYo</h2>
-      <p class="sec-desc">出發前先認識我，旅途中你就會更安心。</p>
+      <p class="sec-desc">旅程開始前，先來打個招呼。</p>
     </div>
 
     <div class="about-hero">
@@ -571,49 +607,20 @@ a { color: inherit; }
       <div>
         <div class="about-name">劉又銘 YoYo</div>
         <div class="about-role">可樂旅遊｜國際短程線領隊</div>
-        <div class="about-tagline">Yo 在東南亞，帶團，也在過生活。<br>有些事，不會寫在行程裡，但我會先幫你整理好。</div>
+        <div class="about-tagline">Yo 在東南亞，帶團，也在過生活。<br>把路上遇到的好吃、好玩和小細節，慢慢收進這一頁。</div>
       </div>
     </div>
 
     <div class="trust-grid">
-      <div class="trust-item"><span class="trust-num">行前</span><span class="trust-label">先整理好重點</span></div>
-      <div class="trust-item"><span class="trust-num">途中</span><span class="trust-label">提醒集合與安全</span></div>
-      <div class="trust-item"><span class="trust-num">回台</span><span class="trust-label">打包前再檢查</span></div>
-    </div>
-
-    <div class="compare-wrap">
-      <div class="compare-title">這趟曼谷芭達雅，先抓這幾個重點</div>
-      <div class="compare-grid">
-        <div class="fact-box"><span class="fact-kicker">曼谷</span><strong>商場大、人潮多、很好逛；集合點先拍起來，逛街才不會緊張。</strong></div>
-        <div class="fact-box"><span class="fact-kicker">芭達雅</span><strong>海邊節奏比較放鬆，夜晚更熱鬧；自由活動時手機和包包要顧好。</strong></div>
-        <div class="fact-box"><span class="fact-kicker">入境</span><strong>TDAC、護照、住宿資料先準備好，通關會順很多。</strong></div>
-        <div class="fact-box"><span class="fact-kicker">回台前</span><strong>好買歸好買，含肉食品、水果和行動電源打包前要先整理。</strong></div>
-      </div>
+      <div class="trust-item"><span class="trust-num">東南亞</span><span class="trust-label">領隊旅行視角</span></div>
+      <div class="trust-item"><span class="trust-num">景點</span><span class="trust-label">不只是一張打卡照</span></div>
+      <div class="trust-item"><span class="trust-num">吃買</span><span class="trust-label">留下真的想分享的</span></div>
     </div>
 
     <div class="note-card">
-      <div class="note-title">✨ YoYo 的一句話提醒</div>
-      <p>泰國好玩的地方，是它很熱鬧、很好買，也很容易讓人放鬆；但越熱鬧的地方，越要先把集合地點、錢包手機和回台禁帶物記清楚。</p>
-      <p style="margin-top:12px">我把大家最常問、最容易忘的重點先整理在這裡。出發前滑一下，旅途中就能把注意力留給吃、拍照和好好玩。</p>
-    </div>
-
-    <div class="rec-grid">
-      <div class="rec-card">
-        <img src="assets/曼谷芭達雅/bigc-entrance.jpg" alt="Big C 賣場入口" onclick="openLB(this.src)">
-        <div class="rec-content">
-          <span class="rec-kicker">曼谷採買感</span>
-          <div class="rec-title">Big C</div>
-          <div class="rec-copy">到了 Big C 真的很容易越逛越想買。先把想買的零食、伴手禮和小物抓好，集合點也先拍起來，買完才不會一邊找人一邊慌。</div>
-        </div>
-      </div>
-      <div class="rec-card">
-        <img src="assets/曼谷芭達雅/pattaya-city-view.jpg" alt="芭達雅海景與 Pattaya City 字樣" onclick="openLB(this.src)">
-        <div class="rec-content">
-          <span class="rec-kicker">芭達雅海景</span>
-          <div class="rec-title">Pattaya City</div>
-          <div class="rec-copy">看到海邊和 Pattaya 字樣，就很有芭達雅的度假感。這裡的節奏比曼谷放鬆，但人潮和財物還是要顧好。</div>
-        </div>
-      </div>
+      <div class="note-title">✨ YoYo 的一句話</div>
+      <p>旅行不用把每一個地方都玩得很滿。留一點時間逛街、吃一口喜歡的東西，或是在夜晚多看幾眼街景，回來以後反而最記得。</p>
+      <p style="margin-top:12px">這趟曼谷・芭達雅，就跟著自己的節奏走；想看的景點、想吃的味道、想帶回去的小東西，我都先收在後面了。</p>
     </div>
   </section>
 
@@ -621,64 +628,54 @@ a { color: inherit; }
     <div class="sec-head">
       <span class="sec-emoji">🍜</span>
       <h2 class="sec-title">YoYo 帶你吃</h2>
-      <p class="sec-desc">我先放幾個容易遇到，也比較有泰國記憶點的味道。看到喜歡的，就可以試試看。</p>
+      <p class="sec-desc">有些味道是專程去找，有些只是逛累了剛好來一杯，反而會記很久。</p>
     </div>
 
-    <span class="country-label">YoYo 這次先放入口袋的味道</span>
+    <div class="tip-box"><strong>泰國的吃，不用做功課做到很滿。</strong>想喝甜的就找一杯泰奶，天氣太熱就來顆椰子；留一點餓的空間，走到哪裡都還有驚喜。</div>
+
+    <span class="country-label">逛街途中，先喝一杯</span>
     <div class="rec-grid">
       <div class="rec-card">
         <img src="assets/曼谷芭達雅/karun-thai-tea.jpg" alt="Karun 泰式奶茶" onclick="openLB(this.src)">
-        <div class="rec-content">
-          <span class="rec-kicker">泰式奶茶</span>
-          <div class="rec-title">Karun</div>
-          <div class="rec-copy">Central World 可以喝到，算是泰奶界比較精緻的路線。杯子漂亮、味道也有層次，想拍照又想喝泰奶的人可以收進口袋。</div>
-        </div>
+        <div class="rec-content"><span class="rec-kicker">商場裡的一杯休息</span><div class="rec-title">Karun</div><div class="rec-copy">逛街走累時坐一下很剛好。想拍照又想喝泰奶的人，可以把它收進口袋。</div></div>
       </div>
       <div class="rec-card">
-        <img src="assets/曼谷芭達雅/cha-tra-mue.jpg" alt="手標泰式奶茶" onclick="openLB(this.src)">
-        <div class="rec-content">
-          <span class="rec-kicker">泰奶經典</span>
-          <div class="rec-title">手標 ChaTraMue</div>
-          <div class="rec-copy">手標是很多人想到泰奶會先想到的牌子，可以調整甜度。YoYo 自己通常喝 30%，比較不會甜到後面受不了。</div>
-        </div>
+        <img src="assets/曼谷芭達雅/cha-tra-mue.jpg" alt="手標 ChaTraMue 泰式奶茶" onclick="openLB(this.src)">
+        <div class="rec-content"><span class="rec-kicker">大家熟悉的經典</span><div class="rec-title">手標 ChaTraMue</div><div class="rec-copy">甜度照自己習慣調整就好，不用為了來泰國就把自己喝到太膩。</div></div>
       </div>
     </div>
 
     <div class="food-grid">
-      <div class="mini-card"><span class="emoji">🥥</span><strong>必喝椰子</strong><span>天氣熱時很解暑，戶外走跳後喝起來特別舒服。</span></div>
-      <div class="mini-card"><span class="emoji">🧋</span><strong>KOI Thé</strong><span>台灣 50 嵐海外店，有熟悉感，也適合不想冒險的人。</span></div>
-      <div class="mini-card"><span class="emoji">🌶️</span><strong>泰式料理</strong><span>冬陰功、打拋這類香辣料理，怕辣的人先問辣度。</span></div>
+      <div class="mini-card"><span class="emoji">🥥</span><strong>椰子</strong><span>天氣熱時來一顆，最簡單也最舒服。</span></div>
+      <div class="mini-card"><span class="emoji">🧋</span><strong>KOI Thé</strong><span>想喝熟悉的味道時，也是一個輕鬆選擇。</span></div>
+      <div class="mini-card"><span class="emoji">🌶️</span><strong>泰式料理</strong><span>喜歡香辣味道的人，可以慢慢試不同菜色。</span></div>
     </div>
 
-    <span class="country-label">在地美食</span>
+    <span class="country-label">想試在地味道</span>
     <div class="rec-grid">
       <div class="rec-card">
         <img src="assets/曼谷芭達雅/thai-blood-noodle-soup.jpg" alt="泰式米粉湯" onclick="openLB(this.src)">
-        <div class="rec-content">
-          <span class="rec-kicker">在地味道</span>
-          <div class="rec-title">泰式米粉湯</div>
-          <div class="rec-copy">湯底常見豬血或牛血，味道很濃、很在地。敢吃的人可以試試看；不吃內臟或血類的人，點餐前先問一下湯底。</div>
-        </div>
+        <div class="rec-content"><span class="rec-kicker">濃一點，也直接一點</span><div class="rec-title">泰式米粉湯</div><div class="rec-copy">配料和湯底各店不同；不吃內臟或血類時，點餐前先確認一下就很安心。</div></div>
       </div>
     </div>
 
-    <span class="country-label alt">甜點與小點</span>
+    <span class="country-label alt">甜點和路上小點</span>
     <div class="rec-grid">
       <div class="rec-card">
-        <img src="assets/曼谷芭達雅/pandan-roll.jpg" alt="斑斕捲餅" onclick="openLB(this.src)">
-        <div class="rec-content">
-          <span class="rec-kicker">路上小點</span>
-          <div class="rec-title">斑斕捲餅 / 斑斕蛋糕</div>
-          <div class="rec-copy">斑斕香氣很有東南亞感，看到可以買來嚐嚐。甜度通常不低，適合大家分著吃，比較不會一下子太膩。</div>
-        </div>
+        <img src="assets/曼谷芭達雅/pandan-roll.jpg" alt="斑斕捲餅與斑斕蛋糕" onclick="openLB(this.src)">
+        <div class="rec-content"><span class="rec-kicker">看到就可以帶一份</span><div class="rec-title">斑斕捲餅／斑斕蛋糕</div><div class="rec-copy">很有東南亞的香氣，大家分著吃，剛好不會太膩。</div></div>
       </div>
       <div class="rec-card">
         <img src="assets/曼谷芭達雅/mango-sticky-rice.jpg" alt="芒果糯米飯" onclick="openLB(this.src)">
-        <div class="rec-content">
-          <span class="rec-kicker">泰國甜點</span>
-          <div class="rec-title">芒果糯米飯</div>
-          <div class="rec-copy">芒果、糯米和椰奶是經典組合。份量看起來不大，但吃起來滿有飽足感，當飯後甜點剛剛好。</div>
-        </div>
+        <div class="rec-content"><span class="rec-kicker">飯後留一點空間</span><div class="rec-title">芒果糯米飯</div><div class="rec-copy">芒果、糯米和椰奶放在一起，就是泰國讓人想起來的甜。</div></div>
+      </div>
+    </div>
+
+    <span class="country-label">泰國水果時間</span>
+    <div class="rec-grid">
+      <div class="rec-card">
+        <img src="assets/曼谷芭達雅/mangosteen-longan-juice.jpg" alt="山竹與龍眼汁" onclick="openLB(this.src)">
+        <div class="rec-content"><span class="rec-kicker">酸甜水果加一杯冰涼</span><div class="rec-title">山竹與龍眼汁</div><div class="rec-copy">山竹的酸甜很剛好，配上一杯冰涼龍眼汁，就是逛完夜市或天氣熱時很舒服的一組。</div></div>
       </div>
     </div>
 
@@ -688,146 +685,104 @@ a { color: inherit; }
     <div class="sec-head">
       <span class="sec-emoji">🗺️</span>
       <h2 class="sec-title">YoYo 帶你走跳</h2>
-      <p class="sec-desc">把曼谷與芭達雅值得走走、拍照與感受氣氛的地方收在這裡。</p>
+      <p class="sec-desc">這趟不是只在城市裡打卡，而是在熱鬧、信仰和夜色之間慢慢換場景。</p>
     </div>
 
-    <span class="country-label">曼谷 Bangkok</span>
-    <div class="card gold">
-      <div class="card-title">🏬 Central World</div>
-      <div class="card-body">
-        Central World 是曼谷很適合自由活動的大型商場，吃飯、逛街、買飲料、躲雨吹冷氣都方便。商場很大，建議先把集合點拍起來，逛起來會比較安心。
-      </div>
-    </div>
+    <div class="collection-intro"><strong>曼谷和芭達雅的個性差很多。</strong>曼谷像一座一直在發生事情的城市；芭達雅則是等到傍晚以後，才慢慢把它的度假感拿出來。</div>
 
-    <div class="card">
-      <div class="card-title">🙏 四面佛</div>
-      <div class="card-body">
-        四面佛是曼谷很代表性的信仰地標，香火很旺，也常被旅人安排順路參拜。來到這裡放慢一點腳步，尊重信仰，也把隨身物品顧好。
+    <article class="collection-card">
+      <div class="collection-photo"><img class="bigc-logo-photo" src="assets/曼谷芭達雅/bigc-sign.jpg" alt="曼谷 Big C 招牌與入口" onclick="openLB(this.src)"></div>
+      <div class="collection-body">
+        <div class="collection-kicker">曼谷・熱鬧全部擠在同一區</div>
+        <h3 class="collection-title">曼谷商場、信仰地標和採買</h3>
+        <p class="collection-copy">這一段很像曼谷的縮影：可以在商場裡吹冷氣、喝飲料，也能在四面佛、象神和吉祥天女前感受這座城市很日常的信仰氛圍。逛到最後，再進 Big C 挑幾樣想帶回去的東西。</p>
+        <div class="collection-tags"><span class="collection-tag">商場逛街</span><span class="collection-tag">城市散步</span><span class="collection-tag">買伴手禮</span></div>
+        <p class="collection-tip"><strong>YoYo 小提醒：</strong>這區很好逛也很大，先拍一下集合地點，逛起來會更放心。</p>
       </div>
-    </div>
+    </article>
 
-    <div class="card">
-      <div class="card-title">🐘 象神 Ganesha</div>
-      <div class="card-body">
-        象神是很多人會注意到的信仰點，常被聯想到智慧、學業、工作和新的開始。若路線有經過，可以停下來感受一下曼谷商圈裡很特別的信仰氛圍。
+    <article class="collection-card">
+      <div class="collection-body">
+        <div class="collection-kicker">芭達雅・像把世界各地縮小放進商場</div>
+        <h3 class="collection-title">航站 21：逛街、吃東西，也順便拍幾張</h3>
+        <p class="collection-copy">它不只是一般商場，走進去會有一點像換到不同城市的感覺。裡面有吃的、有逛的，天氣熱時進來休息一下，順便拍幾張照片，就很剛好。</p>
+        <div class="collection-tags"><span class="collection-tag">吹冷氣休息</span><span class="collection-tag">吃東西</span><span class="collection-tag">主題拍照</span></div>
+        <p class="collection-tip"><strong>YoYo 小提醒：</strong>不用特地把每個角落都走完，剛好有空檔進來晃晃就好。</p>
       </div>
-    </div>
+    </article>
 
-    <div class="card">
-      <div class="card-title">🪷 吉祥天女 Lakshmi</div>
-      <div class="card-body">
-        吉祥天女常被旅人視為祈求幸運、美好與人緣的信仰點。這裡拍起來很漂亮，但也要記得保持安靜、尊重現場，不要只把它當拍照背景。
+    <article class="collection-card">
+      <div class="collection-body">
+        <div class="collection-kicker">芭達雅・白天到傍晚的慢慢逛</div>
+        <h3 class="collection-title">水上市場與飛機夜市</h3>
+        <p class="collection-copy">水上市場適合看看水邊攤位、吃點小東西；飛機夜市則是天色暗下來後比較有感。兩個地方不需要硬湊成趕行程，更像是想拍照、想找小吃時可以慢慢走的一段。</p>
+        <div class="collection-tags"><span class="collection-tag">水邊街景</span><span class="collection-tag">小吃小物</span><span class="collection-tag">傍晚散步</span></div>
       </div>
-    </div>
+    </article>
 
-    <div class="card">
-      <div class="card-title">🛒 Big C</div>
-      <div class="card-body">
-        Big C 是很多人泰國採買的第一站，零食、泡麵、伴手禮、日用品都很好逛。建議先想好清單，不然很容易越買越多，最後行李箱塞到懷疑人生。
+    <article class="collection-card">
+      <div class="collection-photo"><img src="assets/曼谷芭達雅/ocean-sky-show-1.jpg" alt="OCEAN SKY 海天盛宴表演" onclick="openLB(this.src)"></div>
+      <div class="collection-body">
+        <div class="collection-kicker">芭達雅晚間體驗・有海風也有舞台</div>
+        <h3 class="collection-title">OCEAN SKY 海天盛宴</h3>
+        <p class="collection-copy">這一站的重點不是只是吃飯，而是海景、燈光、舞台和表演一起出現的那種熱鬧。想把晚上的氣氛拉滿一點，這裡會是很有記憶點的一段。</p>
+        <div class="collection-tags"><span class="collection-tag">晚餐體驗</span><span class="collection-tag">表演氛圍</span><span class="collection-tag">海景夜晚</span></div>
       </div>
-    </div>
+    </article>
 
-    <span class="country-label alt">芭達雅 Pattaya</span>
-    <div class="card lotus">
-      <div class="card-title">✈️ 飛機夜市</div>
-      <div class="card-body">
-        飛機夜市的特色就是主題感明顯，很適合拍照、吃小吃、感受芭達雅夜晚的熱鬧。晚上人多，邊逛邊拍也要記得顧好手機。
+    <article class="collection-card">
+      <div class="collection-photo"><img src="assets/曼谷芭達雅/walking-street.jpg" alt="芭達雅 Walking Street 夜景" onclick="openLB(this.src)"></div>
+      <div class="collection-body">
+        <div class="collection-kicker">芭達雅最有名的夜晚地標</div>
+        <h3 class="collection-title">Walking Street：霓虹燈亮起後的另一面</h3>
+        <p class="collection-copy">這裡越晚越熱鬧，音樂、人潮和霓虹燈把整條街變得很有自己的節奏。它不只是走過去拍張照的地方，也是很多人想到芭達雅時，腦中會先浮現的一段畫面。</p>
+        <div class="collection-tags"><span class="collection-tag">夜間地標</span><span class="collection-tag">霓虹街景</span><span class="collection-tag">感受氣氛</span></div>
+        <p class="collection-tip"><strong>YoYo 小提醒：</strong>人潮多的地方，和同行的人保持在彼此看得到的距離，玩起來更自在。</p>
       </div>
-    </div>
-
-    <div class="card lotus">
-      <div class="card-title">🛫 航站 21 Pattaya</div>
-      <div class="card-body">
-        航站 21 Pattaya 每層樓都有不同國家主題，適合拍照、吃東西、逛街，也很適合當作吹冷氣休息點。商場動線大，集合點一樣先拍起來。
-      </div>
-    </div>
-
-    <div class="card lotus">
-      <div class="card-title">🛶 水上市場</div>
-      <div class="card-body">
-        水上市場是芭達雅很有地方特色的走跳點，可以看水邊攤販、拍照、買小吃小物。天氣熱的時候記得補水、防曬，貴重物品也放好。
-      </div>
-    </div>
-
-    <div class="card lotus">
-      <div class="card-title">🌊 OCEAN SKY 海天盛宴</div>
-      <div class="card-body">
-        OCEAN SKY 海天盛宴是芭達雅夜晚氣氛很強的一站，結合國際自助餐、人妖公主與男模表演，燈光、海景和舞台都很有記憶點。建議手機先充好電，精彩畫面很多。
-      </div>
-    </div>
-
-    <div class="card lotus">
-      <div class="card-title">🌃 步行街 Walking Street</div>
-      <div class="card-body">
-        越晚越熱鬧，霓虹燈、人潮和音樂感都很強。自由活動時要跟緊同行的人，手機包包顧好，不要單獨走太遠。
-      </div>
-    </div>
+    </article>
   </section>
 
   <section class="section" id="s6">
     <div class="sec-head">
       <span class="sec-emoji">🛍️</span>
       <h2 class="sec-title">YoYo 帶你買</h2>
-      <p class="sec-desc">從零食、伴手禮到實用小物，這裡收錄幾個有泰國感的選擇。</p>
+      <p class="sec-desc">不需要把行李箱塞滿，挑幾樣回家還會想起這趟旅程的就夠了。</p>
     </div>
 
-    <span class="country-label">Big C 可以先看這三類</span>
-    <div class="shop-grid">
-      <div class="mini-card"><span class="emoji">🍜</span><strong>零食泡麵</strong><span>媽媽牌船麵、鹹蛋黃泡麵、洋芋片、小熊餅乾。</span></div>
-      <div class="mini-card"><span class="emoji">🥭</span><strong>伴手禮</strong><span>芒果乾、KUNNA 果乾、椰子奶油蛋捲。</span></div>
-      <div class="mini-card"><span class="emoji">🧴</span><strong>實用小物</strong><span>鼻通、青草膏、防曬、牙膏、防蚊用品。</span></div>
-    </div>
+    <div class="collection-intro"><strong>Big C 最危險的不是價格，是很容易越逛越有靈感。</strong>先想好自己是要帶零食回家、找伴手禮，還是只想買幾個旅行時真的會用到的小物。</div>
 
-    <div class="card">
-      <div class="card-title">🛒 Big C 採買提醒</div>
-      <div class="card-body">
-        Big C 很適合從「零食泡麵、伴手禮、實用小物」三大類慢慢逛起；品項多，先抓想買的方向會更好挑。
+    <article class="collection-card">
+      <div class="collection-photo"><img class="bigc-logo-photo" src="assets/曼谷芭達雅/bigc-sign.jpg" alt="Big C 招牌與入口" onclick="openLB(this.src)"></div>
+      <div class="collection-body">
+        <div class="collection-kicker">泰國採買的起點</div>
+        <h3 class="collection-title">Big C：從零食、伴手禮到實用小物</h3>
+        <p class="collection-copy">如果一走進去腦袋就空白，可以先從三個方向逛：泡麵和零食、果乾和小禮物，再來才是鼻通、防曬這類實用小物。這樣不會一開始就推著籃子亂繞。</p>
+        <div class="collection-tags"><span class="collection-tag">一次買齊</span><span class="collection-tag">伴手禮</span><span class="collection-tag">逛超市</span></div>
+        <p class="collection-tip"><strong>YoYo 小提醒：</strong>媽媽牌船麵可以保留在選物清單裡；其他食品則依自己的需求挑，結帳前看一下成分標示就好。</p>
       </div>
-    </div>
+    </article>
 
-    <span class="country-label">YoYo 拍下來的採買小抄</span>
+    <span class="country-label">YoYo 的採買小格子</span>
     <div class="rec-grid">
       <div class="rec-card">
-        <img src="assets/曼谷芭達雅/bigc-entrance.jpg" alt="Big C 賣場入口" onclick="openLB(this.src)">
-        <div class="rec-content">
-          <span class="rec-kicker">補貨站</span>
-          <div class="rec-title">Big C</div>
-          <div class="rec-copy">泰國採買很容易從「我只買一點」變成一整籃。建議先列清單再進去，不然很容易越買越多，行李箱直接爆開。</div>
-        </div>
-      </div>
-      <div class="rec-card">
         <img src="assets/曼谷芭達雅/salted-egg-chips.jpg" alt="鹹蛋黃洋芋片" onclick="openLB(this.src)">
-        <div class="rec-content">
-          <span class="rec-kicker">零食</span>
-          <div class="rec-title">鹹蛋黃洋芋片</div>
-          <div class="rec-copy">泰國很常見、也很有記憶點的口味。</div>
-        </div>
+        <div class="rec-content"><span class="rec-kicker">零食</span><div class="rec-title">鹹蛋黃洋芋片</div><div class="rec-copy">鹹香味很有記憶點，適合帶回去和朋友一起拆。</div></div>
       </div>
       <div class="rec-card">
         <img src="assets/曼谷芭達雅/thai-flavor-chips.jpg" alt="泰式風味洋芋片" onclick="openLB(this.src)">
-        <div class="rec-content">
-          <span class="rec-kicker">零食</span>
-          <div class="rec-title">泰式風味洋芋片</div>
-          <div class="rec-copy">想買有泰國感的零食，可以看這種酸辣、香料感比較明顯的口味。</div>
-        </div>
+        <div class="rec-content"><span class="rec-kicker">零食</span><div class="rec-title">泰式風味洋芋片</div><div class="rec-copy">酸、辣、香料感都不太一樣，挑自己想試的口味就好。</div></div>
       </div>
       <div class="rec-card">
         <img src="assets/曼谷芭達雅/watermelon-mint.jpg" alt="西瓜涼糖" onclick="openLB(this.src)">
-        <div class="rec-content">
-          <span class="rec-kicker">小物</span>
-          <div class="rec-title">西瓜涼糖</div>
-          <div class="rec-copy">這個 YoYo 自己超愛，每次都會買很多。天氣熱、走路走到有點累時，清涼感很舒服。</div>
-        </div>
+        <div class="rec-content"><span class="rec-kicker">小物</span><div class="rec-title">西瓜涼糖</div><div class="rec-copy">YoYo 自己很喜歡的小東西，走路走累時吃一顆，清涼感很舒服。</div></div>
       </div>
       <div class="rec-card">
-        <img src="assets/曼谷芭達雅/herbal-inhaler.jpg" alt="草藥鼻通" onclick="openLB(this.src)">
-        <div class="rec-content">
-          <span class="rec-kicker">實用小物</span>
-          <div class="rec-title">草藥鼻通</div>
-          <div class="rec-copy">有白色跟綠色款式，喜歡都可以買。搭車、天氣悶熱或想提神時，很多人會覺得很實用。</div>
-        </div>
+        <img src="assets/曼谷芭達雅/herbal-inhaler.jpg" alt="泰國草藥鼻通" onclick="openLB(this.src)">
+        <div class="rec-content"><span class="rec-kicker">實用小物</span><div class="rec-title">草藥鼻通</div><div class="rec-copy">搭車、天氣悶熱或想提神時，很多人會想帶一支在身邊。</div></div>
       </div>
     </div>
+
+    <div class="tip-box"><strong>回台前收行李時</strong>，把食品和伴手禮放在一起看一眼，再對照泰國全境提醒，心裡會更踏實。</div>
 
   </section>
 </main>
