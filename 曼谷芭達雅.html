@@ -420,6 +420,7 @@ a { color: inherit; }
 .collection-photo { height: 216px; overflow: hidden; background: var(--cream); }
 .collection-photo img { display: block; width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; transition: transform .28s ease; }
 .collection-photo img:hover { transform: scale(1.03); }
+.collection-photo.bigc-logo-frame { height: auto; aspect-ratio: 16 / 9; }
 .collection-photo img.bigc-logo-photo { object-position: center top; }
 .collection-body { padding: 19px 20px 20px; }
 .collection-kicker { margin-bottom: 6px; color: var(--lotus); font-size: 12px; font-weight: 900; }
@@ -622,6 +623,25 @@ a { color: inherit; }
       <p>旅行不用把每一個地方都玩得很滿。留一點時間逛街、吃一口喜歡的東西，或是在夜晚多看幾眼街景，回來以後反而最記得。</p>
       <p style="margin-top:12px">這趟曼谷・芭達雅，就跟著自己的節奏走；想看的景點、想吃的味道、想帶回去的小東西，我都先收在後面了。</p>
     </div>
+
+    <div class="rec-grid">
+      <div class="rec-card">
+        <img src="assets/曼谷芭達雅/bigc-entrance.jpg" alt="曼谷 Big C 賣場入口" onclick="openLB(this.src)">
+        <div class="rec-content">
+          <span class="rec-kicker">曼谷的熱鬧</span>
+          <div class="rec-title">逛街、採買，也留一點餘裕</div>
+          <div class="rec-copy">曼谷很適合邊走邊逛，看到喜歡的就停一下，不需要把每一站都趕完。</div>
+        </div>
+      </div>
+      <div class="rec-card">
+        <img src="assets/曼谷芭達雅/pattaya-city-view.jpg" alt="芭達雅城市海景" onclick="openLB(this.src)">
+        <div class="rec-content">
+          <span class="rec-kicker">芭達雅的鬆弛</span>
+          <div class="rec-title">海邊、夜色，和慢一點的步調</div>
+          <div class="rec-copy">離開曼谷後，讓行程節奏慢下來，好好感受芭達雅傍晚以後的樣子。</div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="section" id="s4">
@@ -691,7 +711,7 @@ a { color: inherit; }
     <div class="collection-intro"><strong>曼谷和芭達雅的個性差很多。</strong>曼谷像一座一直在發生事情的城市；芭達雅則是等到傍晚以後，才慢慢把它的度假感拿出來。</div>
 
     <article class="collection-card">
-      <div class="collection-photo"><img class="bigc-logo-photo" src="assets/曼谷芭達雅/bigc-sign.jpg" alt="曼谷 Big C 招牌與入口" onclick="openLB(this.src)"></div>
+      <div class="collection-photo bigc-logo-frame"><img class="bigc-logo-photo" src="assets/曼谷芭達雅/bigc-wide.png" alt="曼谷 Big C 招牌與入口" onclick="openLB(this.src)"></div>
       <div class="collection-body">
         <div class="collection-kicker">曼谷・熱鬧全部擠在同一區</div>
         <h3 class="collection-title">曼谷商場、信仰地標和採買</h3>
@@ -705,7 +725,7 @@ a { color: inherit; }
       <div class="collection-body">
         <div class="collection-kicker">芭達雅・像把世界各地縮小放進商場</div>
         <h3 class="collection-title">航站 21：逛街、吃東西，也順便拍幾張</h3>
-        <p class="collection-copy">它不只是一般商場，走進去會有一點像換到不同城市的感覺。裡面有吃的、有逛的，天氣熱時進來休息一下，順便拍幾張照片，就很剛好。</p>
+        <p class="collection-copy">入口有一點像機場登機門的設計，先拍照再走進去就很有感。裡面的倫敦主題樓層很有記憶點，喜歡日系小細節的人，也可以找找日式洗手間；不必逐層攻略，挑喜歡的地方看看就好。</p>
         <div class="collection-tags"><span class="collection-tag">吹冷氣休息</span><span class="collection-tag">吃東西</span><span class="collection-tag">主題拍照</span></div>
         <p class="collection-tip"><strong>YoYo 小提醒：</strong>不用特地把每個角落都走完，剛好有空檔進來晃晃就好。</p>
       </div>
@@ -715,7 +735,7 @@ a { color: inherit; }
       <div class="collection-body">
         <div class="collection-kicker">芭達雅・白天到傍晚的慢慢逛</div>
         <h3 class="collection-title">水上市場與飛機夜市</h3>
-        <p class="collection-copy">水上市場適合看看水邊攤位、吃點小東西；飛機夜市則是天色暗下來後比較有感。兩個地方不需要硬湊成趕行程，更像是想拍照、想找小吃時可以慢慢走的一段。</p>
+        <p class="collection-copy">水上市場裡有許多小樣飾品和泰國當地特色物品可以慢慢挑選；飛機夜市則是天色暗下來後比較有感。兩個地方不需要硬湊成趕行程，更像是想拍照、想找小吃時可以慢慢走的一段。</p>
         <div class="collection-tags"><span class="collection-tag">水邊街景</span><span class="collection-tag">小吃小物</span><span class="collection-tag">傍晚散步</span></div>
       </div>
     </article>
@@ -752,7 +772,7 @@ a { color: inherit; }
     <div class="collection-intro"><strong>Big C 最危險的不是價格，是很容易越逛越有靈感。</strong>先想好自己是要帶零食回家、找伴手禮，還是只想買幾個旅行時真的會用到的小物。</div>
 
     <article class="collection-card">
-      <div class="collection-photo"><img class="bigc-logo-photo" src="assets/曼谷芭達雅/bigc-sign.jpg" alt="Big C 招牌與入口" onclick="openLB(this.src)"></div>
+      <div class="collection-photo bigc-logo-frame"><img class="bigc-logo-photo" src="assets/曼谷芭達雅/bigc-wide.png" alt="Big C 招牌與入口" onclick="openLB(this.src)"></div>
       <div class="collection-body">
         <div class="collection-kicker">泰國採買的起點</div>
         <h3 class="collection-title">Big C：從零食、伴手禮到實用小物</h3>
