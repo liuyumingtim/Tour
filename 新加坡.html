@@ -437,28 +437,37 @@ a { color: inherit; }
   font-weight: 900;
 }
 .country-label.my { background: var(--coral); }
-.spot-grid { grid-template-columns: 1fr; }
-.spot-card {
-  background: #fff;
+.collection-intro {
+  margin: 4px 0 16px;
+  border-left: 4px solid var(--gold);
+  background: #FFF6DC;
+  color: #4D451F;
+  padding: 15px 17px;
+  font-size: 14px;
+  line-height: 1.85;
+}
+.collection-intro strong { color: var(--teal-dark); }
+.collection-card {
+  overflow: hidden;
+  margin-bottom: 16px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 17px;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 14px;
-  align-items: start;
+  background: var(--paper);
+  box-shadow: var(--shadow);
 }
-.spot-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: var(--mint);
-  font-size: 23px;
-}
-.spot-name { font-weight: 900; font-size: 16px; margin-bottom: 4px; }
-.spot-copy { color: var(--muted); font-size: 13px; line-height: 1.75; }
+.collection-photo { height: 230px; overflow: hidden; background: var(--cream); }
+.collection-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.collection-photo.portrait { height: auto; aspect-ratio: 3 / 4; }
+.collection-photo.portrait img { object-fit: cover; }
+.collection-body { padding: 19px 20px 20px; }
+.collection-kicker { display: flex; align-items: center; gap: 7px; margin-bottom: 6px; color: var(--coral); font-size: 12px; font-weight: 900; }
+.collection-icon { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; background: var(--mint); font-size: 15px; }
+.collection-title { margin-bottom: 8px; color: var(--ink); font-family: 'Noto Serif TC', serif; font-size: 21px; font-weight: 900; line-height: 1.4; }
+.collection-copy { color: var(--muted); font-size: 14px; line-height: 1.85; }
+.collection-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 12px; }
+.collection-tag { border: 1px solid #C9DED8; background: var(--mint); color: #1E665A; padding: 4px 9px; font-size: 11px; font-weight: 900; }
+.collection-tip { margin-top: 13px; padding-top: 12px; border-top: 1px dashed var(--line); color: #4D5D5E; font-size: 13px; line-height: 1.8; }
+.collection-tip strong { color: var(--teal); }
 .food-grid, .shop-grid { grid-template-columns: repeat(3, 1fr); }
 .mini-card {
   background: #fff;
@@ -590,7 +599,6 @@ a { color: inherit; }
   .about-hero { align-items: flex-start; padding: 18px 16px; }
   .about-avatar { width: 88px; height: 88px; }
   .compare-grid, .placeholder-grid, .save-grid, .food-grid, .shop-grid, .trust-grid, .plug-demo, .photo-grid { grid-template-columns: 1fr; }
-  .spot-card { grid-template-columns: 1fr; }
   .flow-grid { grid-template-columns: 1fr; }
   .hero-content { padding-top: 74px; }
 }
@@ -603,7 +611,7 @@ a { color: inherit; }
     <span class="hero-badge">YoYo 帶你玩</span>
     <h1 class="hero-title">新加坡 <span>旅遊收藏版</span></h1>
     <p class="hero-sub">從濱海灣地標、南洋味道到送禮選物，一次收好。</p>
-    <span class="update-meta">最後整理：2026 年 7 月 27 日<br>景點、吃與買的旅行靈感。</span>
+    <span class="update-meta">最後整理：2026 年 8 月 1 日<br>景點、吃與買的旅行靈感。</span>
   </div>
 </header>
 
@@ -650,7 +658,7 @@ a { color: inherit; }
     <div class="note-card">
       <div class="note-title">✨ YoYo 的一句話提醒</div>
       <p>新加坡的迷人之處，是把城市、綠意、建築和日常生活收得很剛好。走在不同街區，總能遇到值得停下來看的小細節。</p>
-      <p style="margin-top:12px">這一頁先把景點、吃與買的靈感收好，行程內容之後再慢慢補進來。</p>
+      <p style="margin-top:12px">這一頁把景點、吃與買的靈感先收好，想看哪一段就從上方慢慢點進去。</p>
     </div>
 
     <div class="photo-grid">
@@ -665,35 +673,62 @@ a { color: inherit; }
       <p class="sec-desc">從濱海灣到星耀樟宜，收錄新加坡很有辨識度的城市畫面。</p>
     </div>
 
-    <div class="country-label">新加坡常見亮點</div>
-    <div class="spot-grid">
-      <div class="spot-card"><div class="spot-icon">🦁</div><div><div class="spot-name">魚尾獅 Merlion</div><div class="spot-copy">第一次來新加坡最經典的地標。拍照時可以把濱海灣天際線一起收進畫面，照片會更有「我到新加坡了」的感覺。</div></div></div>
-      <div class="spot-card"><div class="spot-icon">🏙️</div><div><div class="spot-name">金沙酒店 Marina Bay Sands</div><div class="spot-copy">新加坡天際線代表。它不只是飯店，也是大家認識濱海灣的視覺記憶點，白天和夜晚各有不同氣氛。</div></div></div>
-      <div class="spot-card"><div class="spot-icon">🌳</div><div><div class="spot-name">未來樹 Supertree Grove</div><div class="spot-copy">位在濱海灣花園，白天像城市森林，晚上燈光亮起更有未來感。若行程有夜間安排，記得把手機電量留給這裡。</div></div></div>
-    </div>
+    <div class="collection-intro"><strong>新加坡的景點不是越多越好，而是每一個畫面都很有自己的輪廓。</strong>從濱海灣的天際線，到機場裡的瀑布，走著走著就會收集到這座城市的不同樣子。</div>
 
-    <div class="photo-grid">
-      <div class="photo-card"><img src="assets/新加坡/merlion.jpg" alt="新加坡魚尾獅"><div class="photo-caption"><strong>魚尾獅 Merlion</strong>經典角度可以把水灣和城市天際線一起拍進去。</div></div>
-      <div class="photo-card"><img src="assets/新加坡/marina-bay-sands.jpg" alt="新加坡金沙酒店"><div class="photo-caption"><strong>金沙酒店 Marina Bay Sands</strong>濱海灣最有辨識度的天際線。</div></div>
-      <div class="photo-card"><img src="assets/新加坡/supertree-grove.jpg" alt="新加坡未來樹夜景"><div class="photo-caption"><strong>未來樹 Supertree Grove</strong>夜晚燈光亮起時，很有新加坡的未來城市感。</div></div>
-      <div class="photo-card"><img src="assets/新加坡/jewel-changi.jpg" alt="星耀樟宜室內瀑布"><div class="photo-caption"><strong>星耀樟宜 Jewel</strong>室內瀑布和玻璃穹頂，是很容易留下記憶點的一站。</div></div>
-    </div>
+    <article class="collection-card">
+      <div class="collection-photo portrait"><img src="assets/新加坡/merlion.jpg" alt="新加坡魚尾獅與濱海灣"></div>
+      <div class="collection-body">
+        <div class="collection-kicker"><span class="collection-icon">🦁</span>濱海灣・經典的第一張新加坡照片</div>
+        <h3 class="collection-title">魚尾獅 Merlion</h3>
+        <p class="collection-copy">站在水灣邊看魚尾獅，背後就是金沙和城市天際線。它不只是到此一遊的地標，更像是把新加坡的海、建築和旅行感放進同一個畫面裡。</p>
+        <div class="collection-tags"><span class="collection-tag">濱海灣</span><span class="collection-tag">經典地標</span><span class="collection-tag">城市天際線</span></div>
+        <p class="collection-tip"><strong>YoYo 小提醒：</strong>不用急著只拍魚尾獅，稍微把鏡頭拉遠一點，水灣和城市一起入鏡會更有感。</p>
+      </div>
+    </article>
 
-    <div class="card">
-      <div class="card-title">🛫 補充亮點｜星耀樟宜 Jewel</div>
-      <div class="card-body">Jewel 的室內瀑布、玻璃穹頂與商場動線，讓它成為很有記憶點的新加坡城市空間。</div>
-    </div>
+    <article class="collection-card">
+      <div class="collection-photo portrait"><img src="assets/新加坡/marina-bay-sands.jpg" alt="新加坡金沙酒店與濱海灣"></div>
+      <div class="collection-body">
+        <div class="collection-kicker"><span class="collection-icon">🏙️</span>濱海灣・一眼就認得出的城市線條</div>
+        <h3 class="collection-title">金沙酒店 Marina Bay Sands</h3>
+        <p class="collection-copy">這棟建築不只是一間飯店，也是很多人腦中第一個浮現的新加坡畫面。白天看起來俐落清楚，天色慢慢暗下來後，整個濱海灣的氣氛又會不太一樣。</p>
+        <div class="collection-tags"><span class="collection-tag">城市地標</span><span class="collection-tag">濱海灣散步</span><span class="collection-tag">白天與夜晚</span></div>
+        <p class="collection-tip"><strong>YoYo 小提醒：</strong>不用特別趕著衝進哪一棟樓，沿著周邊走走看看，就已經很有新加坡的感覺。</p>
+      </div>
+    </article>
+
+    <article class="collection-card">
+      <div class="collection-photo portrait"><img src="assets/新加坡/supertree-grove.jpg" alt="新加坡未來樹夜景"></div>
+      <div class="collection-body">
+        <div class="collection-kicker"><span class="collection-icon">🌳</span>濱海灣花園・城市裡長出來的未來森林</div>
+        <h3 class="collection-title">未來樹 Supertree Grove</h3>
+        <p class="collection-copy">金屬結構、植物和燈光放在一起，讓這裡有一種很新加坡的未來感。白天可以看空間感，晚上亮起來後則更像進到另一座城市森林。</p>
+        <div class="collection-tags"><span class="collection-tag">城市綠意</span><span class="collection-tag">夜景氛圍</span><span class="collection-tag">主題拍照</span></div>
+        <p class="collection-tip"><strong>YoYo 小提醒：</strong>喜歡拍照的人可以慢慢找角度，不用只對著最高的那一棵拍，周圍的光線也很好看。</p>
+      </div>
+    </article>
+
+    <article class="collection-card">
+      <div class="collection-photo portrait"><img src="assets/新加坡/jewel-changi.jpg" alt="星耀樟宜室內瀑布"></div>
+      <div class="collection-body">
+        <div class="collection-kicker"><span class="collection-icon">💧</span>樟宜機場・旅行還沒開始或快結束時的亮點</div>
+        <h3 class="collection-title">星耀樟宜 Jewel</h3>
+        <p class="collection-copy">室內瀑布、玻璃穹頂和商場空間放在一起，讓機場不只是等飛機的地方。走進來時很容易忘記自己其實還在機場裡，適合慢慢感受一下這個很特別的城市空間。</p>
+        <div class="collection-tags"><span class="collection-tag">室內瀑布</span><span class="collection-tag">機場亮點</span><span class="collection-tag">旅行收尾</span></div>
+        <p class="collection-tip"><strong>YoYo 小提醒：</strong>有機會經過就抬頭看看，這裡很適合替新加坡留下最後一張照片。</p>
+      </div>
+    </article>
 
   </section>
 
   <section class="section" id="s5">
     <div class="sec-head">
       <span class="sec-emoji">🍽️</span>
-      <h2 class="sec-title">美食特色</h2>
-      <p class="sec-desc">從熟食中心到早餐咖啡，新加坡的日常味道值得慢慢認識。</p>
+      <h2 class="sec-title">YoYo 帶你吃</h2>
+      <p class="sec-desc">從熟食中心到早餐咖啡，把新加坡的日常味道收進來。</p>
     </div>
 
-    <span class="country-label">新加坡必吃</span>
+    <span class="country-label">新加坡日常味道</span>
     <div class="food-grid">
       <div class="mini-card"><span class="emoji">🍗</span><strong>海南雞飯</strong><span>清爽但細節很多，醬料是靈魂。</span></div>
       <div class="mini-card"><span class="emoji">🍞</span><strong>咖椰吐司</strong><span>早餐代表，配半熟蛋和咖啡很在地。</span></div>
@@ -702,11 +737,11 @@ a { color: inherit; }
 
     <div class="card coral">
       <div class="card-title">🥢 YoYo 小提醒</div>
-      <div class="card-body">新馬很多食物名字看起來熟悉，但味道會因地區、族群和店家不同而變化。熟食中心、夜市和街區，本身也是很值得感受的旅行風景。</div>
+      <div class="card-body">新加坡的味道很有自己的節奏。熟食中心、商場美食街和街區小店，不用刻意追著清單跑，剛好遇到想吃的就試試看。</div>
     </div>
 
     <div class="card">
-      <div class="card-title">🌙 夜市與熟食中心怎麼逛</div>
+      <div class="card-title">🌙 熟食中心慢慢逛</div>
       <div class="card-body">
         熟食中心與商場美食街，是認識新加坡日常飲食最直接的方式。
       </div>
@@ -717,7 +752,7 @@ a { color: inherit; }
     <div class="sec-head">
       <span class="sec-emoji">🛍️</span>
       <h2 class="sec-title">YoYo 帶你買</h2>
-      <p class="sec-desc">從茶、咖啡到巧克力，這裡收錄幾樣新馬常見的伴手禮。</p>
+      <p class="sec-desc">從茶、咖啡到小包裝選物，挑幾樣旅行後還會想起新加坡的東西。</p>
     </div>
 
     <span class="country-label">新加坡伴手禮</span>
@@ -730,7 +765,7 @@ a { color: inherit; }
 </main>
 
 <footer class="footer">
-  <strong>🇸🇬🇲🇾 YoYo 帶你玩新馬</strong><br>
+  <strong>🇸🇬 YO! 旅行班・新加坡</strong><br>
   劉又銘 YoYo · 可樂旅遊 國際短程線<br>
   <div class="footer-contact">IG：@yoyo.touring ｜ LINE / 行程群組以行前通知為準</div>
 </footer>
