@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="YoYo 整理北越河內的景點、體驗、吃什麼與買什麼，先收好古街、湖邊咖啡與河內日常。">
+  <title>YoYo 帶你玩北越｜河內旅遊收藏版</title>
+  <style>
+    :root {
+      --red: #A83A2E;
+      --red-deep: #7C241E;
+      --gold: #EAB74E;
+      --teal: #197164;
+      --teal-soft: #E7F3EF;
+      --cream: #FAF7EF;
+      --paper: #FFFDF8;
+      --ink: #26313A;
+      --muted: #66717A;
+      --line: #E8DCC6;
+      --shadow: 0 10px 22px rgba(94, 61, 34, .08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--cream); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", sans-serif; }
+    button { font: inherit; }
+    .guide-back { position: absolute; z-index: 3; top: 18px; left: max(18px, calc((100% - 920px) / 2)); border: 1px solid rgba(255,255,255,.42); color: #fff; background: rgba(55, 21, 17, .22); padding: 9px 12px; text-decoration: none; font-size: 12px; font-weight: 800; }
+    .hero { min-height: 320px; position: relative; overflow: hidden; background: var(--red-deep); color: #fff; }
+    .hero::after { content: "HANOI"; position: absolute; right: -16px; bottom: 30px; color: rgba(255,255,255,.10); font-family: Georgia, "Noto Serif TC", serif; font-size: clamp(84px, 16vw, 210px); font-weight: 800; line-height: .8; pointer-events: none; }
+    .hero-content { position: relative; z-index: 1; width: min(920px, calc(100% - 36px)); margin: 0 auto; padding: 112px 0 60px; }
+    .hero-badge, .update-meta { display: inline-block; }
+    .hero-badge { border-radius: 99px; background: var(--gold); color: #5D3415; padding: 6px 11px; font-size: 12px; font-weight: 900; }
+    .hero-title { margin: 14px 0 6px; font-family: Georgia, "Noto Serif TC", serif; font-size: clamp(39px, 6vw, 62px); line-height: 1.1; letter-spacing: 0; }
+    .hero-title span { color: #FFD97A; }
+    .hero-sub { margin: 0; color: rgba(255,255,255,.88); font-size: 15px; line-height: 1.7; }
+    .gold-line { width: 42px; height: 3px; margin-top: 16px; background: var(--gold); }
+    .update-meta { margin-top: 13px; padding: 8px 10px; border: 1px solid rgba(255,255,255,.22); background: rgba(255,255,255,.10); color: rgba(255,255,255,.78); font-size: 12px; line-height: 1.65; }
+    .nav { position: sticky; top: 0; z-index: 5; display: flex; justify-content: center; gap: 4px; overflow-x: auto; border-bottom: 1px solid var(--line); background: rgba(255,253,248,.97); box-shadow: 0 2px 8px rgba(89,62,35,.05); }
+    .nav-btn { min-height: 50px; border: 0; border-bottom: 3px solid transparent; padding: 13px 15px 10px; background: transparent; color: var(--muted); cursor: pointer; font-size: 13px; font-weight: 800; white-space: nowrap; }
+    .nav-btn.active { color: var(--red); border-bottom-color: var(--red); }
+    .nav-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: -4px; }
+    .content { width: min(820px, calc(100% - 36px)); margin: 0 auto; padding: 38px 0 74px; }
+    .section { display: none; animation: fade .22s ease; }
+    .section.active { display: block; }
+    @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .sec-head { margin-bottom: 20px; }
+    .sec-emoji { display: block; margin-bottom: 6px; font-size: 28px; }
+    .sec-title { margin: 0; color: var(--red); font-family: Georgia, "Noto Serif TC", serif; font-size: 29px; line-height: 1.35; }
+    .sec-desc { margin: 5px 0 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+    .about-hero, .story-card, .notice-card, .food-card, .buy-card { border: 1px solid var(--line); background: var(--paper); box-shadow: var(--shadow); }
+    .about-hero { display: flex; align-items: center; gap: 18px; padding: 20px; margin-bottom: 15px; border-left: 5px solid var(--red); }
+    .about-avatar { width: 92px; height: 92px; flex: 0 0 auto; overflow: hidden; border: 3px solid var(--gold); border-radius: 50%; background: var(--teal-soft); }
+    .about-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .about-name { font-family: Georgia, "Noto Serif TC", serif; color: var(--red); font-size: 23px; font-weight: 900; }
+    .about-role { margin: 4px 0; color: var(--teal); font-size: 13px; font-weight: 900; }
+    .about-copy { color: var(--muted); font-size: 13px; line-height: 1.75; }
+    .story-card { position: relative; margin: 15px 0; padding: 20px; }
+    .story-card::before { content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 4px; background: var(--gold); }
+    .story-card.red::before { background: var(--red); }
+    .story-title { margin: 0 0 8px; color: var(--ink); font-size: 17px; font-weight: 900; }
+    .story-card p { margin: 0; color: #4B5963; font-size: 14px; line-height: 1.9; }
+    .city-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 15px 0; }
+    .city-fact { padding: 14px 11px; border: 1px solid var(--line); background: #FFF9E9; text-align: center; }
+    .city-fact strong { display: block; color: var(--red); font-size: 14px; }
+    .city-fact span { display: block; margin-top: 4px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+    .collection-intro { margin: 0 0 16px; padding: 15px 17px; border-left: 4px solid var(--gold); background: #FFF1C8; color: #5D4920; font-size: 14px; line-height: 1.85; }
+    .collection-intro strong { color: var(--red-deep); }
+    .place-tag { display: inline-flex; align-items: center; gap: 6px; margin: 6px 0 10px; border-radius: 999px; padding: 5px 12px; background: var(--red); color: #fff; font-size: 12px; font-weight: 900; }
+    .place-tag.green { background: var(--teal); }
+    .spot-block { margin-bottom: 22px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 13px 0; }
+    .tag { border: 1px solid #CBE0D8; background: var(--teal-soft); color: var(--teal); padding: 4px 9px; font-size: 11px; font-weight: 900; }
+    .yoyo-note { margin: 0; padding-top: 12px; border-top: 1px dashed var(--line); color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .yoyo-note strong { color: var(--teal); }
+    .food-list { display: grid; gap: 12px; }
+    .food-card { display: grid; grid-template-columns: 50px 1fr; gap: 14px; align-items: start; padding: 17px; }
+    .food-icon { display: grid; width: 50px; height: 50px; place-items: center; border-radius: 50%; background: #FFF0DB; font-size: 25px; }
+    .food-card h3 { margin: 0 0 5px; color: var(--ink); font-size: 17px; }
+    .food-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .food-card small { display: inline-block; margin-top: 8px; color: var(--teal); font-size: 11px; font-weight: 900; }
+    .notice-card { margin-top: 15px; padding: 17px; border-left: 5px solid var(--gold); background: #FFF8E6; color: #5C4D2F; font-size: 13px; line-height: 1.85; }
+    .notice-card strong { color: var(--red); }
+    .buy-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .buy-card { min-height: 172px; padding: 18px 15px; text-align: center; }
+    .buy-icon { display: block; margin-bottom: 7px; font-size: 30px; }
+    .longan-icon { position: relative; width: 18px; height: 18px; margin: 4px auto 15px; border: 2px solid #6B4028; border-radius: 50%; background: #98623C; font-size: 0; }
+    .longan-icon::before, .longan-icon::after { position: absolute; width: 14px; height: 14px; border: 2px solid #6B4028; border-radius: 50%; background: #A76D43; content: ""; }
+    .longan-icon::before { top: 7px; left: -12px; }
+    .longan-icon::after { top: 7px; right: -12px; }
+    .buy-card h3 { margin: 0 0 5px; font-size: 16px; }
+    .buy-card p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
+    .footer { padding: 34px 20px; background: var(--red); color: rgba(255,255,255,.82); text-align: center; font-size: 13px; line-height: 1.8; }
+    .footer strong { color: #fff; font-size: 15px; }
+    .footer-contact { margin-top: 6px; color: rgba(255,255,255,.93); }
+    @media (max-width: 650px) {
+      .hero { min-height: 292px; }
+      .hero-content { padding-top: 100px; }
+      .guide-back { left: 15px; top: 15px; }
+      .content { width: min(100% - 28px, 820px); padding-top: 30px; }
+      .nav { justify-content: flex-start; }
+      .nav-btn { padding-left: 12px; padding-right: 12px; font-size: 12px; }
+      .about-hero { align-items: flex-start; padding: 17px; }
+      .about-avatar { width: 78px; height: 78px; }
+      .city-grid { grid-template-columns: 1fr; }
+      .buy-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <a class="guide-back" href="index.html">← 回到地球導覽</a>
+  <header class="hero">
+    <div class="hero-content">
+      <span class="hero-badge">YoYo 帶你玩</span>
+      <h1 class="hero-title">北越 <span>河內旅遊收藏版</span></h1>
+      <p class="hero-sub">先從古街、湖邊咖啡和河內日常，慢慢認識北越。</p>
+      <div class="gold-line"></div>
+      <span class="update-meta">最後整理：2026 年 8 月 2 日<br>目前先收錄河內內容。</span>
+    </div>
+  </header>
+
+  <nav class="nav" aria-label="北越河內旅遊分類">
+    <button class="nav-btn active" onclick="show('intro', this)">👋 認識 YoYo</button>
+    <button class="nav-btn" onclick="show('spots', this)">🗺️ 景點</button>
+    <button class="nav-btn" onclick="show('experience', this)">💆 體驗什麼</button>
+    <button class="nav-btn" onclick="show('food', this)">🍜 吃什麼</button>
+    <button class="nav-btn" onclick="show('shopping', this)">🛍️ 買什麼</button>
+  </nav>
+
+  <main class="content">
+    <section class="section active" id="intro">
+      <div class="sec-head">
+        <span class="sec-emoji">👋</span>
+        <h2 class="sec-title">YoYo 帶你認識河內</h2>
+        <p class="sec-desc">它是越南的首都，也是一座把老故事、湖景和街頭日常放在一起的城市。</p>
+      </div>
+
+      <div class="about-hero">
+        <div class="about-avatar"><img src="assets/北越/yoyo-avatar.jpg" alt="劉又銘 YoYo 大頭照"></div>
+        <div>
+          <div class="about-name">劉又銘 YoYo</div>
+          <div class="about-role">可樂旅遊｜國際短程線領隊</div>
+          <div class="about-copy">Yo 在東南亞，帶團，也在過生活。河內不是只看景點的城市，走進巷子裡、坐在湖邊時，才會慢慢感覺到它的個性。</div>
+        </div>
+      </div>
+
+      <div class="city-grid">
+        <div class="city-fact"><strong>古街與法式風情</strong><span>寺廟、巷弄、黃色建築和教堂，散步時會一直遇見不同年代。</span></div>
+        <div class="city-fact"><strong>湖邊與咖啡</strong><span>還劍湖、西湖和路邊咖啡，把城市節奏拉得比較慢。</span></div>
+        <div class="city-fact"><strong>街頭日常</strong><span>河粉、烤肉米線、機車和小板凳，是河內很真實的生活畫面。</span></div>
+      </div>
+
+      <div class="story-card">
+        <h3 class="story-title">✨ 這趟河內可以先這樣理解</h3>
+        <p>河內不是一座要急著打卡完的城市。老城區可以慢慢逛，湖邊適合停一下，想喝咖啡時就找一個角落坐下來；那些看似平常的小畫面，反而最容易留下記憶。</p>
+      </div>
+
+      <div class="notice-card"><strong>YoYo 的一句話提醒。</strong><br>河內最有意思的地方，常常不是寫在清單上的那一站，而是走進巷弄、停在湖邊，或坐下來喝一杯咖啡時遇到的那種日常。</div>
+    </section>
+
+    <section class="section" id="spots">
+      <div class="sec-head">
+        <span class="sec-emoji">🗺️</span>
+        <h2 class="sec-title">YoYo 帶你走跳</h2>
+        <p class="sec-desc">河內的好看，常常藏在轉個彎後的街景、湖邊和人群裡。</p>
+      </div>
+
+      <div class="collection-intro"><strong>先不用把河內想成一張行程表。</strong>三十六古街和還劍湖是兩種不同的節奏：一邊熱鬧有生活氣，一邊適合在城市中留一點空白。</div>
+
+      <article class="spot-block">
+        <span class="place-tag">📍 三十六古街</span>
+        <div class="story-card red">
+          <h3 class="story-title">老城巷弄裡，邊走邊遇見河內</h3>
+          <p>古城區最適合用走的。街邊小吃、店鋪、寺廟和老房子的細節都在同一段路上，不用特別追著哪個點跑，慢慢感受巷弄裡的熱鬧就很有河內味。</p>
+          <div class="tags"><span class="tag">古街散步</span><span class="tag">街頭小吃</span><span class="tag">生活感</span></div>
+          <p class="yoyo-note"><strong>YoYo 小提醒：</strong>想逛店或拍照時，先記得回頭看一眼，老城區很多畫面都藏在身後。</p>
+        </div>
+      </article>
+
+      <article class="spot-block">
+        <span class="place-tag green">📍 還劍湖</span>
+        <div class="story-card">
+          <h3 class="story-title">走累時，來湖邊換一個城市節奏</h3>
+          <p>還劍湖把河內熱鬧的街景拉開了一點距離。周邊有商店、咖啡和在地小選物，沿著湖邊走走看看，很適合把匆忙的步調稍微放慢。</p>
+          <div class="tags"><span class="tag">湖邊散步</span><span class="tag">城市休息</span><span class="tag">在地選物</span></div>
+          <p class="yoyo-note"><strong>YoYo 小提醒：</strong>不必特別安排很久，剛好有一段空檔在湖邊走一圈，就很舒服。</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="sec-head">
+        <span class="sec-emoji">💆</span>
+        <h2 class="sec-title">YoYo 帶你放鬆一下</h2>
+        <p class="sec-desc">走累了不一定要再趕下一站，留一點時間給自己，也很像在旅行。</p>
+      </div>
+
+      <div class="food-list">
+        <article class="food-card">
+          <span class="food-icon">💇</span>
+          <div><h3>越式洗頭</h3><p>如果剛好有一段自由時間，洗頭是很輕鬆的在地體驗。行程走了幾天後，坐下來休息一下、把頭髮整理好，也會讓人重新有精神。</p><small>旅行中換個節奏</small></div>
+        </article>
+        <article class="food-card">
+          <span class="food-icon">🪨</span>
+          <div><h3>熱石按摩</h3><p>想安排按摩時，可以依自己的身體狀況和當天精神決定。開始前先和服務人員說好力道、溫度與自己不舒服的地方，放鬆起來會更安心。</p><small>走累後的休息選項</small></div>
+        </article>
+      </div>
+
+      <div class="notice-card"><strong>💛 YoYo 小提醒</strong><br>想安排體驗時，直接問領隊或當地導遊就好；我們會依當天的位置和時間，分享口碑不錯、適合大家參考的店家選項。</div>
+    </section>
+
+    <section class="section" id="food">
+      <div class="sec-head">
+        <span class="sec-emoji">🍜</span>
+        <h2 class="sec-title">YoYo 帶你吃</h2>
+        <p class="sec-desc">河內的味道很日常，走累了、坐下來、慢慢吃，就會很有感。</p>
+      </div>
+
+      <div class="food-list">
+        <article class="food-card">
+          <span class="food-icon">🍜</span>
+          <div><h3>Phở 10 Lý Quốc Sư</h3><p>想吃一碗河內河粉時，可以把它放進選項裡。熱湯、米線和牛肉的組合很簡單，也很能感覺到北越日常的味道。</p><small>河內河粉</small></div>
+        </article>
+        <article class="food-card">
+          <span class="food-icon">☕</span>
+          <div><h3>Cộng Cà Phê</h3><p>河內喝咖啡不只是解渴，更像讓自己坐下來看一會兒城市。想試椰子風味咖啡的人，可以照當下想喝的口味慢慢選。</p><small>咖啡休息</small></div>
+        </article>
+        <article class="food-card">
+          <span class="food-icon">🥖</span>
+          <div><h3>Bánh Mì 25</h3><p>古街散步時想來一份方便拿著走的越式三明治，這裡是可以記下來的選項。口味依自己的喜好挑就好。</p><small>散步小吃</small></div>
+        </article>
+      </div>
+
+      <div class="notice-card"><strong>🍴 河內慢慢吃</strong><br>不用為了集滿清單把每一餐排得太滿。走到肚子餓、剛好聞到香味時，停下來吃一點，反而比較像是在認識這座城市。逛三十六古街時，如果看到想嘗試的越南料理，挑一間坐下來體驗看看也不錯；餐廳環境與衛生狀況先自己看一下，覺得舒服再決定就好。</div>
+    </section>
+
+    <section class="section" id="shopping">
+      <div class="sec-head">
+        <span class="sec-emoji">🛍️</span>
+        <h2 class="sec-title">YoYo 帶你買</h2>
+        <p class="sec-desc">挑幾樣回家後還會想起河內的東西，就夠了。</p>
+      </div>
+
+      <div class="buy-grid">
+        <article class="buy-card"><span class="buy-icon">☕</span><h3>越南咖啡</h3><p>把咖啡香帶回家，旅行結束後還能慢慢回味。</p></article>
+        <article class="buy-card"><span class="buy-icon">🥜</span><h3>腰果</h3><p>原味或調味各有喜好，適合挑小包裝和朋友分享。</p></article>
+        <article class="buy-card"><span class="buy-icon">🥭</span><h3>果乾</h3><p>輕巧好分送，選自己會想吃、也想分享的口味就好。</p></article>
+        <article class="buy-card"><span class="buy-icon longan-icon" role="img" aria-label="龍眼乾"></span><h3>龍眼乾</h3><p>帶著自然甜味，想挑一點北越常見的果乾伴手禮時可以看看。</p></article>
+        <article class="buy-card"><span class="buy-icon">🍰</span><h3>綠豆糕</h3><p>小小一盒有北越的點心感，留給自己或送人都很剛好。</p></article>
+      </div>
+
+      <div class="notice-card"><strong>💡 YoYo 小提醒</strong><br>不需要照著清單全部買完。最後再想一想，哪些東西回家後真的會打開來吃、喝或送出去，就挑那些。</div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <strong>🇻🇳 YO! 旅行班・北越河內</strong><br>
+    劉又銘 YoYo・可樂旅遊 國際短程線
+    <div class="footer-contact">IG：@yoyo.touring｜行程群組以行前通知為準</div>
+  </footer>
+
+  <script>
+    function show(id, button) {
+      document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(navButton => navButton.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      button.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
