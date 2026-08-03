@@ -82,6 +82,9 @@
     .buy-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .buy-card { min-height: 172px; padding: 18px 15px; text-align: center; }
     .buy-icon { display: block; margin-bottom: 7px; font-size: 30px; }
+    .cashew-icon { position: relative; width: 38px; height: 38px; margin: 0 auto 7px; font-size: 0; }
+    .cashew-icon::before { position: absolute; top: 4px; left: 7px; width: 22px; height: 29px; border-radius: 58% 42% 58% 42%; background: #D6A35A; box-shadow: inset -3px -3px 0 rgba(110, 67, 29, .18); content: ""; transform: rotate(28deg); }
+    .cashew-icon::after { position: absolute; top: 8px; left: 15px; width: 15px; height: 22px; border-radius: 58% 42% 58% 42%; background: var(--paper); content: ""; transform: rotate(28deg); }
     .longan-icon { position: relative; width: 18px; height: 18px; margin: 4px auto 15px; border: 2px solid #6B4028; border-radius: 50%; background: #98623C; font-size: 0; }
     .longan-icon::before, .longan-icon::after { position: absolute; width: 14px; height: 14px; border: 2px solid #6B4028; border-radius: 50%; background: #A76D43; content: ""; }
     .longan-icon::before { top: 7px; left: -12px; }
@@ -241,7 +244,7 @@
 
       <div class="buy-grid">
         <article class="buy-card"><span class="buy-icon">☕</span><h3>越南咖啡</h3><p>把咖啡香帶回家，旅行結束後還能慢慢回味。</p></article>
-        <article class="buy-card"><span class="buy-icon">🥜</span><h3>腰果</h3><p>原味或調味各有喜好，適合挑小包裝和朋友分享。</p></article>
+        <article class="buy-card"><span class="buy-icon cashew-icon" role="img" aria-label="腰果"></span><h3>腰果</h3><p>原味或調味各有喜好，適合挑小包裝和朋友分享。</p></article>
         <article class="buy-card"><span class="buy-icon">🥭</span><h3>果乾</h3><p>輕巧好分送，選自己會想吃、也想分享的口味就好。</p></article>
         <article class="buy-card"><span class="buy-icon longan-icon" role="img" aria-label="龍眼乾"></span><h3>龍眼乾</h3><p>帶著自然甜味，想挑一點北越常見的果乾伴手禮時可以看看。</p></article>
         <article class="buy-card"><span class="buy-icon">🍰</span><h3>綠豆糕</h3><p>小小一盒有北越的點心感，留給自己或送人都很剛好。</p></article>
