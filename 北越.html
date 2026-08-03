@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="YoYo 整理北越河內的景點、體驗、吃什麼與買什麼，先收好古街、湖邊咖啡與河內日常。">
-  <title>YoYo 帶你玩北越・河內｜旅遊收藏版</title>
+  <meta name="description" content="YoYo 整理北越河內與下龍灣的景點、體驗、吃什麼與買什麼，先收好古街、湖邊咖啡與石灰岩海景。">
+  <title>YoYo 帶你玩北越・河內・下龍灣｜旅遊收藏版</title>
   <style>
     :root {
       --red: #A83A2E;
@@ -67,6 +67,12 @@
     .place-tag { display: inline-flex; align-items: center; gap: 6px; margin: 6px 0 10px; border-radius: 999px; padding: 5px 12px; background: var(--red); color: #fff; font-size: 12px; font-weight: 900; }
     .place-tag.green { background: var(--teal); }
     .spot-block { margin-bottom: 22px; }
+    .portrait-photo, .spot-photo, .photo-pair img, .food-photo-row img { display: block; width: 100%; border: 1px solid var(--line); object-fit: cover; }
+    .portrait-photo { width: min(100%, 340px); margin: 16px auto 0; }
+    .spot-photo { height: 280px; margin-top: 16px; }
+    .photo-pair, .food-photo-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 16px; }
+    .photo-pair img { height: 230px; }
+    .food-photo-row img { aspect-ratio: 4 / 3; }
     .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 13px 0; }
     .tag { border: 1px solid #CBE0D8; background: var(--teal-soft); color: var(--teal); padding: 4px 9px; font-size: 11px; font-weight: 900; }
     .yoyo-note { margin: 0; padding-top: 12px; border-top: 1px dashed var(--line); color: var(--muted); font-size: 13px; line-height: 1.8; }
@@ -82,9 +88,7 @@
     .buy-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .buy-card { min-height: 172px; padding: 18px 15px; text-align: center; }
     .buy-icon { display: block; margin-bottom: 7px; font-size: 30px; }
-    .cashew-icon { position: relative; width: 38px; height: 38px; margin: 0 auto 7px; font-size: 0; }
-    .cashew-icon::before { position: absolute; top: 4px; left: 7px; width: 22px; height: 29px; border-radius: 58% 42% 58% 42%; background: #D6A35A; box-shadow: inset -3px -3px 0 rgba(110, 67, 29, .18); content: ""; transform: rotate(28deg); }
-    .cashew-icon::after { position: absolute; top: 8px; left: 15px; width: 15px; height: 22px; border-radius: 58% 42% 58% 42%; background: var(--paper); content: ""; transform: rotate(28deg); }
+    .cashew-icon { width: 42px; height: 42px; margin: 0 auto 7px; object-fit: contain; }
     .longan-icon { position: relative; width: 18px; height: 18px; margin: 4px auto 15px; border: 2px solid #6B4028; border-radius: 50%; background: #98623C; font-size: 0; }
     .longan-icon::before, .longan-icon::after { position: absolute; width: 14px; height: 14px; border: 2px solid #6B4028; border-radius: 50%; background: #A76D43; content: ""; }
     .longan-icon::before { top: 7px; left: -12px; }
@@ -99,12 +103,14 @@
       .hero-content { padding-top: 100px; }
       .guide-back { left: 15px; top: 15px; }
       .content { width: min(100% - 28px, 820px); padding-top: 30px; }
-      .nav { justify-content: flex-start; }
-      .nav-btn { padding-left: 12px; padding-right: 12px; font-size: 12px; }
+      .nav { justify-content: center; gap: 0; }
+      .nav-btn { padding-left: 8px; padding-right: 8px; font-size: 11px; }
       .about-hero { align-items: flex-start; padding: 17px; }
       .about-avatar { width: 78px; height: 78px; }
       .city-grid { grid-template-columns: 1fr; }
       .buy-grid { grid-template-columns: 1fr; }
+      .spot-photo { height: 220px; }
+      .photo-pair img { height: 170px; }
     }
   </style>
 </head>
@@ -113,14 +119,14 @@
   <header class="hero">
     <div class="hero-content">
       <span class="hero-badge">YoYo 帶你玩</span>
-      <h1 class="hero-title">北越・河內 <span>旅遊收藏版</span></h1>
-      <p class="hero-sub">先從古街、湖邊咖啡和河內日常，慢慢認識北越。</p>
+      <h1 class="hero-title">北越・河內・下龍灣 <span>旅遊收藏版</span></h1>
+      <p class="hero-sub">從古街、湖邊咖啡到石灰岩海景，慢慢認識北越。</p>
       <div class="gold-line"></div>
-      <span class="update-meta">最後整理：2026 年 8 月 2 日<br>目前先收錄河內內容。</span>
+      <span class="update-meta">最後整理：2026 年 8 月 3 日<br>河內與下龍灣的旅行收藏。</span>
     </div>
   </header>
 
-  <nav class="nav" aria-label="北越河內旅遊分類">
+  <nav class="nav" aria-label="北越河內下龍灣旅遊分類">
     <button class="nav-btn active" onclick="show('intro', this)">👋 認識 YoYo</button>
     <button class="nav-btn" onclick="show('spots', this)">🗺️ 景點</button>
     <button class="nav-btn" onclick="show('experience', this)">💆 體驗什麼</button>
@@ -132,8 +138,8 @@
     <section class="section active" id="intro">
       <div class="sec-head">
         <span class="sec-emoji">👋</span>
-        <h2 class="sec-title">YoYo 帶你認識河內</h2>
-        <p class="sec-desc">它是越南的首都，也是一座把老故事、湖景和街頭日常放在一起的城市。</p>
+        <h2 class="sec-title">YoYo 帶你認識北越</h2>
+        <p class="sec-desc">河內有老故事、湖景和街頭日常；往下龍灣走，又會看見另一種開闊的海上風景。</p>
       </div>
 
       <div class="about-hero">
@@ -141,32 +147,32 @@
         <div>
           <div class="about-name">劉又銘 YoYo</div>
           <div class="about-role">可樂旅遊｜國際短程線領隊</div>
-          <div class="about-copy">Yo 在東南亞，帶團，也在過生活。河內不是只看景點的城市，走進巷子裡、坐在湖邊時，才會慢慢感覺到它的個性。</div>
+          <div class="about-copy">Yo 在東南亞，帶團，也在過生活。北越不只是一張景點清單，走進河內巷子、坐在湖邊，或看著下龍灣的石灰岩慢慢展開時，才會感覺到它的個性。</div>
         </div>
       </div>
 
       <div class="city-grid">
         <div class="city-fact"><strong>古街與法式風情</strong><span>寺廟、巷弄、黃色建築和教堂，散步時會一直遇見不同年代。</span></div>
         <div class="city-fact"><strong>湖邊與咖啡</strong><span>還劍湖、西湖和路邊咖啡，把城市節奏拉得比較慢。</span></div>
-        <div class="city-fact"><strong>街頭日常</strong><span>河粉、烤肉米線、機車和小板凳，是河內很真實的生活畫面。</span></div>
+        <div class="city-fact"><strong>石灰岩海景</strong><span>從海面望出去的島嶼與船影，是下龍灣最讓人放慢的畫面。</span></div>
       </div>
 
       <div class="story-card">
-        <h3 class="story-title">✨ 這趟河內可以先這樣理解</h3>
-        <p>河內不是一座要急著打卡完的城市。老城區可以慢慢逛，湖邊適合停一下，想喝咖啡時就找一個角落坐下來；那些看似平常的小畫面，反而最容易留下記憶。</p>
+        <h3 class="story-title">✨ 這趟北越可以先這樣理解</h3>
+        <p>河內不需要急著打卡完，下龍灣也不用急著把每一座島看清楚。老城區可以慢慢逛，湖邊適合停一下；到了海上，就把眼前的石灰岩和水面留給自己慢慢看。</p>
       </div>
 
-      <div class="notice-card"><strong>YoYo 的一句話提醒。</strong><br>河內最有意思的地方，常常不是寫在清單上的那一站，而是走進巷弄、停在湖邊，或坐下來喝一杯咖啡時遇到的那種日常。</div>
+      <div class="notice-card"><strong>YoYo 的一句話提醒。</strong><br>北越最有意思的地方，常常不是寫在清單上的那一站，而是走進河內巷弄、停在湖邊，或在下龍灣看著船慢慢往前時遇到的那種畫面。</div>
     </section>
 
     <section class="section" id="spots">
       <div class="sec-head">
         <span class="sec-emoji">🗺️</span>
         <h2 class="sec-title">YoYo 帶你走跳</h2>
-        <p class="sec-desc">河內的好看，常常藏在轉個彎後的街景、湖邊和人群裡。</p>
+        <p class="sec-desc">從轉個彎後的河內街景，到海面上的石灰岩群，北越有兩種很不一樣的好看。</p>
       </div>
 
-      <div class="collection-intro"><strong>先不用把河內想成一張行程表。</strong>三十六古街和還劍湖是兩種不同的節奏：一邊熱鬧有生活氣，一邊適合在城市中留一點空白。</div>
+      <div class="collection-intro"><strong>先不用把北越想成一張行程表。</strong>三十六古街、還劍湖和下龍灣是三種不同節奏：街區熱鬧有生活氣、湖邊適合留一點空白，到了海上就慢下來看風景。</div>
 
       <article class="spot-block">
         <span class="place-tag">📍 三十六古街</span>
@@ -175,6 +181,21 @@
           <p>古城區最適合用走的。街邊小吃、店鋪、寺廟和老房子的細節都在同一段路上，不用特別追著哪個點跑，慢慢感受巷弄裡的熱鬧就很有河內味。</p>
           <div class="tags"><span class="tag">古街散步</span><span class="tag">街頭小吃</span><span class="tag">生活感</span></div>
           <p class="yoyo-note"><strong>YoYo 小提醒：</strong>想逛店或拍照時，先記得回頭看一眼，老城區很多畫面都藏在身後。</p>
+          <img class="portrait-photo" src="assets/北越/hanoi-cathedral.jpg" alt="河內老城區附近的聖若瑟主教座堂" loading="lazy">
+        </div>
+      </article>
+
+      <article class="spot-block">
+        <span class="place-tag green">📍 下龍灣・英雄島</span>
+        <div class="story-card">
+          <h3 class="story-title">海面一打開，就是北越另一種風景</h3>
+          <p>下龍灣的石灰岩島嶼一座接著一座，船慢慢往前走時，視線會跟著水面和山形一直變化。登上英雄島附近的觀景處，能把船影、海灣和島嶼一起收進眼前。</p>
+          <div class="tags"><span class="tag">石灰岩海景</span><span class="tag">海上巡航</span><span class="tag">英雄島</span></div>
+          <p class="yoyo-note"><strong>YoYo 小提醒：</strong>海上風景不用急著拍完，留一點時間直接用眼睛看，反而更容易記得當下的感覺。</p>
+          <div class="photo-pair">
+            <img src="assets/北越/halong-bay.jpg" alt="下龍灣海面上的船與石灰岩島嶼" loading="lazy">
+            <img src="assets/北越/halong-ti-top-island.jpg" alt="從英雄島看下龍灣船隻與石灰岩島嶼" loading="lazy">
+          </div>
         </div>
       </article>
 
@@ -192,11 +213,20 @@
     <section class="section" id="experience">
       <div class="sec-head">
         <span class="sec-emoji">💆</span>
-        <h2 class="sec-title">YoYo 帶你放鬆一下</h2>
-        <p class="sec-desc">走累了不一定要再趕下一站，留一點時間給自己，也很像在旅行。</p>
+        <h2 class="sec-title">YoYo 帶你體驗</h2>
+        <p class="sec-desc">旅行不只有走景點。想上船看看海景，或留一段時間放鬆一下，都是認識北越的方式。</p>
       </div>
 
       <div class="food-list">
+        <article class="food-card">
+          <span class="food-icon">🚤</span>
+          <div><h3>下龍灣快艇活動</h3><p>坐上快艇靠近石灰岩島嶼，海風吹過來、山形也跟著靠近，是和搭大船不太一樣的看灣方式。實際是否安排與當天的活動內容，以行程現場說明為準。</p><small>海上近距離看風景</small>
+            <div class="food-photo-row">
+              <img src="assets/北越/halong-speedboat-01.jpg" alt="下龍灣快艇活動沿途的石灰岩島嶼" loading="lazy">
+              <img src="assets/北越/halong-speedboat-02.jpg" alt="下龍灣快艇活動時看見的海上岩山" loading="lazy">
+            </div>
+          </div>
+        </article>
         <article class="food-card">
           <span class="food-icon">💇</span>
           <div><h3>越式洗頭</h3><p>如果剛好有一段自由時間，洗頭是很輕鬆的在地體驗。行程走了幾天後，坐下來休息一下、把頭髮整理好，也會讓人重新有精神。</p><small>旅行中換個節奏</small></div>
@@ -228,7 +258,12 @@
         </article>
         <article class="food-card">
           <span class="food-icon">🥖</span>
-          <div><h3>Bánh Mì 25</h3><p>古街散步時想來一份方便拿著走的越式三明治，這裡是可以記下來的選項。口味依自己的喜好挑就好。</p><small>散步小吃</small></div>
+          <div><h3>Bánh Mì 25</h3><p>古街散步時想來一份方便拿著走的越式三明治，這裡是可以記下來的選項。口味依自己的喜好挑就好。</p><small>散步小吃</small>
+            <div class="food-photo-row">
+              <img src="assets/北越/banh-mi-25-shop.jpg" alt="河內 Bánh Mì 25 店外排隊的人潮" loading="lazy">
+              <img src="assets/北越/banh-mi-25-sandwich.jpg" alt="Bánh Mì 25 越式三明治" loading="lazy">
+            </div>
+          </div>
         </article>
       </div>
 
@@ -244,7 +279,7 @@
 
       <div class="buy-grid">
         <article class="buy-card"><span class="buy-icon">☕</span><h3>越南咖啡</h3><p>把咖啡香帶回家，旅行結束後還能慢慢回味。</p></article>
-        <article class="buy-card"><span class="buy-icon cashew-icon" role="img" aria-label="腰果"></span><h3>腰果</h3><p>原味或調味各有喜好，適合挑小包裝和朋友分享。</p></article>
+        <article class="buy-card"><img class="buy-icon cashew-icon" src="assets/北越/cashew-icon.png" alt="腰果" loading="lazy"><h3>腰果</h3><p>原味或調味各有喜好，適合挑小包裝和朋友分享。</p></article>
         <article class="buy-card"><span class="buy-icon">🥭</span><h3>果乾</h3><p>輕巧好分送，選自己會想吃、也想分享的口味就好。</p></article>
         <article class="buy-card"><span class="buy-icon longan-icon" role="img" aria-label="龍眼乾"></span><h3>龍眼乾</h3><p>帶著自然甜味，想挑一點北越常見的果乾伴手禮時可以看看。</p></article>
         <article class="buy-card"><span class="buy-icon">🍰</span><h3>綠豆糕</h3><p>小小一盒有北越的點心感，留給自己或送人都很剛好。</p></article>
@@ -255,7 +290,7 @@
   </main>
 
   <footer class="footer">
-    <strong>🇻🇳 YO! 旅行班・北越河內</strong><br>
+    <strong>🇻🇳 YO! 旅行班・北越・河內・下龍灣</strong><br>
     劉又銘 YoYo・可樂旅遊 國際短程線
     <div class="footer-contact">IG：@yoyo.touring｜行程群組以行前通知為準</div>
   </footer>
