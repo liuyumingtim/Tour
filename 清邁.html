@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="YoYo 帶你認識清邁與南奔：古城、寺廟、山城、咖啡、夜市與北泰旅行感。">
-  <title>YoYo 帶你玩清邁｜清邁旅遊收藏版</title>
+  <meta name="description" content="YoYo 帶你認識清邁與南奔：景點、體驗、北泰料理與旅行收藏。">
+  <title>YoYo 帶你玩清邁｜旅遊收藏版</title>
   <style>
     :root {
       --ink: #26342d;
       --muted: #68766d;
-      --green: #56766a;
-      --deep-green: #355d50;
+      --green: #2d7d71;
+      --deep-green: #195d55;
       --mint: #e4eee8;
       --cream: #fbf5e9;
-      --sand: #ead7ae;
-      --orange: #c87748;
+      --sand: #f0c867;
+      --orange: #cf6343;
       --rose: #c98f83;
       --white: #fffdf8;
-      --shadow: 0 16px 42px rgba(49, 66, 57, .12);
+      --shadow: 0 12px 30px rgba(36, 78, 70, .10);
     }
 
     * { box-sizing: border-box; }
@@ -27,7 +27,7 @@
     body {
       margin: 0;
       color: var(--ink);
-      background: linear-gradient(180deg, #f9f3e7 0%, #fffdf8 44%, #edf4ee 100%);
+      background: #fcfaf4;
       font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
       line-height: 1.75;
     }
@@ -57,45 +57,43 @@
       position: relative;
       overflow: hidden;
       min-height: 390px;
-      border-radius: 30px;
+      border-radius: 8px;
       padding: 34px;
       display: flex;
       align-items: flex-end;
-      background:
-        radial-gradient(circle at 82% 18%, rgba(255,255,255,.72) 0 4%, transparent 5%),
-        radial-gradient(circle at 76% 26%, rgba(255,255,255,.5) 0 8%, transparent 9%),
-        linear-gradient(135deg, rgba(53,93,80,.88), rgba(112,145,117,.76) 46%, rgba(224,184,119,.8));
+      background: var(--deep-green);
       box-shadow: var(--shadow);
       isolation: isolate;
     }
 
-    .hero::before,
+    .hero::before {
+      content: "CHIANG MAI";
+      position: absolute;
+      z-index: 0;
+      right: -12px;
+      bottom: 28px;
+      color: rgba(255,255,255,.09);
+      font-family: Georgia, "Noto Serif TC", serif;
+      font-size: clamp(68px, 13vw, 160px);
+      font-weight: 800;
+      line-height: .8;
+      pointer-events: none;
+    }
+
     .hero::after {
       content: "";
       position: absolute;
-      z-index: -1;
-      border-radius: 50%;
-      filter: blur(1px);
-    }
-
-    .hero::before {
-      width: 430px;
-      height: 230px;
-      right: -76px;
-      bottom: -98px;
-      background: rgba(247, 220, 160, .55);
-      transform: rotate(-13deg);
-    }
-
-    .hero::after {
-      width: 340px;
-      height: 180px;
-      left: -112px;
-      top: -76px;
-      background: rgba(181, 215, 184, .28);
+      z-index: 0;
+      right: 0;
+      bottom: 0;
+      width: 42%;
+      height: 5px;
+      background: var(--sand);
     }
 
     .hero-copy {
+      position: relative;
+      z-index: 1;
       max-width: 720px;
       color: #fffdf7;
     }
@@ -144,6 +142,7 @@
 
     .hero-stamp {
       position: absolute;
+      z-index: 1;
       top: 30px;
       right: 30px;
       width: 92px;
@@ -186,7 +185,7 @@
       margin: 18px 0;
       padding: 18px 22px;
       border: 1px solid rgba(86,118,106,.18);
-      border-radius: 20px;
+      border-radius: 8px;
       background: rgba(255,253,248,.84);
       box-shadow: 0 10px 28px rgba(49,66,57,.06);
     }
@@ -221,14 +220,14 @@
 
     .nav {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 6px;
     }
 
     .nav-btn {
       min-height: 48px;
       border: 0;
-      border-radius: 13px;
+      border-radius: 8px;
       color: var(--muted);
       background: transparent;
       cursor: pointer;
@@ -236,6 +235,8 @@
       font-size: 14px;
       font-weight: 800;
     }
+
+    .mobile-nav-label { display: none; }
 
     .nav-btn:hover,
     .nav-btn.active {
@@ -273,11 +274,9 @@
     }
 
     .intro-card,
-    .quote-card,
-    .review-card,
-    .faq-card {
+    .quote-card {
       border: 1px solid rgba(86,118,106,.15);
-      border-radius: 22px;
+      border-radius: 8px;
       background: rgba(255,253,248,.9);
       box-shadow: 0 10px 28px rgba(49,66,57,.06);
     }
@@ -297,9 +296,7 @@
     }
 
     .intro-card h3,
-    .quote-card h3,
-    .review-card h3,
-    .faq-card h3 {
+    .quote-card h3 {
       margin: 0 0 8px;
       color: var(--deep-green);
       font-size: 19px;
@@ -324,7 +321,7 @@
       position: relative;
       overflow: hidden;
       border: 1px solid rgba(86,118,106,.14);
-      border-radius: 22px;
+      border-radius: 8px;
       background: rgba(255,253,248,.92);
       box-shadow: 0 10px 28px rgba(49,66,57,.06);
     }
@@ -339,7 +336,7 @@
       display: block;
       width: 100%;
       height: 7px;
-      background: linear-gradient(90deg, var(--green), var(--sand));
+      background: var(--green);
     }
 
     .understand-card h3,
@@ -358,23 +355,12 @@
     .quote-card {
       margin-top: 18px;
       padding: 24px;
-      background: linear-gradient(135deg, #e5efe7, #fffaf0);
+      background: #edf5ef;
     }
 
     .quote-card p { margin: 0; color: #43584d; font-size: 20px; font-weight: 700; }
 
-    .review-card {
-      margin-top: 18px;
-      padding: 18px 22px;
-      border-color: rgba(200,119,72,.22);
-      background: #fff8ef;
-    }
-
-    .review-card p { margin: 0; color: #765746; font-size: 14px; }
-
     .spot-card { display: flex; flex-direction: column; }
-
-    .spot-card.concept { background: linear-gradient(180deg, #fffdf8, #f8eee6); }
 
     .spot-meta {
       display: flex;
@@ -392,8 +378,6 @@
       font-size: 12px;
       font-weight: 800;
     }
-
-    .concept .tag { color: #84533d; background: #f3dfcf; }
 
     .spot-card dl { margin: 0 20px 20px; }
 
@@ -419,12 +403,6 @@
       font-size: 14px;
     }
 
-    .faq-grid { grid-template-columns: 1fr; }
-
-    .faq-card { padding: 20px 22px; }
-
-    .faq-card p { margin: 0; color: #4b5b52; }
-
     footer {
       margin-top: 32px;
       padding: 20px 0 0;
@@ -438,14 +416,15 @@
 
     @media (max-width: 760px) {
       .page-shell { width: min(100% - 20px, 640px); padding-top: 14px; }
-      .hero { min-height: 460px; padding: 24px; border-radius: 24px; }
+      .hero { min-height: 390px; padding: 24px; border-radius: 8px; }
       .hero-stamp { top: 20px; right: 20px; width: 76px; height: 76px; font-size: 11px; }
       .hero-copy { padding-top: 100px; }
       .hero-summary { font-size: 15px; }
-      .quick-note { grid-template-columns: 1fr; gap: 12px; }
       .nav-wrap { top: 6px; }
-      .nav { grid-template-columns: repeat(2, 1fr); }
-      .nav-btn { min-height: 44px; font-size: 13px; }
+      .nav { grid-template-columns: repeat(5, minmax(0, 1fr)); overflow: hidden; }
+      .nav-btn { min-width: 0; min-height: 44px; padding: 6px 2px; font-size: 11px; }
+      .desktop-nav-label { display: none; }
+      .mobile-nav-label { display: inline; }
       .section-heading { display: block; }
       .section-heading p { margin-top: 8px; }
       .understand-grid,
@@ -475,26 +454,19 @@
       </div>
     </header>
 
-    <section class="quick-note" aria-label="頁面提醒">
-      <div>
-        <strong>這不是固定行程表</strong>
-        <p>景點先用清邁與南奔的常見亮點整理，實際安排依各團體行程說明會資料與現場通知為準。</p>
-      </div>
-      <a class="ig-link" href="https://www.instagram.com/youyo.touring/" target="_blank" rel="noopener">追蹤 YoYo</a>
-    </section>
-
     <div class="nav-wrap">
       <nav class="nav" aria-label="清邁旅遊分類">
-        <button class="nav-btn active" type="button" data-target="s0">👋 認識 YoYo</button>
-        <button class="nav-btn" type="button" data-target="s1">🗺️ 景點</button>
-        <button class="nav-btn" type="button" data-target="s2">🍜 吃什麼</button>
-        <button class="nav-btn" type="button" data-target="s3">🛍️ 買什麼</button>
+        <button class="nav-btn active" type="button" data-target="s0"><span class="desktop-nav-label">👋 認識 YoYo</span><span class="mobile-nav-label">👋 YoYo</span></button>
+        <button class="nav-btn" type="button" data-target="s1"><span class="desktop-nav-label">🗺️ 景點</span><span class="mobile-nav-label">🗺️ 景點</span></button>
+        <button class="nav-btn" type="button" data-target="s2"><span class="desktop-nav-label">💆 體驗什麼</span><span class="mobile-nav-label">💆 體驗</span></button>
+        <button class="nav-btn" type="button" data-target="s3"><span class="desktop-nav-label">🍜 吃什麼</span><span class="mobile-nav-label">🍜 吃什麼</span></button>
+        <button class="nav-btn" type="button" data-target="s4"><span class="desktop-nav-label">🛍️ 買什麼</span><span class="mobile-nav-label">🛍️ 買什麼</span></button>
       </nav>
     </div>
 
     <section class="section active" id="s0">
       <div class="section-heading">
-        <h2>先認識清邁，再開始走</h2>
+        <h2>YoYo 帶你認識清邁</h2>
         <p>清邁不是曼谷的慢速版本，它有自己的山城、古城、蘭納文化和生活節奏。</p>
       </div>
 
@@ -529,10 +501,6 @@
         <p>清邁好玩的地方，不是把景點一個個打卡，而是從寺廟、山路、古城、咖啡和夜市裡，慢慢感覺到北泰自己的生活節奏。</p>
       </div>
 
-      <div class="review-card">
-        <h3>這一頁怎麼使用？</h3>
-        <p>這一頁先陪你認識清邁；入境、TDAC、行李與回台提醒，請另外查看 <a href="全境注意事項.html?country=th">泰國全境注意事項</a>。</p>
-      </div>
     </section>
 
     <section class="section" id="s1">
@@ -602,23 +570,26 @@
           <dl><dt>這裡有什麼好看</dt><dd>舊菸葉烘房、紅磚建築、爬藤與老工業空間重新變成文化、餐飲和休閒場域。</dd><dt>YoYo 小提醒</dt><dd>先使用「文化資產保存獎項肯定的活化園區」這種較精準的說法。</dd></dl>
         </article>
 
-        <article class="spot-card concept">
-          <h3>清邁郊區大象互動體驗</h3>
-          <div class="spot-meta"><span class="tag">概念卡</span><span class="tag">動物互動</span><span class="tag">清邁郊區</span></div>
-          <dl><dt>先這樣理解</dt><dd>近距離觀察、餵食或在工作人員帶領下認識大象的體驗；正式店名與位置待確認。</dd><dt>YoYo 小提醒</dt><dd>餵食、拍照和靠近距離都依現場工作人員指示，不自行碰觸或拉扯大象。</dd></dl>
-        </article>
-
-        <article class="spot-card concept">
-          <h3>山區森林美學莊園</h3>
-          <div class="spot-meta"><span class="tag">概念卡</span><span class="tag">山區景色</span><span class="tag">拍照體驗</span></div>
-          <dl><dt>先這樣理解</dt><dd>水池、花園、山景、拍照場景與戶外體驗集中在同一個空間裡；正式名稱與位置待確認。</dd><dt>YoYo 小提醒</dt><dd>雨後地面可能濕滑；如果有戶外活動，鞋子和隨身物品要先準備好。</dd></dl>
-        </article>
       </div>
 
       <div class="subtle-note">以下景點為清邁與南奔的常見亮點，實際景點安排依各團體行程說明會資料為主。清萊先不放在這一版，之後有實際走訪與資料再另外加入。</div>
     </section>
 
     <section class="section" id="s2">
+      <div class="section-heading">
+        <h2>清邁可以體驗什麼？</h2>
+        <p>旅行不只把景點走完，留一段時間放鬆或換個樣子玩，也會讓這趟泰北更有記憶。</p>
+      </div>
+
+      <div class="food-grid">
+        <article class="food-card"><h3>泰式按摩與洗頭</h3><p>走了一整天後，想讓自己好好休息一下，泰式按摩或洗頭都是很舒服的選項。開始前先說好力道和自己在意的地方就好。</p></article>
+        <article class="food-card"><h3>泰服與寺廟拍照</h3><p>想為旅行留一組不一樣的照片時，泰服體驗可以依自己的喜好安排。寺廟參觀仍要留意衣著與現場拍照規定。</p></article>
+      </div>
+
+      <div class="subtle-note">想安排體驗時，直接問領隊或當地導遊就好；我們會依當天的位置與時間，分享口碑不錯、適合大家參考的店家選項。</div>
+    </section>
+
+    <section class="section" id="s3">
       <div class="section-heading">
         <h2>來清邁，可以吃什麼？</h2>
         <p>不用一次吃完所有名物，挑幾樣真正有興趣的，旅行會更舒服。</p>
@@ -630,13 +601,12 @@
         <article class="food-card"><h3>椰子與泰國水果</h3><p>天氣熱時，現場喝椰子或吃水果，是很有旅行感的小享受。山竹、龍眼和芒果適合在當地慢慢吃。</p></article>
         <article class="food-card"><h3>泰奶與清邁咖啡</h3><p>逛古城、尼曼或夜市之間，找一間咖啡店坐一下，也是認識清邁的一種方式。甜度照自己的習慣調整就好。</p></article>
         <article class="food-card"><h3>芒果糯米與夜市甜點</h3><p>適合走累之後和同行的人一起分著吃。看到想試的品項，先買一份分享，不必一次買太多。</p></article>
-        <article class="food-card"><h3>YoYo 私心推薦｜試寫版</h3><p>第一次去清邁，不要只把時間留給大型景點。找一間咖啡店、吃一碗 Khao Soi，再在夜市慢慢走一圈，反而比較容易記住清邁的味道。</p></article>
       </div>
 
-      <div class="subtle-note">回台前能不能攜帶食品，請查看最新官方規定與泰國全境注意事項，不要把個人經驗當成通關規則。</div>
+      <div class="subtle-note">古城與夜市看到想試的料理時，挑一間環境覺得舒服的坐下來吃就好。餐點衛生與個人飲食狀況還是依自己當下判斷，不用為了集滿清單而勉強。</div>
     </section>
 
-    <section class="section" id="s3">
+    <section class="section" id="s4">
       <div class="section-heading">
         <h2>清邁可以買什麼？</h2>
         <p>伴手禮不用買得很滿，挑一個自己真的喜歡、回台灣也用得到的小物就好。</p>
@@ -648,28 +618,14 @@
         <article class="buy-card"><h3>草藥膏與鼻通</h3><p>泰國常見的小型實用物，走路多、天氣熱或想提神時，很多人會買來自己用或送朋友。</p></article>
         <article class="buy-card"><h3>手工藝與夜市小物</h3><p>手作包、飾品、木雕、布品和小型家飾，常常比制式紀念品更能留下清邁的手感。</p></article>
         <article class="buy-card"><h3>7-11 與便利小物</h3><p>飲料、零食和日常小物可以當成旅途中的小發現，看到有興趣的就先記下來，不需要每樣都買。</p></article>
-        <article class="buy-card"><h3>YoYo 私心推薦｜試寫版</h3><p>清邁的伴手禮可以慢慢挑，不用把每一種都帶回家。選一個自己真的喜歡的小物，通常比買一大袋更有旅行記憶。</p></article>
       </div>
 
-      <div class="subtle-note">液體、易漏、易碎或需要托運的物品，回程前要另外整理；不確定能不能帶回台灣，就先問領隊或不要買。</div>
-
-      <div class="section-heading faq-heading">
-        <h2>清邁 FAQ</h2>
-        <p>把團員最常問的幾個問題先放在這裡，詳細規定仍回到國家注意事項頁。</p>
-      </div>
-
-      <div class="faq-grid">
-        <article class="faq-card"><h3>清邁會很熱嗎？</h3><p>白天可能會熱，市區、戶外和山區的體感也會不一樣。早晚或上山時可以準備一件薄外套。</p></article>
-        <article class="faq-card"><h3>寺廟可以穿短褲嗎？</h3><p>不建議穿太短；進寺廟前以有袖上衣、遮住肩膀與膝蓋為原則，最後依現場指示調整。</p></article>
-        <article class="faq-card"><h3>自由活動可以搭 Grab 嗎？</h3><p>可以把 Grab 當成自由活動時可能使用的交通選項，建議先在台灣註冊好，搭車前確認上車點、車牌和集合時間。</p></article>
-        <article class="faq-card"><h3>南奔和清邁有什麼不一樣？</h3><p>南奔離清邁不算遠，但旅行感通常更慢、更地方；火車、老寺廟和文化空間會讓人看到北泰的另一面。</p></article>
-        <article class="faq-card"><h3>這一頁是不是每一團的固定行程？</h3><p>不是。這是清邁的收藏與認識指南，實際去哪裡、怎麼走、停留多久，以各團體行程說明會資料和現場通知為準。</p></article>
-      </div>
+      <div class="subtle-note">液體、易漏、易碎或需要托運的物品，回程前再和行李一起整理。若不確定攜帶方式，問一下領隊會比較安心。</div>
     </section>
 
     <footer>
       <p>最後整理：2026 年 8 月 2 日（台北時間）｜內容會隨官方規定與 YoYo 實際走訪持續更新。</p>
-      <p><a href="全境注意事項.html?country=th">出發前必看：泰國全境注意事項</a> ｜ <a href="https://www.instagram.com/youyo.touring/" target="_blank" rel="noopener">@yoyo.touring</a></p>
+      <p><a href="國家提醒.html?country=th">出發前必看：泰國全境注意事項</a> ｜ <a href="https://www.instagram.com/youyo.touring/" target="_blank" rel="noopener">@yoyo.touring</a></p>
     </footer>
   </main>
 
@@ -680,7 +636,7 @@
     function showSection(id, button) {
       sections.forEach(section => section.classList.toggle('active', section.id === id));
       buttons.forEach(item => item.classList.toggle('active', item === button));
-      if (history.replaceState) history.replaceState(null, '', `#${id}`);
+      if (history.replaceState) history.replaceState(null, '', window.location.pathname);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -688,9 +644,6 @@
       button.addEventListener('click', () => showSection(button.dataset.target, button));
     });
 
-    const initial = window.location.hash.replace('#', '');
-    const initialButton = [...buttons].find(button => button.dataset.target === initial);
-    if (initialButton) showSection(initial, initialButton);
   </script>
 </body>
 </html>
