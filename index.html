@@ -9,25 +9,26 @@
   <title>YO! 旅行班｜地球導覽入口</title>
   <style>
     :root {
-      --bg: #12334a;
-      --bg-2: #2b2948;
-      --ink: #f7fbff;
-      --soft: rgba(247, 251, 255, 0.72);
-      --muted: rgba(247, 251, 255, 0.56);
-      --panel: rgba(255, 255, 255, 0.1);
-      --panel-strong: rgba(255, 255, 255, 0.16);
-      --line: rgba(255, 255, 255, 0.18);
-      --paper: #f6fbff;
-      --paper-ink: #1e2d42;
-      --paper-muted: #64748b;
-      --aqua: #5ee7df;
-      --coral: #ff7468;
-      --pink: #ff8db8;
-      --violet: #a690ff;
-      --gold: #ffc576;
-      --mint: #77e0cc;
-      --shadow: 0 26px 80px rgba(0, 0, 0, 0.3);
-      --radius: 8px;
+      --bg: #147f9d;
+      --bg-2: #6268ba;
+      --ink: #fffaf1;
+      --soft: rgba(255, 253, 247, 0.86);
+      --muted: rgba(255, 253, 247, 0.68);
+      --panel: rgba(255, 255, 255, 0.16);
+      --panel-strong: rgba(255, 255, 255, 0.24);
+      --line: rgba(255, 255, 255, 0.3);
+      --paper: #fffaf1;
+      --paper-ink: #173451;
+      --paper-muted: #63758b;
+      --aqua: #67e4df;
+      --coral: #ff765e;
+      --pink: #ff91ad;
+      --violet: #9da9ff;
+      --gold: #ffd166;
+      --mint: #8fe4b8;
+      --sky: #83cfff;
+      --shadow: 0 24px 65px rgba(19, 58, 96, 0.24);
+      --radius: 16px;
       --content: min(1180px, calc(100% - 36px));
     }
 
@@ -50,10 +51,10 @@
       font-family: ui-rounded, -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
       color: var(--ink);
       background:
-        radial-gradient(circle at 18% 10%, rgba(94, 231, 223, 0.25), transparent 28%),
-        radial-gradient(circle at 82% 16%, rgba(255, 197, 118, 0.22), transparent 26%),
-        radial-gradient(circle at 55% 86%, rgba(255, 141, 184, 0.14), transparent 34%),
-        linear-gradient(145deg, var(--bg), var(--bg-2) 54%, #1a4050);
+        radial-gradient(circle at 10% 5%, rgba(135, 246, 228, 0.6), transparent 27%),
+        radial-gradient(circle at 91% 8%, rgba(255, 221, 132, 0.52), transparent 24%),
+        radial-gradient(circle at 64% 88%, rgba(255, 135, 111, 0.32), transparent 34%),
+        linear-gradient(145deg, var(--bg), var(--bg-2) 58%, #22a58f);
       line-height: 1.65;
       letter-spacing: 0;
     }
@@ -63,12 +64,13 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      opacity: 0;
+      opacity: 0.2;
       background-image:
         radial-gradient(circle, rgba(255,255,255,0.9) 0 1px, transparent 1.5px),
-        radial-gradient(circle, rgba(119,224,204,0.55) 0 1px, transparent 1.5px);
-      background-size: 72px 72px, 118px 118px;
-      background-position: 0 0, 36px 18px;
+        radial-gradient(circle, rgba(131,207,255,0.7) 0 1px, transparent 1.5px),
+        linear-gradient(115deg, transparent 0 48%, rgba(255,255,255,0.1) 48.2% 48.45%, transparent 48.7% 100%);
+      background-size: 72px 72px, 118px 118px, 260px 260px;
+      background-position: 0 0, 36px 18px, 0 0;
       mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,0.72) 72%, transparent 100%);
     }
 
@@ -108,7 +110,7 @@
       top: 0;
       z-index: 30;
       border-bottom: 1px solid var(--line);
-      background: rgba(17, 19, 38, 0.72);
+      background: rgba(8, 80, 108, 0.78);
       backdrop-filter: blur(18px);
     }
 
@@ -124,7 +126,7 @@
 
     .country-picker-bar {
       border-bottom: 1px solid var(--line);
-      background: rgba(17, 19, 38, 0.5);
+      background: rgba(35, 117, 140, 0.62);
     }
 
     .country-picker-inner {
@@ -167,10 +169,10 @@
       flex: 0 0 auto;
       min-height: 32px;
       border: 1px solid rgba(255,255,255,0.16);
-      border-radius: var(--radius);
+      border-radius: 999px;
       padding: 5px 9px;
       color: rgba(255,255,255,0.84);
-      background: rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.09);
       font-size: 13px;
       font-weight: 900;
     }
@@ -187,10 +189,10 @@
     .luggage-quick-bar {
       width: 100%;
       border: 0;
-      border-bottom: 1px solid rgba(255, 116, 104, 0.32);
+      border-bottom: 1px solid rgba(255, 209, 102, 0.42);
       padding: 0;
       color: inherit;
-      background: rgba(255, 116, 104, 0.1);
+      background: linear-gradient(90deg, rgba(255, 118, 94, 0.22), rgba(255, 209, 102, 0.14), rgba(103, 228, 223, 0.12));
       text-align: left;
     }
 
@@ -208,6 +210,14 @@
       color: #ffffff;
       font-size: 14px;
       font-weight: 950;
+    }
+
+    .luggage-quick-title::before {
+      content: "✈";
+      display: inline-block;
+      margin-right: 7px;
+      color: var(--gold);
+      transform: rotate(-8deg);
     }
 
     .luggage-quick-summary {
@@ -230,7 +240,7 @@
 
     .luggage-quick-bar:hover,
     .luggage-quick-bar:focus-visible {
-      background: rgba(255, 116, 104, 0.18);
+      background: linear-gradient(90deg, rgba(255, 118, 94, 0.32), rgba(255, 209, 102, 0.22), rgba(103, 228, 223, 0.18));
       outline: none;
     }
 
@@ -301,10 +311,10 @@
       width: 100%;
       height: 42px;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
+      border-radius: 999px;
       padding: 0 12px;
       color: #ffffff;
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.1);
       outline: none;
     }
 
@@ -320,7 +330,7 @@
     .control-btn {
       min-height: 42px;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
+      border-radius: 999px;
       padding: 8px 12px;
       color: #ffffff;
       background: rgba(255, 255, 255, 0.08);
@@ -336,9 +346,22 @@
     }
 
     .hero {
+      position: relative;
       width: var(--content);
       margin: 0 auto;
-      padding: 58px 0 24px;
+      padding: 62px 0 24px;
+    }
+
+    .hero::after {
+      content: "DREAM  •  PACK  •  GO";
+      position: absolute;
+      top: 70px;
+      right: 2px;
+      color: rgba(255, 209, 102, 0.74);
+      font-size: 11px;
+      font-weight: 950;
+      letter-spacing: 0.2em;
+      transform: rotate(7deg);
     }
 
     .eyebrow {
@@ -346,9 +369,9 @@
       margin: 0 0 14px;
       padding: 7px 10px;
       border: 1px solid rgba(255, 197, 118, 0.28);
-      border-radius: var(--radius);
-      color: #ffe1a9;
-      background: rgba(255, 197, 118, 0.1);
+      border-radius: 999px;
+      color: #ffe7a8;
+      background: rgba(255, 209, 102, 0.12);
       font-size: 13px;
       font-weight: 950;
     }
@@ -364,7 +387,7 @@
 
     .gradient-text {
       color: transparent;
-      background: linear-gradient(90deg, var(--aqua), var(--gold) 45%, var(--coral));
+      background: linear-gradient(90deg, var(--sky), var(--aqua) 30%, var(--gold) 64%, var(--coral));
       -webkit-background-clip: text;
       background-clip: text;
     }
@@ -374,6 +397,41 @@
       margin: 18px 0 0;
       color: var(--soft);
       font-size: 18px;
+    }
+
+    .hero-trip-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .hero-trip-tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 999px;
+      padding: 6px 11px;
+      color: rgba(255,255,255,0.88);
+      background: rgba(255,255,255,0.1);
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .hero-trip-tag:nth-child(1) {
+      border-color: rgba(131, 207, 255, 0.42);
+      background: rgba(131, 207, 255, 0.13);
+    }
+
+    .hero-trip-tag:nth-child(2) {
+      border-color: rgba(255, 209, 102, 0.42);
+      background: rgba(255, 209, 102, 0.13);
+    }
+
+    .hero-trip-tag:nth-child(3) {
+      border-color: rgba(255, 118, 94, 0.42);
+      background: rgba(255, 118, 94, 0.13);
     }
 
     .quick-row {
@@ -427,7 +485,7 @@
     .source-box {
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: linear-gradient(145deg, rgba(255,255,255,0.13), rgba(255,255,255,0.07));
+      background: linear-gradient(145deg, rgba(143, 230, 246, 0.3), rgba(255,255,255,0.14) 46%, rgba(255, 144, 118, 0.16));
       box-shadow: var(--shadow);
       backdrop-filter: blur(18px);
     }
@@ -437,6 +495,7 @@
       position: relative;
       overflow: hidden;
       padding: 20px;
+      border-color: rgba(199, 245, 255, 0.5);
     }
 
     .globe-card::before {
@@ -444,58 +503,72 @@
       position: absolute;
       inset: 18px;
       border-radius: var(--radius);
-      opacity: 0.42;
+      opacity: 0.62;
       background:
-        radial-gradient(circle at 20% 20%, rgba(119, 224, 204, 0.25), transparent 26%),
-        radial-gradient(circle at 72% 24%, rgba(255, 197, 118, 0.2), transparent 22%),
-        linear-gradient(180deg, rgba(255,255,255,0.08), transparent);
+        radial-gradient(circle at 20% 20%, rgba(146, 246, 232, 0.44), transparent 28%),
+        radial-gradient(circle at 76% 20%, rgba(255, 224, 143, 0.4), transparent 24%),
+        repeating-linear-gradient(112deg, transparent 0 32px, rgba(255,255,255,0.055) 33px 34px),
+        linear-gradient(180deg, rgba(255,255,255,0.16), transparent);
+      pointer-events: none;
+    }
+
+    .globe-card::after {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      top: -54px;
+      right: -28px;
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      opacity: 0.72;
+      background: radial-gradient(circle, rgba(255, 236, 171, 0.94) 0 18%, rgba(255, 220, 121, 0.46) 38%, transparent 70%);
+      filter: blur(1px);
       pointer-events: none;
     }
 
     .sky-cloud {
       position: absolute;
       z-index: 0;
-      width: 150px;
-      height: 34px;
-      border-radius: 999px;
-      opacity: 0.24;
-      background: rgba(255,255,255,0.82);
-      filter: blur(1px);
+      width: 290px;
+      height: 194px;
+      border-radius: 0;
+      opacity: 0.76;
+      background: url("assets/YO旅行班/cloud-natural-v1.png") center / contain no-repeat;
+      filter: drop-shadow(0 14px 18px rgba(62, 118, 157, 0.2));
       pointer-events: none;
     }
 
     .sky-cloud::before,
     .sky-cloud::after {
-      content: "";
-      position: absolute;
-      bottom: 7px;
-      border-radius: 50%;
-      background: inherit;
-    }
-
-    .sky-cloud::before {
-      left: 22px;
-      width: 48px;
-      height: 48px;
-    }
-
-    .sky-cloud::after {
-      left: 67px;
-      width: 38px;
-      height: 38px;
+      content: none;
     }
 
     .cloud-one {
-      top: 16%;
-      left: 7%;
-      transform: scale(0.82);
+      top: 11%;
+      left: 2%;
+      transform: scale(0.82) rotate(-2deg);
     }
 
     .cloud-two {
-      right: 5%;
-      bottom: 12%;
-      transform: scale(0.62);
-      opacity: 0.16;
+      right: -2%;
+      bottom: 5%;
+      transform: scale(0.7) rotate(3deg);
+      opacity: 0.52;
+    }
+
+    .cloud-three {
+      top: 4%;
+      right: 7%;
+      transform: scale(0.48) rotate(4deg);
+      opacity: 0.46;
+    }
+
+    .cloud-four {
+      left: 20%;
+      bottom: 0;
+      transform: scale(0.42) rotate(-5deg);
+      opacity: 0.34;
     }
 
     .globe-stage {
@@ -513,7 +586,7 @@
       top: 50%;
       width: min(78%, 640px);
       aspect-ratio: 1 / 0.62;
-      border: 1px solid rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.24);
       border-radius: 50%;
       transform: translate(-50%, -50%) rotate(-18deg);
       pointer-events: none;
@@ -522,7 +595,7 @@
     .orbit-ring.second {
       width: min(64%, 510px);
       transform: translate(-50%, -50%) rotate(20deg);
-      border-color: rgba(255, 197, 118, 0.28);
+      border-color: rgba(255, 209, 102, 0.4);
     }
 
     .air-route {
@@ -532,7 +605,7 @@
       z-index: 1;
       width: min(84%, 660px);
       aspect-ratio: 1 / 0.62;
-      border: 1.5px dashed rgba(255, 197, 118, 0.52);
+      border: 1.5px dashed rgba(255, 209, 102, 0.7);
       border-radius: 50%;
       transform: translate(-50%, -50%) rotate(-18deg);
       pointer-events: none;
@@ -564,11 +637,11 @@
       left: 50%;
       top: 0;
       display: block;
-      color: #ffffff;
+      color: var(--gold);
       font-family: Arial, sans-serif;
       font-size: 30px;
       line-height: 1;
-      text-shadow: 0 5px 18px rgba(0,0,0,0.35), 0 0 18px rgba(255,197,118,0.72);
+      text-shadow: 0 5px 18px rgba(0,0,0,0.35), 0 0 18px rgba(255,209,102,0.8);
       transform: translate(-50%, -50%) rotate(18deg);
     }
 
@@ -589,9 +662,10 @@
       overflow: hidden;
       isolation: isolate;
       box-shadow:
-        0 0 72px rgba(94, 231, 223, 0.34),
-        0 18px 48px rgba(3, 13, 33, 0.46);
-      background: #07162e;
+        0 0 76px rgba(126, 239, 232, 0.55),
+        0 18px 42px rgba(34, 91, 128, 0.3);
+      background: radial-gradient(circle, rgba(187, 246, 255, 0.18), transparent 70%);
+      border: 4px solid rgba(225, 251, 255, 0.5);
       animation: globePulse 5s ease-in-out infinite;
     }
 
@@ -601,8 +675,8 @@
       inset: 0;
       border-radius: 50%;
       background:
-        radial-gradient(circle at 34% 21%, rgba(255,255,255,0.14), transparent 30%),
-        radial-gradient(circle at 50% 56%, transparent 48%, rgba(2, 10, 27, 0.35) 100%);
+        radial-gradient(circle at 32% 18%, rgba(255,255,255,0.2), transparent 28%),
+        radial-gradient(circle at 50% 60%, transparent 60%, rgba(48, 133, 172, 0.1) 100%);
       pointer-events: none;
     }
 
@@ -612,7 +686,7 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
-      transform: scale(1.04);
+      transform: scale(1.16);
     }
 
     @keyframes globePulse {
@@ -675,7 +749,7 @@
       background:
         radial-gradient(circle at 30% 25%, rgba(255,255,255,0.48), transparent 26%),
         linear-gradient(135deg, var(--accent), rgba(255,255,255,0.12));
-      box-shadow: 0 14px 26px rgba(0,0,0,0.26);
+      box-shadow: 0 14px 26px rgba(0,0,0,0.26), 0 0 0 6px rgba(255,255,255,0.06);
       font-size: 24px;
     }
 
@@ -746,6 +820,7 @@
     .info-panel {
       min-height: 640px;
       padding: 22px;
+      border-color: rgba(255, 209, 102, 0.28);
       display: flex;
       flex-direction: column;
       scroll-margin-top: 144px;
@@ -807,7 +882,7 @@
       border: 1px solid rgba(255,255,255,0.16);
       border-radius: var(--radius);
       padding: 14px;
-      background: rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.1);
       transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
     }
 
@@ -815,7 +890,7 @@
     .panel-link:focus-visible {
       transform: translateY(-2px);
       outline: none;
-      border-color: rgba(94, 231, 223, 0.45);
+      border-color: rgba(103, 228, 223, 0.65);
       background: rgba(255,255,255,0.13);
     }
 
@@ -863,7 +938,7 @@
     .country-view-tab {
       min-height: 36px;
       border: 1px solid rgba(255,255,255,0.16);
-      border-radius: var(--radius);
+      border-radius: 999px;
       padding: 7px 10px;
       color: rgba(255,255,255,0.72);
       background: rgba(255,255,255,0.06);
@@ -1007,7 +1082,7 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 15px;
-      background: rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.1);
     }
 
     .classic-country h3 {
@@ -1124,7 +1199,7 @@
       border-radius: var(--radius);
       padding: 0;
       color: var(--ink);
-      background: #19243a;
+      background: linear-gradient(145deg, #123d5b, #282852);
       box-shadow: 0 28px 90px rgba(0,0,0,0.5);
     }
 
@@ -1356,6 +1431,25 @@
         font-size: 14px;
       }
 
+      .cloud-one {
+        top: 17%;
+        left: -18%;
+        opacity: 0.5;
+        transform: scale(0.58) rotate(-2deg);
+      }
+
+      .cloud-two {
+        right: -20%;
+        bottom: 4%;
+        opacity: 0.42;
+        transform: scale(0.52) rotate(3deg);
+      }
+
+      .cloud-three,
+      .cloud-four {
+        display: none;
+      }
+
       .satellite {
         transform: rotate(var(--angle)) translate(62px) rotate(calc(-1 * var(--angle)));
       }
@@ -1452,19 +1546,26 @@
         <p class="eyebrow">YO! TOURING ATLAS</p>
         <h1 id="pageTitle"><span class="gradient-text">下一站</span>，從這裡開始</h1>
         <p class="hero-copy">選一個國家，先看行前重點、通關提醒、上機行李和回台整理。出發前先抓方向，旅途中就更安心。</p>
+        <div class="hero-trip-tags" aria-label="旅行主題">
+          <span class="hero-trip-tag">✈ 一起出發</span>
+          <span class="hero-trip-tag">🌏 東南亞收藏路線</span>
+          <span class="hero-trip-tag">🧳 行前先準備</span>
+        </div>
       </section>
 
       <section class="workspace" aria-label="地球目的地導覽">
         <div class="globe-card">
           <div class="sky-cloud cloud-one"></div>
           <div class="sky-cloud cloud-two"></div>
+          <div class="sky-cloud cloud-three"></div>
+          <div class="sky-cloud cloud-four"></div>
           <div class="globe-stage" id="globeStage" aria-label="互動式地球與目的地">
             <div class="orbit-ring"></div>
             <div class="orbit-ring second"></div>
             <div class="air-route" aria-hidden="true"></div>
             <div class="airplane-flight" aria-hidden="true"><span class="airplane">✈</span></div>
             <div class="globe" aria-hidden="true">
-              <img class="globe-image" src="assets/YO旅行班/earth-southeast-asia-v1.png" alt="">
+              <img class="globe-image" src="assets/YO旅行班/earth-southeast-asia-v2.png" alt="">
             </div>
             <div class="country-layer" id="countryLayer"></div>
           </div>
@@ -1511,7 +1612,7 @@
     </dialog>
 
     <footer class="footer">
-      YO! 旅行班 ｜ IG：@yoyo.touring ｜ 最後更新：2026-08-03（台北時間）
+      YO! 旅行班 ｜ IG：@yoyo.touring ｜ 最後更新：2026-08-05（台北時間）
     </footer>
   </div>
 
@@ -1732,6 +1833,17 @@
       const query = state.query.trim().toLowerCase();
       if (!query) return [];
       const results = [];
+      const sharedGuideKeywords = ["上機", "行李", "行動電源", "液體", "托運", "回台", "通關"];
+      if (sharedGuideKeywords.some(keyword => keyword.includes(query) || query.includes(keyword))) {
+        results.push({
+          country: null,
+          link: {
+            name: "上機與行李小抄",
+            desc: "護照、行動電源、液體、托運與回台前整理。",
+            action: "luggage"
+          }
+        });
+      }
       countries.forEach(country => {
         const haystack = `${country.name} ${country.short} ${country.copy} ${country.note.title} ${country.note.intro} ${country.guides.map(link => `${link.name} ${link.desc}`).join(" ")}`.toLowerCase();
         if (haystack.includes(query)) results.push({ country, link: { name: country.name, desc: "選擇全境指南或目前已整理好的地區內容。", countryAction: country.id } });
@@ -1778,7 +1890,7 @@
           <p class="panel-kicker">搜尋結果</p>
           <h2 class="panel-title">${results.length ? "找到這些入口" : "先換個關鍵字試試"}</h2>
           <p class="panel-copy">${results.length ? "點開需要的目的地或提醒。" : "可以搜尋泰國、越南、新馬、上機、行李、通關、回台。"}</p>
-          <div class="link-list">${results.map(({ country, link }) => linkMarkup(link, country.name)).join("")}</div>
+          <div class="link-list">${results.map(({ country, link }) => linkMarkup(link, country?.name || "")).join("")}</div>
         `;
         return;
       }
