@@ -1134,7 +1134,7 @@
 
     .luggage-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 12px;
     }
 
@@ -1536,7 +1536,7 @@
     <button class="luggage-quick-bar" type="button" data-open-luggage>
       <span class="luggage-quick-inner">
         <span class="luggage-quick-title">上機與行李小抄</span>
-        <span class="luggage-quick-summary">出發前先看 8 件事：護照、行動電源、液體與回台禁帶物</span>
+        <span class="luggage-quick-summary">出發前先看 9 件事：護照、行動電源、手持電風扇與回台禁帶物</span>
         <span class="luggage-quick-action">查看</span>
       </span>
     </button>
@@ -1582,7 +1582,7 @@
         <div class="luggage-dialog-head">
           <div>
             <p class="luggage-dialog-kicker">BOARDING CHECK</p>
-            <h2 class="luggage-dialog-title" id="luggageTitle">出門前 3 分鐘，先檢查這 8 件事。</h2>
+            <h2 class="luggage-dialog-title" id="luggageTitle">出門前 3 分鐘，先檢查這 9 件事。</h2>
             <p class="luggage-dialog-note">這張是通用小抄。各國入境、簽證和特殊禁帶物，仍以目的地頁與行前通知為準。</p>
           </div>
           <button class="dialog-close" type="button" data-close-luggage aria-label="關閉上機與行李小抄">&times;</button>
@@ -1593,6 +1593,7 @@
           <article class="luggage-card"><strong>隨身包</strong><span>手機、錢包、護照、藥品、充電線和貴重物品放同一包。</span></article>
           <article class="luggage-card"><strong>托運行李</strong><span>大瓶液體、剪刀刀具和不急用物品放托運；行李外觀可先拍照。</span></article>
           <article class="luggage-card"><strong>行動電源</strong><span>限帶 2 個，放隨身不托運；飛行途中不要使用，也不要在機上充電。</span></article>
+          <article class="luggage-card"><strong>手持電風扇</strong><span>內建鋰電池款放手提或隨身，不要托運；先關機並防止誤觸，規格以航空公司為準。</span></article>
           <article class="luggage-card"><strong>液體與免稅品</strong><span>隨身液體容器不超過 100 ml，放進 1 公升透明夾鏈袋。</span></article>
           <article class="luggage-card"><strong>常備藥</strong><span>個人藥品建議保留原包裝或醫囑資料；現金、首飾、相機不要托運。</span></article>
           <article class="luggage-card"><strong>回台禁帶物</strong><span>肉類、含肉食品、新鮮水果、植物和種子最容易出問題。</span></article>
@@ -1603,6 +1604,7 @@
           <p class="source-title">出發前可再確認</p>
           <ul class="source-links">
             <li><a href="https://www.motc.gov.tw/ch/app/data/view?id=14&module=news&serno=c4831fc1-d527-40d0-af27-657cb0fce824" target="_blank" rel="noopener">交通部：行動電源新規</a></li>
+            <li><a href="https://www.starlux-airlines.com/zh-TW/check-in-fly/baggage-information/general/restrictions-and-prohibited-items/lithium-batteries" target="_blank" rel="noopener">星宇航空：手持電風扇規定</a></li>
             <li><a href="https://www.taoyuan-airport.com/security_check" target="_blank" rel="noopener">桃園機場：出境安檢</a></li>
             <li><a href="https://web.customs.gov.tw/taipei/singlehtml/3130?cntId=cus2_177199_3130" target="_blank" rel="noopener">臺北關：肉製品與含肉泡麵</a></li>
             <li><a href="https://www.aphia.gov.tw/ws.php?id=10719" target="_blank" rel="noopener">防檢署：出國必看不買清單</a></li>
@@ -1612,7 +1614,7 @@
     </dialog>
 
     <footer class="footer">
-      YO! 旅行班 ｜ IG：@yoyo.touring ｜ 最後更新：2026-08-05（台北時間）
+      YO! 旅行班 ｜ IG：@yoyo.touring ｜ 最後更新：2026-08-09（台北時間）
     </footer>
   </div>
 
@@ -1833,13 +1835,13 @@
       const query = state.query.trim().toLowerCase();
       if (!query) return [];
       const results = [];
-      const sharedGuideKeywords = ["上機", "行李", "行動電源", "液體", "托運", "回台", "通關"];
+      const sharedGuideKeywords = ["上機", "行李", "行動電源", "手持電風扇", "電風扇", "液體", "托運", "回台", "通關"];
       if (sharedGuideKeywords.some(keyword => keyword.includes(query) || query.includes(keyword))) {
         results.push({
           country: null,
           link: {
             name: "上機與行李小抄",
-            desc: "護照、行動電源、液體、托運與回台前整理。",
+            desc: "護照、行動電源、手持電風扇、托運與回台前整理。",
             action: "luggage"
           }
         });
@@ -1861,7 +1863,7 @@
             <div class="link-list">
               ${linkMarkup(country.note.url ? { name: country.note.title, desc: country.note.intro, url: country.note.url } : { name: country.note.title, desc: country.note.intro, countryAction: country.id, countryView: "note" })}
               ${country.guides.map(link => linkMarkup(link)).join("")}
-              ${linkMarkup({ name: "上機與行李小抄", action: "luggage", desc: "護照、行動電源、液體、托運與回台前整理。" })}
+              ${linkMarkup({ name: "上機與行李小抄", action: "luggage", desc: "護照、行動電源、手持電風扇、托運與回台前整理。" })}
             </div>
           </section>
         </div>
