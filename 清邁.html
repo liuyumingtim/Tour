@@ -390,6 +390,45 @@
 
     .spot-card dd { margin: 2px 0 0; color: #4b5b52; font-size: 14px; }
 
+    .spot-photo,
+    .food-photo {
+      display: block;
+      width: calc(100% - 40px);
+      margin: 0 20px 20px;
+      border: 1px solid rgba(86,118,106,.14);
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    .spot-photo { aspect-ratio: 1 / 1; }
+
+    .spot-photo-pair {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 0 20px 20px;
+    }
+
+    .spot-photo-pair img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border: 1px solid rgba(86,118,106,.14);
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    .food-photo { aspect-ratio: 1 / 1; }
+
+    .buy-photo {
+      display: block;
+      width: calc(100% - 40px);
+      aspect-ratio: 1 / 1;
+      margin: 0 20px 20px;
+      border: 1px solid rgba(86,118,106,.14);
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
     .food-card,
     .buy-card { padding-bottom: 2px; }
 
@@ -444,7 +483,7 @@
       <div class="hero-copy">
         <p class="eyebrow">YO! 旅行班｜泰北收藏</p>
         <h1>清邁 <span>旅遊收藏版</span></h1>
-        <p class="hero-summary">從森林寺廟、古城與南奔，到咖啡、夜市和北泰味道。這一頁先幫你抓住清邁的旅行節奏，再慢慢決定自己最想看的風景。</p>
+        <p class="hero-summary">從森林寺廟、古城與南奔，到咖啡、在地小吃和北泰味道。這一頁先幫你抓住清邁的旅行節奏，再慢慢決定自己最想看的風景。</p>
         <div class="info-row">
           <span class="info-chip">清邁市區</span>
           <span class="info-chip">素帖山</span>
@@ -488,17 +527,13 @@
         </article>
         <article class="understand-card">
           <h3>泰北味道</h3>
-          <p>泰北咖哩麵、泰北香腸、夜市小吃和咖啡，味道和曼谷常見的泰式料理不完全一樣，適合慢慢挑自己喜歡的口味。</p>
-        </article>
-        <article class="understand-card">
-          <h3>夜市與手作</h3>
-          <p>夜市不只是買東西，也是吃飯、散步和見面的生活場景。先把集合時間和地點記好，再照自己的步調慢慢看。</p>
+          <p>泰北咖哩麵、泰北香腸、街頭小吃和咖啡，味道和曼谷常見的泰式料理不完全一樣，適合慢慢挑自己喜歡的口味。</p>
         </article>
       </div>
 
       <div class="quote-card">
         <h3>YoYo 的一句話提醒</h3>
-        <p>清邁好玩的地方，不是把景點一個個打卡，而是從寺廟、山路、古城、咖啡和夜市裡，慢慢感覺到北泰自己的生活節奏。</p>
+        <p>清邁好玩的地方，不是把景點一個個打卡，而是從寺廟、山路、古城和咖啡裡，慢慢感覺到北泰自己的生活節奏。</p>
       </div>
 
     </section>
@@ -520,6 +555,17 @@
           <h3>雙龍寺 Wat Phra That Doi Suthep</h3>
           <div class="spot-meta"><span class="tag">清邁代表地標</span><span class="tag">寺廟文化</span><span class="tag">山城視野</span></div>
           <dl><dt>這裡有什麼好看</dt><dd>金色佛塔、山上視野、參拜動線與清邁重要的信仰地標。</dd><dt>YoYo 小提醒</dt><dd>進寺廟要注意衣著、脫鞋和拍照規定；山上天氣變化快。</dd></dl>
+          <img class="spot-photo" src="assets/清邁/doi-suthep.jpg" alt="清邁雙龍寺建築" loading="lazy">
+        </article>
+
+        <article class="spot-card">
+          <h3>清邁藍廟 Wat Ban Den</h3>
+          <div class="spot-meta"><span class="tag">馬登寺廟</span><span class="tag">藍色屋瓦</span><span class="tag">蘭納建築</span></div>
+          <dl><dt>這裡有什麼好看</dt><dd>深藍色屋瓦、白色佛塔和層層延伸的蘭納式寺廟建築，畫面很有辨識度。</dd><dt>YoYo 小提醒</dt><dd>這裡屬於清邁府馬登一帶，若行程安排前往，記得跟著團體動線參觀。</dd></dl>
+          <div class="spot-photo-pair">
+            <img src="assets/清邁/wat-ban-den-01.jpg" alt="清邁藍廟外觀" loading="lazy">
+            <img src="assets/清邁/wat-ban-den-02.jpg" alt="清邁藍廟的屋瓦與佛塔" loading="lazy">
+          </div>
         </article>
 
         <article class="spot-card">
@@ -538,36 +584,34 @@
           <h3>塔佩門 Tha Phae Gate</h3>
           <div class="spot-meta"><span class="tag">古城入口</span><span class="tag">城市明信片</span><span class="tag">街景拍照</span></div>
           <dl><dt>這裡有什麼好看</dt><dd>紅磚城牆、城門廣場、人群和古城與現代街道交會的畫面。</dd><dt>YoYo 小提醒</dt><dd>拍照不要站到車道，也要記得集合時間。</dd></dl>
+          <img class="spot-photo" src="assets/清邁/tha-phae-gate.jpg" alt="清邁塔佩門" loading="lazy">
         </article>
 
         <article class="spot-card">
-          <h3>尼曼區與 One Nimman</h3>
+          <h3>尼曼商圈與尼曼一號</h3>
           <div class="spot-meta"><span class="tag">咖啡生活</span><span class="tag">文青商圈</span><span class="tag">自由活動</span></div>
-          <dl><dt>這裡有什麼好看</dt><dd>咖啡店、設計小店、餐廳、文創商品，以及帶有北泰風格的建築細節。</dd><dt>YoYo 小提醒</dt><dd>自由活動前先拍集合點或存定位，逛起來會比較放心。</dd></dl>
+          <dl><dt>這裡有什麼好看</dt><dd>咖啡店、設計小店、餐廳、尼曼一號與文創商品，還有帶著北泰風格的建築細節。</dd><dt>YoYo 小提醒</dt><dd>自由活動前先拍集合點或存定位，逛起來會比較放心。</dd></dl>
         </article>
 
         <article class="spot-card">
-          <h3>清邁夜市與週末夜市</h3>
-          <div class="spot-meta"><span class="tag">夜市小吃</span><span class="tag">手作小物</span><span class="tag">在地生活</span></div>
-          <dl><dt>這裡有什麼好看</dt><dd>小吃、手作小物、服飾、街頭人潮和邊走邊吃的生活感。</dd><dt>YoYo 小提醒</dt><dd>人潮多時包包和手機顧好，集合時間和地點要先記在手機裡。</dd></dl>
+          <h3>蘭納風格星巴克</h3>
+          <div class="spot-meta"><span class="tag">特色建築</span><span class="tag">咖啡停留</span><span class="tag">蘭納細節</span></div>
+          <dl><dt>這裡有什麼好看</dt><dd>把北泰屋瓦、木雕和大象元素放進咖啡店外觀裡，經過時很容易想停下來拍一張。</dd><dt>YoYo 小提醒</dt><dd>不一定要特地喝咖啡，看看建築、在樹下停一下，也是一段很清邁的休息。</dd></dl>
+          <img class="spot-photo" src="assets/清邁/lanna-starbucks.jpg" alt="清邁蘭納風格星巴克建築" loading="lazy">
         </article>
 
         <article class="spot-card">
           <h3>南奔火車與慢旅行</h3>
           <div class="spot-meta"><span class="tag">地方火車</span><span class="tag">南奔旅行</span><span class="tag">慢節奏</span></div>
           <dl><dt>這裡有什麼好看</dt><dd>地方火車、月台、車廂和從城市慢慢換成郊區的景色。</dd><dt>YoYo 小提醒</dt><dd>班次和實際搭乘方式以當天安排為準，集合與上車時間要聽清楚。</dd></dl>
-        </article>
-
-        <article class="spot-card">
-          <h3>Wat San Pa Yang Luang 南奔寺廟</h3>
-          <div class="spot-meta"><span class="tag">南奔文化</span><span class="tag">蘭納工藝</span><span class="tag">地方寺廟</span></div>
-          <dl><dt>這裡有什麼好看</dt><dd>木構建築、細緻雕刻、蘭納風格和比較地方性的信仰氛圍。</dd><dt>YoYo 小提醒</dt><dd>寺廟衣著和拍照禮儀與清邁市區一樣，先看現場指示再拍。</dd></dl>
+          <img class="spot-photo" src="assets/清邁/lamphun-train.jpg" alt="清邁與南奔之間的火車站月台" loading="lazy">
         </article>
 
         <article class="spot-card">
           <h3>Kao Mai Estate 1955 老菸廠活化園區</h3>
           <div class="spot-meta"><span class="tag">老建築活化</span><span class="tag">文化保存</span><span class="tag">拍照散步</span></div>
           <dl><dt>這裡有什麼好看</dt><dd>舊菸葉烘房、紅磚建築、爬藤與老工業空間重新變成文化、餐飲和休閒場域。</dd><dt>YoYo 小提醒</dt><dd>先使用「文化資產保存獎項肯定的活化園區」這種較精準的說法。</dd></dl>
+          <img class="spot-photo" src="assets/清邁/kao-mai-estate.jpg" alt="Kao Mai Estate 1955 老菸廠活化園區" loading="lazy">
         </article>
 
       </div>
@@ -596,14 +640,13 @@
       </div>
 
       <div class="food-grid">
-        <article class="food-card"><h3>泰北咖哩麵 Khao Soi</h3><p>椰奶和咖哩香氣比較明顯，上面常搭配酥脆炸麵條，柔軟和脆脆的口感一起吃很有記憶點。</p></article>
+        <article class="food-card"><h3>泰北咖哩麵 Khao Soi</h3><p>椰奶和咖哩香氣比較明顯，上面常搭配酥脆炸麵條，柔軟和脆脆的口感一起吃很有記憶點。</p><img class="food-photo" src="assets/清邁/khao-soi.jpg" alt="清邁泰北咖哩麵" loading="lazy"></article>
         <article class="food-card"><h3>泰北香腸 Sai Ua</h3><p>香料味比較明顯，和台灣常見香腸不太一樣。喜歡香料、烤物或重口味的人，可以從它開始認識泰北味道。</p></article>
-        <article class="food-card"><h3>椰子與泰國水果</h3><p>天氣熱時，現場喝椰子或吃水果，是很有旅行感的小享受。山竹、龍眼和芒果適合在當地慢慢吃。</p></article>
-        <article class="food-card"><h3>泰奶與清邁咖啡</h3><p>逛古城、尼曼或夜市之間，找一間咖啡店坐一下，也是認識清邁的一種方式。甜度照自己的習慣調整就好。</p></article>
-        <article class="food-card"><h3>芒果糯米與夜市甜點</h3><p>適合走累之後和同行的人一起分著吃。看到想試的品項，先買一份分享，不必一次買太多。</p></article>
+        <article class="food-card"><h3>泰國水果</h3><p>天氣熱時來一份山竹、龍眼或當季水果，是很有旅行感的小享受。想吃多少就挑多少，留一點肚子給接下來的行程。</p><img class="food-photo" src="assets/清邁/mangosteen-longan-juice.jpg" alt="泰國山竹與龍眼汁" loading="lazy"></article>
+        <article class="food-card"><h3>手標泰奶 ChaTraMue</h3><p>大家熟悉的經典泰奶，甜度照自己的習慣調整就好。走累時來一杯，剛好把步調放慢一點。</p><img class="food-photo" src="assets/清邁/cha-tra-mue.jpg" alt="手標 ChaTraMue 泰式奶茶" loading="lazy"></article>
       </div>
 
-      <div class="subtle-note">古城與夜市看到想試的料理時，挑一間環境覺得舒服的坐下來吃就好。餐點衛生與個人飲食狀況還是依自己當下判斷，不用為了集滿清單而勉強。</div>
+      <div class="subtle-note">古城散步時看到想試的料理，挑一間環境覺得舒服的坐下來吃就好。餐點衛生與個人飲食狀況還是依自己當下判斷，不用為了集滿清單而勉強。</div>
     </section>
 
     <section class="section" id="s4">
@@ -615,16 +658,19 @@
       <div class="buy-grid">
         <article class="buy-card"><h3>果乾與泰北零食</h3><p>芒果乾、果乾、餅乾、洋芋片和糖果比較容易分享。挑自己真的會吃的份量就好。</p></article>
         <article class="buy-card"><h3>香氛與精油</h3><p>適合喜歡讓房間留一點旅行味道的人。先聞味道，再確認容量和包裝是否方便攜帶。</p></article>
-        <article class="buy-card"><h3>草藥膏與鼻通</h3><p>泰國常見的小型實用物，走路多、天氣熱或想提神時，很多人會買來自己用或送朋友。</p></article>
-        <article class="buy-card"><h3>手工藝與夜市小物</h3><p>手作包、飾品、木雕、布品和小型家飾，常常比制式紀念品更能留下清邁的手感。</p></article>
+        <article class="buy-card"><h3>草藥鼻通</h3><p>搭車、天氣悶熱或想提神時，很多人會想帶一支放在身邊。</p><img class="buy-photo" src="assets/清邁/herbal-inhaler.jpg" alt="泰國草藥鼻通" loading="lazy"></article>
+        <article class="buy-card"><h3>手工藝與特色小物</h3><p>手作包、飾品、木雕、布品和小型家飾，常常比制式紀念品更能留下清邁的手感。</p></article>
         <article class="buy-card"><h3>7-11 與便利小物</h3><p>飲料、零食和日常小物可以當成旅途中的小發現，看到有興趣的就先記下來，不需要每樣都買。</p></article>
+        <article class="buy-card"><h3>鹹蛋黃洋芋片</h3><p>鹹香味很有記憶點，買一包回去和朋友一起拆，很適合當旅行的小分享。</p><img class="buy-photo" src="assets/清邁/salted-egg-chips.jpg" alt="鹹蛋黃洋芋片" loading="lazy"></article>
+        <article class="buy-card"><h3>泰式風味零食</h3><p>酸、辣和香料感各有不同，挑自己平常會想吃的口味就好。</p><img class="buy-photo" src="assets/清邁/thai-flavor-chips.jpg" alt="泰式風味零食" loading="lazy"></article>
+        <article class="buy-card"><h3>西瓜涼糖</h3><p>小小一盒很輕巧，走路走累時來一顆，清涼感很舒服。</p><img class="buy-photo" src="assets/清邁/watermelon-mint.jpg" alt="西瓜涼糖" loading="lazy"></article>
       </div>
 
       <div class="subtle-note">液體、易漏、易碎或需要托運的物品，回程前再和行李一起整理。若不確定攜帶方式，問一下領隊會比較安心。</div>
     </section>
 
     <footer>
-      <p>最後整理：2026 年 8 月 2 日（台北時間）｜內容會隨官方規定與 YoYo 實際走訪持續更新。</p>
+      <p>最後整理：2026 年 8 月 8 日（台北時間）｜內容會隨官方規定與 YoYo 實際走訪持續更新。</p>
       <p><a href="國家提醒.html?country=th">出發前必看：泰國全境注意事項</a> ｜ <a href="https://www.instagram.com/youyo.touring/" target="_blank" rel="noopener">@yoyo.touring</a></p>
     </footer>
   </main>
