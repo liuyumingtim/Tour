@@ -70,9 +70,10 @@
     .place-tag { display: inline-flex; align-items: center; gap: 6px; margin: 6px 0 10px; border-radius: 999px; padding: 5px 12px; background: var(--red); color: #fff; font-size: 12px; font-weight: 900; }
     .place-tag.green { background: var(--teal); }
     .spot-block { margin-bottom: 22px; }
-    .portrait-photo, .spot-photo, .photo-pair img, .food-photo-row img { display: block; width: 100%; border: 1px solid var(--line); object-fit: cover; }
+    .portrait-photo, .spot-photo, .landscape-photo, .photo-pair img, .food-photo-row img { display: block; width: 100%; border: 1px solid var(--line); object-fit: cover; }
     .portrait-photo { width: min(100%, 340px); margin: 16px auto 0; }
     .spot-photo { height: 280px; margin-top: 16px; }
+    .landscape-photo { height: auto; margin-top: 16px; }
     .photo-pair, .food-photo-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 16px; }
     .photo-pair img { height: 230px; }
     .food-photo-row img { aspect-ratio: 4 / 3; }
@@ -181,6 +182,17 @@
       <div class="collection-intro"><strong>先不用把北越想成一張行程表。</strong>三十六古街、還劍湖和下龍灣是三種不同節奏：街區熱鬧有生活氣、湖邊適合留一點空白，到了海上就慢下來看風景。</div>
 
       <article class="spot-block">
+        <span class="place-tag">📍 巴亭廣場・胡志明陵寢</span>
+        <div class="story-card red">
+          <h3 class="story-title">河內的歷史場景，從廣場慢慢看</h3>
+          <p>胡志明陵寢位在巴亭廣場一帶，是河內很有代表性的歷史地標。走到這裡時，會發現城市的聲音忽然安靜一些；先看看廣場與建築外觀，也能感受到這一區和老城區不太一樣的節奏。</p>
+          <div class="tags"><span class="tag">巴亭廣場</span><span class="tag">河內地標</span><span class="tag">歷史場景</span></div>
+          <p class="yoyo-note"><strong>YoYo 小提醒：</strong>這一區的參觀動線與拍攝規範會依現場安排調整，跟著導遊與領隊的提醒走就好。</p>
+          <img class="landscape-photo" src="assets/北越/ho-chi-minh-mausoleum.jpg" alt="河內巴亭廣場的胡志明陵寢" loading="lazy">
+        </div>
+      </article>
+
+      <article class="spot-block">
         <span class="place-tag">📍 三十六古街</span>
         <div class="story-card red">
           <h3 class="story-title">老城巷弄裡，邊走邊遇見河內</h3>
@@ -192,10 +204,32 @@
       </article>
 
       <article class="spot-block">
+        <span class="place-tag green">📍 下龍灣・石灰岩島嶼</span>
+        <div class="story-card">
+          <h3 class="story-title">船慢慢往前，山形也一直換</h3>
+          <p>下龍灣最迷人的地方，就是一座座石灰岩島嶼從水面冒出來。沿著海面前進時，同一片山從不同角度看，輪廓和距離感都會一直變，是很適合把手機先放一下、好好看風景的一段路。</p>
+          <div class="tags"><span class="tag">石灰岩海景</span><span class="tag">海上巡航</span><span class="tag">慢慢看風景</span></div>
+          <p class="yoyo-note"><strong>YoYo 小提醒：</strong>海上風景不用急著拍完，留一點時間直接用眼睛看，反而更容易記得當下的感覺。</p>
+          <img class="portrait-photo" src="assets/北越/halong-limestone-islets.jpg" alt="下龍灣海面上的石灰岩島嶼" loading="lazy">
+        </div>
+      </article>
+
+      <article class="spot-block">
+        <span class="place-tag green">📍 下龍灣・驚訝洞</span>
+        <div class="story-card">
+          <h3 class="story-title">走進下龍灣裡，另一個岩石世界</h3>
+          <p>驚訝洞位在下龍灣的 Bồ Hòn 島，是目前對外開放洞穴中規模最大的鐘乳石洞，洞內空間約 10,000 平方公尺。走進挑高洞室後，鐘乳石、岩壁和燈光把洞裡照出很不一樣的層次，和海面上的風景完全是兩種感覺。</p>
+          <div class="tags"><span class="tag">鐘乳石洞</span><span class="tag">Bồ Hòn 島</span><span class="tag">洞內步道</span></div>
+          <p class="yoyo-note"><strong>YoYo 小提醒：</strong>洞內台階和地面有時會比較濕，鞋子踩穩、跟著團體慢慢走，就能好好欣賞裡面的岩石層次。</p>
+          <img class="portrait-photo" src="assets/北越/sung-sot-cave.jpg" alt="下龍灣驚訝洞內的鐘乳石洞景觀" loading="lazy">
+        </div>
+      </article>
+
+      <article class="spot-block">
         <span class="place-tag green">📍 下龍灣・英雄島</span>
         <div class="story-card">
           <h3 class="story-title">海面一打開，就是北越另一種風景</h3>
-          <p>下龍灣的石灰岩島嶼一座接著一座，船慢慢往前走時，視線會跟著水面和山形一直變化。登上英雄島附近的觀景處，能把船影、海灣和島嶼一起收進眼前。</p>
+          <p>登上英雄島附近的觀景處，能把船影、海灣和石灰岩島嶼一起收進眼前。這裡很適合用比較慢的速度看下龍灣，讓眼前的水面和山形自己說話。</p>
           <div class="tags"><span class="tag">石灰岩海景</span><span class="tag">海上巡航</span><span class="tag">英雄島</span></div>
           <p class="yoyo-note"><strong>YoYo 小提醒：</strong>海上風景不用急著拍完，留一點時間直接用眼睛看，反而更容易記得當下的感覺。</p>
           <div class="photo-pair">
