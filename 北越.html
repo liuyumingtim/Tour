@@ -67,6 +67,22 @@
     .city-fact span { display: block; margin-top: 4px; color: var(--muted); font-size: 12px; line-height: 1.6; }
     .collection-intro { margin: 0 0 16px; padding: 15px 17px; border-left: 4px solid var(--gold); background: #FFF1C8; color: #5D4920; font-size: 14px; line-height: 1.85; }
     .collection-intro strong { color: var(--red-deep); }
+    .scenery-note { margin: 0 0 22px; border: 1px solid var(--line); background: #FFFDF7; }
+    .scenery-note-head { padding: 17px 19px 14px; border-bottom: 1px solid var(--line); background: #F9F0E1; }
+    .scenery-note-kicker { margin: 0 0 5px; color: var(--red); font-size: 12px; font-weight: 900; }
+    .scenery-note h3 { margin: 0; color: var(--red-deep); font-family: Georgia, "Noto Serif TC", serif; font-size: 22px; }
+    .scenery-note-head p { margin: 7px 0 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+    .scenery-compare { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .scenery-side { padding: 19px; }
+    .scenery-side + .scenery-side { border-left: 1px solid var(--line); }
+    .scenery-icon { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; margin-bottom: 8px; border-radius: 50%; background: var(--teal-soft); font-size: 20px; }
+    .scenery-side.ninh-binh .scenery-icon { background: #FFF0D0; }
+    .scenery-side h4 { margin: 0; color: var(--ink); font-size: 18px; }
+    .scenery-side h4 span { color: var(--teal); font-size: 12px; }
+    .scenery-side p { margin: 8px 0 0; color: var(--muted); font-size: 14px; line-height: 1.75; }
+    .scenery-detail { display: inline-block; margin-top: 10px; color: var(--teal); font-size: 12px; font-weight: 900; }
+    .scenery-note-foot { margin: 0; padding: 12px 19px; border-top: 1px dashed var(--line); color: var(--muted); font-size: 13px; line-height: 1.75; }
+    .scenery-note-foot strong { color: var(--red); }
     .place-tag { display: inline-flex; align-items: center; gap: 6px; margin: 6px 0 10px; border-radius: 999px; padding: 5px 12px; background: var(--red); color: #fff; font-size: 12px; font-weight: 900; }
     .place-tag.green { background: var(--teal); }
     .spot-block { margin-bottom: 22px; }
@@ -113,6 +129,8 @@
       .about-avatar { width: 78px; height: 78px; }
       .city-grid { grid-template-columns: 1fr; }
       .buy-grid { grid-template-columns: 1fr; }
+      .scenery-compare { grid-template-columns: 1fr; }
+      .scenery-side + .scenery-side { border-top: 1px solid var(--line); border-left: 0; }
       .spot-photo { height: 220px; }
       .photo-pair img { height: 170px; }
     }
@@ -181,6 +199,29 @@
 
       <div class="collection-intro"><strong>先不用把北越想成一張行程表。</strong>三十六古街、還劍湖和下龍灣是三種不同節奏：街區熱鬧有生活氣、湖邊適合留一點空白，到了海上就慢下來看風景。</div>
 
+      <aside class="scenery-note" aria-label="下龍灣與陸龍灣風景比較">
+        <div class="scenery-note-head">
+          <p class="scenery-note-kicker">北越風景小筆記</p>
+          <h3>下龍灣和陸龍灣，名字像，玩起來不太一樣</h3>
+          <p>兩邊都有石灰岩地形，但一邊在海上、一邊在內陸水道；先抓到這個差別，看北越風景會更有感。</p>
+        </div>
+        <div class="scenery-compare">
+          <div class="scenery-side">
+            <span class="scenery-icon" aria-hidden="true">⛴️</span>
+            <h4>下龍灣 <span>Hạ Long Bay</span></h4>
+            <p>廣闊的海灣裡，一座座石灰岩島嶼散落在海面上。搭船、看洞穴、遇見海上山景，是它最有記憶點的地方。</p>
+            <span class="scenery-detail">海上巡航・開闊海景</span>
+          </div>
+          <div class="scenery-side ninh-binh">
+            <span class="scenery-icon" aria-hidden="true">🛶</span>
+            <h4>陸龍灣 <span>Ninh Bình</span></h4>
+            <p>石灰岩山藏在內陸河道與田園之間，常用小船或竹筏慢慢穿過。比起海的壯闊，更多是一種安靜的山水感。</p>
+            <span class="scenery-detail">內陸水道・田園山景</span>
+          </div>
+        </div>
+        <p class="scenery-note-foot"><strong>行程小提醒：</strong>陸龍灣是北越常見的延伸景點，這裡先幫大家理解兩種風景的差別；是否安排仍以行前說明會與手上的行程表為準。</p>
+      </aside>
+
       <article class="spot-block">
         <span class="place-tag">📍 巴亭廣場・胡志明陵寢</span>
         <div class="story-card red">
@@ -207,7 +248,7 @@
         <span class="place-tag green">📍 下龍灣・石灰岩島嶼</span>
         <div class="story-card">
           <h3 class="story-title">船慢慢往前，山形也一直換</h3>
-          <p>下龍灣最迷人的地方，就是一座座石灰岩島嶼從水面冒出來。沿著海面前進時，同一片山從不同角度看，輪廓和距離感都會一直變，是很適合把手機先放一下、好好看風景的一段路。</p>
+          <p>下龍灣最迷人的地方，就是一座座石灰岩島嶼散落在海面上。沿著海面前進時，同一片山從不同角度看，輪廓和距離感都會一直變，是很適合把手機先放一下、好好看風景的一段路。</p>
           <div class="tags"><span class="tag">石灰岩海景</span><span class="tag">海上巡航</span><span class="tag">慢慢看風景</span></div>
           <p class="yoyo-note"><strong>YoYo 小提醒：</strong>海上風景不用急著拍完，留一點時間直接用眼睛看，反而更容易記得當下的感覺。</p>
           <img class="portrait-photo" src="assets/北越/halong-limestone-islets.jpg" alt="下龍灣海面上的石灰岩島嶼" loading="lazy">
