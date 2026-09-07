@@ -135,6 +135,7 @@
       .photo-pair img { height: 170px; }
     }
   </style>
+  <link rel="stylesheet" href="assets/YO旅行班/shareable-sections.css">
 </head>
 <body>
   <a class="guide-back" href="index.html">← 回到地球導覽</a>
@@ -152,12 +153,13 @@
   </header>
 
   <nav class="nav" aria-label="北越河內下龍灣旅遊分類">
-    <button class="nav-btn active" onclick="show('intro', this)">👋 認識 YoYo</button>
-    <button class="nav-btn" onclick="show('spots', this)">🗺️ 景點</button>
-    <button class="nav-btn" onclick="show('experience', this)">💆 體驗什麼</button>
-    <button class="nav-btn" onclick="show('food', this)">🍜 吃什麼</button>
-    <button class="nav-btn" onclick="show('shopping', this)">🛍️ 買什麼</button>
+    <button class="nav-btn active" data-target="intro" data-slug="about" onclick="show('intro', this)">👋 認識 YoYo</button>
+    <button class="nav-btn" data-target="spots" data-slug="spots" onclick="show('spots', this)">🗺️ 景點</button>
+    <button class="nav-btn" data-target="experience" data-slug="experience" onclick="show('experience', this)">💆 體驗什麼</button>
+    <button class="nav-btn" data-target="food" data-slug="food" onclick="show('food', this)">🍜 吃什麼</button>
+    <button class="nav-btn" data-target="shopping" data-slug="shopping" onclick="show('shopping', this)">🛍️ 買什麼</button>
   </nav>
+  <div class="section-share"><button class="section-share-btn" type="button">🔗 複製此分類連結</button><span class="section-share-status" role="status" aria-live="polite"></span></div>
 
   <main class="content">
     <section class="section active" id="intro">
@@ -377,14 +379,17 @@
     <div class="footer-contact"><a href="國家提醒.html?country=vn">出發前提醒</a>｜<a href="https://www.instagram.com/yoyo.touring/" target="_blank" rel="noopener">@yoyo.touring</a>｜行程群組以行前通知為準</div>
   </footer>
 
+  <script src="assets/YO旅行班/shareable-sections.js"></script>
   <script>
-    function show(id, button) {
+    function show(id, button, updateHash = true) {
       document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
       document.querySelectorAll('.nav-btn').forEach(navButton => navButton.classList.remove('active'));
       document.getElementById(id).classList.add('active');
       button.classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (updateHash && history.replaceState) history.replaceState(null, '', `${window.location.pathname}${window.location.search}#${button.dataset.slug}`);
+      if (updateHash) window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+    initShareableSections(document.querySelectorAll('.nav-btn'), show);
   </script>
 </body>
 </html>

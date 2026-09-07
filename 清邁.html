@@ -545,6 +545,7 @@
       .collection-brief-grid { grid-template-columns: 1fr; }
     }
   </style>
+  <link rel="stylesheet" href="assets/YO旅行班/shareable-sections.css">
 </head>
 <body>
   <main class="page-shell">
@@ -569,12 +570,13 @@
 
     <div class="nav-wrap">
       <nav class="nav" aria-label="清邁旅遊分類">
-        <button class="nav-btn active" type="button" data-target="s0"><span class="desktop-nav-label">👋 認識 YoYo</span><span class="mobile-nav-label">👋 YoYo</span></button>
-        <button class="nav-btn" type="button" data-target="s1"><span class="desktop-nav-label">🗺️ 景點</span><span class="mobile-nav-label">🗺️ 景點</span></button>
-        <button class="nav-btn" type="button" data-target="s2"><span class="desktop-nav-label">💆 體驗什麼</span><span class="mobile-nav-label">💆 體驗</span></button>
-        <button class="nav-btn" type="button" data-target="s3"><span class="desktop-nav-label">🍜 吃什麼</span><span class="mobile-nav-label">🍜 吃什麼</span></button>
-        <button class="nav-btn" type="button" data-target="s4"><span class="desktop-nav-label">🛍️ 買什麼</span><span class="mobile-nav-label">🛍️ 買什麼</span></button>
+        <button class="nav-btn active" type="button" data-target="s0" data-slug="about"><span class="desktop-nav-label">👋 認識 YoYo</span><span class="mobile-nav-label">👋 YoYo</span></button>
+        <button class="nav-btn" type="button" data-target="s1" data-slug="spots"><span class="desktop-nav-label">🗺️ 景點</span><span class="mobile-nav-label">🗺️ 景點</span></button>
+        <button class="nav-btn" type="button" data-target="s2" data-slug="experience"><span class="desktop-nav-label">💆 體驗什麼</span><span class="mobile-nav-label">💆 體驗</span></button>
+        <button class="nav-btn" type="button" data-target="s3" data-slug="food"><span class="desktop-nav-label">🍜 吃什麼</span><span class="mobile-nav-label">🍜 吃什麼</span></button>
+        <button class="nav-btn" type="button" data-target="s4" data-slug="shopping"><span class="desktop-nav-label">🛍️ 買什麼</span><span class="mobile-nav-label">🛍️ 買什麼</span></button>
       </nav>
+      <div class="section-share"><button class="section-share-btn" type="button">🔗 複製此分類連結</button><span class="section-share-status" role="status" aria-live="polite"></span></div>
     </div>
 
     <section class="section active" id="s0">
@@ -784,20 +786,23 @@
     </footer>
   </main>
 
+  <script src="assets/YO旅行班/shareable-sections.js"></script>
   <script>
     const buttons = document.querySelectorAll('.nav-btn');
     const sections = document.querySelectorAll('.section');
 
-    function showSection(id, button) {
+    function showSection(id, button, updateHash = true) {
       sections.forEach(section => section.classList.toggle('active', section.id === id));
       buttons.forEach(item => item.classList.toggle('active', item === button));
-      if (history.replaceState) history.replaceState(null, '', window.location.pathname);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (updateHash && history.replaceState) history.replaceState(null, '', `${window.location.pathname}${window.location.search}#${button.dataset.slug}`);
+      if (updateHash) window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     buttons.forEach(button => {
       button.addEventListener('click', () => showSection(button.dataset.target, button));
     });
+
+    initShareableSections(buttons, showSection);
 
   </script>
 </body>

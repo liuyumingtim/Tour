@@ -384,6 +384,7 @@ a { color: inherit; }
 }
 
 </style>
+<link rel="stylesheet" href="assets/YO旅行班/shareable-sections.css">
 </head>
 <body>
 
@@ -406,11 +407,12 @@ a { color: inherit; }
 
 <!-- NAV -->
 <nav class="nav" aria-label="中越攻略分類">
-  <button class="nav-btn active" onclick="show('s7',this)">👋 認識 YoYo</button>
-  <button class="nav-btn" onclick="show('s4',this)">🗺️ 景點</button>
-  <button class="nav-btn" onclick="show('s3',this)">🍜 吃什麼</button>
-  <button class="nav-btn" onclick="show('s5',this)">🛍️ 買什麼</button>
+  <button class="nav-btn active" data-target="s7" data-slug="about" onclick="show('s7',this)">👋 認識 YoYo</button>
+  <button class="nav-btn" data-target="s4" data-slug="spots" onclick="show('s4',this)">🗺️ 景點</button>
+  <button class="nav-btn" data-target="s3" data-slug="food" onclick="show('s3',this)">🍜 吃什麼</button>
+  <button class="nav-btn" data-target="s5" data-slug="shopping" onclick="show('s5',this)">🛍️ 買什麼</button>
 </nav>
+<div class="section-share"><button class="section-share-btn" type="button">🔗 複製此分類連結</button><span class="section-share-status" role="status" aria-live="polite"></span></div>
 
 <div class="content">
 
@@ -682,6 +684,7 @@ a { color: inherit; }
   <span style="font-size:11px;opacity:0.6">有任何問題，出發前到當地都可以先看這頁，再直接找 YoYo 確認。</span>
 </div>
 
+<script src="assets/YO旅行班/shareable-sections.js"></script>
 <script>
 const IMGS = {
   hoian1: "assets/中越/hoian1.jpg",
@@ -704,13 +707,16 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-function show(id, btn) {
+function show(id, btn, updateHash = true) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (updateHash && history.replaceState) history.replaceState(null, '', `${window.location.pathname}${window.location.search}#${btn.dataset.slug}`);
+  if (updateHash) window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+initShareableSections(document.querySelectorAll('.nav-btn'), show);
 
 function openLB(src) {
   document.getElementById('lb-img').src = src;

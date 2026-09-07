@@ -1,0 +1,55 @@
+.section-share {
+  width: min(1040px, calc(100% - 28px));
+  min-height: 38px;
+  margin: 8px auto 14px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.section-share-btn {
+  width: 68px;
+  height: 38px;
+  flex: 0 0 68px;
+  padding: 0;
+  border: 1px solid rgba(40, 66, 73, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #284249;
+  box-shadow: 0 4px 12px rgba(30, 55, 63, 0.08);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0;
+  font-weight: 800;
+}
+
+.section-share-btn::before {
+  content: "↗  分享";
+  display: block;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.section-share-btn:hover,
+.section-share-btn:focus-visible {
+  border-color: currentColor;
+  outline: 2px solid transparent;
+}
+
+.section-share-status {
+  min-width: 0;
+  color: #315f57;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .section-share {
+    width: calc(100% - 40px);
+    margin-top: 8px;
+    margin-bottom: 12px;
+  }
+}

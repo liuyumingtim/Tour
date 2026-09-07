@@ -603,6 +603,7 @@ a { color: inherit; }
   .hero-content { padding-top: 74px; }
 }
 </style>
+<link rel="stylesheet" href="assets/YO旅行班/shareable-sections.css">
 </head>
 <body>
 <a class="guide-back" href="index.html">← 回到地球導覽</a>
@@ -616,11 +617,12 @@ a { color: inherit; }
 </header>
 
 <nav class="nav" aria-label="新加坡旅遊分類">
-  <button class="nav-btn active" onclick="show('s0',this)">👋 認識 YoYo</button>
-  <button class="nav-btn" onclick="show('s3',this)">🗺️ 景點</button>
-  <button class="nav-btn" onclick="show('s5',this)">🍜 吃什麼</button>
-  <button class="nav-btn" onclick="show('s6',this)">🛍️ 買什麼</button>
+  <button class="nav-btn active" data-target="s0" data-slug="about" onclick="show('s0',this)">👋 認識 YoYo</button>
+  <button class="nav-btn" data-target="s3" data-slug="spots" onclick="show('s3',this)">🗺️ 景點</button>
+  <button class="nav-btn" data-target="s5" data-slug="food" onclick="show('s5',this)">🍜 吃什麼</button>
+  <button class="nav-btn" data-target="s6" data-slug="shopping" onclick="show('s6',this)">🛍️ 買什麼</button>
 </nav>
+<div class="section-share"><button class="section-share-btn" type="button">🔗 複製此分類連結</button><span class="section-share-status" role="status" aria-live="polite"></span></div>
 
 <main class="content">
   <section class="section active" id="s0">
@@ -770,14 +772,17 @@ a { color: inherit; }
   <div class="footer-contact">IG：@yoyo.touring ｜ LINE / 行程群組以行前通知為準</div>
 </footer>
 
+<script src="assets/YO旅行班/shareable-sections.js"></script>
 <script>
-function show(id, btn) {
+function show(id, btn, updateHash = true) {
   document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(button => button.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (updateHash && history.replaceState) history.replaceState(null, '', `${window.location.pathname}${window.location.search}#${btn.dataset.slug}`);
+  if (updateHash) window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+initShareableSections(document.querySelectorAll('.nav-btn'), show);
 </script>
 </body>
 </html>
