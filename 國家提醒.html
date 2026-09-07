@@ -61,6 +61,11 @@
     .emergency-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
     .emergency a { display: block; min-height: 58px; padding: 9px 10px; border: 1px solid #edc2b5; border-radius: 6px; background: rgba(255,255,255,.72); color: #8c3527; font-size: 12px; font-weight: 800; line-height: 1.45; text-decoration: none; }
     .emergency a span { display: block; margin-top: 2px; color: #ad4938; font-size: 14px; }
+    .ai-checker { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 18px; padding: 17px 18px; border: 1px solid #e5c96f; border-radius: 8px; background: #fff9df; }
+    .ai-checker strong { display: block; color: #765d13; font-size: 15px; }
+    .ai-checker span { display: block; margin-top: 4px; color: #706232; font-size: 12px; line-height: 1.55; }
+    .ai-checker a { display: inline-flex; flex: 0 0 auto; align-items: center; justify-content: center; min-height: 40px; padding: 9px 12px; border: 1px solid #c8a73e; border-radius: 6px; color: #664f0b; background: #ffffff; font-size: 12px; font-weight: 900; text-decoration: none; white-space: nowrap; }
+    .ai-checker a:hover, .ai-checker a:focus-visible { outline: none; background: #fff1ae; }
     .sources { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 18px; padding: 16px 18px; border: 1px solid #8edbd4; border-radius: 8px; background: var(--soft); }
     .sources strong { font-size: 14px; }
     .sources span { display: block; margin-top: 3px; color: #37696b; font-size: 12px; line-height: 1.45; }
@@ -68,7 +73,7 @@
     .source-links a { padding: 8px 10px; border: 1px solid #77c8c1; border-radius: 6px; color: #176c68; font-size: 12px; font-weight: 800; text-decoration: none; white-space: nowrap; }
     .source-links a:hover { background: #d2f1ec; }
     @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .card { min-height: 156px; } }
-    @media (max-width: 600px) { .shell { padding: 16px 12px 24px; } .hero { grid-template-columns: 1fr; gap: 10px; padding: 22px 18px; } .updated { white-space: normal; } .priority { grid-template-columns: 1fr; } .priority-item { min-height: 62px; padding: 11px 13px; } .priority-item + .priority-item { border-top: 1px solid #b3dcd7; border-left: 0; } .emergency-list { grid-template-columns: 1fr; } .sources { align-items: flex-start; flex-direction: column; } .source-links { justify-content: flex-start; } }
+    @media (max-width: 600px) { .shell { padding: 16px 12px 24px; } .hero { grid-template-columns: 1fr; gap: 10px; padding: 22px 18px; } .updated { white-space: normal; } .priority { grid-template-columns: 1fr; } .priority-item { min-height: 62px; padding: 11px 13px; } .priority-item + .priority-item { border-top: 1px solid #b3dcd7; border-left: 0; } .emergency-list { grid-template-columns: 1fr; } .ai-checker, .sources { align-items: stretch; flex-direction: column; } .ai-checker a { width: 100%; white-space: normal; } .source-links { justify-content: flex-start; } }
   </style>
 </head>
 <body>
@@ -97,6 +102,10 @@
     </section>
     <section class="priority" id="priority" aria-label="泰國出發前三件事"></section>
     <section class="grid" id="grid" aria-label="全境注意事項八格重點"></section>
+    <aside class="ai-checker" aria-label="伴手禮 AI 輔助檢查">
+      <div><strong>伴手禮看不懂成分？先拍照檢查</strong><span>第三方非政府工具，AI 結果僅供參考。只拍商品包裝，不要上傳護照、登機證或個人資料；有疑問請走紅線申報，最終以海關與防檢署現場判定為準。</span></div>
+      <a href="https://ai-customs.tw/" target="_blank" rel="noopener noreferrer">開啟 AI 入境物品檢查 ↗</a>
+    </aside>
     <section class="emergency" id="emergency" hidden></section>
     <section class="sources">
       <div><strong>出發前再確認</strong><span>入境、簽證、海關與航空規定可能調整，請以官方系統及行前通知為準。</span></div>

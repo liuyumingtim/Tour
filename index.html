@@ -1167,6 +1167,53 @@
       font-size: 14px;
     }
 
+    .ai-customs-callout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-top: 14px;
+      padding: 16px;
+      border: 1px solid rgba(103, 228, 223, 0.56);
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(103, 228, 223, 0.2), rgba(255, 224, 143, 0.12));
+    }
+
+    .ai-customs-copy strong {
+      display: block;
+      color: #ffffff;
+      font-size: 16px;
+    }
+
+    .ai-customs-copy span {
+      display: block;
+      margin-top: 5px;
+      color: var(--soft);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .ai-customs-link {
+      display: inline-flex;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 9px 14px;
+      border: 1px solid rgba(255,255,255,0.46);
+      border-radius: var(--radius);
+      color: #10344c;
+      background: #fff4bd;
+      font-size: 13px;
+      font-weight: 950;
+    }
+
+    .ai-customs-link:hover,
+    .ai-customs-link:focus-visible {
+      outline: none;
+      background: #ffffff;
+    }
+
     .source-box {
       margin-top: 14px;
       padding: 16px;
@@ -1499,6 +1546,15 @@
       .luggage-dialog-title {
         font-size: 26px;
       }
+
+      .ai-customs-callout {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .ai-customs-link {
+        width: 100%;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1618,6 +1674,14 @@
           <article class="luggage-card"><strong>回台禁帶物</strong><span>肉類、含肉食品、新鮮水果、植物和種子最容易出問題。</span></article>
           <article class="luggage-card"><strong>抵達後確認</strong><span>拿到行李先確認件數、外觀和輪子拉桿；有破損先在機場處理。</span></article>
         </div>
+
+        <aside class="ai-customs-callout" aria-label="伴手禮 AI 輔助檢查">
+          <div class="ai-customs-copy">
+            <strong>伴手禮看不懂成分？先拍照檢查</strong>
+            <span>可用第三方「台灣入境 AI 放大鏡」輔助判斷是否含肉或有入境風險，AI 結果僅供參考。只拍商品包裝，不要上傳護照、登機證或個人資料；有疑問請走紅線申報，最終以海關與防檢署現場判定為準。</span>
+          </div>
+          <a class="ai-customs-link" href="https://ai-customs.tw/" target="_blank" rel="noopener noreferrer">開啟 AI 入境物品檢查 ↗</a>
+        </aside>
 
         <div class="source-box" id="luggageSources">
           <p class="source-title">出發前可再確認</p>
@@ -1952,11 +2016,11 @@
         seen.add(key);
         results.push({ country, link });
       };
-      const sharedGuideKeywords = ["上機", "行李", "行動電源", "手持電風扇", "電風扇", "液體", "托運", "回台", "通關"];
+      const sharedGuideKeywords = ["上機", "行李", "行動電源", "手持電風扇", "電風扇", "液體", "托運", "回台", "通關", "肉類", "含肉", "食品", "伴手禮", "海關", "AI", "拍照檢查"];
       if (sharedGuideKeywords.some(keyword => keyword.includes(query) || query.includes(keyword))) {
         addResult(null, {
           name: "上機與行李小抄",
-          desc: "護照、行動電源、手持電風扇、托運與回台前整理。",
+          desc: "護照、行動電源、托運、回台禁帶物與伴手禮 AI 輔助檢查。",
           action: "luggage"
         });
       }
