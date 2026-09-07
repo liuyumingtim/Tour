@@ -1326,6 +1326,15 @@
         grid-template-columns: 1fr;
       }
 
+      body.search-active main#top > .hero,
+      body.search-active .workspace .globe-card {
+        display: none;
+      }
+
+      body.search-active .workspace {
+        margin-top: 14px;
+      }
+
       .info-panel {
         min-height: auto;
       }
@@ -1512,7 +1521,7 @@
         <div class="controls" aria-label="導覽工具">
           <label class="search">
             <span class="sr-only">搜尋目的地與提醒</span>
-            <input id="searchInput" type="search" placeholder="搜尋國家、城市、提醒" autocomplete="off">
+            <input id="searchInput" type="search" placeholder="搜尋國家、景點、美食、提醒" autocomplete="off">
           </label>
           <button class="control-btn" id="pauseBtn" type="button">暫停動態</button>
           <button class="control-btn" id="modeBtn" type="button">清單模式</button>
@@ -1614,7 +1623,7 @@
     </dialog>
 
     <footer class="footer">
-      YO! 旅行班 ｜ IG：@yoyo.touring ｜ 最後更新：2026-08-09（台北時間）
+      YO! 旅行班 ｜ IG：@yoyo.touring ｜ 最後更新：2026-09-07（台北時間）
     </footer>
   </div>
 
@@ -1632,11 +1641,27 @@
         note: {
           title: "泰國全境注意事項",
           intro: "適用於曼谷、芭達雅、清邁、清萊等地。",
-          url: "國家提醒.html?country=th"
+          url: "國家提醒.html?country=th",
+          keywords: "TDAC 數位入境卡 財力證明 現金 泰銖 電子菸 菸品 插座 電壓 220V 寺廟 護照"
         },
         guides: [
-          { name: "清邁｜旅遊收藏版", url: "清邁.html", desc: "清邁市區與南奔的景點、體驗什麼、吃什麼與買什麼。" },
-          { name: "曼谷・芭達雅｜旅遊收藏版", url: "曼谷芭達雅.html", desc: "曼谷與芭達雅的景點、吃什麼與買什麼。" }
+          {
+            name: "清邁｜旅遊收藏版", url: "清邁.html", desc: "清邁市區、清萊與南奔的景點、體驗什麼、吃什麼與買什麼。",
+            sections: [
+              { name: "清邁｜景點", category: "景點 走跳", url: "清邁.html#spots", desc: "白廟、金三角、雙龍寺與古城景點。", keywords: "森林禪院 Wat Pha Lat 清萊白廟 Wat Rong Khun 金三角 湄公河 雙龍寺 藍廟 Wat Ban Den 三王紀念像 大塔寺 Wat Chedi Luang 塔佩門 Tha Phae Gate 尼曼 尼曼一號 蘭納星巴克 南奔火車 Kao Mai Estate" },
+              { name: "清邁｜體驗什麼", category: "體驗 體驗什麼", url: "清邁.html#experience", desc: "泰式按摩、洗頭與泰服拍照。", keywords: "泰式按摩 洗頭 泰服 寺廟拍照" },
+              { name: "清邁｜吃什麼", category: "美食 吃什麼", url: "清邁.html#food", desc: "泰北咖哩麵、香腸、泰奶與水果。", keywords: "泰北香腸 Sai Ua 泰北咖哩麵 咖喱麵 Khao Soi 山竹 龍眼 手標泰奶 ChaTraMue" },
+              { name: "清邁｜買什麼", category: "購物 伴手禮 買什麼", url: "清邁.html#shopping", desc: "泰北零食、香氛與旅行小物。", keywords: "草藥鼻通 鹹蛋黃洋芋片 泰式零食 西瓜涼糖 果乾 精油 香氛 手工藝" }
+            ]
+          },
+          {
+            name: "曼谷・芭達雅｜旅遊收藏版", url: "曼谷芭達雅.html", desc: "曼谷與芭達雅的景點、吃什麼與買什麼。",
+            sections: [
+              { name: "曼谷・芭達雅｜景點", category: "景點 走跳", url: "曼谷芭達雅.html#spots", desc: "商場、水上市場、夜市與芭達雅夜景。", keywords: "Big C 四面佛 航站 21 Terminal 21 水上市場 飛機夜市 OCEAN SKY 海天盛宴 Walking Street 步行街" },
+              { name: "曼谷・芭達雅｜吃什麼", category: "美食 吃什麼", url: "曼谷芭達雅.html#food", desc: "泰奶、泰式料理與經典甜點。", keywords: "Karun 手標 ChaTraMue 泰奶 椰子 KOI 泰式米粉湯 斑斕 芒果糯米飯 山竹 龍眼汁" },
+              { name: "曼谷・芭達雅｜買什麼", category: "購物 伴手禮 買什麼", url: "曼谷芭達雅.html#shopping", desc: "Big C 零食、伴手禮與實用小物。", keywords: "Big C 媽媽牌船麵 鹹蛋黃洋芋片 泰式零食 西瓜涼糖 草藥鼻通" }
+            ]
+          }
         ]
       },
       {
@@ -1651,11 +1676,27 @@
         note: {
           title: "越南全境注意事項",
           intro: "適用於中越、北越與未來的越南各地行程。",
-          url: "國家提醒.html?country=vn"
+          url: "國家提醒.html?country=vn",
+          keywords: "PAI 入境資料 QR Code 團體簽證 eVisa 電子菸 加熱菸 越盾 插座 電壓 220V 護照"
         },
         guides: [
-          { name: "北越・河內・下龍灣｜旅遊收藏版", url: "北越.html", desc: "河內與下龍灣的景點、體驗什麼、吃什麼與買什麼。" },
-          { name: "中越・峴港・會安｜旅遊收藏版", url: "中越.html", desc: "峴港與會安的景點、吃什麼與買什麼。" }
+          {
+            name: "北越・河內・下龍灣｜旅遊收藏版", url: "北越.html", desc: "河內與下龍灣的景點、體驗什麼、吃什麼與買什麼。",
+            sections: [
+              { name: "北越｜景點", category: "景點 走跳", url: "北越.html#spots", desc: "河內古街、湖景與下龍灣。", keywords: "三十六古街 還劍湖 西湖 下龍灣 陸龍灣 巴亭廣場 胡志明陵寢 驚訝洞 英雄島 石灰岩" },
+              { name: "北越｜體驗什麼", category: "體驗 體驗什麼", url: "北越.html#experience", desc: "下龍灣快艇、越式洗頭與按摩。", keywords: "快艇 越式洗頭 熱石按摩" },
+              { name: "北越｜吃什麼", category: "美食 吃什麼", url: "北越.html#food", desc: "河粉、椰子咖啡與越式三明治。", keywords: "河粉 Phở Pho 10 Lý Quốc Sư Cộng Cà Phê Cong Cafe 椰子咖啡 Bánh Mì 25 Banh Mi 越式三明治" },
+              { name: "北越｜買什麼", category: "購物 伴手禮 買什麼", url: "北越.html#shopping", desc: "越南咖啡、腰果、果乾與綠豆糕。", keywords: "越南咖啡 腰果 果乾 龍眼乾 綠豆糕" }
+            ]
+          },
+          {
+            name: "中越・峴港・會安｜旅遊收藏版", url: "中越.html", desc: "峴港與會安的景點、吃什麼與買什麼。",
+            sections: [
+              { name: "中越｜景點", category: "景點 走跳", url: "中越.html#spots", desc: "巴拿山、黃金佛手橋與會安古鎮。", keywords: "巴拿山 黃金佛手橋 Golden Bridge 法國村 French Village 山頂星巴克 POP MART 泡泡瑪特 會安古鎮 燈籠" },
+              { name: "中越｜吃什麼", category: "美食 吃什麼", url: "中越.html#food", desc: "夜市、巧克力、越式三明治與花草飲。", keywords: "山茶夜市 Maison Marou 巧克力 Bánh Mì Phượng Banh Mi Phuong 越式三明治 椰子咖啡 Mót Mot 花草飲" },
+              { name: "中越｜買什麼", category: "購物 伴手禮 買什麼", url: "中越.html#shopping", desc: "巧克力、咖啡、燈籠與越南伴手禮。", keywords: "Marou 巧克力 越南咖啡 GO Đà Nẵng GO Da Nang 會安燈籠 芒果乾 腰果" }
+            ]
+          }
         ]
       },
       {
@@ -1670,11 +1711,24 @@
         note: {
           title: "馬來西亞全境注意事項",
           intro: "適用於馬來西亞各地的入境與旅行提醒。",
-          url: "國家提醒.html?country=my"
+          url: "國家提醒.html?country=my",
+          keywords: "MDAC 數位入境卡 英規插座 Type G 令吉 電子菸 清真寺 護照"
         },
         guides: [
-          { name: "馬來西亞｜旅遊收藏版", url: "馬來西亞.html", desc: "馬來西亞的景點、吃什麼與買什麼。" },
-          { name: "新馬跨境｜旅行指南", url: "新馬跨境.html", desc: "兩國切換與跨境移動的共用內容。" }
+          {
+            name: "馬來西亞｜旅遊收藏版", url: "馬來西亞.html", desc: "馬來西亞的景點、吃什麼與買什麼。",
+            sections: [
+              { name: "馬來西亞｜景點", category: "景點 走跳", url: "馬來西亞.html#spots", desc: "吉隆坡地標與馬六甲旅行畫面。", keywords: "雙子星大樓 Petronas Twin Towers 吉隆坡 馬六甲 老城 書店" },
+              { name: "馬來西亞｜吃什麼", category: "美食 吃什麼", url: "馬來西亞.html#food", desc: "椰漿飯、沙嗲與肉骨茶。", keywords: "椰漿飯 沙嗲 肉骨茶 夜市 熟食中心" },
+              { name: "馬來西亞｜買什麼", category: "購物 伴手禮 買什麼", url: "馬來西亞.html#shopping", desc: "白咖啡、巧克力與肉骨茶包。", keywords: "白咖啡 Beryl's Beryl’s 巧克力 肉骨茶包" }
+            ]
+          },
+          {
+            name: "新馬跨境｜旅行指南", url: "新馬跨境.html", desc: "兩國切換與跨境移動的共用內容。",
+            sections: [
+              { name: "新馬跨境｜通關", category: "跨境 通關", url: "新馬跨境.html#border", desc: "護照、行李下車與跨境集合提醒。", keywords: "新進馬出 馬進新出 跨境 通關 過關 行李下車 護照 集合 廁所" }
+            ]
+          }
         ]
       },
       {
@@ -1689,11 +1743,24 @@
         note: {
           title: "新加坡全境注意事項",
           intro: "適用於新加坡行程的入境與城市旅行提醒。",
-          url: "國家提醒.html?country=sg"
+          url: "國家提醒.html?country=sg",
+          keywords: "SG Arrival Card SGAC MyICA 電子菸 英規插座 Type G 城市規矩 護照"
         },
         guides: [
-          { name: "新加坡｜旅遊收藏版", url: "新加坡.html", desc: "新加坡的景點、吃什麼與買什麼。" },
-          { name: "新馬跨境｜旅行指南", url: "新馬跨境.html", desc: "兩國切換與跨境移動的共用內容。" }
+          {
+            name: "新加坡｜旅遊收藏版", url: "新加坡.html", desc: "新加坡的景點、吃什麼與買什麼。",
+            sections: [
+              { name: "新加坡｜景點", category: "景點 走跳", url: "新加坡.html#spots", desc: "魚尾獅、金沙、未來樹與星耀樟宜。", keywords: "魚尾獅 Merlion 金沙酒店 Marina Bay Sands 未來樹 Supertree Grove 星耀樟宜 Jewel 濱海灣" },
+              { name: "新加坡｜吃什麼", category: "美食 吃什麼", url: "新加坡.html#food", desc: "海南雞飯、咖椰吐司與叻沙。", keywords: "海南雞飯 咖椰吐司 半熟蛋 叻沙 熟食中心" },
+              { name: "新加坡｜買什麼", category: "購物 伴手禮 買什麼", url: "新加坡.html#shopping", desc: "Bacha Coffee、TWG 與伴手禮。", keywords: "Bacha Coffee TWG 茶 果乾 伴手禮" }
+            ]
+          },
+          {
+            name: "新馬跨境｜旅行指南", url: "新馬跨境.html", desc: "兩國切換與跨境移動的共用內容。",
+            sections: [
+              { name: "新馬跨境｜通關", category: "跨境 通關", url: "新馬跨境.html#border", desc: "護照、行李下車與跨境集合提醒。", keywords: "新進馬出 馬進新出 跨境 通關 過關 行李下車 護照 集合 廁所" }
+            ]
+          }
         ]
       }
     ];
@@ -1775,6 +1842,7 @@
       state.selectedView = view;
       state.query = "";
       searchInput.value = "";
+      document.body.classList.remove("search-active");
       layer.querySelectorAll(".country-node").forEach(node => {
         node.classList.toggle("active", node.dataset.id === id);
       });
@@ -1831,26 +1899,67 @@
       return `<a class="panel-link" href="${link.url}">${body}</a>`;
     }
 
+    function textMatches(value, query) {
+      return String(value || "").toLowerCase().includes(query);
+    }
+
+    function matchingGuideLinks(country, query) {
+      if (!query) return country.guides;
+      const matches = [];
+      country.guides.forEach(guide => {
+        if (textMatches(`${guide.name} ${guide.desc}`, query)) matches.push(guide);
+        (guide.sections || []).forEach(section => {
+          if (textMatches(`${section.category} ${section.desc} ${section.keywords}`, query)) matches.push(section);
+        });
+      });
+      return matches;
+    }
+
+    function countrySearchText(country) {
+      return [
+        country.name,
+        country.short,
+        country.copy,
+        country.note.title,
+        country.note.intro,
+        country.note.keywords,
+        ...country.guides.flatMap(guide => [
+          guide.name,
+          guide.desc,
+          ...(guide.sections || []).flatMap(section => [section.category, section.desc, section.keywords])
+        ])
+      ].join(" ").toLowerCase();
+    }
+
     function getSearchResults() {
       const query = state.query.trim().toLowerCase();
       if (!query) return [];
       const results = [];
+      const seen = new Set();
+      const addResult = (country, link) => {
+        const key = link.url || link.action || `${link.countryAction}:${link.countryView || "overview"}`;
+        if (seen.has(key)) return;
+        seen.add(key);
+        results.push({ country, link });
+      };
       const sharedGuideKeywords = ["上機", "行李", "行動電源", "手持電風扇", "電風扇", "液體", "托運", "回台", "通關"];
       if (sharedGuideKeywords.some(keyword => keyword.includes(query) || query.includes(keyword))) {
-        results.push({
-          country: null,
-          link: {
-            name: "上機與行李小抄",
-            desc: "護照、行動電源、手持電風扇、托運與回台前整理。",
-            action: "luggage"
-          }
+        addResult(null, {
+          name: "上機與行李小抄",
+          desc: "護照、行動電源、手持電風扇、托運與回台前整理。",
+          action: "luggage"
         });
       }
       countries.forEach(country => {
-        const haystack = `${country.name} ${country.short} ${country.copy} ${country.note.title} ${country.note.intro} ${country.guides.map(link => `${link.name} ${link.desc}`).join(" ")}`.toLowerCase();
-        if (haystack.includes(query)) results.push({ country, link: { name: country.name, desc: "選擇全境指南或目前已整理好的地區內容。", countryAction: country.id } });
+        if (textMatches(`${country.name} ${country.short} ${country.copy}`, query)) {
+          addResult(country, { name: country.name, desc: "選擇全境注意事項或目前已整理好的旅遊收藏版。", countryAction: country.id });
+        }
+        if (textMatches(`${country.note.title} ${country.note.keywords}`, query)) {
+          addResult(country, { name: country.note.title, desc: country.note.intro, url: country.note.url });
+        }
+        matchingGuideLinks(country, query).forEach(link => addResult(country, link));
       });
-      return results;
+      return results.slice(0, 10);
     }
 
     function countryOverviewMarkup(country) {
@@ -1882,6 +1991,20 @@
       `;
     }
 
+    function bindPanelActions() {
+      panel.querySelectorAll("[data-country-action]").forEach(btn => {
+        btn.addEventListener("click", () => selectCountry(btn.dataset.countryAction, btn.dataset.countryView));
+      });
+      panel.querySelectorAll("[data-country-view]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          state.selectedView = btn.dataset.countryView;
+          renderPanel();
+        });
+      });
+      const clearBtn = panel.querySelector("#clearBtn");
+      if (clearBtn) clearBtn.addEventListener("click", clearSelection);
+    }
+
     function renderPanel() {
       const hasPanelContent = Boolean(state.query.trim() || state.selectedId);
       workspace.classList.toggle("country-selected", hasPanelContent);
@@ -1891,9 +2014,10 @@
         panel.innerHTML = `
           <p class="panel-kicker">搜尋結果</p>
           <h2 class="panel-title">${results.length ? "找到這些入口" : "先換個關鍵字試試"}</h2>
-          <p class="panel-copy">${results.length ? "點開需要的目的地或提醒。" : "可以搜尋泰國、越南、新馬、上機、行李、通關、回台。"}</p>
+          <p class="panel-copy">${results.length ? "點開就會直接進到對應目的地或分類。" : "可以搜尋白廟、咖哩麵、行動電源、通關或國家名稱。"}</p>
           <div class="link-list">${results.map(({ country, link }) => linkMarkup(link, country?.name || "")).join("")}</div>
         `;
+        bindPanelActions();
         return;
       }
 
@@ -1914,17 +2038,7 @@
         `;
       }
 
-      panel.querySelectorAll("[data-country-action]").forEach(btn => {
-        btn.addEventListener("click", () => selectCountry(btn.dataset.countryAction, btn.dataset.countryView));
-      });
-      panel.querySelectorAll("[data-country-view]").forEach(btn => {
-        btn.addEventListener("click", () => {
-          state.selectedView = btn.dataset.countryView;
-          renderPanel();
-        });
-      });
-      const clearBtn = panel.querySelector("#clearBtn");
-      if (clearBtn) clearBtn.addEventListener("click", clearSelection);
+      bindPanelActions();
     }
 
     function renderClassic() {
@@ -1932,10 +2046,7 @@
       classicPanel.innerHTML = `
         <div class="classic-grid">
           ${countries.map(country => {
-            const links = country.guides.filter(link => {
-              if (!query) return true;
-              return `${country.name} ${country.short} ${country.copy} ${country.note.title} ${country.note.intro} ${link.name} ${link.desc}`.toLowerCase().includes(query);
-            });
+            const links = matchingGuideLinks(country, query);
             return `
               <section class="classic-country" style="--accent:${country.accent}">
                 <h3>${country.name}</h3>
@@ -1963,13 +2074,14 @@
       const query = state.query.trim().toLowerCase();
       layer.querySelectorAll(".country-node").forEach(node => {
         const country = countries.find(item => item.id === node.dataset.id);
-        const match = !query || `${country.name} ${country.short} ${country.copy} ${country.note.title} ${country.note.intro} ${country.guides.map(link => `${link.name} ${link.desc}`).join(" ")}`.toLowerCase().includes(query);
+        const match = !query || countrySearchText(country).includes(query);
         node.classList.toggle("dimmed", !match);
       });
     }
 
     searchInput.addEventListener("input", event => {
       state.query = event.target.value;
+      document.body.classList.toggle("search-active", Boolean(state.query.trim()));
       if (state.query.trim()) {
         state.selectedId = "";
         layer.querySelectorAll(".country-node").forEach(node => node.classList.remove("active"));
