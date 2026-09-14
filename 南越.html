@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="YoYo 整理南越胡志明、美奈與美托的景點、體驗、吃什麼與買什麼，從城市走進沙丘與湄公河水鄉。">
+  <link rel="canonical" href="https://liuyumingtim.github.io/Tour/%E5%8D%97%E8%B6%8A.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="YO! 旅行班">
+  <meta property="og:title" content="YoYo 帶你玩南越・胡志明｜旅遊收藏版">
+  <meta property="og:description" content="胡志明、美奈與美托的景點、體驗、吃什麼與買什麼，分類整理好直接分享。">
+  <meta property="og:url" content="https://liuyumingtim.github.io/Tour/%E5%8D%97%E8%B6%8A.html">
+  <meta property="og:image" content="https://liuyumingtim.github.io/Tour/assets/YO%E6%97%85%E8%A1%8C%E7%8F%AD/hero-yoyo-airport.png">
+  <meta property="og:image:alt" content="YO! 旅行班南越胡志明旅遊收藏版">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>YoYo 帶你玩南越・胡志明｜旅遊收藏版</title>
+  <style>
+    :root {
+      --brick: #A74632;
+      --brick-deep: #70291F;
+      --orange: #E27845;
+      --gold: #E9B94C;
+      --teal: #16766E;
+      --teal-soft: #E5F3EF;
+      --sand: #F6E7C7;
+      --cream: #FBF7EF;
+      --paper: #FFFDF8;
+      --ink: #27333A;
+      --muted: #68747A;
+      --line: #E5D7C0;
+      --shadow: 0 12px 28px rgba(82, 54, 35, .09);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--cream); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", sans-serif; }
+    button { font: inherit; }
+    a { color: inherit; }
+
+    .guide-back {
+      position: absolute;
+      z-index: 3;
+      top: 18px;
+      left: max(18px, calc((100% - 940px) / 2));
+      padding: 9px 12px;
+      border: 1px solid rgba(255,255,255,.44);
+      color: #fff;
+      background: rgba(58, 23, 18, .25);
+      font-size: 12px;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .hero {
+      min-height: 360px;
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background:
+        radial-gradient(circle at 78% 30%, rgba(255, 215, 112, .33), transparent 24%),
+        linear-gradient(135deg, var(--brick-deep), var(--brick) 55%, #C45D35);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      right: -7vw;
+      bottom: -190px;
+      width: 610px;
+      height: 330px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 50%;
+      transform: rotate(-8deg);
+      box-shadow: 0 -45px 0 rgba(255,255,255,.04), 0 -90px 0 rgba(255,255,255,.035);
+    }
+
+    .hero::after {
+      content: "SAIGON";
+      position: absolute;
+      right: -12px;
+      bottom: 24px;
+      color: rgba(255,255,255,.09);
+      font-family: Georgia, "Noto Serif TC", serif;
+      font-size: clamp(78px, 15vw, 188px);
+      font-weight: 900;
+      line-height: .82;
+      pointer-events: none;
+    }
+
+    .hero-content { position: relative; z-index: 1; width: min(940px, calc(100% - 36px)); margin: 0 auto; padding: 108px 0 58px; }
+    .hero-badge { display: inline-block; padding: 6px 11px; border-radius: 99px; color: #5F3416; background: #FFD77B; font-size: 12px; font-weight: 950; }
+    .hero-title { max-width: 760px; margin: 15px 0 8px; font-family: Georgia, "Noto Serif TC", serif; font-size: clamp(39px, 6vw, 62px); line-height: 1.12; }
+    .hero-title span { color: #FFE08D; }
+    .hero-sub { max-width: 680px; margin: 0; color: rgba(255,255,255,.88); font-size: 15px; line-height: 1.75; }
+    .hero-line { width: 48px; height: 3px; margin-top: 17px; background: var(--gold); }
+    .hero-meta { display: inline-block; margin-top: 14px; padding: 8px 11px; border: 1px solid rgba(255,255,255,.22); color: rgba(255,255,255,.84); background: rgba(255,255,255,.09); font-size: 12px; line-height: 1.65; }
+    .hero-meta strong { color: #FFE08D; }
+
+    .nav { position: sticky; top: 0; z-index: 5; display: flex; justify-content: center; gap: 3px; overflow-x: auto; border-bottom: 1px solid var(--line); background: rgba(255,253,248,.97); box-shadow: 0 2px 8px rgba(89,62,35,.05); }
+    .nav-btn { min-height: 50px; border: 0; border-bottom: 3px solid transparent; padding: 13px 15px 10px; color: var(--muted); background: transparent; cursor: pointer; font-size: 13px; font-weight: 850; white-space: nowrap; }
+    .nav-btn.active { color: var(--brick); border-bottom-color: var(--brick); }
+    .nav-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: -4px; }
+
+    .content { width: min(860px, calc(100% - 36px)); margin: 0 auto; padding: 38px 0 74px; }
+    .section { display: none; animation: fade .22s ease; }
+    .section.active { display: block; }
+    @keyframes fade { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: none; } }
+
+    .sec-head { margin-bottom: 20px; }
+    .sec-emoji { display: block; margin-bottom: 6px; font-size: 28px; }
+    .sec-title { margin: 0; color: var(--brick); font-family: Georgia, "Noto Serif TC", serif; font-size: 29px; line-height: 1.35; }
+    .sec-desc { margin: 6px 0 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+
+    .about-hero, .route-card, .spot-card, .item-card, .buy-card { border: 1px solid var(--line); background: var(--paper); box-shadow: var(--shadow); }
+    .about-hero { display: flex; align-items: center; gap: 18px; margin-bottom: 15px; padding: 20px; border-left: 5px solid var(--brick); }
+    .about-avatar { width: 92px; height: 92px; flex: 0 0 auto; overflow: hidden; border: 3px solid var(--gold); border-radius: 50%; background: var(--teal-soft); }
+    .about-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .about-name { color: var(--brick); font-family: Georgia, "Noto Serif TC", serif; font-size: 23px; font-weight: 900; }
+    .about-role { margin: 4px 0; color: var(--teal); font-size: 13px; font-weight: 900; }
+    .about-copy { color: var(--muted); font-size: 13px; line-height: 1.75; }
+
+    .route-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 11px; margin: 15px 0; }
+    .route-card { min-height: 180px; padding: 17px; }
+    .route-card:nth-child(1) { border-top: 4px solid var(--brick); }
+    .route-card:nth-child(2) { border-top: 4px solid var(--gold); }
+    .route-card:nth-child(3) { border-top: 4px solid var(--teal); }
+    .route-icon { display: block; margin-bottom: 7px; font-size: 27px; }
+    .route-card h3 { margin: 0 0 7px; font-size: 17px; }
+    .route-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.75; }
+
+    .yoyo-quote { margin-top: 16px; padding: 18px 20px; border: 1px solid #C7DDD5; border-left: 5px solid var(--teal); background: var(--teal-soft); color: #365B57; font-size: 14px; line-height: 1.85; }
+    .yoyo-quote strong { color: var(--teal); }
+    .collection-intro { margin: 0 0 18px; padding: 15px 17px; border-left: 4px solid var(--gold); color: #5D4920; background: #FFF1C8; font-size: 14px; line-height: 1.85; }
+    .collection-intro strong { color: var(--brick-deep); }
+
+    .region-head { display: flex; align-items: center; gap: 10px; margin: 28px 0 13px; }
+    .region-head::after { content: ""; height: 1px; flex: 1; background: var(--line); }
+    .region-head h3 { margin: 0; color: var(--brick-deep); font-family: Georgia, "Noto Serif TC", serif; font-size: 20px; white-space: nowrap; }
+    .spot-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; }
+    .spot-card { min-height: 255px; padding: 19px; }
+    .spot-card h4 { margin: 8px 0 7px; color: var(--ink); font-size: 18px; line-height: 1.4; }
+    .spot-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .place-tag { display: inline-flex; padding: 5px 10px; border-radius: 99px; color: #fff; background: var(--brick); font-size: 11px; font-weight: 900; }
+    .place-tag.sand { color: #5F4316; background: #F3C85E; }
+    .place-tag.green { background: var(--teal); }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 13px 0; }
+    .tag { padding: 4px 8px; border: 1px solid #C6DED7; color: var(--teal); background: var(--teal-soft); font-size: 11px; font-weight: 850; }
+    .yoyo-note { padding-top: 11px; border-top: 1px dashed var(--line); color: #5E6A6F !important; }
+    .yoyo-note strong { color: var(--teal); }
+
+    .item-list { display: grid; gap: 12px; }
+    .item-card { display: grid; grid-template-columns: 52px 1fr; align-items: start; gap: 14px; padding: 18px; }
+    .item-icon { display: grid; width: 52px; height: 52px; place-items: center; border-radius: 50%; background: #FFF0D9; font-size: 26px; }
+    .item-card h3 { margin: 0 0 5px; font-size: 17px; }
+    .item-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .item-card small { display: inline-block; margin-top: 8px; color: var(--teal); font-size: 11px; font-weight: 900; }
+
+    .notice-card { margin-top: 15px; padding: 17px; border: 1px solid #E7CF91; border-left: 5px solid var(--gold); color: #5C4D2F; background: #FFF8E6; font-size: 13px; line-height: 1.85; }
+    .notice-card strong { color: var(--brick); }
+    .buy-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .buy-card { min-height: 180px; padding: 18px 16px; text-align: center; }
+    .buy-icon { display: block; margin-bottom: 7px; font-size: 30px; }
+    .buy-icon-image { width: 42px; height: 42px; margin: 0 auto 7px; object-fit: contain; }
+    .buy-card h3 { margin: 0 0 6px; font-size: 16px; }
+    .buy-card p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.75; }
+
+    .footer { padding: 34px 20px; color: rgba(255,255,255,.83); background: linear-gradient(135deg, var(--brick-deep), var(--brick)); text-align: center; font-size: 13px; line-height: 1.8; }
+    .footer strong { color: #fff; font-size: 15px; }
+    .footer-contact { margin-top: 6px; color: rgba(255,255,255,.94); }
+    .footer-contact a { font-weight: 850; text-underline-offset: 3px; }
+
+    @media (max-width: 680px) {
+      .hero { min-height: 330px; }
+      .hero-content { padding-top: 98px; }
+      .guide-back { top: 15px; left: 15px; }
+      .content { width: min(100% - 28px, 860px); padding-top: 30px; }
+      .nav { justify-content: center; gap: 0; }
+      .nav-btn { padding-right: 8px; padding-left: 8px; font-size: 11px; }
+      .about-hero { align-items: flex-start; padding: 17px; }
+      .about-avatar { width: 76px; height: 76px; }
+      .route-grid, .spot-grid, .buy-grid { grid-template-columns: 1fr; }
+      .route-card, .spot-card, .buy-card { min-height: 0; }
+    }
+  </style>
+  <link rel="stylesheet" href="assets/YO旅行班/shareable-sections.css">
+</head>
+<body>
+  <a class="guide-back" href="index.html">← 回到地球導覽</a>
+
+  <header class="hero">
+    <div class="hero-content">
+      <span class="hero-badge">YoYo 帶你玩</span>
+      <h1 class="hero-title">南越・胡志明 <span>旅遊收藏版</span></h1>
+      <p class="hero-sub">從胡志明的城市建築，走到美奈的海岸沙丘，再進入美托的湄公河水鄉。</p>
+      <div class="hero-line"></div>
+      <div class="hero-meta">最後整理：2026 年 9 月 14 日<br><strong>行程小提醒：</strong>景點與順序以行前說明會和團員手上的行程表為準。</div>
+    </div>
+  </header>
+
+  <nav class="nav" aria-label="南越胡志明旅遊分類">
+    <button class="nav-btn active" data-target="intro" data-slug="about" onclick="show('intro', this)">👋 認識 YoYo</button>
+    <button class="nav-btn" data-target="spots" data-slug="spots" onclick="show('spots', this)">🗺️ 景點</button>
+    <button class="nav-btn" data-target="experience" data-slug="experience" onclick="show('experience', this)">🛻 體驗什麼</button>
+    <button class="nav-btn" data-target="food" data-slug="food" onclick="show('food', this)">🍜 吃什麼</button>
+    <button class="nav-btn" data-target="shopping" data-slug="shopping" onclick="show('shopping', this)">🛍️ 買什麼</button>
+  </nav>
+  <div class="section-share"><button class="section-share-btn" type="button">🔗 複製此分類連結</button><span class="section-share-status" role="status" aria-live="polite"></span></div>
+
+  <main class="content">
+    <section class="section active" id="intro">
+      <div class="sec-head">
+        <span class="sec-emoji">👋</span>
+        <h2 class="sec-title">YoYo 帶你認識南越</h2>
+        <p class="sec-desc">這趟會在城市、沙丘和水鄉之間切換。先抓住三種節奏，走起來會更有感。</p>
+      </div>
+
+      <div class="about-hero">
+        <div class="about-avatar"><img src="assets/YO旅行班/yoyo-avatar.jpg" alt="劉又銘 YoYo 大頭照"></div>
+        <div>
+          <div class="about-name">劉又銘 YoYo</div>
+          <div class="about-role">可樂旅遊｜國際短程線領隊</div>
+          <div class="about-copy">Yo 在東南亞，帶團，也在過生活。這次我先把胡志明、美奈和美托的旅行畫面整理好，讓大家出發前知道每一段有什麼不同，也更容易找到自己喜歡的節奏。</div>
+        </div>
+      </div>
+
+      <div class="route-grid">
+        <article class="route-card"><span class="route-icon">🏙️</span><h3>胡志明市</h3><p>法式建築、熱鬧街區、咖啡館與西貢河，城市節奏快，畫面切換也快。</p></article>
+        <article class="route-card"><span class="route-icon">🏜️</span><h3>美奈</h3><p>從漁村、海岸到紅白沙丘，城市感突然轉成開闊的風與沙。</p></article>
+        <article class="route-card"><span class="route-icon">🛶</span><h3>美托</h3><p>搭船進入湄公河水道，看果園、蜂蜜、椰林與椰子糖製作，節奏慢慢沉下來。</p></article>
+      </div>
+
+      <div class="yoyo-quote"><strong>YoYo 的一句話提醒。</strong><br>這趟南越最有意思的，是短短幾天裡會一直換風景；從城市走到沙丘，再進到水鄉，三種南越剛好連成一趟旅程。</div>
+    </section>
+
+    <section class="section" id="spots">
+      <div class="sec-head">
+        <span class="sec-emoji">🗺️</span>
+        <h2 class="sec-title">YoYo 帶你走跳</h2>
+        <p class="sec-desc">這一版依照實際行程地點整理，先用文字抓畫面，實際順序仍以當團安排為準。</p>
+      </div>
+
+      <div class="collection-intro"><strong>南越的好看，不只一種。</strong>胡志明看城市建築，美奈看海岸和沙丘，美托則從水路走進農村生活。每一段都不用急著打卡完，先感受風景怎麼改變。</div>
+
+      <div class="region-head"><h3>胡志明｜城市建築與街區</h3></div>
+      <div class="spot-grid">
+        <article class="spot-card">
+          <span class="place-tag">胡志明市中心</span>
+          <h4>西貢大教堂</h4>
+          <p>又稱紅教堂，是胡志明市中心辨識度很高的建築。這趟以外觀欣賞為主，可以和旁邊的中央郵政總局一起看，感受老西貢留下來的城市輪廓。</p>
+          <div class="tags"><span class="tag">城市地標</span><span class="tag">法式建築</span><span class="tag">外觀拍照</span></div>
+          <p class="yoyo-note"><strong>YoYo 小提醒：</strong>現場若有整修或人潮，拍照位置與停留方式以導遊、領隊安排為準。</p>
+        </article>
+        <article class="spot-card">
+          <span class="place-tag">胡志明市中心</span>
+          <h4>百年郵政總局</h4>
+          <p>走進郵政總局，會看到挑高大廳、拱形結構與很有年代感的細節。它不只是一個拍照點，也很適合用幾分鐘看看胡志明城市歷史留下來的層次。</p>
+          <div class="tags"><span class="tag">百年建築</span><span class="tag">室內空間</span><span class="tag">城市歷史</span></div>
+        </article>
+        <article class="spot-card">
+          <span class="place-tag">第一郡</span>
+          <h4>胡志明市政廳・阮惠街</h4>
+          <p>市政廳以外觀欣賞為主，往前就是阮惠街。沿著步行區慢慢走，會遇見老建築、現代高樓、咖啡館和往西貢河延伸的城市景色。</p>
+          <div class="tags"><span class="tag">市政廳外觀</span><span class="tag">阮惠街</span><span class="tag">城市散步</span></div>
+        </article>
+        <article class="spot-card">
+          <span class="place-tag">第一郡</span>
+          <h4>咖啡公寓・同起街</h4>
+          <p>咖啡公寓先從外觀看一整面陽台與店家招牌；同起街則把法式建築、商店與咖啡館串在一起。這一段很適合邊走邊看。</p>
+          <div class="tags"><span class="tag">咖啡文化</span><span class="tag">同起街</span><span class="tag">街區散步</span></div>
+          <p class="yoyo-note"><strong>YoYo 小提醒：</strong>行程安排咖啡公寓外觀拍照，是否有自由時間入內以現場說明為準。</p>
+        </article>
+      </div>
+
+      <div class="region-head"><h3>美奈｜海岸、漁村與沙丘</h3></div>
+      <div class="spot-grid">
+        <article class="spot-card">
+          <span class="place-tag sand">美奈海岸</span>
+          <h4>美奈漁村</h4>
+          <p>從岸邊望出去，圓形簍船、漁船與海面會疊成很有生活感的畫面。這裡的重點不是華麗，而是看見美奈原本作為漁村的日常。</p>
+          <div class="tags"><span class="tag">漁村日常</span><span class="tag">海岸風景</span><span class="tag">簍船</span></div>
+          <p class="yoyo-note"><strong>YoYo 小提醒：</strong>海邊日照和風都很直接，帽子先拿穩，拍完也記得留一點時間用眼睛看。</p>
+        </article>
+        <article class="spot-card">
+          <span class="place-tag sand">美奈</span>
+          <h4>白沙丘</h4>
+          <p>白沙丘的空間感很開，光線照在沙面上時，坡度和紋理會一直變。搭吉普車進入沙丘後，沿途的速度感和站上高處看到的風景，是這趟很有記憶點的一段。</p>
+          <div class="tags"><span class="tag">白色沙丘</span><span class="tag">開闊風景</span><span class="tag">吉普車</span></div>
+          <p class="yoyo-note"><strong>YoYo 小提醒：</strong>沙丘風大、日照強，手機和小物先收好；座位與活動方式依現場安排。</p>
+        </article>
+        <article class="spot-card">
+          <span class="place-tag sand">美奈</span>
+          <h4>紅沙丘</h4>
+          <p>紅沙丘離海岸不遠，顏色和白沙丘完全不同。光線落下來時，沙面的紅、橘與陰影會更明顯，很適合拍出南越比較溫暖的一面。</p>
+          <div class="tags"><span class="tag">紅色沙丘</span><span class="tag">暖色光影</span><span class="tag">沙海交界</span></div>
+        </article>
+        <article class="spot-card">
+          <span class="place-tag sand">美奈</span>
+          <h4>RD Wine Castle</h4>
+          <p>以歐洲城堡風格打造的酒莊空間，行程會在這裡看看建築、認識葡萄酒展示並安排品飲。和前後的漁村、沙丘相比，畫面切換得很有趣。</p>
+          <div class="tags"><span class="tag">城堡建築</span><span class="tag">酒莊空間</span><span class="tag">品酒</span></div>
+          <p class="yoyo-note"><strong>YoYo 小提醒：</strong>是否品飲依個人狀況決定，未成年與不喝酒的團員可以把重點放在建築和空間。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="sec-head">
+        <span class="sec-emoji">🛻</span>
+        <h2 class="sec-title">YoYo 帶你體驗</h2>
+        <p class="sec-desc">換一種移動方式，南越的風景也會跟著換一個角度。</p>
+      </div>
+
+      <div class="item-list">
+        <article class="item-card"><span class="item-icon">🛻</span><div><h3>白沙丘吉普車</h3><p>從沙丘低處一路往高處移動，速度感和視野都很強烈。四人一車及實際路線依現場安排；怕顛簸或身體不舒服，可以先告訴 YoYo。</p><small>沙丘活動・開闊風景</small></div></article>
+        <article class="item-card"><span class="item-icon">⛴️</span><div><h3>西貢河水上巴士</h3><p>從河面換一個角度看胡志明，高樓、橋梁和河岸會變成另一條城市風景線。行程安排單程搭乘，碼頭、班次與停留方式依當日狀況。</p><small>西貢河・城市視角</small></div></article>
+        <article class="item-card"><span class="item-icon">🛶</span><div><h3>美托農村生態</h3><p>搭船進入湄公河水道，沿途接觸果園、蜂蜜茶、水椰林小舟與椰子糖製作。不用急著把每一段都拍完，水道、船聲和兩岸植物本身就是這裡最有感的畫面。</p><small>湄公河・水鄉體驗・農村日常</small></div></article>
+        <article class="item-card"><span class="item-icon">🛏️</span><div><h3>飯店放慢時間</h3><p>美奈住宿兩晚，行程也保留使用飯店設施的時間。前一天移動後，可以把這段當成真正休息；泳池或其他設施以飯店當日開放狀況為準。</p><small>度假節奏・留白時間</small></div></article>
+      </div>
+
+      <div class="notice-card"><strong>💛 YoYo 小提醒</strong><br>吉普車、船隻和小舟的乘坐感受都不一樣。如果容易暈車、暈船，或膝蓋、腰部比較不舒服，出發前先準備，也可以提早讓 YoYo 知道。</div>
+    </section>
+
+    <section class="section" id="food">
+      <div class="sec-head">
+        <span class="sec-emoji">🍜</span>
+        <h2 class="sec-title">YoYo 帶你吃</h2>
+        <p class="sec-desc">先認識南越常見的味道；店家與 YoYo 實際吃過的內容，之後再接著補進來。</p>
+      </div>
+
+      <div class="item-list">
+        <article class="item-card"><span class="item-icon">🍖</span><div><h3>Cơm tấm sườn nướng 排骨碎米飯</h3><p>碎米配上烤排骨、蛋與配菜，是胡志明很有代表性的日常吃法。想吃一份有飽足感、味道也比較直接的正餐，可以留意看看。</p><small>胡志明日常主食</small></div></article>
+        <article class="item-card"><span class="item-icon">🥖</span><div><h3>Bánh mì 越式法國麵包</h3><p>外皮酥、內餡變化多，適合城市散步中想快速吃一點時。口味很多，不用追同一家，挑當下看起來舒服的就好。</p><small>散步小吃</small></div></article>
+        <article class="item-card"><span class="item-icon">☕</span><div><h3>Cà phê sữa đá 越南冰咖啡</h3><p>煉乳甜度和咖啡濃度都很有存在感。阮惠街或同起街散步時，如果剛好想休息，坐下來慢慢喝一杯很有胡志明的感覺。</p><small>城市咖啡時間</small></div></article>
+        <article class="item-card"><span class="item-icon">🦐</span><div><h3>美奈海鮮</h3><p>來到海岸可以留意魚、蝦、貝類與當地做法。實際餐點以行程安排為準，看到沒吃過的料理也可以先問問內容。</p><small>海岸風味</small></div></article>
+        <article class="item-card"><span class="item-icon">🐝</span><div><h3>美托水果與蜂蜜茶</h3><p>農村生態行程裡會接觸熱帶水果與蜂蜜茶，是認識湄公河農產的一小段。口味不用急著下結論，慢慢試就好。</p><small>湄公河農產</small></div></article>
+      </div>
+    </section>
+
+    <section class="section" id="shopping">
+      <div class="sec-head">
+        <span class="sec-emoji">🛍️</span>
+        <h2 class="sec-title">YoYo 帶你買</h2>
+        <p class="sec-desc">先記住品項，實際品牌、店家與 YoYo 推薦，等走過、吃過、拍過後再補進來。</p>
+      </div>
+
+      <div class="buy-grid">
+        <article class="buy-card"><span class="buy-icon">🥥</span><h3>椰子糖</h3><p>美托行程會看椰子糖製作，喜歡甜食的人可以挑小包裝分享。</p></article>
+        <article class="buy-card"><span class="buy-icon">☕</span><h3>越南咖啡與滴漏壺</h3><p>想把越南咖啡的節奏帶回家，可以連同小型滴漏壺一起挑。</p></article>
+        <article class="buy-card"><img class="buy-icon buy-icon-image" src="assets/南越/cashew-icon.png" alt="腰果"><h3>腰果</h3><p>原味、調味款很多，先看包裝完整與成分，再選自己真的會吃的口味。</p></article>
+        <article class="buy-card"><span class="buy-icon">🥭</span><h3>果乾</h3><p>芒果、鳳梨等口味輕巧好分送，選密封清楚的小包裝較好整理。</p></article>
+        <article class="buy-card"><span class="buy-icon">🧺</span><h3>在地手工藝</h3><p>同起街或行程停留處可能遇到編織、漆器與小型紀念品，喜歡再慢慢挑。</p></article>
+      </div>
+
+      <div class="notice-card"><strong>💡 買食品前先看一下</strong><br>看不懂成分時，可以回到「越南全境注意事項」使用台灣入境 AI 放大鏡輔助檢查。AI 結果僅供參考，最終仍以海關與防檢署現場判定為準。</div>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <strong>🇻🇳 YO! 旅行班・南越・胡志明</strong><br>
+    劉又銘 YoYo・可樂旅遊 國際短程線
+    <div class="footer-contact"><a href="國家提醒.html?country=vn">出發前提醒</a>｜<a href="https://www.instagram.com/yoyo.touring/" target="_blank" rel="noopener">@yoyo.touring</a>｜行程群組以行前通知為準</div>
+  </footer>
+
+  <script src="assets/YO旅行班/shareable-sections.js"></script>
+  <script>
+    function show(id, button, updateHash = true) {
+      document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(navButton => navButton.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      button.classList.add('active');
+      if (updateHash && history.replaceState) history.replaceState(null, '', `${window.location.pathname}${window.location.search}#${button.dataset.slug}`);
+      if (updateHash) window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    initShareableSections(document.querySelectorAll('.nav-btn'), show);
+  </script>
+</body>
+</html>
