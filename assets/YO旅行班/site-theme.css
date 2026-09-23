@@ -1,0 +1,65 @@
+/* YO! 旅行班：共用閱讀與操作樣式。各目的地保留自己的封面。 */
+:root { --yo-brand:#215e51; --yo-ink:#26342f; --yo-muted:#5e6c64; --yo-bg:#faf7ef; --yo-paper:#fffdf8; --yo-line:#e2ddcf; --yo-radius:12px; --yo-width:940px; }
+body { font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif; }
+a:focus-visible, button:focus-visible { outline:3px solid #b77c22; outline-offset:3px; }
+body.yo-guide, body.yo-reminder { background:var(--yo-bg); color:var(--yo-ink); font-size:16px; line-height:1.8; }
+.yo-guide .content { width:min(var(--yo-width),calc(100% - 40px)); max-width:var(--yo-width); margin-inline:auto; padding:28px 0 64px; }
+.yo-guide .page-shell, .yo-guide .wrap { width:min(var(--yo-width),calc(100% - 40px)); margin-inline:auto; }
+.yo-guide .hero-content { max-width:var(--yo-width); width:min(var(--yo-width),calc(100% - 40px)); padding:100px 0 44px; margin-inline:auto; }
+.yo-guide .hero-title, .yo-guide .hero h1 { font-family:Georgia,"Noto Serif TC",serif; font-size:clamp(34px,5vw,56px); line-height:1.25; }
+.yo-guide .hero-sub { font-size:16px; line-height:1.8; }
+.yo-guide .guide-back { left:max(20px,calc((100% - var(--yo-width))/2)); border-radius:8px; min-height:44px; display:inline-flex; align-items:center; }
+.yo-guide .back-link, .yo-guide .back { min-height:44px; display:inline-flex; align-items:center; }
+.yo-guide .guide-country-links { width:min(var(--yo-width),calc(100% - 40px)); border-color:var(--yo-line); border-radius:var(--yo-radius); background:var(--yo-paper); margin:20px auto; padding:10px 16px; gap:6px 16px; }
+.yo-guide .guide-country-links a { color:var(--yo-brand); min-height:44px; display:inline-flex; align-items:center; }
+.yo-guide .page-shell > .guide-country-links { width:100%; }
+.yo-guide .nav { display:flex; justify-content:center; gap:4px; padding:8px 12px; border:0; border-bottom:1px solid var(--yo-line); background:rgba(255,253,248,.98); box-shadow:0 3px 12px #26342f08; overflow-x:auto; }
+.yo-guide .nav-btn { flex:0 0 auto; min-height:44px; padding:10px 16px; border:0; border-radius:8px; background:transparent; color:var(--yo-muted); font-size:14px; font-weight:700; line-height:1.5; white-space:nowrap; }
+.yo-guide .nav-btn:hover { background:#e9f0e9; color:var(--yo-brand); }
+.yo-guide .nav-btn.active { background:var(--yo-brand); color:white; }
+.yo-guide .nav-wrap { top:0; margin:0 0 24px; padding:0; border:0; border-radius:0; background:var(--yo-paper); box-shadow:none; }
+.yo-guide .nav-wrap .nav { position:static; }
+.yo-guide .nav-wrap .section-share { margin:8px 0; width:100%; }
+.yo-guide .section-share { width:min(var(--yo-width),calc(100% - 40px)); margin:12px auto 0; }
+.yo-guide .section-share-btn { width:auto; height:auto; min-height:44px; flex:0 0 auto; padding:8px 14px; font-size:13px; border-radius:8px; color:var(--yo-brand); box-shadow:none; border-color:var(--yo-line); background:var(--yo-paper); }
+.yo-guide .section-share-btn::before { content:none; }
+.yo-guide .sec-title, .yo-guide .section-heading h2 { font-size:clamp(24px,3vw,30px); line-height:1.4; color:var(--yo-brand); }
+.yo-guide .sec-desc, .yo-guide .section-heading p { font-size:16px; line-height:1.8; color:var(--yo-muted); }
+.yo-guide :is(.card,.about-hero,.intro-card,.spot-card,.food-card,.buy-card,.shop-card,.mini-card,.notice-card,.story-card,.collection-card,.rec-card,.note-card,.quote-card,.warm,.quote) { border-radius:var(--yo-radius); }
+.yo-guide :is(.about-hero,.intro-card) { padding:24px; background:var(--yo-paper); border:1px solid var(--yo-line); border-left:4px solid var(--yo-brand); box-shadow:0 6px 20px #26342f06; }
+.yo-guide .about-role { color:var(--yo-brand); font-size:14px; }
+.yo-guide :is(.about-copy,.about-tagline) { color:var(--yo-muted); font-size:15px; line-height:1.8; }
+.yo-guide .about-avatar { flex-shrink:0; }
+.yo-guide .footer, .yo-sapa footer { background:var(--yo-brand); color:#fffdf8; padding:32px 20px; font-size:14px; line-height:1.9; }
+.yo-guide .footer a, .yo-sapa footer a { color:inherit; }
+.yo-sapa .nav { display:block; }
+.yo-sapa .nav .wrap { display:flex; gap:8px; padding:0; }
+.yo-sapa .nav a { display:inline-flex; align-items:center; min-height:44px; padding:8px 12px; border-radius:8px; color:var(--yo-brand); }
+.yo-sapa .nav a:hover { background:#e9f0e9; }
+.yo-sapa .save { border-radius:8px; min-height:44px; }
+.yo-reminder .shell { max-width:988px; }
+.yo-reminder .hero { background:var(--yo-brand); border-color:var(--yo-brand); border-radius:var(--yo-radius); }
+.yo-reminder .card { border-color:var(--yo-line); border-radius:var(--yo-radius); background:var(--yo-paper); }
+.yo-reminder .back { display:inline-flex; align-items:center; min-height:44px; color:var(--yo-brand); }
+.yo-reminder .hero p, .yo-reminder .updated { color:#e0eee7; }
+.yo-home :is(.control-btn,.country-picker-button,.dialog-close) { min-height:44px; }
+@media(max-width:640px) {
+ .yo-guide .content,.yo-guide .page-shell,.yo-guide .wrap,.yo-guide .hero-content,.yo-guide .guide-country-links,.yo-guide .section-share { width:calc(100% - 32px); }
+ .yo-guide .content { padding:24px 0 48px; }
+ .yo-guide .hero-content { padding:88px 0 32px; }
+ .yo-guide .nav { justify-content:flex-start; gap:4px; padding:8px; }
+ .yo-guide .nav-btn { flex:1 0 auto; padding:10px 12px; font-size:14px; }
+ .yo-guide .desktop-nav-label { display:inline; }
+ .yo-guide .mobile-nav-label { display:none; }
+ .yo-guide .guide-country-links { padding:8px 14px; }
+ .yo-guide :is(.about-hero,.intro-card) { padding:20px 16px; }
+ .yo-guide .page-shell > .guide-country-links { width:100%; }
+ .yo-guide .nav-wrap .section-share { width:100%; }
+ .yo-sapa .nav .wrap { width:100%; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation:none !important; transition:none !important; } }
+
+/* 收藏版副標獨立一行，避免手機上被切成兩段。 */
+.yo-guide:not(.yo-sapa) .hero h1 span { display:block; font-size:.62em; margin-top:8px; }
+.yo-guide .nav::-webkit-scrollbar { display:block; height:3px; }
+.yo-guide .nav::-webkit-scrollbar-thumb { background:#b6c7bd; border-radius:3px; }
