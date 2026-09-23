@@ -604,6 +604,9 @@ a { color: inherit; }
   .flow-grid { grid-template-columns: 1fr; }
   .hero-content { padding-top: 74px; }
 }
+
+/* Shared guide links: phase-one content consistency */
+.guide-country-links{display:flex;flex-wrap:wrap;gap:10px;align-items:center;width:min(900px,calc(100% - 32px));margin:18px auto;padding:12px 16px;border:1px solid #ddd9ca;background:#fffdf8;color:#26313a;font:14px/1.7 -apple-system,BlinkMacSystemFont,"Noto Sans TC",sans-serif}.guide-country-links a{color:#215e51;font-weight:700;text-underline-offset:3px}.guide-country-links a:focus-visible{outline:3px solid #a97a20;outline-offset:3px}
 </style>
 <link rel="stylesheet" href="assets/YO旅行班/shareable-sections.css">
 </head>
@@ -614,10 +617,11 @@ a { color: inherit; }
     <span class="hero-badge">YoYo 帶你玩</span>
     <h1 class="hero-title">馬來西亞 <span>旅遊收藏版</span></h1>
     <p class="hero-sub">從城市地標、南洋味道到在地選物，一次收好。</p>
-    <span class="update-meta">最後整理：2026 年 7 月 27 日<br><strong>行程小提醒：</strong>景點僅供參考，實際以行前說明會與行程表為準。</span>
+    <span class="update-meta">最後更新：2026 年 9 月 23 日<br><strong>行程小提醒：</strong>景點僅供參考，實際以行前說明會與行程表為準。</span>
   </div>
 </header>
 
+<aside class="guide-country-links" aria-label="全境行前提醒"><span>出發前先看</span><a href="國家提醒.html?country=my">馬來西亞全境注意事項 →</a></aside>
 <nav class="nav" aria-label="馬來西亞旅遊分類">
   <button class="nav-btn active" data-target="s0" data-slug="about" onclick="show('s0',this)">👋 認識 YoYo</button>
   <button class="nav-btn" data-target="s4" data-slug="spots" onclick="show('s4',this)">🗺️ 景點</button>
@@ -630,7 +634,7 @@ a { color: inherit; }
   <section class="section active" id="s0">
     <div class="sec-head">
       <span class="sec-emoji">👋</span>
-      <h2 class="sec-title">認識你的領隊 YoYo</h2>
+      <h2 class="sec-title">認識 YoYo｜劉又銘</h2>
       <p class="sec-desc">出發前先認識我，旅途中你就會更安心。</p>
     </div>
 
@@ -638,13 +642,13 @@ a { color: inherit; }
       <div class="about-avatar"><img src="assets/馬來西亞/yoyo-avatar.jpg" alt="劉又銘 YoYo 大頭照"></div>
       <div>
         <div class="about-name">劉又銘 YoYo</div>
-        <div class="about-role">可樂旅遊｜國際短程線領隊</div>
+        <div class="about-role">國際領隊｜旅行內容創作者</div>
         <div class="about-tagline">Yo 在東南亞，帶團，也在過生活。<br>有些事，不會寫在行程裡，但我會先幫你整理好。</div>
       </div>
     </div>
 
     <div class="trust-grid">
-      <div class="trust-item"><span class="trust-num">短程</span><span class="trust-label">國際線帶團視角</span></div>
+      <div class="trust-item"><span class="trust-num">帶團</span><span class="trust-label">國際線帶團視角</span></div>
       <div class="trust-item"><span class="trust-num">行前</span><span class="trust-label">整理好出發重點</span></div>
       <div class="trust-item"><span class="trust-num">途中</span><span class="trust-label">提醒與支援</span></div>
     </div>
@@ -662,7 +666,7 @@ a { color: inherit; }
     <div class="note-card">
       <div class="note-title">✨ YoYo 的一句話提醒</div>
       <p>馬來西亞好玩的地方，在於它不只是一座城市，而是文化、街區、老建築與南洋味道交織起來的旅行感。</p>
-      <p style="margin-top:12px">這一頁先把景點、吃與買的靈感收好，行程內容之後再慢慢補進來。</p>
+      <p style="margin-top:12px">這一頁收錄城市地標、老城散步與南洋味道，依自己的興趣慢慢挑選。</p>
     </div>
 
     <div class="photo-grid">
@@ -702,7 +706,7 @@ a { color: inherit; }
       <p class="sec-desc">從椰漿飯到白咖啡，馬來西亞的南洋味道值得慢慢認識。</p>
     </div>
 
-    <span class="country-label my">馬來西亞必吃</span>
+    <span class="country-label my">馬來西亞在地味道</span>
     <div class="food-grid">
       <div class="mini-card"><span class="emoji">🍛</span><strong>椰漿飯</strong><span>椰香米飯、參巴醬和配料是重點。</span></div>
       <div class="mini-card"><span class="emoji">🍢</span><strong>沙嗲</strong><span>炭香、花生醬和夜市感很強。</span></div>
@@ -739,8 +743,8 @@ a { color: inherit; }
 </main>
 
 <footer class="footer">
-  <strong>🇸🇬🇲🇾 YoYo 帶你玩新馬</strong><br>
-  劉又銘 YoYo · 可樂旅遊 國際短程線<br>
+  <strong>🇲🇾 YO! 旅行班・馬來西亞</strong><br>
+  劉又銘 YoYo · 國際領隊｜旅行內容創作者<br>
   <div class="footer-contact">IG：<a href="https://www.instagram.com/yoyo.touring/" target="_blank" rel="noopener">@yoyo.touring</a> ｜ LINE / 行程群組以行前通知為準</div>
 </footer>
 

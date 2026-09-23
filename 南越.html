@@ -182,7 +182,10 @@
       .route-grid, .spot-grid, .buy-grid { grid-template-columns: 1fr; }
       .route-card, .spot-card, .buy-card { min-height: 0; }
     }
-  </style>
+
+/* Shared guide links: phase-one content consistency */
+.guide-country-links{display:flex;flex-wrap:wrap;gap:10px;align-items:center;width:min(900px,calc(100% - 32px));margin:18px auto;padding:12px 16px;border:1px solid #ddd9ca;background:#fffdf8;color:#26313a;font:14px/1.7 -apple-system,BlinkMacSystemFont,"Noto Sans TC",sans-serif}.guide-country-links a{color:#215e51;font-weight:700;text-underline-offset:3px}.guide-country-links a:focus-visible{outline:3px solid #a97a20;outline-offset:3px}
+</style>
   <link rel="stylesheet" href="assets/YO旅行班/shareable-sections.css">
 </head>
 <body>
@@ -194,11 +197,12 @@
       <h1 class="hero-title">南越・胡志明 <span>旅遊收藏版</span></h1>
       <p class="hero-sub">從胡志明的城市建築，走到美奈的海岸沙丘，再進入美托的湄公河水鄉。</p>
       <div class="hero-line"></div>
-      <div class="hero-meta">最後整理：2026 年 9 月 14 日<br><strong>行程小提醒：</strong>景點與順序以行前說明會和團員手上的行程表為準。</div>
+      <div class="hero-meta">最後更新：2026 年 9 月 23 日<br><strong>行程小提醒：</strong>景點與順序以行前說明會和團員手上的行程表為準。</div>
     </div>
   </header>
 
-  <nav class="nav" aria-label="南越胡志明旅遊分類">
+  <aside class="guide-country-links" aria-label="全境行前提醒"><span>出發前先看</span><a href="國家提醒.html?country=vn">越南全境注意事項 →</a></aside>
+<nav class="nav" aria-label="南越胡志明旅遊分類">
     <button class="nav-btn active" data-target="intro" data-slug="about" onclick="show('intro', this)">👋 認識 YoYo</button>
     <button class="nav-btn" data-target="spots" data-slug="spots" onclick="show('spots', this)">🗺️ 景點</button>
     <button class="nav-btn" data-target="experience" data-slug="experience" onclick="show('experience', this)">🛻 體驗什麼</button>
@@ -219,8 +223,8 @@
         <div class="about-avatar"><img src="assets/YO旅行班/yoyo-avatar.jpg" alt="劉又銘 YoYo 大頭照"></div>
         <div>
           <div class="about-name">劉又銘 YoYo</div>
-          <div class="about-role">可樂旅遊｜國際短程線領隊</div>
-          <div class="about-copy">Yo 在東南亞，帶團，也在過生活。這次我先把胡志明、美奈和美托的旅行畫面整理好，讓大家出發前知道每一段有什麼不同，也更容易找到自己喜歡的節奏。</div>
+          <div class="about-role">國際領隊｜旅行內容創作者</div>
+          <div class="about-copy">把帶團路上的風景、文化與實用提醒，整理成你用得上的旅行筆記。</div>
         </div>
       </div>
 
@@ -237,7 +241,7 @@
       <div class="sec-head">
         <span class="sec-emoji">🗺️</span>
         <h2 class="sec-title">YoYo 帶你走跳</h2>
-        <p class="sec-desc">這一版依照實際行程地點整理，先用文字抓畫面，實際順序仍以當團安排為準。</p>
+        <p class="sec-desc">從城市建築、海岸沙丘到水鄉風景，認識南越不同的旅行面貌。</p>
       </div>
 
       <div class="collection-intro"><strong>南越的好看，不只一種。</strong>胡志明看城市建築，美奈看海岸和沙丘，美托則從水路走進農村生活。每一段都不用急著打卡完，先感受風景怎麼改變。</div>
@@ -312,10 +316,10 @@
       </div>
 
       <div class="item-list">
-        <article class="item-card"><span class="item-icon">🛻</span><div><h3>白沙丘吉普車</h3><p>從沙丘低處一路往高處移動，速度感和視野都很強烈。四人一車及實際路線依現場安排；怕顛簸或身體不舒服，可以先告訴 YoYo。</p><small>沙丘活動・開闊風景</small></div></article>
-        <article class="item-card"><span class="item-icon">⛴️</span><div><h3>西貢河水上巴士</h3><p>從河面換一個角度看胡志明，高樓、橋梁和河岸會變成另一條城市風景線。行程安排單程搭乘，碼頭、班次與停留方式依當日狀況。</p><small>西貢河・城市視角</small></div></article>
+        <article class="item-card"><span class="item-icon">🛻</span><div><h3>白沙丘吉普車</h3><p>從沙丘低處一路往高處移動，速度感和視野都很強烈。每車人數與實際路線依現場安排；怕顛簸或身體不舒服，可以先告訴 YoYo。</p><small>沙丘活動・開闊風景</small></div></article>
+        <article class="item-card"><span class="item-icon">⛴️</span><div><h3>西貢河水上巴士</h3><p>從河面換一個角度看胡志明，高樓、橋梁和河岸會變成另一條城市風景線。搭乘方式、碼頭與班次以自己的行程及當日安排為準。</p><small>西貢河・城市視角</small></div></article>
         <article class="item-card"><span class="item-icon">🛶</span><div><h3>美托農村生態</h3><p>搭船進入湄公河水道，沿途接觸果園、蜂蜜茶、水椰林小舟與椰子糖製作。不用急著把每一段都拍完，水道、船聲和兩岸植物本身就是這裡最有感的畫面。</p><small>湄公河・水鄉體驗・農村日常</small></div></article>
-        <article class="item-card"><span class="item-icon">🛏️</span><div><h3>飯店放慢時間</h3><p>美奈住宿兩晚，行程也保留使用飯店設施的時間。前一天移動後，可以把這段當成真正休息；泳池或其他設施以飯店當日開放狀況為準。</p><small>度假節奏・留白時間</small></div></article>
+        <article class="item-card"><span class="item-icon">🛏️</span><div><h3>飯店放慢時間</h3><p>入住美奈時，可以留一段時間享受飯店、放慢腳步。前一天移動後，可以把這段當成真正休息；泳池或其他設施以飯店當日開放狀況為準。</p><small>度假節奏・留白時間</small></div></article>
       </div>
 
       <div class="notice-card"><strong>💛 YoYo 小提醒</strong><br>吉普車、船隻和小舟的乘坐感受都不一樣。如果容易暈車、暈船，或膝蓋、腰部比較不舒服，出發前先準備，也可以提早讓 YoYo 知道。</div>
@@ -325,7 +329,7 @@
       <div class="sec-head">
         <span class="sec-emoji">🍜</span>
         <h2 class="sec-title">YoYo 帶你吃</h2>
-        <p class="sec-desc">先認識南越常見的味道；店家與 YoYo 實際吃過的內容，之後再接著補進來。</p>
+        <p class="sec-desc">從街頭主食、咖啡到海鮮，認識南越常見的味道。</p>
       </div>
 
       <div class="item-list">
@@ -359,7 +363,7 @@
 
   <footer class="footer">
     <strong>🇻🇳 YO! 旅行班・南越・胡志明</strong><br>
-    劉又銘 YoYo・可樂旅遊 國際短程線
+    劉又銘 YoYo・國際領隊｜旅行內容創作者
     <div class="footer-contact"><a href="國家提醒.html?country=vn">出發前提醒</a>｜<a href="https://www.instagram.com/yoyo.touring/" target="_blank" rel="noopener">@yoyo.touring</a>｜行程群組以行前通知為準</div>
   </footer>
 

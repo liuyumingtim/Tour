@@ -585,6 +585,9 @@ a { color: inherit; }
   .compare-grid, .placeholder-grid, .save-grid, .food-grid, .shop-grid, .trust-grid, .image-grid, .rec-grid { grid-template-columns: 1fr; }
   .hero-content { padding-top: 74px; }
 }
+
+/* Shared guide links: phase-one content consistency */
+.guide-country-links{display:flex;flex-wrap:wrap;gap:10px;align-items:center;width:min(900px,calc(100% - 32px));margin:18px auto;padding:12px 16px;border:1px solid #ddd9ca;background:#fffdf8;color:#26313a;font:14px/1.7 -apple-system,BlinkMacSystemFont,"Noto Sans TC",sans-serif}.guide-country-links a{color:#215e51;font-weight:700;text-underline-offset:3px}.guide-country-links a:focus-visible{outline:3px solid #a97a20;outline-offset:3px}
 </style>
 <link rel="stylesheet" href="assets/YO旅行班/shareable-sections.css">
 </head>
@@ -595,10 +598,11 @@ a { color: inherit; }
     <span class="hero-badge">YoYo 帶你玩</span>
     <h1 class="hero-title">曼谷・芭達雅 <span>旅遊收藏版</span></h1>
     <p class="hero-sub">從曼谷的熱鬧，到芭達雅的夜晚，先收幾段會想回看的畫面。</p>
-    <span class="update-meta">最後整理：2026 年 7 月 29 日<br><strong>行程小提醒：</strong>景點僅供參考，實際以行前說明會與行程表為準。</span>
+    <span class="update-meta">最後更新：2026 年 9 月 23 日<br><strong>行程小提醒：</strong>景點僅供參考，實際以行前說明會與行程表為準。</span>
   </div>
 </header>
 
+<aside class="guide-country-links" aria-label="全境行前提醒"><span>出發前先看</span><a href="國家提醒.html?country=th">泰國全境注意事項 →</a></aside>
 <nav class="nav" aria-label="曼谷芭達雅旅遊分類">
   <button class="nav-btn active" data-target="s0" data-slug="about" onclick="show('s0',this)">👋 認識 YoYo</button>
   <button class="nav-btn" data-target="s5" data-slug="spots" onclick="show('s5',this)">🗺️ 景點</button>
@@ -611,7 +615,7 @@ a { color: inherit; }
   <section class="section active" id="s0">
     <div class="sec-head">
       <span class="sec-emoji">👋</span>
-      <h2 class="sec-title">認識你的領隊 YoYo</h2>
+      <h2 class="sec-title">認識 YoYo｜劉又銘</h2>
       <p class="sec-desc">旅程開始前，先來打個招呼。</p>
     </div>
 
@@ -619,7 +623,7 @@ a { color: inherit; }
       <div class="about-avatar"><img src="assets/曼谷芭達雅/yoyo-avatar.jpg" alt="劉又銘 YoYo 大頭照"></div>
       <div>
         <div class="about-name">劉又銘 YoYo</div>
-        <div class="about-role">可樂旅遊｜國際短程線領隊</div>
+        <div class="about-role">國際領隊｜旅行內容創作者</div>
         <div class="about-tagline">Yo 在東南亞，帶團，也在過生活。<br>把路上遇到的好吃、好玩和小細節，慢慢收進這一頁。</div>
       </div>
     </div>
@@ -826,7 +830,7 @@ a { color: inherit; }
 
 <footer class="footer">
   <strong>YoYo 帶你玩曼谷芭達雅</strong><br>
-  劉又銘 YoYo · 可樂旅遊 國際短程線<br>
+  劉又銘 YoYo · 國際領隊｜旅行內容創作者<br>
   <div class="footer-contact">IG：<a href="https://www.instagram.com/yoyo.touring/" target="_blank" rel="noopener">@yoyo.touring</a> ｜ 出發前有問題，也可以在行程群組問我</div>
 </footer>
 
