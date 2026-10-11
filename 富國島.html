@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e7f3ef">
+  <title>富國島｜YoYo 帶你輕鬆玩・YO! 旅行班</title>
+  <meta name="description" content="YoYo 幫你分清楚富國島北、中、南：樂園、沙灘、夜市與纜車怎麼安排，下雨怎麼調整，出門前先看這一頁。">
+  <link rel="canonical" href="https://liuyumingtim.github.io/Tour/富國島.html">
+  <meta property="og:title" content="富國島｜YoYo 帶你輕鬆玩・YO! 旅行班">
+  <meta property="og:description" content="北島玩樂園，中島逛夜市，南島搭纜車。點地圖看玩法、集合與天氣提醒。">
+  <meta property="og:type" content="website"><meta property="og:locale" content="zh_TW">
+  <link rel="stylesheet" href="assets/富國島/guide.css">
+  <script src="assets/富國島/guide.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#north">跳到度假指南</a>
+<header class="topbar"><a class="brand" href="index.html"><b>YO!</b><span>旅行班</span></a><nav aria-label="主要導覽"><a href="index.html">← 地球導覽</a><a href="國家提醒.html?country=vn">越南行前提醒 ↗</a></nav></header>
+<main>
+  <section class="intro shell" aria-labelledby="title">
+    <div><p class="eyebrow">VIETNAM · PHÚ QUỐC · 跟著 YoYo 慢慢玩</p><h1 id="title">富國島<span>出來度假，不用趕。</span></h1></div>
+    <p class="intro-copy">富國島可以先分北、中、南來看。<br>想玩的挑幾個，飯店也留點時間享受。</p>
+  </section>
+
+  <section class="guide-tools shell" aria-label="認識 YoYo 與收藏重點">
+    <div class="guide-tools-row"><div class="guide-mini" id="about"><img src="assets/富國島/yoyo-avatar.jpg" width="44" height="44" alt="領隊 YoYo 劉又銘"><div><strong>我是領隊 YoYo，劉又銘</strong><p>出發前先看分區，到了再照天氣和體力調整。 <a href="https://www.instagram.com/yoyo.touring/" target="_blank" rel="noopener">@yoyo.touring ↗</a></p></div></div><button class="copy-button" id="copy-button" type="button">一鍵收藏重點 ↗</button></div>
+    <details id="summary" class="quick-summary"><summary>查看北、中、南重點</summary><div id="summary-copy"><p><strong>富國島｜YoYo 帶團提醒</strong></p><ul><li>北島：珍珠樂園、Safari、大世界是不同地方，先看票券和行程，再挑想玩的。</li><li>中島：Sunset Sanato 拍照看海、陽東夜市找吃的；到達和回程那天別排太滿。</li><li>南島：日落小鎮、親吻橋、纜車與香島；出發前確認營運，回程時間先記好。</li><li>下雨或風大：先找室內休息，戶外與跨海活動看當天公告調整。</li><li>自由活動前先記好集合時間和地點。玩累了就休息，飯店也要留時間享受。</li></ul></div></details>
+    <p id="copy-status" role="status"></p>
+  </section>
+
+  <div class="explore shell" id="explore">
+    <aside class="map-column" aria-label="富國島互動地圖">
+      <div class="map-sticky">
+        <div class="map-top"><span class="eyebrow">富國島分區地圖</span><span id="map-current">01 / 北島・樂園與動物園</span></div>
+        <nav class="region-nav" aria-label="選擇島嶼區域"><a href="#north" data-region="north" aria-current="true"><i></i>北島</a><a href="#central" data-region="central"><i></i>中島</a><a href="#south" data-region="south"><i></i>南島</a></nav>
+        <div class="map-canvas">
+          <svg id="island-map" viewBox="0 0 600 680" role="group" aria-labelledby="map-title map-desc">
+            <title id="map-title">富國島北、中、南度假地圖</title><desc id="map-desc">旅遊分區示意圖，位置與比例經簡化。點區域切換內容，點景點標記看度假建議；亦可使用上方區域連結與下方景點按鈕。</desc>
+            <defs>
+              <path id="island" d="M150 112 Q173 111 188 94 L206 65 Q216 48 239 58 L266 78 Q286 64 308 84 L340 83 Q365 94 387 102 L410 126 Q421 148 407 172 L407 212 Q426 237 417 268 L399 302 Q392 330 380 346 L374 381 Q381 411 364 443 L357 473 Q369 497 359 516 L365 548 Q352 567 334 559 L319 574 L302 563 L305 541 Q291 531 297 508 L287 485 L278 452 Q263 431 258 405 L248 384 Q244 360 227 342 L207 331 Q203 311 219 292 L213 274 Q192 265 193 244 L183 222 Q169 214 177 190 L166 175 Q145 169 150 150 L137 135 Z"/>
+              <clipPath id="island-clip"><use href="#island"/></clipPath>
+              <pattern id="sea-lines" width="64" height="64" patternUnits="userSpaceOnUse"><path d="M8 32q8-5 16 0t16 0" fill="none" stroke="#abcfc8" stroke-width="1" opacity=".42"/></pattern>
+              <symbol id="palm" viewBox="0 0 50 60"><path d="M28 56Q23 35 28 20M28 21Q10 3 3 20Q17 16 28 21M28 21Q18 0 36 6L28 21M28 21Q43 4 49 19L28 21M28 21Q47 18 47 34Q38 24 28 21" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
+            </defs>
+            <rect width="600" height="680" fill="url(#sea-lines)"/>
+            <g class="compass" transform="translate(529 42)"><text y="-9" text-anchor="middle">N</text><path d="M0 0L-7 24L0 18L7 24Z" fill="#527a73"/><path d="M0 18v22" stroke="#527a73"/></g>
+            <text class="sea-label" transform="translate(95 383) rotate(-90)">GULF OF THAILAND</text>
+            <use href="#island" fill="#b8d7cc" stroke="#f8fbef" stroke-width="14" stroke-linejoin="round"/>
+            <g clip-path="url(#island-clip)" class="zones">
+              <rect data-zone="north" x="110" y="40" width="340" height="240" fill="#9fc8a7"/>
+              <rect data-zone="central" x="110" y="280" width="340" height="170" fill="#f0d79f"/>
+              <rect data-zone="south" x="110" y="450" width="340" height="140" fill="#e9aa8e"/>
+              <path d="M150 280H430M220 450H400" fill="none" stroke="#fffdf4" stroke-width="2" stroke-dasharray="5 7"/>
+              <path d="M230 168Q335 232 291 318T318 455L333 544" class="island-road"/>
+            </g>
+            <g class="map-decor" aria-hidden="true"><use href="#palm" x="317" y="171" width="38" height="46"/><use href="#palm" x="347" y="222" width="29" height="35"/><use href="#palm" x="317" y="347" width="24" height="30"/><path d="M326 593l11-6 9 9-4 8-13-1Z M365 610l10-4 5 8-9 4Z" fill="#afcbb4"/><path d="M327 622Q340 611 352 624L358 645Q350 662 337 649Z" fill="#e9aa8e" stroke="#fffdf4" stroke-width="5"/></g>
+            <g class="zone-links"><a href="#north" data-region="north" aria-label="探索北島"><rect x="430" y="155" width="100" height="51" rx="25"/><text x="480" y="187" text-anchor="middle">北島 ↗</text></a><a href="#central" data-region="central" aria-label="探索中島"><rect x="425" y="338" width="100" height="51" rx="25"/><text x="475" y="370" text-anchor="middle">中島 ↗</text></a><a href="#south" data-region="south" aria-label="探索南島"><rect x="425" y="500" width="100" height="51" rx="25"/><text x="475" y="532" text-anchor="middle">南島 ↗</text></a></g>
+            <g id="map-pins"></g>
+            <g aria-hidden="true" class="sun-drawing" transform="translate(95 485)"><circle r="21"/><path d="M-36 0h9M27 0h9M0-36v9M-26-26l7 7M26-26l-7 7M-35 29h70M-22 39h44"/></g>
+            <text x="48" y="564" class="map-whisper">玩累了，</text><text x="48" y="589" class="map-whisper">就休息一下。</text>
+          </svg>
+        </div>
+        <div class="map-caption"><span>點地標看玩法 · 往下滑探索全島</span><small>旅遊分區與位置示意，非導航地圖</small></div>
+      </div>
+    </aside>
+
+    <div class="region-stories">
+      <section class="region-story" id="north" data-story="north" aria-labelledby="north-title">
+        <p class="section-number">01 <span>NORTH · 北島</span></p><p class="kicker">北島 / 樂園、動物園、大世界</p><h2 id="north-title">想玩樂園、看動物，<br>就看北島。</h2>
+        <p class="lead">珍珠樂園、Safari 和大世界都在這一區。<br>先挑最想去的，別急著一天全部跑完。</p>
+        <div class="spot-list"><button type="button" data-spot="vinwonders"><span class="spot-no">01</span><span><strong>珍珠樂園 VinWonders</strong><small>想玩遊樂設施，就多留點時間</small></span><span>↗</span></button><button type="button" data-spot="safari"><span class="spot-no">02</span><span><strong>Safari 野生動物園</strong><small>逛園區看動物，記得帶水、防曬</small></span><span>↗</span></button><button type="button" data-spot="grandworld"><span class="spot-no">03</span><span><strong>大世界 Grand World</strong><small>逛街、吃東西、拍照都可以</small></span><span>↗</span></button></div>
+        <p class="yoyo-note"><span>YoYo 提醒大家</span>這三個是不同地方，不是買一張票就當成同一個園區逛。先看自己的票券和行程，集合時間也要記好。</p>
+        <a class="next-region" href="#central" data-region="central">接著看中島：沙灘、夜市、機場 ↓</a>
+      </section>
+
+      <section class="region-story" id="central" data-story="central" aria-labelledby="central-title">
+        <p class="section-number">02 <span>CENTRAL · 中島</span></p><p class="kicker">中島 / 沙灘、夜市、機場</p><h2 id="central-title">白天去海邊，<br>晚上逛夜市。</h2>
+        <p class="lead">Sunset Sanato 可以拍照看海，陽東夜市可以找吃的。中間有空檔，就回飯店休息，不用一直往外跑。</p>
+        <div class="spot-list"><button type="button" data-spot="sanato"><span class="spot-no">04</span><span><strong>Sunset Sanato Beach</strong><small>海邊拍照、散步，夕陽看當天天氣</small></span><span>↗</span></button><button type="button" data-spot="nightmarket"><span class="spot-no">05</span><span><strong>陽東夜市 Dương Đông</strong><small>先逛一圈再買，海鮮先問價格</small></span><span>↗</span></button><button type="button" data-spot="airport"><span class="spot-no">06</span><span><strong>富國島機場 PQC</strong><small>到達和回程那天，行程別排太滿</small></span><span>↗</span></button></div>
+        <p class="yoyo-note"><span>YoYo 提醒大家</span>都來度假了，飯店也要留時間用。下午睡一下、喝咖啡或按摩都很好；夕陽有看到就拍，沒看到也不用一直等。</p>
+        <a class="next-region" href="#south" data-region="south">接著看南島：小鎮、纜車、香島 ↓</a>
+      </section>
+
+      <section class="region-story" id="south" data-story="south" aria-labelledby="south-title">
+        <p class="section-number">03 <span>SOUTH · 南島</span></p><p class="kicker">南島 / 日落小鎮、纜車、香島</p><h2 id="south-title">搭纜車去香島，<br>再逛逛日落小鎮。</h2>
+        <p class="lead">大家說的地中海、親吻橋，還有去香島的纜車，都在南島這一帶。先看當天行程和營運情況，再安排順序。</p>
+        <div class="spot-list"><button type="button" data-spot="sunsettown"><span class="spot-no">07</span><span><strong>日落小鎮・地中海風格街區</strong><small>地中海風格建築，走走拍照</small></span><span>↗</span></button><button type="button" data-spot="kissbridge"><span class="spot-no">08</span><span><strong>親吻橋 Kiss Bridge</strong><small>看海拍照，先確認入場方式</small></span><span>↗</span></button><button type="button" data-spot="cablecar"><span class="spot-no">09</span><span><strong>跨海纜車 → 香島 Hòn Thơm</strong><small>途中看海景，回程時間先記好</small></span><span>↗</span></button></div>
+        <p class="yoyo-note"><span>YoYo 提醒大家</span>纜車和跨海活動會受天氣影響，出發前先確認。遇到調整就換個安排，別為了跑完景點，把自己弄得很累。</p>
+      </section>
+    </div>
+  </div>
+
+
+
+
+  <section class="sources shell" aria-label="資料來源"><p>最後更新：2026 年 10 月 11 日（台北時間）</p><p>旅遊分區方便理解度假動線，並非行政區界。園區開放、票券、活動與交通安排，以業者及行前通知為準。</p><details><summary>查看資料來源</summary><div><a href="https://www.sunsetsanato.com/en/" target="_blank" rel="noopener">Sunset Sanato 官方</a><a href="https://vinpearl.com/en/phu-quoc/about-us" target="_blank" rel="noopener">Vinpearl 富國島</a><a href="https://sunworld.vn/en/hon-thom/about-us" target="_blank" rel="noopener">Sun World 香島</a><a href="https://sunworld.vn/en/hon-thom" target="_blank" rel="noopener">Sun World 營運公告</a><a href="https://www.vietnam.travel/places-to-go/southern-vietnam/phu-quoc" target="_blank" rel="noopener">越南觀光・富國島</a></div></details></section>
+</main>
+<footer><a class="brand" href="index.html"><b>YO!</b><span>旅行班</span></a><p>跟著 YoYo，輕鬆玩富國島。</p><a href="index.html">回到地球導覽 ↑</a></footer>
+<dialog id="spot-dialog" aria-labelledby="spot-title"><button class="dialog-close" type="button" aria-label="關閉景點卡">×</button><p class="eyebrow" id="spot-zone"></p><h2 id="spot-title"></h2><p class="dialog-sub" id="spot-subtitle"></p><div class="dialog-row"><h3>這裡可以做什麼</h3><p id="spot-enjoy"></p></div><div class="dialog-row"><h3>怎麼安排比較順</h3><p id="spot-pace"></p></div><div class="dialog-row weather-row"><h3>下雨或風大怎麼辦</h3><p id="spot-weather"></p></div><a class="map-external" id="spot-map" target="_blank" rel="noopener">在 Google Maps 查看位置 ↗</a></dialog>
+<noscript><p class="shell">開啟瀏覽器 JavaScript 可使用地標小卡與情境切換；北、中、南的度假重點仍可直接往下閱讀。</p></noscript>
+</body>
+</html>
