@@ -1,0 +1,40 @@
+/* Only the Changi guide and its existing Jewel-card entry; reuse site cards and theme. */
+.transit-entry{display:inline-flex;align-items:center;min-height:44px;margin-top:14px;padding:9px 14px;border:1px solid var(--yo-line);border-radius:8px;background:var(--mint);color:var(--yo-brand);font-size:14px;font-weight:700;text-decoration:none;line-height:1.7}
+.changi-transit{overflow-wrap:anywhere}
+.changi-transit .sec-title{max-width:780px;margin-inline:auto;text-wrap:balance}
+.changi-transit .transit-overview{display:grid;grid-template-columns:1fr 1fr;align-items:start}
+.transit-figure{min-width:0;background:var(--yo-paper)}
+.transit-figure img{display:block;width:100%;height:auto;aspect-ratio:4/3}
+.transit-figure figcaption{padding:10px 14px;font-size:11px;color:var(--muted);line-height:1.7}
+.transit-figure a,.changi-transit a{text-underline-offset:3px}
+.changi-transit .transit-hours{color:var(--yo-brand);font-size:15px;margin:12px 0}
+.transit-hours strong{display:block;font-size:clamp(27px,4vw,36px);line-height:1.4;letter-spacing:1px}
+.transit-route{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;list-style:none;margin:22px 0 18px;padding:0}
+.transit-route li{position:relative;border:1px solid var(--yo-line);border-radius:var(--yo-radius);padding:14px 10px;background:var(--yo-paper);text-align:center;min-width:0}
+.transit-route li:not(:last-child)::after{content:'→';position:absolute;right:-17px;top:48%;font-size:17px;font-weight:700;color:var(--yo-brand);line-height:1}
+.transit-route .transit-step{display:grid;place-items:center;width:28px;height:28px;background:var(--yo-brand);color:white;border-radius:50%;font-size:13px;font-weight:700;margin:0 auto 10px}
+.transit-route strong{display:block;color:var(--yo-brand);font-size:14px;margin-bottom:7px;line-height:1.5}
+.transit-route li>span:last-child{display:block;font-size:12px;color:var(--muted);line-height:1.7}
+.transit-route em{display:inline-block;font-style:normal;color:#835c19;font-weight:700;margin-top:5px}
+.transit-route .transit-view{background:#fff6dc;border-color:var(--gold)}
+.transit-option h4{font-size:17px;color:var(--yo-brand);margin-bottom:8px}
+.transit-option .country-label{background:var(--yo-brand)}
+.transit-option .check-list{margin-top:12px}
+.changi-transit .check-list li{margin-bottom:9px}
+.changi-transit .warn-text{min-width:0}
+.changi-transit .warn-text h3{font-size:17px;margin-bottom:10px;color:#6e2318}
+.changi-transit .source-card{border-radius:var(--yo-radius)}
+.changi-transit .source-card a{min-height:44px;display:flex;align-items:center;font-size:13px;padding-block:5px}
+@media(max-width:760px){
+ .changi-transit .transit-overview{grid-template-columns:1fr}
+ .transit-route{grid-template-columns:1fr;gap:22px}
+ .transit-route li{display:grid;grid-template-columns:30px 1fr;gap:2px 12px;text-align:left;padding:14px}
+ .transit-route .transit-step{grid-row:1/3;margin:0}
+ .transit-route strong{margin-bottom:3px}
+ .transit-route li>span:last-child{grid-column:2}
+ .transit-route li:not(:last-child)::after{content:'↓';top:auto;right:auto;bottom:-21px;left:20px}
+ .changi-transit .collection-body{padding:18px}
+ .changi-transit .warn-box{gap:8px;padding:14px}
+ .changi-transit .compare-wrap{padding:14px}
+ .changi-transit .fact-box{padding:13px}
+}
