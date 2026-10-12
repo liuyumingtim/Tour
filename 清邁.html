@@ -477,6 +477,7 @@
 
     .spot-photo-pair img {
       width: 100%;
+      height: auto;
       aspect-ratio: 1 / 1;
       border: 1px solid rgba(86,118,106,.14);
       border-radius: 6px;
@@ -555,6 +556,28 @@
       .collection-brief-grid { grid-template-columns: 1fr; }
     }
 
+
+    /* Photo cover uses the existing green header and destination photos. */
+    .hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 28px; align-items: center; padding: 28px; }
+    .hero-copy { min-width: 0; }
+    .hero-gallery { display: grid; grid-template-columns: 1.2fr 1fr; grid-template-rows: repeat(2, 190px); gap: 8px; min-width: 0; position: relative; z-index: 1; }
+    .hero-gallery figure { margin: 0; position: relative; overflow: hidden; border-radius: 6px; }
+    .hero-gallery .hero-main-photo { grid-row: 1 / 3; }
+    .hero-main-photo img { object-position: 75% center; }
+    .hero::before { opacity: .3; }
+    .hero-gallery img { width: 100%; height: 100%; display: block; object-fit: cover; }
+    .hero-gallery figcaption { position: absolute; inset: auto 0 0; padding: 24px 10px 8px; background: linear-gradient(transparent,rgba(0,0,0,.65)); color: white; font-size: 12px; }
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; padding: 22px; gap: 22px; }
+      .hero-copy { padding-top: 0; }
+      .hero-gallery { grid-template-columns: 1.25fr 1fr; grid-template-rows: repeat(2, 112px); }
+    }
+
+.region-links { display:flex; flex-wrap:wrap; gap:10px; margin:20px 0; }
+.region-links a { padding:9px 20px; border:1px solid #c4d8cd; border-radius:6px; text-decoration:none; color:var(--deep-green); background:var(--mint); font-weight:700; }
+.spot-region { scroll-margin-top:100px; margin-top:32px; }
+.region-title { border-left:4px solid var(--green); padding:6px 12px; font-size:24px; }
+.photo-credit { margin:0 20px 20px; font-size:11px; color:var(--muted); }
 /* Shared guide links: phase-one content consistency */
 .guide-country-links{display:flex;flex-wrap:wrap;gap:10px;align-items:center;width:min(900px,calc(100% - 32px));margin:18px auto;padding:12px 16px;border:1px solid #ddd9ca;background:#fffdf8;color:#26313a;font:14px/1.7 -apple-system,BlinkMacSystemFont,"Noto Sans TC",sans-serif}.guide-country-links a{color:#215e51;font-weight:700;text-underline-offset:3px}.guide-country-links a:focus-visible{outline:3px solid #a97a20;outline-offset:3px}
 </style>
@@ -566,19 +589,24 @@
     <a class="back-link" href="index.html">← 回到 YO! 旅行班地球導覽</a>
 
     <header class="hero">
-      <div class="hero-stamp">清邁<br>Chiang Mai</div>
+
       <div class="hero-copy">
         <p class="eyebrow">YO! 旅行班｜泰北收藏</p>
         <h1>清邁 <span>旅遊收藏版</span></h1>
-        <p class="hero-summary">從森林寺廟、古城與南奔，到咖啡、在地小吃和北泰味道。這一頁先幫你抓住清邁的旅行節奏，再慢慢決定自己最想看的風景。</p>
+        <p class="hero-summary">清邁有寺廟、古城，也有好拍的瀑布庭園。跟著行程走，有空再喝杯泰奶、逛逛街；想吃什麼、想看哪裡，這裡先幫大家整理好。</p>
         <div class="info-row">
           <span class="info-chip">清邁市區</span>
-          <span class="info-chip">素帖山</span>
+          <span class="info-chip">雙龍寺</span>
           <span class="info-chip">清萊</span>
           <span class="info-chip">南奔</span>
           <a class="info-chip" href="https://www.instagram.com/yoyo.touring/" target="_blank" rel="noopener">@yoyo.touring</a>
         </div>
-        <p class="hero-update">最後更新：2026 年 9 月 23 日<br><strong>行程小提醒：</strong>景點僅供參考，實際以行前說明會與行程表為準。</p>
+        <p class="hero-update">最後更新：2026 年 10 月 12 日<br><strong>行程小提醒：</strong>景點僅供參考，實際以行前說明會與行程表為準。</p>
+      </div>
+      <div class="hero-gallery" aria-label="清邁旅行風景">
+        <figure class="hero-main-photo"><img src="assets/清邁/dantewada-02.jpg" alt="天使瀑布的瀑布、綠樹與碧綠水池" width="1272" height="1600" fetchpriority="high"><figcaption>天使瀑布</figcaption></figure>
+        <figure><img src="assets/清邁/doi-suthep.jpg" alt="清邁雙龍寺" loading="eager"><figcaption>雙龍寺</figcaption></figure>
+        <figure><img src="assets/清邁/tha-phae-gate.jpg" alt="清邁塔佩門" loading="eager"><figcaption>塔佩門</figcaption></figure>
       </div>
     </header>
 
@@ -630,22 +658,79 @@
     </section>
 
     <section class="section" id="s1">
-      <div class="section-heading">
-        <h2>清邁、清萊與南奔，慢慢收藏</h2>
-        <p>有些地方看故事，有些地方看建築，也有些地方只是讓你感覺：原來泰北可以這樣玩。</p>
-      </div>
-
-      <aside class="spot-brief" aria-label="森林禪院景點簡介">
-        <span class="spot-brief-icon" aria-hidden="true">🌿</span>
-        <div>
-          <h3>Wat Pha Lat 森林禪院</h3>
-          <div class="spot-meta"><span class="tag">森林寺廟</span><span class="tag">安靜散步</span><span class="tag">素帖山</span></div>
-          <p>森林、溪流、石階、苔蘚和比較安靜的寺廟建築，像是清邁山城裡一段留白的小路。</p>
-        </div>
-      </aside>
-
-      <div class="card-grid">
-        <article class="spot-card">
+<div class="section-heading"><h2>景點分區看，找起來更方便</h2><p>照清邁、南奔、清萊分好；這團會去哪幾個地方，記得對照手上的行程表。</p></div>
+<nav class="region-links" aria-label="景點地區"><a href="#region-chiang-mai">清邁 ↓</a><a href="#region-lamphun">南奔 ↓</a><a href="#region-chiang-rai">清萊 ↓</a></nav><div class="spot-region" id="region-chiang-mai"><h3 class="region-title">清邁</h3><div class="card-grid"><article class="spot-card">
+<h3>Wat Pha Lat 森林禪院</h3>
+<div class="spot-meta"><span class="tag">清邁</span><span class="tag">森林寺廟</span><span class="tag">散步參觀</span></div>
+<dl><dt>這裡有什麼好看</dt><dd>寺廟就在樹林裡，可以邊走邊看石階、雕像和周圍的綠意。這裡適合放輕聲音慢慢逛，穿好走的鞋會比較舒服。</dd></dl>
+<img class="spot-photo" src="assets/清邁/wat-pha-lat.jpg" alt="Wat Pha Lat 森林禪院的石階、守護雕像與樹林" loading="lazy">
+<p class="photo-credit">照片：<a href="https://commons.wikimedia.org/wiki/File:Wat_Pha_Lat_1.jpg" target="_blank" rel="noopener">Christophe95 / Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>（版面裁切）</p>
+</article>
+<article class="spot-card" id="dantewada">
+          <h3>天使瀑布 Dantewada</h3>
+          <div class="spot-meta"><span class="tag">瀑布庭園</span><span class="tag">綠樹水景</span><span class="tag">拍照散步</span></div>
+          <dl><dt>這裡有什麼好看</dt><dd>這裡是把瀑布、造景石和水池放在一起的庭園。可以先拍一張瀑布全景，再沿著步道慢慢看、找喜歡的角度。靠水的地方留意腳步，拍照不用急。</dd></dl>
+          <div class="spot-photo-pair">
+            <img src="assets/清邁/dantewada-01.jpg" alt="天使瀑布的層疊瀑布與造景石" loading="lazy" width="1600" height="1600">
+            <img src="assets/清邁/dantewada-02.jpg" alt="天使瀑布庭園裡的水池與綠樹" loading="lazy" width="1272" height="1600">
+          </div>
+        </article>
+<article class="spot-card">
+          <h3>雙龍寺 Wat Phra That Doi Suthep</h3>
+          <div class="spot-meta"><span class="tag">清邁代表地標</span><span class="tag">寺廟文化</span><span class="tag">山城視野</span></div>
+          <dl><dt>這裡有什麼好看</dt><dd>到這裡先看看金色佛塔，再慢慢欣賞周圍的建築。拍照時留意參拜的人，別擋住通道就好。</dd></dl>
+          <img class="spot-photo" src="assets/清邁/doi-suthep.jpg" alt="清邁雙龍寺建築" loading="lazy">
+        </article>
+<article class="spot-card">
+          <h3>清邁藍廟 Wat Ban Den</h3>
+          <div class="spot-meta"><span class="tag">馬登寺廟</span><span class="tag">藍色屋瓦</span><span class="tag">蘭納建築</span></div>
+          <dl><dt>這裡有什麼好看</dt><dd>藍色屋瓦和白色佛塔很搶眼，裡面還有一尊大型臥佛，建議大家也進去看看。這間是清邁藍廟，別和清萊的藍廟搞混囉。</dd></dl>
+          <div class="spot-photo-pair">
+            <img src="assets/清邁/wat-ban-den-01.jpg" alt="清邁藍廟外觀" loading="lazy">
+            <img src="assets/清邁/wat-ban-den-02.jpg" alt="清邁藍廟的屋瓦與佛塔" loading="lazy">
+          </div>
+        </article>
+<article class="spot-card">
+          <h3>三王紀念像</h3>
+          <div class="spot-meta"><span class="tag">古城散步</span><span class="tag">蘭納歷史</span><span class="tag">城市故事</span></div>
+          <dl><dt>這裡有什麼好看</dt><dd>來古城散步時，可以在三位國王的銅像前停一下，聽聽導遊說清邁建城的故事，再到附近走走。</dd></dl>
+          <img class="spot-photo" src="assets/清邁/three-kings-monument.jpg" alt="清邁古城中心的三王紀念像" loading="lazy">
+        </article>
+<article class="spot-card">
+          <h3>大塔寺 Wat Chedi Luang</h3>
+          <div class="spot-meta"><span class="tag">古蹟感</span><span class="tag">古城寺廟</span><span class="tag">歷史痕跡</span></div>
+          <dl><dt>這裡有什麼好看</dt><dd>這裡最吸睛的就是大佛塔。站遠一點才拍得下它的大小，走近再看看磚牆和雕像的細節。</dd></dl>
+          <img class="spot-photo" src="assets/清邁/wat-chedi-luang.jpg" alt="清邁大塔寺的寺廟建築" loading="lazy">
+        </article>
+<article class="spot-card">
+          <h3>塔佩門 Tha Phae Gate</h3>
+          <div class="spot-meta"><span class="tag">古城入口</span><span class="tag">城市明信片</span><span class="tag">街景拍照</span></div>
+          <dl><dt>這裡有什麼好看</dt><dd>想拍清邁古城的合照，可以來這面紅磚城牆。廣場人多，拍完記得確認集合位置，別逛著逛著走散了。</dd></dl>
+          <img class="spot-photo" src="assets/清邁/tha-phae-gate.jpg" alt="清邁塔佩門" loading="lazy">
+        </article>
+<article class="spot-card">
+          <h3>尼曼商圈與尼曼一號</h3>
+          <div class="spot-meta"><span class="tag">咖啡生活</span><span class="tag">文青商圈</span><span class="tag">自由活動</span></div>
+          <dl><dt>這裡有什麼好看</dt><dd>想喝咖啡、吃東西或逛小店，可以留點時間給這裡。不用每間都逛，挑自己有興趣的走走就好。</dd></dl>
+          <img class="spot-photo" src="assets/清邁/one-nimman.jpg" alt="清邁尼曼一號商圈入口" loading="lazy">
+        </article>
+<article class="spot-card">
+          <h3>蘭納風格星巴克</h3>
+          <div class="spot-meta"><span class="tag">特色建築</span><span class="tag">咖啡停留</span><span class="tag">蘭納細節</span></div>
+          <dl><dt>這裡有什麼好看</dt><dd>把北泰屋瓦、木雕和大象元素放進咖啡店外觀裡，經過時很容易想停下來拍一張。</dd></dl>
+          <img class="spot-photo" src="assets/清邁/lanna-starbucks.jpg" alt="清邁蘭納風格星巴克建築" loading="lazy">
+        </article>
+<article class="spot-card">
+          <h3>Kao Mai Estate 1955 老菸廠活化園區</h3>
+          <div class="spot-meta"><span class="tag">老建築活化</span><span class="tag">文化保存</span><span class="tag">拍照散步</span></div>
+          <dl><dt>這裡有什麼好看</dt><dd>這裡把老菸廠留下來，紅磚建築外爬滿綠色植物。可以邊走邊拍，累了再找地方坐一下。</dd></dl>
+          <img class="spot-photo" src="assets/清邁/kao-mai-estate.jpg" alt="Kao Mai Estate 1955 老菸廠活化園區" loading="lazy">
+        </article></div></div><div class="spot-region" id="region-lamphun"><h3 class="region-title">南奔</h3><div class="card-grid"><article class="spot-card">
+          <h3>南奔火車與慢旅行</h3>
+          <div class="spot-meta"><span class="tag">地方火車</span><span class="tag">南奔旅行</span><span class="tag">慢節奏</span></div>
+          <dl><dt>這裡有什麼好看</dt><dd>如果行程有搭火車去南奔，記得看看窗外沿途的景色。上下車跟著領隊走，拍月台照也要留意集合時間。</dd></dl>
+          <img class="spot-photo" src="assets/清邁/lamphun-train.jpg" alt="清邁與南奔之間的火車站月台" loading="lazy">
+        </article></div></div><div class="spot-region" id="region-chiang-rai"><h3 class="region-title">清萊</h3><div class="card-grid"><article class="spot-card">
           <h3>清萊白廟 Wat Rong Khun</h3>
           <div class="spot-meta"><span class="tag">清萊地標</span><span class="tag">白色藝術建築</span><span class="tag">當代佛寺</span></div>
           <dl><dt>這裡有什麼好看</dt><dd>整座寺廟以白色雕飾與鏡面細節為主，線條很多、近看更有層次。它把佛教意象和藝術創作放在一起，和一般看到的泰國寺廟很不一樣。</dd></dl>
@@ -654,84 +739,12 @@
             <img src="assets/清邁/chiang-rai-white-temple-02.jpg" alt="清萊白廟的主殿與入口" loading="lazy">
           </div>
         </article>
-
-        <article class="spot-card">
+<article class="spot-card">
           <h3>金三角・湄公河遊船</h3>
           <div class="spot-meta"><span class="tag">湄公河</span><span class="tag">三國交界</span><span class="tag">河岸風景</span></div>
           <dl><dt>這裡有什麼好看</dt><dd>金三角位在泰國、寮國與緬甸交界一帶。搭船沿著湄公河前進時，能從水面看看兩岸山景和邊境地帶不一樣的旅行感。</dd></dl>
           <img class="spot-photo golden-triangle-photo" src="assets/清邁/golden-triangle-boat.jpg" alt="清萊金三角湄公河遊船碼頭" loading="lazy">
-        </article>
-
-        <article class="spot-card">
-          <h3>雙龍寺 Wat Phra That Doi Suthep</h3>
-          <div class="spot-meta"><span class="tag">清邁代表地標</span><span class="tag">寺廟文化</span><span class="tag">山城視野</span></div>
-          <dl><dt>這裡有什麼好看</dt><dd>金色佛塔、山上視野、參拜動線與清邁重要的信仰地標。</dd></dl>
-          <img class="spot-photo" src="assets/清邁/doi-suthep.jpg" alt="清邁雙龍寺建築" loading="lazy">
-        </article>
-
-        <article class="spot-card">
-          <h3>清邁藍廟 Wat Ban Den</h3>
-          <div class="spot-meta"><span class="tag">馬登寺廟</span><span class="tag">藍色屋瓦</span><span class="tag">蘭納建築</span></div>
-          <dl><dt>這裡有什麼好看</dt><dd>深藍色屋瓦、白色佛塔和層層延伸的蘭納式寺廟建築，畫面很有辨識度。</dd></dl>
-          <div class="spot-photo-pair">
-            <img src="assets/清邁/wat-ban-den-01.jpg" alt="清邁藍廟外觀" loading="lazy">
-            <img src="assets/清邁/wat-ban-den-02.jpg" alt="清邁藍廟的屋瓦與佛塔" loading="lazy">
-          </div>
-        </article>
-
-        <article class="spot-card">
-          <h3>三王紀念像</h3>
-          <div class="spot-meta"><span class="tag">古城散步</span><span class="tag">蘭納歷史</span><span class="tag">城市故事</span></div>
-          <dl><dt>這裡有什麼好看</dt><dd>三位國王的銅像、古城中心的城市感，以及清邁建城故事的入口。</dd></dl>
-          <img class="spot-photo" src="assets/清邁/three-kings-monument.jpg" alt="清邁古城中心的三王紀念像" loading="lazy">
-        </article>
-
-        <article class="spot-card">
-          <h3>大塔寺 Wat Chedi Luang</h3>
-          <div class="spot-meta"><span class="tag">古蹟感</span><span class="tag">古城寺廟</span><span class="tag">歷史痕跡</span></div>
-          <dl><dt>這裡有什麼好看</dt><dd>巨大的磚造佛塔、老建築留下的時間感，以及古城裡很有份量的寺廟空間。</dd></dl>
-          <img class="spot-photo" src="assets/清邁/wat-chedi-luang.jpg" alt="清邁大塔寺的寺廟建築" loading="lazy">
-        </article>
-
-        <article class="spot-card">
-          <h3>塔佩門 Tha Phae Gate</h3>
-          <div class="spot-meta"><span class="tag">古城入口</span><span class="tag">城市明信片</span><span class="tag">街景拍照</span></div>
-          <dl><dt>這裡有什麼好看</dt><dd>紅磚城牆、城門廣場、人群和古城與現代街道交會的畫面。</dd></dl>
-          <img class="spot-photo" src="assets/清邁/tha-phae-gate.jpg" alt="清邁塔佩門" loading="lazy">
-        </article>
-
-        <article class="spot-card">
-          <h3>尼曼商圈與尼曼一號</h3>
-          <div class="spot-meta"><span class="tag">咖啡生活</span><span class="tag">文青商圈</span><span class="tag">自由活動</span></div>
-          <dl><dt>這裡有什麼好看</dt><dd>咖啡店、設計小店、餐廳、尼曼一號與文創商品，還有帶著北泰風格的建築細節。</dd></dl>
-          <img class="spot-photo" src="assets/清邁/one-nimman.jpg" alt="清邁尼曼一號商圈入口" loading="lazy">
-        </article>
-
-        <article class="spot-card">
-          <h3>蘭納風格星巴克</h3>
-          <div class="spot-meta"><span class="tag">特色建築</span><span class="tag">咖啡停留</span><span class="tag">蘭納細節</span></div>
-          <dl><dt>這裡有什麼好看</dt><dd>把北泰屋瓦、木雕和大象元素放進咖啡店外觀裡，經過時很容易想停下來拍一張。</dd></dl>
-          <img class="spot-photo" src="assets/清邁/lanna-starbucks.jpg" alt="清邁蘭納風格星巴克建築" loading="lazy">
-        </article>
-
-        <article class="spot-card">
-          <h3>南奔火車與慢旅行</h3>
-          <div class="spot-meta"><span class="tag">地方火車</span><span class="tag">南奔旅行</span><span class="tag">慢節奏</span></div>
-          <dl><dt>這裡有什麼好看</dt><dd>地方火車、月台、車廂和從城市慢慢換成郊區的景色。</dd></dl>
-          <img class="spot-photo" src="assets/清邁/lamphun-train.jpg" alt="清邁與南奔之間的火車站月台" loading="lazy">
-        </article>
-
-        <article class="spot-card">
-          <h3>Kao Mai Estate 1955 老菸廠活化園區</h3>
-          <div class="spot-meta"><span class="tag">老建築活化</span><span class="tag">文化保存</span><span class="tag">拍照散步</span></div>
-          <dl><dt>這裡有什麼好看</dt><dd>舊菸葉烘房、紅磚建築、爬藤與老工業空間重新變成文化、餐飲和休閒場域。</dd></dl>
-          <img class="spot-photo" src="assets/清邁/kao-mai-estate.jpg" alt="Kao Mai Estate 1955 老菸廠活化園區" loading="lazy">
-        </article>
-
-      </div>
-
-      <div class="subtle-note">以下景點為清邁、清萊與南奔的常見亮點，實際景點安排仍以各團體行程說明會資料為主。</div>
-    </section>
+        </article></div></div><div class="subtle-note">這裡先把景點整理給大家參考，實際安排以行前說明會和行程表為準。</div></section>
 
     <section class="section" id="s2">
       <div class="section-heading">
@@ -762,6 +775,7 @@
       <div class="food-grid">
         <article class="food-card"><h3>泰北咖哩麵 Khao Soi</h3><p>椰奶和咖哩香氣比較明顯，上面常搭配酥脆炸麵條，柔軟和脆脆的口感一起吃很有記憶點。</p><img class="food-photo" src="assets/清邁/khao-soi.jpg" alt="清邁泰北咖哩麵" loading="lazy"></article>
         <article class="food-card"><h3>泰國水果</h3><p>天氣熱時來一份山竹、龍眼或當季水果，是很有旅行感的小享受。想吃多少就挑多少，留一點肚子給接下來的行程。</p><img class="food-photo" src="assets/清邁/mangosteen-longan-juice.jpg" alt="泰國山竹與龍眼汁" loading="lazy"></article>
+        <article class="food-card" id="karun"><h3>Karun 泰式奶茶</h3><p>逛 Central Chiang Mai 時可以來喝。這家是從曼谷開過來的新店，想喝泰奶的可以去喝喝看。</p><img class="food-photo" src="assets/清邁/karun-thai-tea.jpg" alt="Central Chiang Mai 的 Karun 泰式奶茶櫃位與招牌" loading="lazy"></article>
         <article class="food-card"><h3>手標泰奶 ChaTraMue</h3><p>大家熟悉的經典泰奶，甜度照自己的習慣調整就好。走累時來一杯，剛好把步調放慢一點。</p><img class="food-photo" src="assets/清邁/cha-tra-mue.jpg" alt="手標 ChaTraMue 泰式奶茶" loading="lazy"></article>
       </div>
 
@@ -771,23 +785,23 @@
     <section class="section" id="s4">
       <div class="section-heading">
         <h2>清邁可以買什麼？</h2>
-        <p>伴手禮不用買得很滿，挑一個自己真的喜歡、回台灣也用得到的小物就好。</p>
+        <p>想買伴手禮可以從下面幾樣挑，先試吃、試用，喜歡再買就好。</p>
       </div>
 
       <aside class="collection-brief" aria-label="清邁小選物">
         <p class="collection-brief-kicker">先收好這幾個小選物</p>
         <h3>有興趣再慢慢挑，不用一次買滿</h3>
         <div class="collection-brief-grid">
-          <article class="collection-brief-item"><h4>果乾與泰北零食</h4><p>芒果乾、果乾、餅乾和糖果都很適合挑小包裝分享。</p></article>
-          <article class="collection-brief-item"><h4>香氛與精油</h4><p>先聞喜歡的味道，再確認容量和包裝是否方便攜帶。</p></article>
-          <article class="collection-brief-item"><h4>手工藝與特色小物</h4><p>手作包、飾品、木雕和布品，常常留得住清邁的手感。</p></article>
-          <article class="collection-brief-item"><h4>7-Eleven 與便利小物</h4><p>飲料、零食和日常小物，當成旅途中的小發現就好。</p></article>
+          <article class="collection-brief-item"><h4>果乾與泰北零食</h4><p>想帶回去分同事、朋友，可以挑小包裝的芒果乾、餅乾或糖果，分起來比較方便。</p></article>
+          <article class="collection-brief-item"><h4>香氛與精油</h4><p>先聞聞看，喜歡再買。不用挑太大瓶，小瓶的比較好帶，回家也用得完。</p></article>
+          <article class="collection-brief-item"><h4>手工藝與特色小物</h4><p>編織包、小飾品、木雕都可以逛逛看。挑自己平常會用、會戴的，比較不會買回家就收進櫃子。</p></article>
+          <article class="collection-brief-item"><h4>7-Eleven 與便利小物</h4><p>進去補水時也可以逛一下零食區，沒吃過的口味先買一小包試試。</p></article>
         </div>
       </aside>
 
       <div class="buy-grid">
         <article class="buy-card"><h3>草藥鼻通</h3><p>搭車、天氣悶熱或想提神時，很多人會想帶一支放在身邊。</p><img class="buy-photo" src="assets/清邁/herbal-inhaler.jpg" alt="泰國草藥鼻通" loading="lazy"></article>
-        <article class="buy-card"><h3>鹹蛋黃洋芋片</h3><p>鹹香味很有記憶點，買一包回去和朋友一起拆，很適合當旅行的小分享。</p><img class="buy-photo" src="assets/清邁/salted-egg-chips.jpg" alt="鹹蛋黃洋芋片" loading="lazy"></article>
+        <article class="buy-card"><h3>鹹蛋黃洋芋片</h3><p>喜歡鹹蛋黃口味的可以試試，先買一包和旅伴分著吃，覺得喜歡再多帶幾包。</p><img class="buy-photo" src="assets/清邁/salted-egg-chips.jpg" alt="鹹蛋黃洋芋片" loading="lazy"></article>
         <article class="buy-card"><h3>泰式風味零食</h3><p>酸、辣和香料感各有不同，挑自己平常會想吃的口味就好。</p><img class="buy-photo" src="assets/清邁/thai-flavor-chips.jpg" alt="泰式風味零食" loading="lazy"></article>
         <article class="buy-card"><h3>西瓜涼糖</h3><p>小小一盒很輕巧，走路走累時來一顆，清涼感很舒服。</p><img class="buy-photo" src="assets/清邁/watermelon-mint.jpg" alt="西瓜涼糖" loading="lazy"></article>
       </div>
@@ -796,13 +810,19 @@
     </section>
 
     <footer>
-      <p>最後更新：2026 年 9 月 23 日（台北時間）｜內容會隨官方規定與 YoYo 實際走訪持續更新。</p>
+      <p>最後更新：2026 年 10 月 12 日（台北時間）｜內容會隨官方規定與 YoYo 實際走訪持續更新。</p>
       <p><a href="國家提醒.html?country=th">出發前必看：泰國全境注意事項</a> ｜ <a href="https://www.instagram.com/yoyo.touring/" target="_blank" rel="noopener">@yoyo.touring</a></p>
     </footer>
   </main>
 
   <script src="assets/YO旅行班/shareable-sections.js"></script>
   <script>
+    document.querySelectorAll('.region-links a').forEach(link => {
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
     const buttons = document.querySelectorAll('.nav-btn');
     const sections = document.querySelectorAll('.section');
 
