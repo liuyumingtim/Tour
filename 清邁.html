@@ -603,6 +603,15 @@
       #s0 .quote-card { padding: 18px 20px; }
     }
 
+.safari-card { display:grid; grid-template-columns:1fr 1.2fr; gap:24px; padding:24px; margin-bottom:18px; border-top:4px solid var(--green); align-items:center; }
+.safari-card::before { display:none; }
+.safari-card h3 { margin:0 0 16px; }
+.safari-card p { margin:0 0 14px; }
+.safari-card .safari-note { font-size:13px; color:var(--muted); }
+.safari-card figure { margin:0; min-width:0; }
+.safari-card img { display:block; width:100%; height:auto; border-radius:6px; }
+.safari-card figcaption { font-size:11px; color:var(--muted); margin-top:8px; }
+@media(max-width:760px) { .safari-card { grid-template-columns:1fr; padding:20px; gap:8px; } }
 /* Shared guide links: phase-one content consistency */
 .guide-country-links{display:flex;flex-wrap:wrap;gap:10px;align-items:center;width:min(900px,calc(100% - 32px));margin:18px auto;padding:12px 16px;border:1px solid #ddd9ca;background:#fffdf8;color:#26313a;font:14px/1.7 -apple-system,BlinkMacSystemFont,"Noto Sans TC",sans-serif}.guide-country-links a{color:#215e51;font-weight:700;text-underline-offset:3px}.guide-country-links a:focus-visible{outline:3px solid #a97a20;outline-offset:3px}
 </style>
@@ -774,15 +783,26 @@
     <section class="section" id="s2">
       <div class="section-heading">
         <h2>清邁可以體驗什麼？</h2>
-        <p>旅行不只把景點走完，留一段時間放鬆或換個樣子玩，也會讓這趟泰北更有記憶。</p>
+        <p>搭遊園車看動物、按摩放鬆，或換上泰服拍照，可以依行程和自己的喜好安排。</p>
       </div>
 
-      <div class="food-grid">
+      <article class="food-card safari-card">
+        <div>
+          <h3>清邁夜間動物園 Chiang Mai Night Safari</h3>
+          <p>這一站我們會搭遊園車看動物，體驗晚上逛動物園的感覺。</p>
+          <p class="safari-note">＊各團行程安排可能不同，是否前往及參觀內容，以行前說明會與行程表為準。</p>
+        </div>
+        <figure>
+          <img src="assets/清邁/night-safari-tram.jpg" alt="清邁夜間動物園的遊園車與路旁斑馬" width="1280" height="853" loading="lazy">
+          <figcaption>照片：<a href="https://commons.wikimedia.org/wiki/File:Night_Safari1.jpg" target="_blank" rel="noopener">Chiang Mai Night Safari / Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>（縮圖）</figcaption>
+        </figure>
+      </article>
+
+<div class="subtle-note">想安排體驗時，直接問領隊或當地導遊就好；我們會依當天的位置與時間，分享口碑不錯、適合大家參考的店家選項。</div>
+          <div class="food-grid">
         <article class="food-card"><h3>泰式按摩與洗頭</h3><p>走了一整天後，想讓自己好好休息一下，泰式按摩或洗頭都是很舒服的選項。開始前先說好力道和自己在意的地方就好。</p></article>
         <article class="food-card"><h3>泰服與寺廟拍照</h3><p>想為旅行留一組不一樣的照片時，泰服體驗可以依自己的喜好安排。寺廟參觀仍要留意衣著與現場拍照規定。</p></article>
       </div>
-
-      <div class="subtle-note">想安排體驗時，直接問領隊或當地導遊就好；我們會依當天的位置與時間，分享口碑不錯、適合大家參考的店家選項。</div>
     </section>
 
     <section class="section" id="s3">
