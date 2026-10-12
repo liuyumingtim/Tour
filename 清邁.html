@@ -578,6 +578,31 @@
 .spot-region { scroll-margin-top:100px; margin-top:32px; }
 .region-title { border-left:4px solid var(--green); padding:6px 12px; font-size:24px; }
 .photo-credit { margin:0 20px 20px; font-size:11px; color:var(--muted); }
+
+    /* Keep the three introduction themes together without an empty grid cell. */
+    #s0 .section-heading { display: block; margin-bottom: 20px; }
+    #s0 .section-heading p { max-width: none; margin-top: 8px; }
+    #s0 .intro-card { display: grid; grid-template-columns: 88px minmax(0,1fr); column-gap: 20px; align-items: center; }
+    #s0 .yoyo-avatar { float: none; grid-row: 1 / 3; width: 88px; height: 88px; margin: 0; }
+    #s0 .intro-card h3 { align-self: end; }
+    #s0 .intro-card p { align-self: start; }
+    #s0 .understand-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
+    #s0 .understand-card { padding: 22px; border-top: 4px solid var(--green); }
+    #s0 .understand-card::before { display: none; }
+    #s0 .understand-card h3 { margin: 0 0 12px; font-size: 19px; }
+    #s0 .understand-card p { margin: 0; font-size: 15px; line-height: 1.85; }
+    #s0 .quote-card { padding: 20px 24px; }
+    #s0 .quote-card p { font-size: 17px; font-weight: 500; line-height: 1.85; }
+    @media (max-width: 760px) {
+      #s0 .understand-grid { grid-template-columns: 1fr; gap: 12px; }
+      #s0 .understand-card { padding: 18px 20px; }
+      #s0 .intro-card { grid-template-columns: 64px minmax(0,1fr); gap: 0 14px; }
+      #s0 .yoyo-avatar { width: 64px; height: 64px; }
+      #s0 .intro-card h3 { font-size: 17px; }
+      #s0 .intro-card p { font-size: 14px; }
+      #s0 .quote-card { padding: 18px 20px; }
+    }
+
 /* Shared guide links: phase-one content consistency */
 .guide-country-links{display:flex;flex-wrap:wrap;gap:10px;align-items:center;width:min(900px,calc(100% - 32px));margin:18px auto;padding:12px 16px;border:1px solid #ddd9ca;background:#fffdf8;color:#26313a;font:14px/1.7 -apple-system,BlinkMacSystemFont,"Noto Sans TC",sans-serif}.guide-country-links a{color:#215e51;font-weight:700;text-underline-offset:3px}.guide-country-links a:focus-visible{outline:3px solid #a97a20;outline-offset:3px}
 </style>
@@ -632,7 +657,7 @@
         <img class="yoyo-avatar" src="assets/清邁/yoyo-avatar.jpg" alt="YoYo 在戶外旅行時的照片">
         <h3>認識 YoYo｜劉又銘</h3>
         <p>國際領隊｜旅行內容創作者<br>把帶團路上的風景、文化與實用提醒，整理成你用得上的旅行筆記。</p>
-        <div style="clear: both;"></div>
+
       </div>
 
       <div class="understand-grid">
