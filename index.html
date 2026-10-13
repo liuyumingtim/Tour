@@ -1704,6 +1704,7 @@
 
   <script>
     const countries = [
+{"id": "ph", "name": "菲律賓", "short": "PHILIPPINES", "code": "PH", "flag": "🇵🇭", "accent": "#83cbd9", "mapPath": "M40 5L57 12 53 31 38 35 30 24Z M53 40L64 49 59 61 47 53Z M69 62L89 71 82 91 61 84 57 71Z M28 48L35 55 20 79 14 75Z", "copy": "從宿霧出發，認識市區、南部、薄荷島與離島，先看這趟旅行的專屬提醒。", "note": {"title": "宿霧行前提醒", "intro": "護照、eTravel、行李、噴霧、付款、充電與教堂穿著，出發前看這 8 格。", "url": "國家提醒.html?country=ph", "keywords": "噴霧 防曬 定妝 教堂 服裝 拖鞋 行李 長榮 華航 eTravel 入境 免簽 披索 插座"}, "guides": [{"name": "宿霧・薄荷島｜互動地圖指南", "url": "宿霧.html", "desc": "市區教堂、Oslob 鯨鯊、巧克力山、眼鏡猴與資生堂島。", "sections": [{"name": "宿霧｜宿霧市區", "category": "景點 旅遊", "url": "宿霧.html#city", "desc": "市區這一段會看聖嬰教堂和麥哲倫十字架。看看教堂建築、十字架上方的壁畫，也認識一下宿霧的歷史。", "keywords": "聖嬰教堂 Basilica Minore del Santo Niño 麥哲倫十字架 Magellan’s Cross"}, {"name": "宿霧｜宿霧南部", "category": "景點 旅遊", "url": "宿霧.html#south", "desc": "Oslob 在宿霧南部，和市區不是隔壁景點。這天可能需要早起，車上休息、下水活動量依體力調整。", "keywords": "Oslob 鯨鯊觀賞"}, {"name": "宿霧｜薄荷島", "category": "景點 旅遊", "url": "宿霧.html#bohol", "desc": "薄荷島要另外搭船過去，到了島上還有車程。這段會上觀景區看巧克力山，再到園區找找小小的眼鏡猴。", "keywords": "巧克力山 Chocolate Hills 眼鏡猴 Bohol Tarsier Conservation Area"}, {"name": "宿霧｜離島出海", "category": "景點 旅遊", "url": "宿霧.html#islands", "desc": "資生堂島在麥克坦外海。這一站會安排浮潛，看看水面下的風景，上岸再走走、吹海風。活動依海況調整。", "keywords": "資生堂島 Caohagan Island"}]}]},
       {
         id: "th",
         name: "泰國",
@@ -1921,7 +1922,7 @@
 
       countries.forEach((country, index) => {
         const node = layer.querySelector(`[data-id="${country.id}"]`);
-        const angle = state.orbit + index * Math.PI / 2 - Math.PI / 5;
+        const angle = state.orbit + index * (Math.PI * 2 / countries.length) - Math.PI / 5;
         const x = cx + Math.cos(angle) * rx;
         const y = cy + Math.sin(angle) * ry;
         node.style.left = `${Math.max(nodeSize / 2, Math.min(w - nodeSize / 2, x))}px`;

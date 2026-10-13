@@ -115,6 +115,7 @@
   </main>
   <script>
     const countryData = {
+      ph: {"flag": "🇵🇭", "name": "宿霧行前注意事項", "intro": "出發前先用 8 格確認；宿霧、薄荷島與離島行程都能先看這一頁。", "updated": "2026 年 10 月 13 日", "priority": [["scan-line", "eTravel", "抵達前 72 小時內免費登記"], ["luggage", "返台噴霧提醒", "出發前就改帶非噴霧替代品"], ["map", "行程表", "景點、船班與活動依當團安排"]], "cards": [["contact", "護照與入境", "持台灣護照、符合條件的觀光旅客，目前可免簽停留最多 14 天，措施至 2027 年 6 月 30 日。護照在預定停留結束後須仍有效至少 6 個月；回程或續程機票、住宿與財力資料先備好，入境由移民官審核。"], ["scan-line", "eTravel 電子入境登記", "抵達菲律賓前 72 小時內，到官方網站填寫，完成後存好 QR Code。這是入境登記，不是簽證；官方免費，不用找付費代辦。"], ["luggage", "行李與回台", "託運重量與隨身行李額度，照當次長榮或華航的機票規定整理。買伴手禮前先確認能否帶回台灣，不確定的食品可先拍包裝詢問。"], ["luggage", "宿霧返台，噴霧先不帶", "<span class=\"warning\">YoYo 帶團提醒：定妝噴霧、防曬噴霧、髮膠等，建議出發前就不要帶。</span>改用防曬乳、粉餅等非噴霧替代品，避免回程安檢時被要求丟棄。實際限制以機場安檢與航空公司規定為準。"], ["wallet-cards", "貨幣與付款", "當地使用菲律賓披索（PHP）。建議準備一些小額現金，買飲料或小東西比較方便；刷卡前先確認店家是否接受與結帳幣別。"], ["plug-zap", "插座與充電", "當地一般電壓為 220V。先看充電器是否標示 100–240V；只有 110V 的電器不要直接插。可帶萬用轉接頭備用，轉接頭不會改變電壓。"], ["landmark", "教堂穿著與禮貌", "參觀聖嬰教堂，準備有袖上衣、長褲或過膝裙，避免短褲、短裙與露肩。YoYo 建議穿包鞋、不穿拖鞋；入內放輕聲音，拍照與開放區域依現場規定。"], ["map", "行程表與出海", "景點、交通和住宿以當團行程表為主。資生堂島會安排浮潛，帶泳衣、毛巾和替換衣物；船班與下水活動看海況調整，有身體不適先跟領隊說。"]], "sources": [["eTravel 官方登記", "https://etravel.gov.ph/"], ["eTravel 填寫說明", "https://etravel.gov.ph/en/frequently-asked-questions"], ["入境與免簽資訊", "https://www.boca.gov.tw/sp-foof-countrycp-02-11-6fcbf-02-1.html"], ["MECO 旅遊資訊", "https://www.meco.org.tw/topics/travel-and-tourism/visiting-the-philippines"], ["宿霧互動地圖", "宿霧.html"], ["聖嬰教堂官方公告", "https://santoninodecebubasilica.org/wp-content/uploads/2025/12/FIESTA-SENOR-BOOKLET-2026.pdf"], ["長榮行李限制", "https://www.evaair.com/en-ph/fly-prepare/baggage/additional-baggage-information/restrictions/"], ["華航行李提醒", "https://calec.china-airlines.com/eCheckin/baggage_info.aspx?country=tw&locale=zh"]]},
       th: {
         flag: "🇹🇭", name: "泰國全境注意事項", intro: "出發前先用 8 格確認；曼谷、芭達雅、清邁與清萊等行程都能先看這一頁。",
         priority: [
@@ -206,6 +207,7 @@
     document.getElementById("intro").textContent = country.intro;
     if (country.updated) document.getElementById("updated").innerHTML = `最後整理：${country.updated}<br>易變動規定以官方與行前通知為準。`;
     const priority = document.getElementById("priority");
+    priority.setAttribute("aria-label", country.name + "出發前三件事");
     if (country.priority) {
       priority.classList.add("is-visible");
       priority.innerHTML = country.priority.map(([icon, title, text]) => `
