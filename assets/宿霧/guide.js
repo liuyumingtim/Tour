@@ -51,6 +51,7 @@ document.addEventListener('click',event=>{
 });
 pins.addEventListener('keydown',event=>{if((event.key==='Enter'||event.key===' ')&&event.target.matches('[data-spot]')){event.preventDefault();openSpot(event.target.dataset.spot,event.target);}});
 
+const spotPhotos={"oslob": {"src": "assets/宿霧/whale-sharks.jpg", "alt": "水下的鯨鯊與潛水者"}, "hills": {"src": "assets/宿霧/chocolate-hills.jpg", "alt": "巧克力山觀景平台與連綿山丘"}, "tarsier": {"src": "assets/宿霧/tarsier.jpg", "alt": "躲在葉片與樹枝間休息的眼鏡猴"}};
 const dialog=document.getElementById('spot-dialog');
 function openSpot(id,opener){
   const spot=spots[id];if(!spot)return;dialogOpener=opener;
@@ -59,6 +60,9 @@ function openSpot(id,opener){
   document.getElementById('spot-subtitle').textContent=spot.subtitle;
   ['enjoy','pace','weather'].forEach(key=>document.getElementById(`spot-${key}`).textContent=spot[key]);
   document.getElementById('spot-map').href=`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(spot.query)}`;
+  const photo=document.getElementById('spot-photo');
+  photo.hidden=!spotPhotos[id];
+  if(spotPhotos[id]){photo.src=spotPhotos[id].src;photo.alt=spotPhotos[id].alt;}else{photo.removeAttribute('src');photo.alt='';}
   dialog.showModal();document.body.classList.add('modal-open');
 }
 dialog.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
