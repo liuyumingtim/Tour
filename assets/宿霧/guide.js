@@ -92,3 +92,14 @@ document.getElementById('copy-button').addEventListener('click',async()=>{
 setRegion(regions[location.hash.slice(1)]?location.hash.slice(1):'city');
 updateMobileMapHeight();
 window.addEventListener('load',()=>{const region=location.hash.slice(1);if(regions[region])navigateRegion(region);else syncScroll();});
+
+const copyRegionLink=document.getElementById('copy-region-link');
+copyRegionLink.addEventListener('click',async()=>{
+ const status=document.getElementById('copy-link-status');
+ const active=document.querySelector('.region-nav a.is-active')||document.querySelector('.region-nav a.active');
+ const hash=active?.getAttribute('href')||location.hash||'#city';
+ const url=new URL(location.href);url.search='';url.hash=hash;
+ try{await navigator.clipboard.writeText(url.href);status.textContent='已複製，可貼到 LINE';}
+ catch{status.textContent='請複製網址列的連結';}
+ setTimeout(()=>status.textContent='',3000);
+});
