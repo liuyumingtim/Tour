@@ -35,10 +35,10 @@
 .notes-edition { color: var(--notes-muted); font-size: 12px; margin: 18px 0 0; }
 .notes-start { color: var(--notes-accent); font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; min-height: 44px; margin-top: 8px; text-decoration: underline; text-underline-offset: 4px; }
 .notes-cover, .notes-diptych figure { margin: 0; }
-.notes-cover img { display: block; width: 100%; height: 238px; object-fit: cover; border-radius: 4px; }
+.notes-cover img { display: block; width: 100%; height: auto; object-fit: contain; border-radius: 4px; }
 .notes-cover figcaption, .notes-diptych figcaption { color: var(--notes-muted); font-size: 12px; margin-top: 8px; }
 .notes-diptych { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.notes-diptych img { display: block; width: 100%; height: 238px; object-fit: cover; border-radius: 4px; }
+.notes-diptych img { display: block; width: 100%; height: auto; object-fit: contain; border-radius: 4px; }
 .notes-regions { border-left: 2px solid #c5ad80; padding-left: 24px; }
 .notes-regions p { margin: 0; padding: 12px 0; border-bottom: 1px solid var(--notes-line); }
 .notes-regions strong { display: block; font-size: 22px; font-family: Georgia, "Noto Serif TC", serif; color: var(--notes-accent); }
@@ -117,19 +117,22 @@
 .yo-sapa .card { background: none; border: 0; border-top: 1px solid var(--yo-line); box-shadow: none; border-radius: 0; }
 @media (max-width: 700px) {
   .yo-notes .notes-topbar { width: calc(100% - 32px); padding: 10px 0; }
-  .yo-notes .notes-hero { display: block; width: calc(100% - 32px); padding: 26px 0 18px; }
-  .notes-hero h1 { font-size: 32px; margin-bottom: 12px; }
-  .notes-eyebrow { font-size: 12px; margin-bottom: 10px; }
-  .notes-deck { font-size: 16px; }
+  .yo-notes .notes-hero { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 20px 18px; width: calc(100% - 32px); padding: 26px 0 18px; }
+  .notes-hero h1 { font-size: 28px; margin-bottom: 12px; text-wrap: balance; }
+  .notes-hero h1 .notes-route { display: block; font-size: 18px; line-height: 1.5; margin-top: 4px; }
+  .notes-eyebrow { font-size: 11px; margin-bottom: 8px; }
+  .notes-deck { font-size: 14px; line-height: 1.85; }
   .notes-edition { margin-top: 12px; font-size: 11px; }
-  .notes-cover, .notes-diptych { margin-top: 22px; }
-  .notes-cover img { height: 184px; }
-  .notes-diptych img { height: 184px; }
-  .notes-regions { margin-top: 20px; padding-left: 16px; }
-  .notes-regions p { display: flex; align-items: baseline; gap: 16px; }
+  .notes-cover, .notes-diptych { margin: 0; }
+  .notes-diptych { grid-template-columns: 1fr; gap: 12px; }
+  .notes-cover figcaption, .notes-diptych figcaption { font-size: 11px; line-height: 1.6; }
+  .notes-cover img { height: auto; }
+  .notes-diptych img { height: auto; }
+  .notes-regions { margin-top: 0; padding-left: 14px; }
+  .notes-regions p { display: block; padding: 10px 0; }
   .notes-regions strong { font-size: 18px; min-width: 3em; }
   .notes-regions span { font-size: 13px; }
-  .notes-meta { margin-top: 20px; padding-top: 12px; }
+  .notes-meta { margin-top: 0; padding-top: 12px; }
   .yo-notes .guide-country-links { font-size: 12px; gap: 0 10px; }
   .yo-notes .info-bar { width: calc(100% - 32px); display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 20px; }
   .yo-notes .nav { justify-content: flex-start; gap: 0; padding: 4px 8px; }

@@ -6,3 +6,19 @@
 button:focus-visible,.city-topbar a:focus-visible{outline:3px solid #c5943a;outline-offset:3px}
 @media(max-width:760px){.city-topbar{padding-bottom:14px}.city-topbar nav{gap:12px;font-size:12px}.yo-guide .hero{padding:22px;gap:18px}.hero-gallery{grid-template-rows:repeat(2,82px)}.hero-actions{margin-top:16px}.hero .info-row{display:none}.hero .hero-update{margin-top:12px}.city-tools{font-size:12px;gap:8px}.city-tools>button{padding:8px 10px}.yo-guide .nav-wrap .nav-btn{font-size:12px;min-height:44px}.spot-card>h3,.food-card>h3,.buy-card>h3{font-size:19px}.hero::after{display:none}}
 @media(max-width:760px){.yo-guide .nav-wrap .nav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;overflow:visible}.yo-guide .nav-wrap .nav-btn{min-width:0;padding:8px 2px;white-space:nowrap;font-size:11px}.yo-guide .nav-wrap .desktop-nav-label{display:none}.yo-guide .nav-wrap .mobile-nav-label{display:inline}}
+
+/* 手機仍保留左文右圖，照片組依原比例在右側排列。 */
+@media(max-width:760px){
+  .yo-guide .hero{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);padding:18px;gap:18px;align-items:center}
+  .hero-copy .eyebrow{font-size:11px;letter-spacing:0;line-height:1.7}
+  .hero-copy .eyebrow::before{display:none}
+  .yo-guide .hero h1{font-size:28px}
+  .yo-guide .hero h1 span{font-size:16px;letter-spacing:0;line-height:1.5}
+  .hero-copy .hero-summary{font-size:14px;line-height:1.85;margin-top:14px}
+  .hero-actions{flex-direction:column;gap:8px}
+  .hero-actions button{min-height:44px;font-size:14px;padding:8px;white-space:nowrap}
+  .hero-gallery{grid-template-columns:1fr;grid-template-rows:none;gap:10px}
+  .hero-gallery .hero-main-photo{grid-row:auto}
+  .hero-gallery img{height:auto;aspect-ratio:auto;object-fit:contain}
+  .hero-gallery figcaption{font-size:11px;padding:18px 6px 6px}
+}
