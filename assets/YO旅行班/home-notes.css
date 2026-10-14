@@ -1,0 +1,183 @@
+/* 首頁專用：保留地球導覽，讓閱讀與目的地入口先被看見。 */
+.yo-home {
+  --ink: #263e35;
+  --soft: #506359;
+  --muted: #5e6c64;
+  --line: #dddcd0;
+  --gold: #886127;
+  --radius: 12px;
+  --shadow: none;
+  --content: min(1080px, calc(100% - 48px));
+  background: #faf7ef;
+  color: var(--ink);
+  line-height: 1.75;
+}
+.yo-home::before, .yo-home .hero::after { content: none; }
+.yo-home main#top { scroll-margin-top: 96px; }
+.yo-home .topbar { background: #faf7ef; backdrop-filter: none; }
+.yo-home .topbar-inner { min-height: 80px; }
+.yo-home .brand-title { color: #215e51; }
+.yo-home .brand-sub { font-weight: 500; }
+.yo-home .brand-avatar { filter: none; }
+.yo-home .controls { width: auto; }
+.yo-home .search { width: 320px; }
+.yo-home .search input {
+  height: 44px; padding-inline: 16px; border-radius: 8px;
+  color: var(--ink); background: #fffdf8;
+}
+.yo-home .search input::placeholder { color: #647369; }
+.yo-home .search input:focus { border-color: #215e51; box-shadow: 0 0 0 3px #215e5118; }
+.yo-home .hero {
+  display: grid; grid-template-columns: minmax(0, 1fr) 240px;
+  align-items: center; gap: 64px; padding: 46px 0 40px;
+}
+.yo-home .eyebrow {
+  padding: 0; margin-bottom: 14px; border: 0; border-radius: 0;
+  color: #215e51; background: none; font-size: 14px; font-weight: 600;
+}
+.yo-home h1 {
+  color: #215e51; font-family: Georgia, "Noto Serif TC", "Songti TC", serif;
+  font-size: clamp(38px, 4.5vw, 58px); line-height: 1.25; font-weight: 700;
+}
+.yo-home .gradient-text { color: #aa5839; background: none; }
+.yo-home .hero-copy { margin-top: 20px; font-size: 17px; line-height: 1.9; }
+.yo-home .hero-author { margin: 0; }
+.yo-home .hero-author img { display: block; width: 180px; height: 180px; object-fit: cover; border-radius: 8px; }
+.yo-home .hero-author figcaption { margin-top: 12px; }
+.yo-home .hero-author strong { display: block; font-size: 16px; }
+.yo-home .hero-author span { display: block; color: var(--muted); font-size: 13px; }
+.yo-home .hero-author a { display: inline-flex; align-items: center; min-height: 44px; color: #215e51; font-size: 13px; text-decoration: underline; text-underline-offset: 4px; }
+.yo-home .country-picker-bar {
+  width: var(--content); margin: 0 auto; border-block: 1px solid var(--line);
+  background: none;
+}
+.yo-home .country-picker-inner { width: 100%; min-height: 76px; gap: 24px; }
+.yo-home .country-picker-label { color: #215e51; font-size: 15px; }
+.yo-home .country-picker-copy { display: none; }
+.yo-home .country-picker-actions { gap: 8px; overflow: visible; flex-wrap: wrap; }
+.yo-home .country-picker-button {
+  border: 1px solid #c9d1c6; border-radius: 6px; min-height: 44px;
+  padding: 8px 20px; color: #215e51; background: #fffdf8;
+  font-size: 15px; font-weight: 600;
+}
+.yo-home .country-picker-button:hover,
+.yo-home .country-picker-button.active { color: #fffdf8; background: #215e51; border-color: #215e51; }
+.yo-home .luggage-quick-bar {
+  display: block; width: var(--content); margin: 18px auto 0;
+  border: 0; border-radius: 8px; padding: 4px 18px; color: #6a4d27; background: #eee7d7;
+}
+.yo-home .luggage-quick-inner { width: 100%; min-height: 52px; gap: 16px; }
+.yo-home .luggage-quick-title { color: #604a2e; font-size: 14px; font-weight: 700; }
+.yo-home .luggage-quick-title::before { color: #886127; }
+.yo-home .luggage-quick-summary { color: #6a5840; font-weight: 400; }
+.yo-home .luggage-quick-action { color: #604a2e; font-weight: 600; }
+.yo-home .luggage-quick-bar:hover { background: #e6ddc7; }
+.yo-home .atlas-tools {
+  width: var(--content); margin: 28px auto 12px; display: flex;
+  align-items: center; justify-content: space-between; gap: 20px;
+}
+.yo-home .atlas-tools p { margin: 0; color: var(--muted); font-size: 14px; }
+.yo-home .atlas-actions { display: flex; gap: 8px; }
+.yo-home .control-btn, .yo-home .small-btn, .yo-home .dialog-close {
+  border-color: #c9d1c6; border-radius: 6px; color: #215e51;
+  background: #fffdf8; font-weight: 600;
+}
+.yo-home .control-btn:hover, .yo-home .small-btn:hover, .yo-home .dialog-close:hover { background: #e9eee6; border-color: #215e51; }
+.yo-home .workspace { margin-top: 0; grid-template-columns: minmax(0, 1fr) 390px; gap: 18px; align-items: start; }
+.yo-home .workspace:not(.country-selected) { grid-template-columns: 1fr; }
+.yo-home :is(.globe-card,.info-panel,.classic-panel,.luggage-card,.source-box) {
+  background: #fffdf8; border-color: var(--line); box-shadow: none; backdrop-filter: none;
+}
+.yo-home .globe-card { min-height: 500px; padding: 18px; background: #e8efeb; }
+.yo-home .globe-card::before, .yo-home .globe-card::after { content: none; }
+.yo-home .sky-cloud { display: none; }
+.yo-home .globe-stage { height: 460px; min-height: 460px; }
+.yo-home .orbit-ring { border-color: #bdcbc0; }
+.yo-home .orbit-ring.second { display: none; }
+.yo-home .air-route { border-color: #b9c5b3; opacity: .65; }
+.yo-home .air-route::after { content: none; }
+.yo-home .airplane { color: #8b683c; text-shadow: none; font-size: 24px; }
+.yo-home .globe { width: clamp(160px, 23vw, 260px); border: 0; box-shadow: 0 12px 28px #263e351a; animation: none; }
+.yo-home .globe::after { content: none; }
+.yo-home .globe-image { filter: saturate(.7); }
+.yo-home .node-button { color: #215e51; border-radius: 8px; }
+.yo-home .node-button:hover, .yo-home .country-node.active .node-button { transform: none; filter: none; background: #fffdf8; }
+.yo-home .country-orb { background: #fffdf8; border-color: #c9d1c6; box-shadow: none; }
+.yo-home .country-code { color: #506359; border: 1px solid #c9d1c6; }
+.yo-home .country-name { color: #215e51; font-weight: 700; }
+.yo-home .country-count { color: #506359; font-size: 11px; font-weight: 400; }
+.yo-home .satellite-orbit { display: none; }
+.yo-home .info-panel { min-height: 500px; padding: 24px; scroll-margin-top: 100px; }
+.yo-home :is(.panel-kicker,.country-section-kicker,.link-country) { color: #886127; font-weight: 600; }
+.yo-home :is(.panel-title,.country-section-title,.link-name,.classic-country h3) { color: #215e51; font-weight: 700; }
+.yo-home .country-detail-scroll { max-height: none; overflow: visible; }
+.yo-home .panel-link { background: none; border: 0; border-top: 1px solid var(--line); border-radius: 0; padding: 16px 0; }
+.yo-home .panel-link:hover { transform: none; background: #edf1e8; border-color: #bbc9bc; }
+.yo-home .link-list { gap: 0; }
+.yo-home .link-desc { display: block; color: var(--muted); font-size: 14px; margin-top: 6px; }
+.yo-home .classic-panel { padding: 0; border: 0; background: none; }
+.yo-home .classic-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.yo-home .classic-country { border: 0; border-top: 2px solid #215e51; border-radius: 0; padding: 20px 0; background: none; }
+.yo-home .classic-country p { font-size: 14px; }
+.yo-home .luggage-dialog { color: var(--ink); background: #faf7ef; border-color: var(--line); box-shadow: 0 20px 80px #263e3529; }
+.yo-home .luggage-dialog::backdrop { background: #263e3577; backdrop-filter: none; }
+.yo-home .luggage-dialog-title, .yo-home .luggage-card strong, .yo-home .source-title { color: #215e51; }
+.yo-home .luggage-card span, .yo-home .ai-customs-copy span { color: var(--muted); }
+.yo-home .source-links a { color: #215e51; background: #edf1e8; border-color: var(--line); }
+.yo-home .ai-customs-callout { color: var(--ink); background: #eee7d7; border-color: var(--line); }
+.yo-home .ai-customs-link { color: #fffdf8; background: #215e51; border-color: #215e51; }
+.yo-home .footer { border-top: 1px solid var(--line); font-size: 13px; line-height: 2; }
+.yo-home.search-active .atlas-tools { display: none; }
+.yo-home :is(a,button,input):focus-visible { outline: 3px solid #886127; outline-offset: 3px; }
+@media (min-width: 981px) {
+  .yo-home .workspace.country-selected .globe { width: 210px; }
+}
+@media (max-width: 980px) {
+  .yo-home .topbar-inner { flex-direction: row; align-items: center; padding: 12px 0; }
+  .yo-home .hero { gap: 32px; grid-template-columns: minmax(0, 1fr) 210px; }
+  .yo-home .country-picker-label { display: block; }
+  .yo-home .country-picker-inner { gap: 16px; }
+  .yo-home .country-picker-button { padding-inline: 14px; }
+  .yo-home .workspace { grid-template-columns: 1fr; }
+  .yo-home .info-panel { min-height: auto; }
+  .yo-home .classic-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .yo-home { --content: calc(100% - 32px); }
+  .yo-home .topbar-inner { flex-direction: column; align-items: flex-start; gap: 10px; padding: 12px 0; }
+  .yo-home .brand-avatar { width: 36px; height: 42px; margin: 0; }
+  .yo-home .brand-title { font-size: 15px; }
+  .yo-home .brand-sub { font-size: 11px; }
+  .yo-home .controls, .yo-home .search { display: block; width: 100%; min-width: 0; }
+  .yo-home .hero { display: block; padding: 28px 0; }
+  .yo-home h1 { font-size: 38px; }
+  .yo-home .eyebrow { margin-bottom: 10px; font-size: 13px; }
+  .yo-home .hero-copy { margin-top: 14px; font-size: 16px; }
+  .yo-home .desktop-break { display: none; }
+  .yo-home .hero-author { display: flex; align-items: center; gap: 14px; margin-top: 22px; }
+  .yo-home .hero-author img { width: 72px; height: 88px; flex-shrink: 0; }
+  .yo-home .hero-author figcaption { margin: 0; }
+  .yo-home .hero-author strong { font-size: 14px; }
+  .yo-home .hero-author span { font-size: 12px; }
+  .yo-home .country-picker-inner { display: block; padding: 14px 0; }
+  .yo-home .country-picker-label { font-size: 14px; }
+  .yo-home .country-picker-actions { display: grid; grid-template-columns: repeat(3, 1fr); padding: 10px 0 0; }
+  .yo-home .country-picker-button { padding: 8px 4px; font-size: 14px; }
+  .yo-home .luggage-quick-bar { padding: 10px 14px; margin-top: 14px; }
+  .yo-home .luggage-quick-inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 8px; min-height: 44px; }
+  .yo-home .luggage-quick-summary { grid-column: 1 / -1; grid-row: 2; white-space: normal; font-size: 12px; }
+  .yo-home .luggage-quick-action { grid-column: 2; grid-row: 1; font-size: 12px; }
+  .yo-home .atlas-tools { display: block; margin-top: 24px; }
+  .yo-home .atlas-tools p { font-size: 13px; }
+  .yo-home .atlas-actions { margin-top: 8px; gap: 14px; }
+  .yo-home .atlas-actions .control-btn { width: auto; padding: 6px 12px; font-size: 13px; }
+  .yo-home .globe-card { min-height: 460px; padding: 8px; }
+  .yo-home .globe-stage { height: 440px; min-height: 440px; }
+  .yo-home .country-count { font-size: 10px; }
+  .yo-home .node-button { gap: 3px; }
+  .yo-home .country-orb { width: 42px; height: 42px; }
+  .yo-home .info-panel { padding: 20px 16px; scroll-margin-top: 144px; }
+  .yo-home .panel-title { font-size: 26px; }
+  .yo-home .classic-grid { grid-template-columns: 1fr; gap: 16px; }
+  .yo-home .footer { text-align: left; }
+}

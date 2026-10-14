@@ -1572,8 +1572,9 @@
     }
   </style>
 <link rel="stylesheet" href="assets/YO旅行班/site-theme.css">
+<link rel="stylesheet" href="assets/YO旅行班/home-notes.css">
 </head>
-<body class="yo-home">
+<body class="yo-home paused">
   <div class="site">
     <header class="topbar">
       <div class="topbar-inner">
@@ -1581,7 +1582,7 @@
           <img class="brand-avatar" src="assets/YO旅行班/yoyo-nav-avatar-v1.png" alt="YoYo Q 版人物">
           <span>
             <span class="brand-title">YO! 旅行班</span>
-            <span class="brand-sub">一起出發</span>
+            <span class="brand-sub">YoYo 的旅行筆記</span>
           </span>
         </a>
 
@@ -1590,21 +1591,37 @@
             <span class="sr-only">搜尋目的地與提醒</span>
             <input id="searchInput" type="search" placeholder="搜尋國家、景點、美食、提醒" autocomplete="off">
           </label>
-          <button class="control-btn" id="pauseBtn" type="button">暫停動態</button>
-          <button class="control-btn" id="modeBtn" type="button">清單模式</button>
         </div>
       </div>
     </header>
 
+    <main id="top">
+      <section class="hero" aria-labelledby="pageTitle">
+        <div class="hero-intro">
+          <p class="eyebrow">領隊 YoYo 的旅行筆記</p>
+          <h1 id="pageTitle"><span class="gradient-text">下一站，</span><br>一起出發。</h1>
+          <p class="hero-copy">把帶團路上的提醒、景點和吃買筆記，整理在這裡。<br class="desktop-break">選好目的地，就能開始看。</p>
+        </div>
+        <figure class="hero-author">
+          <img src="assets/YO旅行班/yoyo-avatar.jpg" alt="YoYo 在戶外旅行時的照片" width="700" height="700">
+          <figcaption>
+            <strong>我是 YoYo，劉又銘</strong>
+            <span>國際領隊・旅行內容創作者</span>
+            <a href="https://www.instagram.com/yoyo.touring/" target="_blank" rel="noopener">跟著我的旅行日常 ↗</a>
+          </figcaption>
+        </figure>
+      </section>
+
     <nav class="country-picker-bar" aria-label="選擇目的地">
       <div class="country-picker-inner">
-        <span class="country-picker-label">目的地導覽</span>
+        <span class="country-picker-label">選擇目的地</span>
         <span class="country-picker-copy">想去哪裡？</span>
         <div class="country-picker-actions">
           <button class="country-picker-button" type="button" data-select-country="th">泰國</button>
           <button class="country-picker-button" type="button" data-select-country="vn">越南</button>
           <button class="country-picker-button" type="button" data-select-country="my">馬來西亞</button>
           <button class="country-picker-button" type="button" data-select-country="sg">新加坡</button>
+          <button class="country-picker-button" type="button" data-select-country="ph">菲律賓</button>
         </div>
       </div>
     </nav>
@@ -1612,22 +1629,18 @@
     <button class="luggage-quick-bar" type="button" data-open-luggage>
       <span class="luggage-quick-inner">
         <span class="luggage-quick-title">上機與行李小抄</span>
-        <span class="luggage-quick-summary">出發前先看 9 件事：護照、行動電源、手持電風扇與回台禁帶物</span>
-        <span class="luggage-quick-action">查看</span>
+        <span class="luggage-quick-summary">正在整理行李？出門前先看這 9 件事。</span>
+        <span class="luggage-quick-action">打開小抄 ↗</span>
       </span>
     </button>
 
-    <main id="top">
-      <section class="hero" aria-labelledby="pageTitle">
-        <p class="eyebrow">YO! TOURING ATLAS</p>
-        <h1 id="pageTitle"><span class="gradient-text">下一站</span>，從這裡開始</h1>
-        <p class="hero-copy">選一個國家，先看行前重點、通關提醒、上機行李和回台整理。出發前先抓方向，旅途中就更安心。</p>
-        <div class="hero-trip-tags" aria-label="旅行主題">
-          <span class="hero-trip-tag">✈ 一起出發</span>
-          <span class="hero-trip-tag">🌏 東南亞收藏路線</span>
-          <span class="hero-trip-tag">🧳 行前先準備</span>
+      <div class="atlas-tools" aria-label="地球導覽工具">
+        <p>點選地球旁的國家，看看這趟想去哪裡。</p>
+        <div class="atlas-actions">
+          <button class="control-btn" id="pauseBtn" type="button" aria-pressed="false">開啟動態</button>
+          <button class="control-btn" id="modeBtn" type="button" aria-pressed="false">改看清單</button>
         </div>
-      </section>
+      </div>
 
       <section class="workspace" aria-label="地球目的地導覽">
         <div class="globe-card">
@@ -1657,7 +1670,7 @@
       <div class="luggage-dialog-inner">
         <div class="luggage-dialog-head">
           <div>
-            <p class="luggage-dialog-kicker">BOARDING CHECK</p>
+            <p class="luggage-dialog-kicker">出門前的小檢查</p>
             <h2 class="luggage-dialog-title" id="luggageTitle">出門前 3 分鐘，先檢查這 9 件事。</h2>
             <p class="luggage-dialog-note">這張是通用小抄。各國入境、簽證和特殊禁帶物，仍以目的地頁與行前通知為準。</p>
           </div>
@@ -1698,7 +1711,7 @@
     </dialog>
 
     <footer class="footer">
-      YO! 旅行班 ｜ IG：<a href="https://www.instagram.com/yoyo.touring/" target="_blank" rel="noopener">@yoyo.touring</a> ｜ 最後更新：2026-09-23（台北時間）
+      YO! 旅行班 ｜ IG：<a href="https://www.instagram.com/yoyo.touring/" target="_blank" rel="noopener">@yoyo.touring</a> ｜ 首頁更新：2026-10-14（台北時間）
     </footer>
   </div>
 
@@ -1869,7 +1882,7 @@
     const state = {
       selectedId: "",
       selectedView: "overview",
-      paused: false,
+      paused: true,
       classic: false,
       query: "",
       orbit: 0,
@@ -1895,7 +1908,7 @@
         <button class="node-button" type="button" aria-label="查看${country.name}">
           <span class="country-orb" aria-hidden="true">${country.flag}<span class="country-code">${country.code}</span></span>
           <span class="country-name">${country.name}</span>
-          <span class="country-count">全境注意・指南</span>
+          <span class="country-count">行前提醒・指南</span>
         </button>
       `;
       node.querySelector("button").addEventListener("click", () => selectCountry(country.id));
@@ -1939,6 +1952,10 @@
     }
 
     function selectCountry(id, view = "overview") {
+      state.classic = false;
+      document.body.classList.remove("classic-active");
+      modeBtn.textContent = "改看清單";
+      modeBtn.setAttribute("aria-pressed", "false");
       state.selectedId = id;
       state.selectedView = view;
       state.query = "";
@@ -2067,9 +2084,9 @@
       return `
         <div class="country-detail-scroll">
           <section class="country-section">
-            <p class="country-section-kicker">CHOOSE YOUR GUIDE</p>
+            <p class="country-section-kicker">行前提醒與旅行指南</p>
             <h3 class="country-section-title">這趟想先看什麼？</h3>
-            <p class="panel-copy">先選全境共用提醒，或直接進目前已整理好的旅遊收藏版。</p>
+            <p class="panel-copy">準備出發，先看行前提醒；想找景點和吃買，就選旅行指南。</p>
             <div class="link-list">
               ${linkMarkup(country.note.url ? { name: country.note.title, desc: country.note.intro, url: country.note.url } : { name: country.note.title, desc: country.note.intro, countryAction: country.id, countryView: "note" })}
               ${country.guides.map(link => linkMarkup(link)).join("")}
@@ -2128,7 +2145,7 @@
       } else {
         const isOverview = state.selectedView === "overview";
         panel.innerHTML = `
-          <p class="panel-kicker">${isOverview ? "COUNTRY GUIDE" : `已選擇｜${country.short}`}</p>
+          <p class="panel-kicker">${isOverview ? "這趟旅行" : `已選擇｜${country.name}`}</p>
           <h2 class="panel-title">${isOverview ? country.name : country.note.title}</h2>
           <p class="panel-copy">${isOverview ? country.copy : country.note.intro}</p>
           <div class="panel-actions">
@@ -2153,7 +2170,7 @@
                 <h3>${country.name}</h3>
                 <p>${country.copy}</p>
                 <div class="link-list">
-                  ${linkMarkup({ name: `選擇${country.name}內容`, desc: "查看全境注意事項與目前已整理好的旅遊收藏版。", countryAction: country.id })}
+                  ${linkMarkup({ name: country.note.title, desc: country.note.intro, url: country.note.url })}
                   ${links.length ? links.map(link => linkMarkup(link)).join("") : ""}
                 </div>
               </section>
@@ -2165,7 +2182,8 @@
         btn.addEventListener("click", () => {
           state.classic = false;
           document.body.classList.remove("classic-active");
-          modeBtn.textContent = "清單模式";
+          modeBtn.textContent = "改看清單";
+          modeBtn.setAttribute("aria-pressed", "false");
           selectCountry(btn.dataset.countryAction, btn.dataset.countryView);
         });
       });
@@ -2181,6 +2199,10 @@
     }
 
     searchInput.addEventListener("input", event => {
+      state.classic = false;
+      document.body.classList.remove("classic-active");
+      modeBtn.textContent = "改看清單";
+      modeBtn.setAttribute("aria-pressed", "false");
       state.query = event.target.value;
       document.body.classList.toggle("search-active", Boolean(state.query.trim()));
       if (state.query.trim()) {
@@ -2197,13 +2219,15 @@
     pauseBtn.addEventListener("click", () => {
       state.paused = !state.paused;
       document.body.classList.toggle("paused", state.paused);
-      pauseBtn.textContent = state.paused ? "繼續動態" : "暫停動態";
+      pauseBtn.textContent = state.paused ? "開啟動態" : "暫停動態";
+      pauseBtn.setAttribute("aria-pressed", String(!state.paused));
     });
 
     modeBtn.addEventListener("click", () => {
       state.classic = !state.classic;
       document.body.classList.toggle("classic-active", state.classic);
-      modeBtn.textContent = state.classic ? "地球模式" : "清單模式";
+      modeBtn.textContent = state.classic ? "回到地球" : "改看清單";
+      modeBtn.setAttribute("aria-pressed", String(state.classic));
       renderClassic();
     });
 
@@ -2229,6 +2253,7 @@
     });
 
     window.addEventListener("resize", positionCountries);
+    new ResizeObserver(positionCountries).observe(stage);
 
     renderCountries();
     renderPanel();
