@@ -400,34 +400,34 @@ a { color: inherit; }
 </style>
 <link rel="stylesheet" href="assets/YO旅行班/shareable-sections.css">
 <link rel="stylesheet" href="assets/YO旅行班/site-theme.css">
+<link rel="stylesheet" href="assets/YO旅行班/travel-notes.css">
 </head>
-<body class="yo-guide">
+<body class="yo-guide yo-notes" data-destination="central-vietnam">
 
-<a class="guide-back" href="index.html">← 回到地球導覽</a>
-
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-bg"></div>
-  <img class="hero-photo" src="assets/中越/hoian1.jpg" alt="會安古鎮燈籠街景">
-  <div class="hero-pattern"></div>
-  <div class="hero-content">
-    <span class="hero-badge">YoYo 帶你玩</span>
-    <span class="hero-flag">🇻🇳</span>
-    <h1 class="hero-title">中越・峴港・會安 <span>旅遊收藏版</span></h1>
-    <p class="hero-sub">峴港・會安的景點、吃什麼、買什麼</p>
-    <div class="gold-line"></div>
-    <span class="update-meta">最後更新：2026 年 9 月 23 日<br><strong>行程小提醒：</strong>景點僅供參考，實際以行前說明會與行程表為準。</span>
-  </div>
-</div>
-
-<!-- NAV -->
+<div class="notes-topbar"><a class="notes-brand" href="index.html"><b>YO!</b> 旅行班</a><a href="index.html">所有目的地 ↗</a></div>
 <aside class="guide-country-links" aria-label="全境行前提醒"><span>出發前先看</span><a href="國家提醒.html?country=vn">越南全境注意事項 →</a></aside>
 <nav class="nav" aria-label="中越攻略分類">
-  <button class="nav-btn active" data-target="s7" data-slug="about" onclick="show('s7',this)">👋 認識 YoYo</button>
-  <button class="nav-btn" data-target="s4" data-slug="spots" onclick="show('s4',this)">🗺️ 景點</button>
-  <button class="nav-btn" data-target="s3" data-slug="food" onclick="show('s3',this)">🍜 吃什麼</button>
-  <button class="nav-btn" data-target="s5" data-slug="shopping" onclick="show('s5',this)">🛍️ 買什麼</button>
+  <button class="nav-btn active" data-target="s7" data-slug="about" onclick="show('s7',this)">認識 YoYo</button>
+  <button class="nav-btn" data-target="s4" data-slug="spots" onclick="show('s4',this)">景點</button>
+  <button class="nav-btn" data-target="s3" data-slug="food" onclick="show('s3',this)">吃什麼</button>
+  <button class="nav-btn" data-target="s5" data-slug="shopping" onclick="show('s5',this)">買什麼</button>
 </nav>
+
+<!-- HERO -->
+<header class="notes-hero">
+  <div class="notes-opening">
+    <p class="notes-eyebrow">越南｜山上的雲，古鎮的燈</p>
+    <h1>中越・峴港・會安</h1>
+    <p class="notes-deck">巴拿山看纜車、佛手橋與法國村；會安看黃牆、燈籠和河岸。這兩段的照片與吃買筆記，分開整理給你看。</p>
+    <p class="notes-edition">領隊 YoYo 的旅遊收藏版 · 版面整理：2026 年 10 月 14 日</p>
+    <a class="notes-start" href="#spots">先看景點 ↗</a>
+  </div>
+  <figure class="notes-cover"><img src="assets/中越/hoian1.jpg" alt="會安｜古鎮的夜晚" width="640" height="480"><figcaption>會安｜古鎮的夜晚</figcaption></figure>
+  <div class="notes-meta"><span class="update-meta">最後更新：2026 年 9 月 23 日<br><strong>行程小提醒：</strong>景點僅供參考，實際以行前說明會與行程表為準。</span></div>
+</header>
+<!-- NAV -->
+
+
 <div class="section-share"><button class="section-share-btn" type="button">🔗 複製此分類連結</button><span class="section-share-status" role="status" aria-live="polite"></span></div>
 
 <div class="content">
@@ -437,7 +437,7 @@ a { color: inherit; }
     <div class="sec-head">
       <span class="sec-emoji">👋</span>
       <h2 class="sec-title">認識 YoYo｜劉又銘</h2>
-      <p class="sec-desc">先認識 YoYo，這趟中越可以玩得更有自己的節奏。</p>
+      <p class="sec-desc">我是 YoYo。這頁先從巴拿山與會安兩種風景，幫你認識中越。</p>
     </div>
 
     <div class="about-hero">
@@ -449,33 +449,20 @@ a { color: inherit; }
       </div>
     </div>
 
-    <div class="trust-grid">
-      <div class="trust-item">
-        <span class="trust-num">帶團</span>
-        <span class="trust-label">國際線帶團視角</span>
-      </div>
-      <div class="trust-item">
-        <span class="trust-num">行前</span>
-        <span class="trust-label">整理好出發重點</span>
-      </div>
-      <div class="trust-item">
-        <span class="trust-num">途中</span>
-        <span class="trust-label">提醒與支援</span>
-      </div>
-    </div>
+
 
     <div class="card">
       <div class="card-accent yellow"></div>
       <div class="card-title">✨ 這趟中越可以先這樣理解</div>
       <div class="card-body">
         中越有兩種很不一樣的旅行感：巴拿山是纜車、雲霧和歐式街景；會安則是黃牆、燈籠和河邊的慢步調。<br><br>
-        不需要把每一站都走得很趕，留一點時間看看周圍，這趟的畫面會慢慢長出來。
+        巴拿山的雲霧和會安的燈籠，看的方式不一樣。山上留意天氣；古鎮散步時，把集合位置先記好。
       </div>
     </div>
 
     <div class="card">
       <div class="card-accent green"></div>
-      <div class="card-title">🌟 YoYo 想和你分享的 4 個畫面</div>
+      <div class="card-title">YoYo 的中越小筆記</div>
       <div class="card-body">
         <ul class="yoyo-list" style="margin-top:4px">
           <li><div><strong>會安古鎮傍晚後</strong><br><span style="font-size:13px;color:#666">燈籠慢慢亮起來後，古鎮會換成另一種比較安靜又有顏色的樣子。</span></div></li>
@@ -493,7 +480,7 @@ a { color: inherit; }
     <div class="sec-head">
       <span class="sec-emoji">🍜</span>
       <h2 class="sec-title">YoYo 帶你吃</h2>
-      <p class="sec-desc">從峴港到會安，收幾樣散步時剛好會遇到的味道。</p>
+      <p class="sec-desc">峴港看夜市，會安找越式三明治、椰子咖啡與花草飲。</p>
     </div>
 
     <span class="place-tag">📍 峴港</span>
@@ -521,7 +508,7 @@ a { color: inherit; }
     <div class="sec-head">
       <span class="sec-emoji">🗺️</span>
       <h2 class="sec-title">YoYo 帶你走跳</h2>
-      <p class="sec-desc">從山上的雲霧走到古鎮的燈籠，把中越兩種不同的畫面收進來。</p>
+      <p class="sec-desc">巴拿山與會安分開看，照片、園區地圖和街景都放在各自的段落。</p>
     </div>
 
     <div class="tip-box">
@@ -536,7 +523,7 @@ a { color: inherit; }
       <div class="card-accent"></div>
       <div class="card-body">
         搭纜車上山後，佛手橋、法國村和山上的雲霧會慢慢出現在眼前。<br><br>
-        這裡不只是一個拍照點，也很適合在不同街景之間走走看看；雲霧和歐式建築一起出現時，畫面會多一點電影感。
+        佛手橋看橋身與山景，法國村看歐式建築。拍完地標後，再看看園區地圖，確認自己與集合點的位置。
       </div>
     </div>
 
@@ -580,7 +567,7 @@ a { color: inherit; }
       <div class="card-accent green"></div>
       <div class="card-body">
         黃色老屋、河岸燈籠和街邊小店，讓會安有一種可以慢慢看細節的旅行感。<br><br>
-        傍晚到入夜之間，燈籠和街景會慢慢把氣氛拉起來；不需要急著打卡，散步本身就很有記憶點。
+        傍晚到入夜之間，燈籠會亮起來。想回到同一個角落拍夜景，可以先記下店名或路口，回頭才找得到。
       </div>
     </div>
 
@@ -601,7 +588,7 @@ a { color: inherit; }
     <div class="sec-head">
       <span class="sec-emoji">🛍️</span>
       <h2 class="sec-title">YoYo 帶你買</h2>
-      <p class="sec-desc">挑幾樣有中越旅行記憶的小選物，送人或留給自己都剛好。</p>
+      <p class="sec-desc">巧克力、咖啡、果乾和燈籠，先分成吃的與擺飾，再挑適合的品項。</p>
     </div>
 
     <div class="card">
@@ -693,7 +680,7 @@ function show(id, btn, updateHash = true) {
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
   if (updateHash && history.replaceState) history.replaceState(null, '', `${window.location.pathname}${window.location.search}#${btn.dataset.slug}`);
-  if (updateHash) window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (updateHash) window.scrollGuideSection(id);
 }
 
 initShareableSections(document.querySelectorAll('.nav-btn'), show);
@@ -709,5 +696,6 @@ function closeLB() {
   document.body.style.overflow = '';
 }
 </script>
+<script src="assets/YO旅行班/travel-notes.js"></script>
 </body>
 </html>

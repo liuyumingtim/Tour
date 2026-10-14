@@ -1,0 +1,151 @@
+/* YO! 旅行班的閱讀層：文字、照片與帶團提醒各有自己的位置。 */
+.yo-notes {
+  --notes-accent: #215e51;
+  --notes-soft: #eef1e8;
+  --notes-ink: #293a32;
+  --notes-muted: #5e6c64;
+  --notes-line: #dddcd0;
+  --notes-width: 940px;
+  background: #faf7ef;
+  color: var(--notes-ink);
+  line-height: 1.85;
+}
+.yo-notes[data-destination="bangkok"] { --notes-accent: #296766; --notes-soft: #eaf0ed; }
+.yo-notes[data-destination="central-vietnam"] { --notes-accent: #99543b; --notes-soft: #f3ece1; }
+.yo-notes[data-destination="northern-vietnam"] { --notes-accent: #675845; --notes-soft: #eeeee3; }
+.yo-notes[data-destination="southern-vietnam"] { --notes-accent: #99633b; --notes-soft: #f3ede0; }
+.yo-notes[data-destination="singapore"] { --notes-accent: #315950; --notes-soft: #ebf0e9; }
+.yo-notes[data-destination="malaysia"] { --notes-accent: #786044; --notes-soft: #f1ebdf; }
+.yo-notes .notes-topbar {
+  display: flex; justify-content: space-between; align-items: center; gap: 20px;
+  width: min(var(--notes-width), calc(100% - 40px)); margin: auto; padding: 20px 0;
+  border-bottom: 1px solid var(--notes-line); color: #215e51; font-size: 13px;
+}
+.notes-topbar a { color: #215e51; text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
+.notes-brand { font-weight: 700; gap: 6px; }
+.notes-brand b { font-size: 25px; }
+.yo-notes .notes-hero {
+  display: grid; grid-template-columns: minmax(0, 1fr) 320px; align-items: center;
+  gap: 28px 40px; width: min(var(--notes-width), calc(100% - 40px));
+  margin: auto; padding: 40px 0 24px;
+}
+.notes-eyebrow { font-size: 13px; color: var(--notes-accent); font-weight: 600; margin: 0 0 14px; }
+.notes-hero h1 { color: var(--notes-accent); font-family: Georgia, "Noto Serif TC", "Songti TC", serif; font-size: clamp(32px, 4vw, 48px); line-height: 1.4; margin: 0 0 14px; font-weight: 700; }
+.notes-deck { font-size: 16px; color: var(--notes-ink); margin: 0; line-height: 1.9; }
+.notes-edition { color: var(--notes-muted); font-size: 12px; margin: 18px 0 0; }
+.notes-start { color: var(--notes-accent); font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; min-height: 44px; margin-top: 8px; text-decoration: underline; text-underline-offset: 4px; }
+.notes-cover, .notes-diptych figure { margin: 0; }
+.notes-cover img { display: block; width: 100%; height: 238px; object-fit: cover; border-radius: 4px; }
+.notes-cover figcaption, .notes-diptych figcaption { color: var(--notes-muted); font-size: 12px; margin-top: 8px; }
+.notes-diptych { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.notes-diptych img { display: block; width: 100%; height: 238px; object-fit: cover; border-radius: 4px; }
+.notes-regions { border-left: 2px solid #c5ad80; padding-left: 24px; }
+.notes-regions p { margin: 0; padding: 12px 0; border-bottom: 1px solid var(--notes-line); }
+.notes-regions strong { display: block; font-size: 22px; font-family: Georgia, "Noto Serif TC", serif; color: var(--notes-accent); }
+.notes-regions span { font-size: 14px; color: var(--notes-muted); }
+.notes-meta { grid-column: 1 / -1; padding-top: 18px; border-top: 1px solid var(--notes-line); }
+.yo-notes .notes-meta :is(.update-meta,.hero-meta) { margin: 0; padding: 0; color: var(--notes-muted); background: none; border: 0; backdrop-filter: none; border-radius: 0; font-size: 12px; line-height: 1.8; }
+.yo-notes .notes-meta :is(.update-meta,.hero-meta) strong { color: inherit; }
+.yo-notes .notes-meta .visa-note { max-width: none; padding: 10px 0 0; color: var(--notes-ink); background: none; border: 0; font-size: 13px; }
+.yo-notes .notes-meta .visa-note strong { color: var(--notes-accent); }
+.yo-notes .guide-country-links { background: none; border: 0; border-top: 1px solid var(--notes-line); border-radius: 0; margin: 0 auto; padding: 8px 0; font-size: 13px; }
+.yo-notes .guide-country-links a { color: var(--notes-accent); }
+.yo-notes .nav { position: sticky; top: 0; z-index: 20; background: #faf7ef; box-shadow: none; border-bottom: 1px solid var(--notes-line); gap: 8px; padding: 6px 12px; flex-wrap: wrap; overflow: visible; }
+.yo-notes .nav-btn { background: none; color: var(--notes-muted); border: 0; border-radius: 0; border-bottom: 2px solid transparent; padding: 8px 16px; font-size: 14px; font-weight: 600; }
+.yo-notes .nav-btn.active { color: var(--notes-accent); background: none; border-bottom-color: var(--notes-accent); }
+.yo-notes .nav-btn:hover { background: var(--notes-soft); color: var(--notes-accent); }
+.yo-notes .section-share { margin-top: 10px; }
+.yo-notes .section { animation: none; }
+.yo-notes .section-share-btn { color: var(--notes-accent); background: none; border: 0; text-decoration: underline; text-underline-offset: 4px; font-weight: 500; }
+.yo-notes .content { padding-top: 28px; }
+.yo-notes .sec-head { margin-bottom: 24px; }
+.yo-notes .sec-emoji { display: none; }
+.yo-notes .sec-title { color: var(--notes-accent); font-family: Georgia, "Noto Serif TC", serif; font-size: 29px; font-weight: 700; line-height: 1.5; }
+.yo-notes .sec-desc { color: var(--notes-muted); font-size: 16px; margin-top: 8px; line-height: 1.85; }
+.yo-notes .about-hero { padding: 0 0 24px; border: 0; border-bottom: 1px solid var(--notes-line); border-radius: 0; background: none; box-shadow: none; }
+.yo-notes .about-name { color: var(--notes-ink); font-size: 20px; }
+.yo-notes .about-role { color: var(--notes-accent); }
+.yo-notes :is(.about-copy,.about-tagline) { color: var(--notes-muted); font-size: 15px; }
+.yo-notes .about-avatar { border: 0; box-shadow: none; border-radius: 6px; width: 72px; height: 88px; overflow: hidden; }
+.yo-notes .about-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.yo-notes .compare-wrap { border: 0; padding: 12px 0; background: none; }
+.yo-notes .compare-title { color: var(--notes-accent); font-size: 21px; margin-bottom: 14px; }
+.yo-notes :is(.fact-box,.city-fact,.route-card) { background: none; border: 0; border-top: 1px solid var(--notes-line); border-radius: 0; padding: 16px 0; box-shadow: none; }
+.yo-notes :is(.route-icon,.city-fact)::before { display: none; }
+.yo-notes .route-icon { display: none; }
+.yo-notes :is(.fact-box strong,.city-fact strong,.route-card h3) { color: var(--notes-ink); font-size: 16px; font-weight: 600; }
+.yo-notes :is(.fact-box,.city-fact,.route-card) :is(p,span) { font-size: 15px; color: var(--notes-muted); line-height: 1.85; }
+.yo-notes :is(.city-grid,.route-grid) { gap: 24px; }
+.yo-notes :is(.note-card,.notice-card,.tip-box,.yoyo-quote) { color: var(--notes-ink); border: 0; border-left: 3px solid #b9a477; border-radius: 0; background: var(--notes-soft); padding: 18px 22px; box-shadow: none; font-size: 15px; line-height: 1.85; }
+.yo-notes :is(.note-title,.story-title,.card-title) { color: var(--notes-accent); font-weight: 700; }
+.yo-notes .collection-intro { color: var(--notes-ink); border: 0; background: none; padding: 0 0 22px; font-size: 16px; line-height: 1.9; }
+.yo-notes :is(.collection-card,.rec-card,.spot-card,.food-card,.buy-card,.shop-card,.item-card,.story-card,.card) { box-shadow: none; border-radius: 6px; }
+.yo-notes :is(.card,.story-card) { background: none; border: 0; border-top: 1px solid var(--notes-line); }
+.yo-notes .card-accent { display: none; }
+.yo-notes .card-body { color: var(--notes-ink); font-size: 16px; line-height: 1.9; }
+.yo-notes :is(.collection-card,.rec-card,.spot-card,.food-card,.buy-card,.shop-card,.item-card) { border-color: var(--notes-line); background: #fffdf8; }
+.yo-notes :is(.collection-card,.rec-card,.spot-card,.food-card,.buy-card,.shop-card,.item-card)::before { display: none; }
+.yo-notes :is(.collection-title,.rec-title,.spot-name,.shop-name) { color: var(--notes-accent); font-size: 22px; font-family: Georgia, "Noto Serif TC", serif; font-weight: 700; }
+.yo-notes :is(.collection-copy,.rec-copy,.spot-copy,.shop-desc,.mini-card span,.item-card p,.food-card p,.buy-card p) { color: var(--notes-ink); font-size: 16px; line-height: 1.85; }
+.yo-notes :is(.collection-tip,.yoyo-note) { color: var(--notes-ink); background: var(--notes-soft); border: 0; border-left: 2px solid #b9a477; border-radius: 0; padding: 12px 14px; font-size: 14px; line-height: 1.85; }
+.yo-notes :is(.collection-tip,.yoyo-note) strong { color: var(--notes-accent); }
+.yo-notes :is(.collection-kicker,.rec-kicker,.country-label,.place-tag) { color: var(--notes-muted); font-size: 13px; background: none; font-weight: 500; }
+.yo-notes :is(.tag,.collection-tag) { border: 0; background: var(--notes-soft); color: var(--notes-muted); border-radius: 3px; font-size: 12px; font-weight: 500; }
+.yo-notes .mini-card { border: 0; border-top: 1px solid var(--notes-line); background: none; border-radius: 0; padding: 20px 0; }
+.yo-notes :is(.mini-card .emoji,.food-icon,.item-icon,.spot-icon,.shop-emoji) { font-size: 24px; }
+.yo-notes .divider-star { display: none; }
+.yo-notes .info-bar { width: min(var(--notes-width), calc(100% - 40px)); margin: auto; padding: 12px 0; background: none; border-block: 1px solid var(--notes-line); gap: 20px; }
+.yo-notes .info-item { border: 0; padding: 4px 0; }
+.yo-notes .info-icon { display: none; }
+.yo-notes .info-label { color: var(--notes-muted); font-size: 12px; }
+.yo-notes .info-val { color: var(--notes-accent); font-size: 14px; }
+.yo-notes .footer { background: #faf7ef; border-top: 1px solid var(--notes-line); color: var(--notes-muted); font-size: 13px; }
+.yo-notes .footer * { color: var(--notes-muted); }
+.yo-notes .footer :is(a,.footer-title,.footer-name,.footer-role) { color: var(--notes-accent); }
+.yo-notes :is(a,button):focus-visible { outline: 3px solid #a27b39; outline-offset: 3px; }
+.yo-reminder .eyebrow { letter-spacing: 0; }
+.yo-reminder .card p { font-size: 15px; line-height: 1.85; }
+.yo-reminder .card { min-height: 0; padding: 20px; }
+.yo-reminder .hero p { font-size: 16px; line-height: 1.8; }
+.yo-reminder .updated { line-height: 1.8; }
+.yo-sapa .hero::after { content: none; }
+.yo-sapa .sapa-topbar { width: min(940px, calc(100% - 40px)); margin: auto; display: flex; align-items: center; justify-content: space-between; padding: 12px 0; font-size: 13px; }
+.yo-sapa .sapa-topbar a { display: inline-flex; align-items: center; min-height: 44px; color: #215e51; text-decoration: none; }
+.yo-sapa .sapa-topbar strong { font-size: 18px; }
+.yo-sapa .hero .eyebrow { margin-top: 10px; }
+.yo-sapa .nav .wrap { flex-wrap: wrap; overflow: visible; }
+.yo-sapa .card { background: none; border: 0; border-top: 1px solid var(--yo-line); box-shadow: none; border-radius: 0; }
+@media (max-width: 700px) {
+  .yo-notes .notes-topbar { width: calc(100% - 32px); padding: 10px 0; }
+  .yo-notes .notes-hero { display: block; width: calc(100% - 32px); padding: 26px 0 18px; }
+  .notes-hero h1 { font-size: 32px; margin-bottom: 12px; }
+  .notes-eyebrow { font-size: 12px; margin-bottom: 10px; }
+  .notes-deck { font-size: 16px; }
+  .notes-edition { margin-top: 12px; font-size: 11px; }
+  .notes-cover, .notes-diptych { margin-top: 22px; }
+  .notes-cover img { height: 184px; }
+  .notes-diptych img { height: 184px; }
+  .notes-regions { margin-top: 20px; padding-left: 16px; }
+  .notes-regions p { display: flex; align-items: baseline; gap: 16px; }
+  .notes-regions strong { font-size: 18px; min-width: 3em; }
+  .notes-regions span { font-size: 13px; }
+  .notes-meta { margin-top: 20px; padding-top: 12px; }
+  .yo-notes .guide-country-links { font-size: 12px; gap: 0 10px; }
+  .yo-notes .info-bar { width: calc(100% - 32px); display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 20px; }
+  .yo-notes .nav { justify-content: flex-start; gap: 0; padding: 4px 8px; }
+  .yo-notes .nav-btn { flex: 1 0 auto; padding: 10px; font-size: 13px; min-height: 44px; }
+  .yo-notes .section-share-btn { font-size: 12px; padding: 6px 0; }
+  .yo-notes .content { padding-top: 20px; }
+  .yo-notes .sec-title { font-size: 26px; }
+  .yo-notes .about-hero { align-items: flex-start; gap: 14px; }
+  .yo-notes .about-name { font-size: 18px; }
+  .yo-notes .about-avatar { width: 62px; height: 76px; }
+  .yo-notes :is(.about-tagline,.about-copy) { font-size: 14px; }
+  .yo-notes :is(.city-grid,.route-grid,.compare-grid) { grid-template-columns: 1fr; gap: 0; }
+  .yo-notes :is(.note-card,.notice-card,.tip-box,.yoyo-quote) { padding: 16px 18px; }
+  .yo-reminder .grid { grid-template-columns: 1fr; gap: 12px; }
+  .yo-reminder .card h2 { font-size: 20px; }
+  .yo-reminder .hero { padding: 22px 20px; }
+  .yo-reminder .card .number { font-size: 13px; }
+  .yo-sapa .sapa-topbar { width: calc(100% - 32px); }
+}

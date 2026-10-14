@@ -188,28 +188,34 @@
 </style>
   <link rel="stylesheet" href="assets/YO旅行班/shareable-sections.css">
 <link rel="stylesheet" href="assets/YO旅行班/site-theme.css">
+<link rel="stylesheet" href="assets/YO旅行班/travel-notes.css">
 </head>
-<body class="yo-guide">
-  <a class="guide-back" href="index.html">← 回到地球導覽</a>
-
-  <header class="hero">
-    <div class="hero-content">
-      <span class="hero-badge">YoYo 帶你玩</span>
-      <h1 class="hero-title">南越・胡志明 <span>旅遊收藏版</span></h1>
-      <p class="hero-sub">從胡志明的城市建築，走到美奈的海岸沙丘，再進入美托的湄公河水鄉。</p>
-      <div class="hero-line"></div>
-      <div class="hero-meta">最後更新：2026 年 9 月 23 日<br><strong>行程小提醒：</strong>景點與順序以行前說明會和團員手上的行程表為準。</div>
-    </div>
-  </header>
-
-  <aside class="guide-country-links" aria-label="全境行前提醒"><span>出發前先看</span><a href="國家提醒.html?country=vn">越南全境注意事項 →</a></aside>
+<body class="yo-guide yo-notes" data-destination="southern-vietnam">
+  <div class="notes-topbar"><a class="notes-brand" href="index.html"><b>YO!</b> 旅行班</a><a href="index.html">所有目的地 ↗</a></div>
+<aside class="guide-country-links" aria-label="全境行前提醒"><span>出發前先看</span><a href="國家提醒.html?country=vn">越南全境注意事項 →</a></aside>
 <nav class="nav" aria-label="南越胡志明旅遊分類">
-    <button class="nav-btn active" data-target="intro" data-slug="about" onclick="show('intro', this)">👋 認識 YoYo</button>
-    <button class="nav-btn" data-target="spots" data-slug="spots" onclick="show('spots', this)">🗺️ 景點</button>
-    <button class="nav-btn" data-target="experience" data-slug="experience" onclick="show('experience', this)">🛻 體驗什麼</button>
-    <button class="nav-btn" data-target="food" data-slug="food" onclick="show('food', this)">🍜 吃什麼</button>
-    <button class="nav-btn" data-target="shopping" data-slug="shopping" onclick="show('shopping', this)">🛍️ 買什麼</button>
+    <button class="nav-btn active" data-target="intro" data-slug="about" onclick="show('intro', this)">認識 YoYo</button>
+    <button class="nav-btn" data-target="spots" data-slug="spots" onclick="show('spots', this)">景點</button>
+    <button class="nav-btn" data-target="experience" data-slug="experience" onclick="show('experience', this)">體驗什麼</button>
+    <button class="nav-btn" data-target="food" data-slug="food" onclick="show('food', this)">吃什麼</button>
+    <button class="nav-btn" data-target="shopping" data-slug="shopping" onclick="show('shopping', this)">買什麼</button>
   </nav>
+
+  <header class="notes-hero">
+  <div class="notes-opening">
+    <p class="notes-eyebrow">越南｜城市、沙丘與水鄉</p>
+    <h1>南越・胡志明</h1>
+    <p class="notes-deck">胡志明的建築、美奈的沙丘、美托的水道，各有不同的玩法。先認識這三個地方，再選你想看的景點或吃買。</p>
+    <p class="notes-edition">領隊 YoYo 的旅遊收藏版 · 版面整理：2026 年 10 月 14 日</p>
+    <a class="notes-start" href="#spots">先看景點 ↗</a>
+  </div>
+  <aside class="notes-regions" aria-label="南越三個地區"><p><strong>胡志明</strong><span>建築、街區與咖啡</span></p><p><strong>美奈</strong><span>漁村、海岸與沙丘</span></p><p><strong>美托</strong><span>水道、果園與椰子糖</span></p></aside>
+  <div class="notes-meta"><div class="hero-meta">最後更新：2026 年 9 月 23 日<br><strong>行程小提醒：</strong>景點與順序以行前說明會和團員手上的行程表為準。</div></div>
+</header>
+
+
+
+
   <div class="section-share"><button class="section-share-btn" type="button">🔗 複製此分類連結</button><span class="section-share-status" role="status" aria-live="polite"></span></div>
 
   <main class="content">
@@ -217,7 +223,7 @@
       <div class="sec-head">
         <span class="sec-emoji">👋</span>
         <h2 class="sec-title">YoYo 帶你認識南越</h2>
-        <p class="sec-desc">這趟會在城市、沙丘和水鄉之間切換。先抓住三種節奏，走起來會更有感。</p>
+        <p class="sec-desc">胡志明、美奈、美托是不同的地方。先分清城市、海岸與水道，再看各自的景點。</p>
       </div>
 
       <div class="about-hero">
@@ -235,7 +241,7 @@
         <article class="route-card"><span class="route-icon">🛶</span><h3>美托</h3><p>搭船進入湄公河水道，看果園、蜂蜜、椰林與椰子糖製作，節奏慢慢沉下來。</p></article>
       </div>
 
-      <div class="yoyo-quote"><strong>YoYo 的一句話提醒。</strong><br>這趟南越最有意思的，是短短幾天裡會一直換風景；從城市走到沙丘，再進到水鄉，三種南越剛好連成一趟旅程。</div>
+      <div class="yoyo-quote"><strong>YoYo 帶團提醒</strong><br>城市散步、沙丘吉普車和水道小舟的活動量不同。怕顛簸、容易暈車或暈船，先讓 YoYo 知道，現場比較好照應。</div>
     </section>
 
     <section class="section" id="spots">
@@ -289,7 +295,7 @@
         <article class="spot-card">
           <span class="place-tag sand">美奈</span>
           <h4>白沙丘</h4>
-          <p>白沙丘的空間感很開，光線照在沙面上時，坡度和紋理會一直變。搭吉普車進入沙丘後，沿途的速度感和站上高處看到的風景，是這趟很有記憶點的一段。</p>
+          <p>白沙丘的空間感很開，光線照在沙面上時，坡度和紋理會一直變。搭吉普車進入沙丘，可以從高處看沙面的坡度與紋理；活動方式以現場安排為準。</p>
           <div class="tags"><span class="tag">白色沙丘</span><span class="tag">開闊風景</span><span class="tag">吉普車</span></div>
           <p class="yoyo-note"><strong>YoYo 小提醒：</strong>沙丘風大、日照強，手機和小物先收好；座位與活動方式依現場安排。</p>
         </article>
@@ -346,7 +352,7 @@
       <div class="sec-head">
         <span class="sec-emoji">🛍️</span>
         <h2 class="sec-title">YoYo 帶你買</h2>
-        <p class="sec-desc">先記住品項，實際品牌、店家與 YoYo 推薦，等走過、吃過、拍過後再補進來。</p>
+        <p class="sec-desc">這裡先整理椰子糖、咖啡與滴漏壺、腰果和果乾，讓你知道可以從哪些品項挑。</p>
       </div>
 
       <div class="buy-grid">
@@ -376,9 +382,10 @@
       document.getElementById(id).classList.add('active');
       button.classList.add('active');
       if (updateHash && history.replaceState) history.replaceState(null, '', `${window.location.pathname}${window.location.search}#${button.dataset.slug}`);
-      if (updateHash) window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (updateHash) window.scrollGuideSection(id);
     }
     initShareableSections(document.querySelectorAll('.nav-btn'), show);
   </script>
+<script src="assets/YO旅行班/travel-notes.js"></script>
 </body>
 </html>

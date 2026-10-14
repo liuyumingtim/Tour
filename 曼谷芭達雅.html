@@ -591,25 +591,32 @@ a { color: inherit; }
 </style>
 <link rel="stylesheet" href="assets/YO旅行班/shareable-sections.css">
 <link rel="stylesheet" href="assets/YO旅行班/site-theme.css">
+<link rel="stylesheet" href="assets/YO旅行班/travel-notes.css">
 </head>
-<body class="yo-guide">
-<a class="guide-back" href="index.html">← 回到地球導覽</a>
-<header class="hero">
-  <div class="hero-content">
-    <span class="hero-badge">YoYo 帶你玩</span>
-    <h1 class="hero-title">曼谷・芭達雅 <span>旅遊收藏版</span></h1>
-    <p class="hero-sub">從曼谷的熱鬧，到芭達雅的夜晚，先收幾段會想回看的畫面。</p>
-    <span class="update-meta">最後更新：2026 年 9 月 23 日<br><strong>行程小提醒：</strong>景點僅供參考，實際以行前說明會與行程表為準。</span>
-  </div>
-</header>
-
+<body class="yo-guide yo-notes" data-destination="bangkok">
+<div class="notes-topbar"><a class="notes-brand" href="index.html"><b>YO!</b> 旅行班</a><a href="index.html">所有目的地 ↗</a></div>
 <aside class="guide-country-links" aria-label="全境行前提醒"><span>出發前先看</span><a href="國家提醒.html?country=th">泰國全境注意事項 →</a></aside>
 <nav class="nav" aria-label="曼谷芭達雅旅遊分類">
-  <button class="nav-btn active" data-target="s0" data-slug="about" onclick="show('s0',this)">👋 認識 YoYo</button>
-  <button class="nav-btn" data-target="s5" data-slug="spots" onclick="show('s5',this)">🗺️ 景點</button>
-  <button class="nav-btn" data-target="s4" data-slug="food" onclick="show('s4',this)">🍜 吃什麼</button>
-  <button class="nav-btn" data-target="s6" data-slug="shopping" onclick="show('s6',this)">🛍️ 買什麼</button>
+  <button class="nav-btn active" data-target="s0" data-slug="about" onclick="show('s0',this)">認識 YoYo</button>
+  <button class="nav-btn" data-target="s5" data-slug="spots" onclick="show('s5',this)">景點</button>
+  <button class="nav-btn" data-target="s4" data-slug="food" onclick="show('s4',this)">吃什麼</button>
+  <button class="nav-btn" data-target="s6" data-slug="shopping" onclick="show('s6',this)">買什麼</button>
 </nav>
+<header class="notes-hero">
+  <div class="notes-opening">
+    <p class="notes-eyebrow">泰國｜城市與海岸</p>
+    <h1>曼谷・芭達雅</h1>
+    <p class="notes-deck">逛曼谷的商場、找一杯泰奶，再看看芭達雅的海邊與夜色。想找景點、吃的或伴手禮，直接選上方的分類。</p>
+    <p class="notes-edition">領隊 YoYo 的旅遊收藏版 · 版面整理：2026 年 10 月 14 日</p>
+    <a class="notes-start" href="#spots">先看景點 ↗</a>
+  </div>
+  <figure class="notes-cover"><img src="assets/曼谷芭達雅/pattaya-city-view.jpg" alt="芭達雅｜海岸與城市" width="640" height="480"><figcaption>芭達雅｜海岸與城市</figcaption></figure>
+  <div class="notes-meta"><span class="update-meta">最後更新：2026 年 9 月 23 日<br><strong>行程小提醒：</strong>景點僅供參考，實際以行前說明會與行程表為準。</span></div>
+</header>
+
+
+
+
 <div class="section-share"><button class="section-share-btn" type="button">🔗 複製此分類連結</button><span class="section-share-status" role="status" aria-live="polite"></span></div>
 
 <main class="content">
@@ -629,16 +636,12 @@ a { color: inherit; }
       </div>
     </div>
 
-    <div class="trust-grid">
-      <div class="trust-item"><span class="trust-num">東南亞</span><span class="trust-label">領隊旅行視角</span></div>
-      <div class="trust-item"><span class="trust-num">景點</span><span class="trust-label">不只是一張打卡照</span></div>
-      <div class="trust-item"><span class="trust-num">吃買</span><span class="trust-label">留下真的想分享的</span></div>
-    </div>
+
 
     <div class="note-card">
-      <div class="note-title">✨ YoYo 的一句話</div>
-      <p>旅行不用把每一個地方都玩得很滿。留一點時間逛街、吃一口喜歡的東西，或是在夜晚多看幾眼街景，回來以後反而最記得。</p>
-      <p style="margin-top:12px">這趟曼谷・芭達雅，就跟著自己的節奏走；想看的景點、想吃的味道、想帶回去的小東西，我都先收在後面了。</p>
+      <div class="note-title">YoYo 帶團提醒</div>
+      <p>逛商場前，先把集合地點拍下來。想找泰奶、零食或伴手禮，就從這頁的吃買分類開始看。</p>
+      <p style="margin-top:12px">下面分成曼谷的採買、芭達雅的海邊與夜晚，以及路上能吃到的泰奶、小點和水果。</p>
     </div>
 
     <div class="rec-grid">
@@ -665,7 +668,7 @@ a { color: inherit; }
     <div class="sec-head">
       <span class="sec-emoji">🍜</span>
       <h2 class="sec-title">YoYo 帶你吃</h2>
-      <p class="sec-desc">有些味道是專程去找，有些只是逛累了剛好來一杯，反而會記很久。</p>
+      <p class="sec-desc">泰奶、米粉湯、斑斕小點和水果，依你現在想吃的來找。</p>
     </div>
 
     <div class="tip-box"><strong>泰國的吃，不用做功課做到很滿。</strong>想喝甜的就找一杯泰奶，天氣太熱就來顆椰子；留一點餓的空間，走到哪裡都還有驚喜。</div>
@@ -722,17 +725,17 @@ a { color: inherit; }
     <div class="sec-head">
       <span class="sec-emoji">🗺️</span>
       <h2 class="sec-title">YoYo 帶你走跳</h2>
-      <p class="sec-desc">這趟不是只在城市裡打卡，而是在熱鬧、信仰和夜色之間慢慢換場景。</p>
+      <p class="sec-desc">曼谷看商場與信仰地標，芭達雅看市集、海景與夜晚。</p>
     </div>
 
-    <div class="collection-intro"><strong>曼谷和芭達雅的個性差很多。</strong>曼谷像一座一直在發生事情的城市；芭達雅則是等到傍晚以後，才慢慢把它的度假感拿出來。</div>
+    <div class="collection-intro"><strong>曼谷和芭達雅的個性差很多。</strong>曼谷這裡先整理商場、信仰地標和採買；芭達雅則放市集、晚間表演與 Walking Street。</div>
 
     <article class="collection-card">
       <div class="collection-photo bigc-logo-frame"><img class="bigc-logo-photo" src="assets/曼谷芭達雅/bigc-wide.png" alt="曼谷 Big C 招牌與入口" onclick="openLB(this.src)"></div>
       <div class="collection-body">
         <div class="collection-kicker">曼谷・熱鬧全部擠在同一區</div>
         <h3 class="collection-title">曼谷商場、信仰地標和採買</h3>
-        <p class="collection-copy">這一段很像曼谷的縮影：可以在商場裡吹冷氣、喝飲料，也能在四面佛、象神和吉祥天女前感受這座城市很日常的信仰氛圍。逛到最後，再進 Big C 挑幾樣想帶回去的東西。</p>
+        <p class="collection-copy">這區可以逛商場、喝泰奶，也能看四面佛、象神和吉祥天女。想採買再進 Big C；逛街與看信仰地標，可以依自己的興趣分配時間。</p>
         <div class="collection-tags"><span class="collection-tag">商場逛街</span><span class="collection-tag">城市散步</span><span class="collection-tag">買伴手禮</span></div>
         <p class="collection-tip"><strong>YoYo 小提醒：</strong>這區很好逛也很大，先拍一下集合地點，逛起來會更放心。</p>
       </div>
@@ -742,7 +745,7 @@ a { color: inherit; }
       <div class="collection-body">
         <div class="collection-kicker">芭達雅・像把世界各地縮小放進商場</div>
         <h3 class="collection-title">航站 21：逛街、吃東西，也順便拍幾張</h3>
-        <p class="collection-copy">入口有一點像機場登機門的設計，先拍照再走進去就很有感。裡面的倫敦主題樓層很有記憶點，喜歡日系小細節的人，也可以找找日式洗手間；不必逐層攻略，挑喜歡的地方看看就好。</p>
+        <p class="collection-copy">入口做成機場登機門的樣子，裡面還有倫敦主題樓層與日式洗手間。想拍照就找主題布景，走累了則進來吃東西、吹冷氣。</p>
         <div class="collection-tags"><span class="collection-tag">吹冷氣休息</span><span class="collection-tag">吃東西</span><span class="collection-tag">主題拍照</span></div>
         <p class="collection-tip"><strong>YoYo 小提醒：</strong>不用特地把每個角落都走完，剛好有空檔進來晃晃就好。</p>
       </div>
@@ -762,7 +765,7 @@ a { color: inherit; }
       <div class="collection-body">
         <div class="collection-kicker">芭達雅晚間體驗・有海風也有舞台</div>
         <h3 class="collection-title">OCEAN SKY 海天盛宴</h3>
-        <p class="collection-copy">這一站的重點不是只是吃飯，而是海景、燈光、舞台和表演一起出現的那種熱鬧。想把晚上的氣氛拉滿一點，這裡會是很有記憶點的一段。</p>
+        <p class="collection-copy">這裡把晚餐、海景和舞台表演放在同一個晚上。想看的是用餐與表演一起進行的現場，不只是拍一張海景照。</p>
         <div class="collection-tags"><span class="collection-tag">晚餐體驗</span><span class="collection-tag">表演氛圍</span><span class="collection-tag">海景夜晚</span></div>
       </div>
     </article>
@@ -783,7 +786,7 @@ a { color: inherit; }
     <div class="sec-head">
       <span class="sec-emoji">🛍️</span>
       <h2 class="sec-title">YoYo 帶你買</h2>
-      <p class="sec-desc">不需要把行李箱塞滿，挑幾樣回家還會想起這趟旅程的就夠了。</p>
+      <p class="sec-desc">零食拿來分送，鼻通和涼糖留著用；先想好買給誰，再挑份量。</p>
     </div>
 
     <div class="collection-intro"><strong>Big C 最危險的不是價格，是很容易越逛越有靈感。</strong>先想好自己是要帶零食回家、找伴手禮，還是只想買幾個旅行時真的會用到的小物。</div>
@@ -803,7 +806,7 @@ a { color: inherit; }
     <div class="rec-grid">
       <div class="rec-card">
         <img src="assets/曼谷芭達雅/salted-egg-chips.jpg" alt="鹹蛋黃洋芋片" onclick="openLB(this.src)">
-        <div class="rec-content"><span class="rec-kicker">零食</span><div class="rec-title">鹹蛋黃洋芋片</div><div class="rec-copy">鹹香味很有記憶點，適合帶回去和朋友一起拆。</div></div>
+        <div class="rec-content"><span class="rec-kicker">零食</span><div class="rec-title">鹹蛋黃洋芋片</div><div class="rec-copy">鹹蛋黃口味的零食，適合買小包裝和朋友分著試。</div></div>
       </div>
       <div class="rec-card">
         <img src="assets/曼谷芭達雅/thai-flavor-chips.jpg" alt="泰式風味洋芋片" onclick="openLB(this.src)">
@@ -843,7 +846,7 @@ function show(id, btn, updateHash = true) {
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
   if (updateHash && history.replaceState) history.replaceState(null, '', `${window.location.pathname}${window.location.search}#${btn.dataset.slug}`);
-  if (updateHash) window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (updateHash) window.scrollGuideSection(id);
 }
 
 initShareableSections(document.querySelectorAll('.nav-btn'), show);
@@ -859,5 +862,6 @@ function closeLB() {
   document.body.style.overflow = '';
 }
 </script>
+<script src="assets/YO旅行班/travel-notes.js"></script>
 </body>
 </html>

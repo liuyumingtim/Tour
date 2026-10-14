@@ -69,7 +69,7 @@ a { color: inherit; }
     repeating-linear-gradient(45deg, rgba(255,255,255,.7) 0 1px, transparent 1px 18px);
 }
 .hero::after {
-  content: "SG × MY";
+  content: "SINGAPORE";
   position: absolute;
   right: clamp(16px, 8vw, 80px);
   bottom: clamp(74px, 14vw, 120px);
@@ -619,26 +619,33 @@ a { color: inherit; }
 <link rel="stylesheet" href="assets/YO旅行班/shareable-sections.css">
 <link rel="stylesheet" href="assets/YO旅行班/site-theme.css">
 <link rel="stylesheet" href="assets/新加坡/changi-transit.css">
+<link rel="stylesheet" href="assets/YO旅行班/travel-notes.css">
 </head>
-<body class="yo-guide">
-<a class="guide-back" href="index.html">← 回到地球導覽</a>
-<header class="hero">
-  <div class="hero-content">
-    <span class="hero-badge">YoYo 帶你玩</span>
-    <h1 class="hero-title">新加坡 <span>旅遊收藏版</span></h1>
-    <p class="hero-sub">從濱海灣地標、南洋味道到送禮選物，一次收好。</p>
-    <span class="update-meta">最後更新：2026 年 10 月 11 日<br><strong>行程小提醒：</strong>景點僅供參考，實際以行前說明會與行程表為準。</span>
-  </div>
-</header>
-
+<body class="yo-guide yo-notes" data-destination="singapore">
+<div class="notes-topbar"><a class="notes-brand" href="index.html"><b>YO!</b> 旅行班</a><a href="index.html">所有目的地 ↗</a></div>
 <aside class="guide-country-links" aria-label="全境行前提醒"><span>出發前先看</span><a href="國家提醒.html?country=sg">新加坡全境注意事項 →</a></aside>
 <nav class="nav" aria-label="新加坡旅遊分類">
-  <button class="nav-btn active" data-target="s0" data-slug="about" onclick="show('s0',this)">👋 認識 YoYo</button>
-  <button class="nav-btn" data-target="s3" data-slug="spots" onclick="show('s3',this)">🗺️ 景點</button>
-  <button class="nav-btn" data-target="s5" data-slug="food" onclick="show('s5',this)">🍜 吃什麼</button>
-  <button class="nav-btn" data-target="s6" data-slug="shopping" onclick="show('s6',this)">🛍️ 買什麼</button>
-  <button class="nav-btn" data-target="s7" data-slug="transit" onclick="show('s7',this)">🚆 機場轉機</button>
+  <button class="nav-btn active" data-target="s0" data-slug="about" onclick="show('s0',this)">認識 YoYo</button>
+  <button class="nav-btn" data-target="s3" data-slug="spots" onclick="show('s3',this)">景點</button>
+  <button class="nav-btn" data-target="s5" data-slug="food" onclick="show('s5',this)">吃什麼</button>
+  <button class="nav-btn" data-target="s6" data-slug="shopping" onclick="show('s6',this)">買什麼</button>
+  <button class="nav-btn" data-target="s7" data-slug="transit" onclick="show('s7',this)">機場轉機</button>
 </nav>
+<header class="notes-hero">
+  <div class="notes-opening">
+    <p class="notes-eyebrow">新加坡｜濱海灣與日常吃買</p>
+    <h1>新加坡</h1>
+    <p class="notes-deck">魚尾獅、金沙、未來樹，先認識濱海灣的幾個地標。想吃早餐、挑茶或咖啡，或在樟宜轉機，上方都有各自的入口。</p>
+    <p class="notes-edition">領隊 YoYo 的旅遊收藏版 · 版面整理：2026 年 10 月 14 日</p>
+    <a class="notes-start" href="#spots">先看景點 ↗</a>
+  </div>
+  <figure class="notes-cover"><img src="assets/新加坡/merlion.jpg" alt="濱海灣｜魚尾獅與金沙" width="640" height="480"><figcaption>濱海灣｜魚尾獅與金沙</figcaption></figure>
+  <div class="notes-meta"><span class="update-meta">最後更新：2026 年 10 月 11 日<br><strong>行程小提醒：</strong>景點僅供參考，實際以行前說明會與行程表為準。</span></div>
+</header>
+
+
+
+
 <div class="section-share"><button class="section-share-btn" type="button">🔗 複製此分類連結</button><span class="section-share-status" role="status" aria-live="polite"></span></div>
 
 <main class="content">
@@ -646,7 +653,7 @@ a { color: inherit; }
     <div class="sec-head">
       <span class="sec-emoji">👋</span>
       <h2 class="sec-title">認識 YoYo｜劉又銘</h2>
-      <p class="sec-desc">出發前先認識我，旅途中你就會更安心。</p>
+      <p class="sec-desc">我是 YoYo。濱海灣的地標、熟食中心的吃法，和機場轉機，這頁分開整理給你看。</p>
     </div>
 
     <div class="about-hero">
@@ -658,11 +665,7 @@ a { color: inherit; }
       </div>
     </div>
 
-    <div class="trust-grid">
-      <div class="trust-item"><span class="trust-num">帶團</span><span class="trust-label">國際線帶團視角</span></div>
-      <div class="trust-item"><span class="trust-num">行前</span><span class="trust-label">整理好出發重點</span></div>
-      <div class="trust-item"><span class="trust-num">途中</span><span class="trust-label">提醒與支援</span></div>
-    </div>
+
 
     <div class="compare-wrap">
       <div class="compare-title">這趟新加坡可以先這樣理解</div>
@@ -675,9 +678,9 @@ a { color: inherit; }
     </div>
 
     <div class="note-card">
-      <div class="note-title">✨ YoYo 的一句話提醒</div>
-      <p>新加坡的迷人之處，是把城市、綠意、建築和日常生活收得很剛好。走在不同街區，總能遇到值得停下來看的小細節。</p>
-      <p style="margin-top:12px">這一頁把景點、吃與買的靈感先收好，想看哪一段就從上方慢慢點進去。</p>
+      <div class="note-title">YoYo 帶團提醒</div>
+      <p>濱海灣的幾個地標常會一起看，但集合位置還是要認清楚。拍魚尾獅時，也可以把金沙和水灣一起帶進鏡頭。</p>
+      <p style="margin-top:12px">想看地標選景點，找早餐選吃什麼；在樟宜機場轉機，直接看機場轉機分類。</p>
     </div>
 
     <div class="photo-grid">
@@ -699,7 +702,7 @@ a { color: inherit; }
       <div class="collection-body">
         <div class="collection-kicker"><span class="collection-icon">🦁</span>濱海灣・經典的第一張新加坡照片</div>
         <h3 class="collection-title">魚尾獅 Merlion</h3>
-        <p class="collection-copy">站在水灣邊看魚尾獅，背後就是金沙和城市天際線。它不只是到此一遊的地標，更像是把新加坡的海、建築和旅行感放進同一個畫面裡。</p>
+        <p class="collection-copy">站在水灣邊看魚尾獅，背後就是金沙和城市天際線。拍照時可以把魚尾獅、金沙和水灣一起入鏡，畫面就能交代你所在的位置。</p>
         <div class="collection-tags"><span class="collection-tag">濱海灣</span><span class="collection-tag">經典地標</span><span class="collection-tag">城市天際線</span></div>
         <p class="collection-tip"><strong>YoYo 小提醒：</strong>不用急著只拍魚尾獅，稍微把鏡頭拉遠一點，水灣和城市一起入鏡會更有感。</p>
       </div>
@@ -745,7 +748,7 @@ a { color: inherit; }
     <div class="sec-head">
       <span class="sec-emoji">🍽️</span>
       <h2 class="sec-title">YoYo 帶你吃</h2>
-      <p class="sec-desc">從熟食中心到早餐咖啡，把新加坡的日常味道收進來。</p>
+      <p class="sec-desc">海南雞飯吃正餐，咖椰吐司吃早餐，想喝香料湯則看叻沙。</p>
     </div>
 
     <span class="country-label">新加坡日常味道</span>
@@ -757,7 +760,7 @@ a { color: inherit; }
 
     <div class="card coral">
       <div class="card-title">🥢 YoYo 小提醒</div>
-      <div class="card-body">新加坡的味道很有自己的節奏。熟食中心、商場美食街和街區小店，不用刻意追著清單跑，剛好遇到想吃的就試試看。</div>
+      <div class="card-body">找吃的可以先看熟食中心與商場美食街。想吃一餐、喝杯咖啡，或和同行的人分著試，先按食量挑。</div>
     </div>
 
     <div class="card">
@@ -772,7 +775,7 @@ a { color: inherit; }
     <div class="sec-head">
       <span class="sec-emoji">🛍️</span>
       <h2 class="sec-title">YoYo 帶你買</h2>
-      <p class="sec-desc">從茶、咖啡到小包裝選物，挑幾樣旅行後還會想起新加坡的東西。</p>
+      <p class="sec-desc">咖啡、茶和果乾，先想好是自己喝、自己吃，還是拿來送人。</p>
     </div>
 
     <span class="country-label">新加坡伴手禮</span>
@@ -896,12 +899,13 @@ function show(id, btn, updateHash = true) {
   btn.classList.add('active');
   requestAnimationFrame(keepActiveNavVisible);
   if (updateHash && history.replaceState) history.replaceState(null, '', `${window.location.pathname}${window.location.search}#${btn.dataset.slug}`);
-  if (updateHash) window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (updateHash) window.scrollGuideSection(id);
 }
 initShareableSections(document.querySelectorAll('.nav-btn'), show);
 window.addEventListener('load', keepActiveNavVisible);
 window.addEventListener('resize', keepActiveNavVisible);
 if (document.fonts) document.fonts.ready.then(keepActiveNavVisible);
 </script>
+<script src="assets/YO旅行班/travel-notes.js"></script>
 </body>
 </html>

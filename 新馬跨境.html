@@ -610,17 +610,27 @@ a { color: inherit; }
 </style>
 <link rel="stylesheet" href="assets/YO旅行班/shareable-sections.css">
 <link rel="stylesheet" href="assets/YO旅行班/site-theme.css">
+<link rel="stylesheet" href="assets/YO旅行班/travel-notes.css">
 </head>
-<body class="yo-guide">
-<a class="guide-back" href="index.html">← 回到地球導覽</a>
-<header class="hero">
-  <div class="hero-content">
-    <span class="hero-badge">YoYo 帶你玩</span>
-    <h1 class="hero-title">新馬跨境 <span>旅行指南</span></h1>
-    <p class="hero-sub">新加坡 × 馬來西亞，理解跨境移動，玩起來更有節奏。</p>
-    <span class="update-meta">最後更新：2026 年 9 月 23 日<br><strong>行程小提醒：</strong>內容供參考，實際通關方式與行程以行前說明會及行程表為準。</span>
+<body class="yo-guide yo-notes" data-destination="border">
+<div class="notes-topbar"><a class="notes-brand" href="index.html"><b>YO!</b> 旅行班</a><a href="index.html">所有目的地 ↗</a></div>
+<aside class="guide-country-links" aria-label="全境行前提醒"><span>出發前先看</span><a href="國家提醒.html?country=sg">新加坡全境注意事項 →</a><a href="國家提醒.html?country=my">馬來西亞全境注意事項 →</a></aside>
+<nav class="nav" aria-label="新馬跨境旅行分類">
+  <button class="nav-btn active" data-target="s0" data-slug="about" onclick="show('s0',this)">認識 YoYo</button>
+  <button class="nav-btn" data-target="s2" data-slug="border" onclick="show('s2',this)">跨境旅行</button>
+</nav>
+<header class="notes-hero">
+  <div class="notes-opening">
+    <p class="notes-eyebrow">新加坡 × 馬來西亞｜兩國之間</p>
+    <h1>新馬跨境</h1>
+    <p class="notes-deck">跨境那天，護照、行李與集合最容易讓人搞混。先看這頁的現場提醒，兩國各自的入境規定再回到國家提醒頁。</p>
+    <p class="notes-edition">領隊 YoYo 的旅行指南 · 版面整理：2026 年 10 月 14 日</p>
+    <a class="notes-start" href="#border">先看跨境提醒 ↗</a>
   </div>
+  <div class="notes-diptych"><figure><img src="assets/新馬跨境/merlion.jpg" alt="新加坡｜魚尾獅" width="640" height="480"><figcaption>新加坡｜魚尾獅</figcaption></figure><figure><img src="assets/新馬跨境/petronas-twin-towers.jpg" alt="馬來西亞｜雙子星" width="640" height="480"><figcaption>馬來西亞｜雙子星</figcaption></figure></div>
+  <div class="notes-meta"><span class="update-meta">最後更新：2026 年 9 月 23 日<br><strong>行程小提醒：</strong>內容供參考，實際通關方式與行程以行前說明會及行程表為準。</span></div>
 </header>
+
 
 <div class="info-bar">
   <div class="info-item"><span class="info-icon">💱</span><span class="info-label">貨幣</span><span class="info-val">SGD / MYR</span></div>
@@ -630,11 +640,8 @@ a { color: inherit; }
   <div class="info-item"><span class="info-icon">🧳</span><span class="info-label">節奏</span><span class="info-val">兩國切換</span></div>
 </div>
 
-<aside class="guide-country-links" aria-label="全境行前提醒"><span>出發前先看</span><a href="國家提醒.html?country=sg">新加坡全境注意事項 →</a><a href="國家提醒.html?country=my">馬來西亞全境注意事項 →</a></aside>
-<nav class="nav" aria-label="新馬跨境旅行分類">
-  <button class="nav-btn active" data-target="s0" data-slug="about" onclick="show('s0',this)">👋 認識 YoYo</button>
-  <button class="nav-btn" data-target="s2" data-slug="border" onclick="show('s2',this)">🛂 跨境旅行</button>
-</nav>
+
+
 <div class="section-share"><button class="section-share-btn" type="button">🔗 複製此分類連結</button><span class="section-share-status" role="status" aria-live="polite"></span></div>
 
 <main class="content">
@@ -642,7 +649,7 @@ a { color: inherit; }
     <div class="sec-head">
       <span class="sec-emoji">👋</span>
       <h2 class="sec-title">認識 YoYo｜劉又銘</h2>
-      <p class="sec-desc">出發前先認識我，旅途中你就會更安心。</p>
+      <p class="sec-desc">我是 YoYo。跨境這一段，先把護照、行李與集合看清楚。</p>
     </div>
 
     <div class="about-hero">
@@ -654,11 +661,7 @@ a { color: inherit; }
       </div>
     </div>
 
-    <div class="trust-grid">
-      <div class="trust-item"><span class="trust-num">帶團</span><span class="trust-label">國際線帶團視角</span></div>
-      <div class="trust-item"><span class="trust-num">行前</span><span class="trust-label">整理好出發重點</span></div>
-      <div class="trust-item"><span class="trust-num">途中</span><span class="trust-label">提醒與支援</span></div>
-    </div>
+
 
     <div class="compare-wrap">
       <div class="compare-title">這趟新馬可以先這樣理解</div>
@@ -671,9 +674,9 @@ a { color: inherit; }
     </div>
 
     <div class="note-card">
-      <div class="note-title">✨ YoYo 的一句話提醒</div>
-      <p>新馬好玩的地方，在於你會很快感覺到兩個國家的差異。新加坡像一座節奏精準的城市，馬來西亞則有更多文化、夜市、街區和長車程的旅行感。</p>
-      <p style="margin-top:12px">出發前先知道規矩，旅途中就能把注意力留給風景、拍照和吃東西。</p>
+      <div class="note-title">YoYo 帶團提醒</div>
+      <p>兩邊通關的安排可能不同。上一段怎麼做，下一段不一定照搬；行李是否下車，直接聽現場說明。</p>
+      <p style="margin-top:12px">過關後先找到團體的集合位置，確定人和行李都到齊，再繼續下一段。</p>
     </div>
 
     <div class="photo-grid">
@@ -736,9 +739,10 @@ function show(id, btn, updateHash = true) {
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
   if (updateHash && history.replaceState) history.replaceState(null, '', `${window.location.pathname}${window.location.search}#${btn.dataset.slug}`);
-  if (updateHash) window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (updateHash) window.scrollGuideSection(id);
 }
 initShareableSections(document.querySelectorAll('.nav-btn'), show);
 </script>
+<script src="assets/YO旅行班/travel-notes.js"></script>
 </body>
 </html>
