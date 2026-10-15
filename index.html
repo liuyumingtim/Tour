@@ -1572,9 +1572,9 @@
     }
   </style>
 <link rel="stylesheet" href="assets/YO旅行班/site-theme.css">
-<link rel="stylesheet" href="assets/YO旅行班/home-notes.css">
+<link rel="stylesheet" href="assets/YO旅行班/home-notes.css?v=20261015-picker-rows">
 </head>
-<body class="yo-home paused">
+<body class="yo-home">
   <div class="site">
     <header class="topbar">
       <div class="topbar-inner">
@@ -1589,13 +1589,28 @@
         <div class="controls" aria-label="導覽工具">
           <label class="search">
             <span class="sr-only">搜尋目的地與提醒</span>
-            <input id="searchInput" type="search" placeholder="搜尋國家、景點、美食、提醒" autocomplete="off">
+            <input id="searchInput" type="search" placeholder="搜尋景點、提醒" autocomplete="off">
           </label>
         </div>
       </div>
     </header>
 
     <main id="top">
+
+    <nav class="country-picker-bar" aria-label="選擇目的地">
+      <div class="country-picker-inner">
+        <div class="country-picker-actions">
+          <button class="country-picker-button" type="button" data-select-country="th">泰國</button>
+          <button class="country-picker-button" type="button" data-select-country="vn">越南</button>
+          <button class="country-picker-button" type="button" data-select-country="my">馬來西亞</button>
+          <button class="country-picker-button" type="button" data-select-country="sg">新加坡</button>
+          <button class="country-picker-button" type="button" data-select-country="ph">菲律賓</button>
+        </div>
+      </div>
+    </nav>
+
+
+
       <section class="hero" aria-labelledby="pageTitle">
         <div class="hero-intro">
           <p class="eyebrow">領隊 YoYo 的旅行筆記</p>
@@ -1611,36 +1626,6 @@
           </figcaption>
         </figure>
       </section>
-
-    <nav class="country-picker-bar" aria-label="選擇目的地">
-      <div class="country-picker-inner">
-        <span class="country-picker-label">選擇目的地</span>
-        <span class="country-picker-copy">想去哪裡？</span>
-        <div class="country-picker-actions">
-          <button class="country-picker-button" type="button" data-select-country="th">泰國</button>
-          <button class="country-picker-button" type="button" data-select-country="vn">越南</button>
-          <button class="country-picker-button" type="button" data-select-country="my">馬來西亞</button>
-          <button class="country-picker-button" type="button" data-select-country="sg">新加坡</button>
-          <button class="country-picker-button" type="button" data-select-country="ph">菲律賓</button>
-        </div>
-      </div>
-    </nav>
-
-    <button class="luggage-quick-bar" type="button" data-open-luggage>
-      <span class="luggage-quick-inner">
-        <span class="luggage-quick-title">上機與行李小抄</span>
-        <span class="luggage-quick-summary">正在整理行李？出門前先看這 9 件事。</span>
-        <span class="luggage-quick-action">打開小抄 ↗</span>
-      </span>
-    </button>
-
-      <div class="atlas-tools" aria-label="地球導覽工具">
-        <p>點選地球旁的國家，看看這趟想去哪裡。</p>
-        <div class="atlas-actions">
-          <button class="control-btn" id="pauseBtn" type="button" aria-pressed="false">開啟動態</button>
-          <button class="control-btn" id="modeBtn" type="button" aria-pressed="false">改看清單</button>
-        </div>
-      </div>
 
       <section class="workspace" aria-label="地球目的地導覽">
         <div class="globe-card">
@@ -1663,7 +1648,25 @@
         <aside class="info-panel" id="infoPanel" aria-live="polite" tabindex="-1"></aside>
       </section>
 
+      <div class="atlas-tools" aria-label="地球導覽工具">
+        <p>點選地球旁的國家，看看這趟想去哪裡。</p>
+        <div class="atlas-actions">
+          <button class="control-btn" id="pauseBtn" type="button" aria-pressed="true">暫停動態</button>
+          <button class="control-btn" id="modeBtn" type="button" aria-pressed="false">改看清單</button>
+        </div>
+      </div>
+
       <section class="classic-panel" id="classicPanel" aria-label="目的地清單"></section>
+
+    <button class="luggage-quick-bar" type="button" data-open-luggage>
+      <span class="luggage-quick-inner">
+        <span class="luggage-quick-title">上機與行李小抄</span>
+        <span class="luggage-quick-summary">正在整理行李？出門前先看這 9 件事。</span>
+        <span class="luggage-quick-action">打開小抄 ↗</span>
+      </span>
+    </button>
+
+
     </main>
 
     <dialog class="luggage-dialog" id="luggageDialog" aria-labelledby="luggageTitle">
@@ -1711,7 +1714,7 @@
     </dialog>
 
     <footer class="footer">
-      YO! 旅行班 ｜ IG：<a href="https://www.instagram.com/yoyo.touring/" target="_blank" rel="noopener">@yoyo.touring</a> ｜ 首頁更新：2026-10-14（台北時間）
+      YO! 旅行班 ｜ IG：<a href="https://www.instagram.com/yoyo.touring/" target="_blank" rel="noopener">@yoyo.touring</a> ｜ 首頁更新：2026-10-15（台北時間）
     </footer>
   </div>
 
@@ -1882,7 +1885,7 @@
     const state = {
       selectedId: "",
       selectedView: "overview",
-      paused: true,
+      paused: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
       classic: false,
       query: "",
       orbit: 0,
@@ -1944,7 +1947,7 @@
     }
 
     function animationLoop() {
-      if (!state.paused && !state.reduceMotion) {
+      if (!state.paused) {
         state.orbit += 0.0022;
         positionCountries();
       }
@@ -2255,6 +2258,9 @@
     window.addEventListener("resize", positionCountries);
     new ResizeObserver(positionCountries).observe(stage);
 
+    document.body.classList.toggle("paused", state.paused);
+    pauseBtn.textContent = state.paused ? "開啟動態" : "暫停動態";
+    pauseBtn.setAttribute("aria-pressed", String(!state.paused));
     renderCountries();
     renderPanel();
     renderClassic();
