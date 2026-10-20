@@ -51,7 +51,7 @@ document.addEventListener('click',event=>{
 });
 pins.addEventListener('keydown',event=>{if((event.key==='Enter'||event.key===' ')&&event.target.matches('[data-spot]')){event.preventDefault();openSpot(event.target.dataset.spot,event.target);}});
 
-const spotPhotos={"oslob": {"src": "assets/宿霧/whale-sharks.jpg", "alt": "水下的鯨鯊與潛水者"}, "hills": {"src": "assets/宿霧/chocolate-hills.jpg", "alt": "巧克力山觀景平台與連綿山丘"}, "tarsier": {"src": "assets/宿霧/tarsier.jpg", "alt": "躲在葉片與樹枝間休息的眼鏡猴"}};
+const spotPhotos={"cross": [{"src": "assets/宿霧/magellans-cross-exterior.jpg", "alt": "麥哲倫十字架八角亭外觀與廣場", "caption": "麥哲倫十字架・亭外建築"}, {"src": "assets/宿霧/magellans-cross-interior.jpg", "alt": "從鐵門外看麥哲倫十字架及上方穹頂壁畫", "caption": "十字架與穹頂壁畫"}], "oslob": {"src": "assets/宿霧/whale-sharks.jpg", "alt": "水下的鯨鯊與潛水者"}, "hills": {"src": "assets/宿霧/chocolate-hills.jpg", "alt": "巧克力山觀景平台與連綿山丘"}, "tarsier": {"src": "assets/宿霧/tarsier.jpg", "alt": "躲在葉片與樹枝間休息的眼鏡猴"}};
 const dialog=document.getElementById('spot-dialog');
 function openSpot(id,opener){
   const spot=spots[id];if(!spot)return;dialogOpener=opener;
@@ -60,9 +60,18 @@ function openSpot(id,opener){
   document.getElementById('spot-subtitle').textContent=spot.subtitle;
   ['enjoy','pace','weather'].forEach(key=>document.getElementById(`spot-${key}`).textContent=spot[key]);
   document.getElementById('spot-map').href=`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(spot.query)}`;
-  const photo=document.getElementById('spot-photo');
-  photo.hidden=!spotPhotos[id];
-  if(spotPhotos[id]){photo.src=spotPhotos[id].src;photo.alt=spotPhotos[id].alt;}else{photo.removeAttribute('src');photo.alt='';}
+  const gallery=document.getElementById('spot-photos');
+  const photos=spotPhotos[id]?[spotPhotos[id]].flat():[];
+  gallery.replaceChildren();
+  gallery.hidden=photos.length===0;
+  photos.forEach(item=>{
+    const figure=document.createElement('figure');
+    const photo=document.createElement('img');
+    photo.className='dialog-photo';photo.src=item.src;photo.alt=item.alt;
+    figure.append(photo);
+    if(item.caption){const caption=document.createElement('figcaption');caption.textContent=item.caption;figure.append(caption);}
+    gallery.append(figure);
+  });
   dialog.showModal();document.body.classList.add('modal-open');
 }
 dialog.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
