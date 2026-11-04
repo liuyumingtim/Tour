@@ -397,6 +397,40 @@ a { color: inherit; }
 
 /* Shared guide links: phase-one content consistency */
 .guide-country-links{display:flex;flex-wrap:wrap;gap:10px;align-items:center;width:min(900px,calc(100% - 32px));margin:18px auto;padding:12px 16px;border:1px solid #ddd9ca;background:#fffdf8;color:#26313a;font:14px/1.7 -apple-system,BlinkMacSystemFont,"Noto Sans TC",sans-serif}.guide-country-links a{color:#215e51;font-weight:700;text-underline-offset:3px}.guide-country-links a:focus-visible{outline:3px solid #a97a20;outline-offset:3px}
+
+/* 圖片縮小並跟著對應的景點或餐點 */
+.compact-card { display: grid; grid-template-columns: minmax(0, 1fr) minmax(100px, 30%); gap: 16px; align-items: start; }
+.compact-card .compact-text { min-width: 0; line-height: 1.8; font-size: 14px; }
+.compact-card .compact-text strong { color: var(--text); }
+.compact-photo { margin: 0; max-width: 220px; }
+.compact-photo img { width: 100%; height: auto; max-height: 210px; aspect-ratio: 4/3; object-fit: cover; display: block; border-radius: 8px; }
+.compact-photo figcaption { font-size: 11px; color: var(--text-sub); padding-top: 4px; }
+.compact-group { display: grid; gap: 10px; margin: 14px 0; }
+.compact-group .card { margin: 0; }
+.drink-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.drink-grid .compact-photo { max-width: 220px; }
+.img-grid.single { max-width: 340px; }
+@media (max-width: 600px) {
+  .img-grid, .img-grid.three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .img-grid.single { grid-template-columns: 1fr; max-width: 52%; }
+  .compact-card { grid-template-columns: minmax(0, 1fr) minmax(94px, 34%); gap: 10px; }
+  .compact-photo img { max-height: 160px; }
+}
+
+
+/* 景點依地區分組，保留原本的小照片比例 */
+.yo-notes.spots-view .notes-hero { display: none; }
+.spot-jumps { display: flex; gap: 10px; margin: 4px 0 22px; }
+.spot-jumps button { flex: 1; border: 1px solid #d5dfd5; border-radius: 9px; background: #fff; padding: 12px 10px; color: #28594d; font: inherit; font-weight: 700; cursor: pointer; }
+.spot-region { margin: 0 0 30px; scroll-margin-top: 110px; }
+.spot-region-head { border-left: 4px solid #467767; padding: 2px 0 2px 14px; margin: 0 0 18px; }
+.spot-region-head h3 { font-size: 22px; color: #28594d; margin: 0 0 3px; }
+.spot-region-head p { margin: 0; font-size: 13px; color: #6c7771; line-height: 1.6; }
+.spot-subheading { color: #28594d; font-size: 17px; margin: 28px 0 12px; }
+.spot-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 12px 0 0; }
+.spot-gallery .img-wrap img { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; }
+@media (max-width: 600px) { .spot-region-head h3 { font-size: 20px; } .spot-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
 </style>
 <link rel="stylesheet" href="assets/YO旅行班/shareable-sections.css">
 <link rel="stylesheet" href="assets/YO旅行班/site-theme.css">
@@ -418,12 +452,12 @@ a { color: inherit; }
   <div class="notes-opening">
     <p class="notes-eyebrow">越南｜山上的雲，古鎮的燈</p>
     <h1>中越<span class="notes-route">・峴港・會安</span></h1>
-    <p class="notes-deck">巴拿山看纜車、佛手橋與法國村；會安看黃牆、燈籠和河岸。這兩段的照片與吃買筆記，分開整理給你看。</p>
+    <p class="notes-deck">從峴港海岸、市區到巴拿山和會安古鎮，把風景、吃喝與散步時光一起收進來。</p>
     <p class="notes-edition">領隊 YoYo 的旅遊收藏版 · 版面整理：2026 年 10 月 14 日</p>
     <a class="notes-start" href="#spots">先看景點 ↗</a>
   </div>
   <figure class="notes-cover"><img src="assets/中越/hoian1.jpg" alt="會安｜古鎮的夜晚" width="675" height="900"><figcaption>會安｜古鎮的夜晚</figcaption></figure>
-  <div class="notes-meta"><span class="update-meta">最後更新：2026 年 9 月 23 日<br><strong>行程小提醒：</strong>景點僅供參考，實際以行前說明會與行程表為準。</span></div>
+  <div class="notes-meta"><span class="update-meta">最後更新：2026 年 11 月 4 日<br><strong>行程小提醒：</strong>景點僅供參考，實際以行前說明會與行程表為準。</span></div>
 </header>
 <!-- NAV -->
 
@@ -437,7 +471,7 @@ a { color: inherit; }
     <div class="sec-head">
       <span class="sec-emoji">👋</span>
       <h2 class="sec-title">認識 YoYo｜劉又銘</h2>
-      <p class="sec-desc">我是 YoYo。這頁先從巴拿山與會安兩種風景，幫你認識中越。</p>
+      <p class="sec-desc">我是 YoYo。一起從峴港的海岸與市區，走到巴拿山和會安古鎮。</p>
     </div>
 
     <div class="about-hero">
@@ -456,7 +490,7 @@ a { color: inherit; }
       <div class="card-title">✨ 這趟中越可以先這樣理解</div>
       <div class="card-body">
         中越有兩種很不一樣的旅行感：巴拿山是纜車、雲霧和歐式街景；會安則是黃牆、燈籠和河邊的慢步調。<br><br>
-        巴拿山的雲霧和會安的燈籠，看的方式不一樣。山上留意天氣；古鎮散步時，把集合位置先記好。
+        巴拿山的雲霧和會安的燈籠，各有不一樣的風景。
       </div>
     </div>
 
@@ -480,21 +514,21 @@ a { color: inherit; }
     <div class="sec-head">
       <span class="sec-emoji">🍜</span>
       <h2 class="sec-title">YoYo 帶你吃</h2>
-      <p class="sec-desc">峴港看夜市，會安找越式三明治、椰子咖啡與花草飲。</p>
+      <p class="sec-desc">從峴港披薩、夜市到會安三明治與飲料，挑喜歡的慢慢吃。</p>
     </div>
 
+    <span class="place-tag alt">📍 會安古鎮｜先吃點什麼</span>
+    <div class="compact-group"><div class="card compact-card"><div class="compact-text"><strong>Bánh Mì Phượng 越式三明治</strong><br>外酥的法國麵包夾入餡料，逛古鎮時想吃點有飽足感的，可以試試看。</div><figure class="compact-photo"><img src="assets/中越/banh-mi-phuong.jpg" alt="Bánh Mì Phượng 越式三明治" loading="lazy"><figcaption>Bánh Mì Phượng 越式三明治</figcaption></figure></div></div>
+    <span class="place-tag alt">☕ 會安古鎮｜喝什麼</span>
+    <div class="card"><div class="card-body"><strong>Mót 蓮花飲與 Cộng 咖啡</strong><br>逛古鎮時可以來杯 Mót 蓮花飲；走累了也能到 Cộng 咖啡坐坐，喜歡椰香的可以試試椰子咖啡。</div>
+    <div class="drink-grid"><figure class="compact-photo"><img src="assets/中越/mot-lotus-drink.jpg" alt="會安 Mót 蓮花飲" loading="lazy"><figcaption>Mót 蓮花飲</figcaption></figure><figure class="compact-photo"><img src="assets/中越/cong-coffee.jpg" alt="會安 Cộng 咖啡" loading="lazy"><figcaption>Cộng 咖啡</figcaption></figure></div></div>
+    <div class="divider"><div class="divider-line"></div><div class="divider-star">★</div><div class="divider-line"></div></div>
     <span class="place-tag">📍 峴港</span>
+    <div class="compact-group"><div class="card compact-card"><div class="compact-text"><strong>Pizza 4P’s 披薩</strong><br>在峴港想換個口味，可以和朋友分享披薩；分店與營業資訊出發前再確認。</div><figure class="compact-photo"><img src="assets/中越/pizza-4ps.jpg" alt="Pizza 4P’s 披薩" loading="lazy"><figcaption>Pizza 4P’s 披薩</figcaption></figure></div></div>
     <ul class="yoyo-list">
       <li><div><strong>山茶夜市</strong><br><span style="font-size:13px;color:#666">重點是市集裡的熱鬧感和邊走邊看的節奏，不需要追著某一攤跑。</span></div></li>
+
       <li><div><strong>Maison Marou 巧克力</strong><br><span style="font-size:13px;color:#666">喜歡巧克力的人可以留意一下不同產地和口味，當成旅途中一段甜甜的停留。</span></div></li>
-    </ul>
-
-    <div class="divider"><div class="divider-line"></div><div class="divider-star">★</div><div class="divider-line"></div></div>
-
-    <span class="place-tag alt">📍 會安古鎮</span>
-    <ul class="yoyo-list">
-      <li><div><strong>Bánh Mì Phượng</strong><br><span style="font-size:13px;color:#666">散步途中想來點有飽足感的越式三明治時，可以把它放進選項裡。</span></div></li>
-      <li><div><strong>椰子咖啡與 Mót 花草飲</strong><br><span style="font-size:13px;color:#666">一杯帶著椰香，一杯比較清爽；走累時挑自己當下想喝的就好。</span></div></li>
     </ul>
 
     <div class="tip-box">
@@ -508,16 +542,20 @@ a { color: inherit; }
     <div class="sec-head">
       <span class="sec-emoji">🗺️</span>
       <h2 class="sec-title">YoYo 帶你走跳</h2>
-      <p class="sec-desc">巴拿山與會安分開看，照片、園區地圖和街景都放在各自的段落。</p>
+      <p class="sec-desc">從峴港市區、海邊到巴拿山與會安，看看中越不一樣的風景。</p>
     </div>
 
-    <div class="tip-box">
-      <strong>✨ 中越的旅行感</strong><br>
-      巴拿山有纜車、雲霧和歐式街景；會安則把黃色老屋、河岸和燈籠放進慢慢走的夜晚。兩種節奏放在同一趟旅程裡，剛好很有對比。
-    </div>
+    <nav class="spot-jumps" aria-label="景點地區快速選擇">
+      <button type="button" onclick="document.getElementById('danang-region').scrollIntoView({behavior:'smooth',block:'start'})">峴港・巴拿山 ↓</button>
+      <button type="button" onclick="document.getElementById('hoian-region').scrollIntoView({behavior:'smooth',block:'start'})">會安古鎮 ↓</button>
+    </nav>
+    <section class="spot-region" id="danang-region" aria-labelledby="danang-title">
+      <div class="spot-region-head"><h3 id="danang-title">峴港・巴拿山</h3><p>海岸、市區、山景與表演，都整理在這裡。</p></div>
+      <h4 class="spot-subheading">峴港海岸與市區</h4>
 
-
-    <span class="place-tag">📍 巴拿山</span>
+    <div class="compact-group">
+<div class="card compact-card"><div class="compact-text"><strong>美溪沙灘｜海岸線與夜晚海景</strong><br>美溪沙灘有綿長海岸線，是峴港最美的海岸風景之一。照片記錄的是晚上的海邊；有興趣可以在自由時間，依住宿位置與當天安排前往散步。實際行程仍以行前通知和行程表為準，夜間留意海浪與照明。</div><figure class="compact-photo"><img src="assets/中越/my-khe-night.jpg" alt="美溪沙灘夜景" loading="lazy"><figcaption>美溪沙灘夜景</figcaption></figure></div><div class="card compact-card"><div class="compact-text"><strong>粉紅教堂｜峴港大教堂</strong><br>粉色外牆和尖塔是市區很有辨識度的畫面。</div><figure class="compact-photo"><img src="assets/中越/pink-church.jpg" alt="峴港粉紅教堂" loading="lazy"><figcaption>峴港粉紅教堂</figcaption></figure></div><div class="card compact-card"><div class="compact-text"><strong>APEC 公園｜生命樹</strong><br>沿著韓江散步時，可以留意公園裡的生命樹雕塑，從不同角度看看它的線條。</div><figure class="compact-photo"><img src="assets/中越/apec-tree.jpg" alt="APEC 公園生命樹" loading="lazy"><figcaption>APEC 公園生命樹</figcaption></figure></div><div class="card compact-card"><div class="compact-text"><strong>五行山</strong><br>石灰岩山丘裡有寺廟、洞穴與眺望風景的地方；部分路段需要走階梯，鞋子選好走的就好。</div><figure class="compact-photo"><img src="assets/中越/ngu-hanh-son.jpg" alt="五行山玄空洞" loading="lazy"><figcaption>五行山玄空洞<br>照片：<a href="https://commons.wikimedia.org/wiki/File:Da_Nang_-_%C3%90%E1%BB%99ng_Huy%E1%BB%81n_Kh%C3%B4ng_(2024)_-_img_07.jpg">Chainwit.</a>，<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>，已縮圖</figcaption></figure></div><div class="card"><div class="compact-text"><strong>山茶半島</strong><br>從市區往海邊看，山茶半島把山和海連在一起；靈應寺與海岸風景是認識峴港的另一個角度。</div></div><div class="card compact-card"><div class="compact-text"><strong>奧黛秀</strong><br>透過傳統服飾、音樂與舞台演出感受越南文化。是否安排及場次以當團行程為準。</div><figure class="compact-photo"><img src="assets/中越/ao-dai-show.jpg" alt="奧黛秀演出後合影" loading="lazy"><figcaption>奧黛秀演出後合影</figcaption></figure></div><div class="card compact-card"><div class="compact-text"><strong>漢市場 Han Market</strong><br>峴港市區熱鬧的傳統市場，可以逛服飾、乾貨和在地商品；挑選前先確認價格與商品內容。</div><figure class="compact-photo"><img src="assets/中越/han-market.jpg" alt="峴港漢市場入口" loading="lazy"><figcaption>漢市場入口<br>照片：<a href="https://commons.wikimedia.org/wiki/File:Cho_Han_Da_Nang.JPG">Dragfyre</a>，<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>，已縮圖</figcaption></figure></div>    </div>
+    <h4 class="spot-subheading">巴拿山｜纜車、佛手橋與法國村</h4>
 
     <div class="card">
       <div class="card-accent"></div>
@@ -559,19 +597,24 @@ a { color: inherit; }
       </div>
     </div>
 
-    <div class="divider"><div class="divider-line"></div><div class="divider-star">★</div><div class="divider-line"></div></div>
-
-    <span class="place-tag alt">📍 會安古鎮</span>
+    </section>
+    <section class="spot-region" id="hoian-region" aria-labelledby="hoian-title">
+      <div class="spot-region-head"><h3 id="hoian-title">會安古鎮</h3><p>黃牆老屋、燈籠與河岸，留給會安慢慢逛。</p></div>
 
     <div class="card">
       <div class="card-accent green"></div>
       <div class="card-body">
-        黃色老屋、河岸燈籠和街邊小店，讓會安有一種可以慢慢看細節的旅行感。<br><br>
-        傍晚到入夜之間，燈籠會亮起來。想回到同一個角落拍夜景，可以先記下店名或路口，回頭才找得到。
+        會安古鎮曾是熱鬧的貿易港口，老屋與街道留下不同文化交流的痕跡。黃色牆面、木窗、河岸與街邊小店都值得慢慢看。<br><br>白天可以逛巷弄、看看手工燈籠和小店；傍晚再走到河邊，感受燈光亮起後的古鎮。<br><br>
+        傍晚到入夜之間，燈籠亮起來，古鎮又是另一種風景。
       </div>
     </div>
 
-    <div class="img-grid">
+    <div class="compact-group">
+      <div class="card compact-card"><div class="compact-text"><strong>迦南島椰子船</strong><br>搭著圓圓的竹籃船穿過水椰林，看看沿岸的椰林風景，也感受船上的熱鬧氣氛。實際體驗仍以當團安排為準。</div><figure class="compact-photo"><img src="assets/中越/cam-thanh-coconut-boat.jpg" alt="會安迦南島水椰林的椰子船" loading="lazy"><figcaption>會安｜椰子船與水椰林</figcaption></figure></div>
+      <div class="card compact-card"><div class="compact-text"><strong>日本橋｜來遠橋</strong><br>走進會安古鎮，可以看看這座帶著屋頂的古橋；橋上也有一處供奉的廟宇。</div><figure class="compact-photo"><img src="assets/中越/hoi-an-japanese-bridge.jpg" alt="會安日本橋入口" loading="lazy"><figcaption>日本橋｜來遠橋</figcaption></figure></div>
+      <div class="card compact-card"><div class="compact-text"><strong>廣肇會館</strong><br>色彩鮮明的門樓和雕飾，是古鎮裡值得停下來欣賞的建築細節。</div><figure class="compact-photo"><img src="assets/中越/hoi-an-cantonese-hall.jpg" alt="會安廣肇會館入口" loading="lazy"><figcaption>廣肇會館</figcaption></figure></div>
+    </div>
+    <div class="spot-gallery">
       <div class="img-wrap tall">
         <img data-img="hoian1" alt="會安古鎮街道">
         <div class="img-label">古鎮街道夜景</div>
@@ -580,7 +623,9 @@ a { color: inherit; }
         <img data-img="hoian2" alt="會安古鎮燈籠">
         <div class="img-label">河邊燈籠小船</div>
       </div>
+      <div class="img-wrap"><img src="assets/中越/hoian-street.jpg" alt="會安古鎮｜燈籠與街邊小店" loading="lazy"><div class="img-label">街邊小店</div></div>
     </div>
+    </section>
   </div>
 
   <!-- 帶你買 -->
@@ -590,6 +635,8 @@ a { color: inherit; }
       <h2 class="sec-title">YoYo 帶你買</h2>
       <p class="sec-desc">巧克力、咖啡、果乾和燈籠，先分成吃的與擺飾，再挑適合的品項。</p>
     </div>
+
+    <div class="compact-group"><div class="card compact-card"><div class="compact-text"><strong>Grab 外送員外套</strong><br>逛街時找到的 Grab 外送員外套，穿上留個旅行紀念。</div><figure class="compact-photo"><img src="assets/中越/danang-green-jacket.jpg" alt="YoYo 穿著 Grab 外送員外套與店家合影" loading="lazy"><figcaption>Grab 外送員外套</figcaption></figure></div></div>
 
     <div class="card">
       <div class="card-accent yellow"></div>
@@ -607,7 +654,9 @@ a { color: inherit; }
         </div>
         <div class="shop-card">
           <span class="shop-emoji">🛒</span>
-          <div class="shop-name">GO! Đà Nẵng</div>
+          <div class="shop-name">漢市場 Han Market</div><div class="shop-desc">逛服飾、乾貨與在地商品，先確認價格與商品內容，再挑喜歡的。</div>
+        </div>
+        <div class="shop-card"><span class="shop-emoji">🛒</span><div class="shop-name">GO! Đà Nẵng</div>
           <div class="shop-desc">想找零食、咖啡或小包裝伴手禮時，可以慢慢逛。</div>
         </div>
         <div class="shop-card">
@@ -678,6 +727,7 @@ function show(id, btn, updateHash = true) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
+  document.body.classList.toggle('spots-view', id === 's4');
   btn.classList.add('active');
   if (updateHash && history.replaceState) history.replaceState(null, '', `${window.location.pathname}${window.location.search}#${btn.dataset.slug}`);
   if (updateHash) window.scrollGuideSection(id);
