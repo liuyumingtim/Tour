@@ -588,6 +588,15 @@ a { color: inherit; }
 
 /* Shared guide links: phase-one content consistency */
 .guide-country-links{display:flex;flex-wrap:wrap;gap:10px;align-items:center;width:min(900px,calc(100% - 32px));margin:18px auto;padding:12px 16px;border:1px solid #ddd9ca;background:#fffdf8;color:#26313a;font:14px/1.7 -apple-system,BlinkMacSystemFont,"Noto Sans TC",sans-serif}.guide-country-links a{color:#215e51;font-weight:700;text-underline-offset:3px}.guide-country-links a:focus-visible{outline:3px solid #a97a20;outline-offset:3px}
+
+/* 曼谷景點：文字在左，照片在右，依原比例完整顯示。 */
+#s5 .spot-photo-card { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 34%); align-items: start; gap: 12px; padding: 16px; }
+#s5 .spot-photo-card .collection-body { grid-column: 1; grid-row: 1; min-width: 0; padding: 0; }
+#s5 .spot-photo-card .collection-photo, #s5 .spot-photo-card .collection-photo.bigc-logo-frame { grid-column: 2; grid-row: 1; height: auto; aspect-ratio: auto; background: transparent; overflow: visible; }
+#s5 .spot-photo-card .collection-photo img { width: 100%; height: auto; object-fit: contain; border-radius: 4px; }
+#s5 .spot-photo-card .collection-photo img:hover { transform: none; }
+@media (min-width: 761px) { #s5 .spot-photo-card { grid-template-columns: minmax(0, 1fr) minmax(0, 220px); gap: 22px; padding: 22px; } }
+@media (max-width: 400px) { #s5 .spot-photo-card { gap: 10px; padding: 13px; } #s5 .spot-photo-card .collection-title { font-size: 18px; } }
 </style>
 <link rel="stylesheet" href="assets/YO旅行班/shareable-sections.css">
 <link rel="stylesheet" href="assets/YO旅行班/site-theme.css">
@@ -674,6 +683,12 @@ a { color: inherit; }
 
     <div class="tip-box"><strong>泰國的吃，不用做功課做到很滿。</strong>想喝甜的就找一杯泰奶，天氣太熱就來顆椰子；留一點餓的空間，走到哪裡都還有驚喜。</div>
 
+    <div class="food-grid">
+      <div class="mini-card"><span class="emoji">🥥</span><strong>椰子</strong><span>天氣熱時來一顆，最簡單也最舒服。</span></div>
+      <div class="mini-card"><span class="emoji">🧋</span><strong>KOI Thé</strong><span>想喝熟悉的味道時，也是一個輕鬆選擇。</span></div>
+      <div class="mini-card"><span class="emoji">🌶️</span><strong>泰式料理</strong><span>喜歡香辣味道的人，可以慢慢試不同菜色。</span></div>
+    </div>
+
     <span class="country-label">逛街途中，先喝一杯</span>
     <div class="rec-grid">
       <div class="rec-card">
@@ -686,11 +701,6 @@ a { color: inherit; }
       </div>
     </div>
 
-    <div class="food-grid">
-      <div class="mini-card"><span class="emoji">🥥</span><strong>椰子</strong><span>天氣熱時來一顆，最簡單也最舒服。</span></div>
-      <div class="mini-card"><span class="emoji">🧋</span><strong>KOI Thé</strong><span>想喝熟悉的味道時，也是一個輕鬆選擇。</span></div>
-      <div class="mini-card"><span class="emoji">🌶️</span><strong>泰式料理</strong><span>喜歡香辣味道的人，可以慢慢試不同菜色。</span></div>
-    </div>
 
     <span class="country-label">想試在地味道</span>
     <div class="rec-grid">
@@ -731,7 +741,7 @@ a { color: inherit; }
 
     <div class="collection-intro"><strong>曼谷市區與周邊景點分開看。</strong>大城、美功與丹能沙朵位在曼谷以外，實際安排以行程表為準。</div>
 
-    <article class="collection-card">
+    <article class="collection-card spot-photo-card">
       <div class="collection-photo bigc-logo-frame"><img class="bigc-logo-photo" src="assets/曼谷芭達雅/bigc-wide.png" alt="曼谷 Big C 招牌與入口" onclick="openLB(this.src)"></div>
       <div class="collection-body">
         <div class="collection-kicker">曼谷・熱鬧全部擠在同一區</div>
@@ -742,7 +752,7 @@ a { color: inherit; }
       </div>
     </article>
 
-    <article class="collection-card">
+    <article class="collection-card spot-photo-card">
       <div class="collection-photo"><img src="assets/曼谷芭達雅/iconsiam-waterfall.jpg" alt="ICONSIAM 商場內的室內瀑布" onclick="openLB(this.src)"></div>
       <div class="collection-body"><div class="collection-kicker">曼谷・河畔商場</div><h3 class="collection-title">ICONSIAM 室內瀑布</h3><p class="collection-copy">逛 ICONSIAM 時，記得到 7 樓看看 Alangkarn 室內瀑布。從高處欣賞水流落下，也可以順手拍一張照片。</p></div>
     </article>
@@ -752,17 +762,17 @@ a { color: inherit; }
       <div class="collection-body"><div class="collection-kicker">夜市・曼谷</div><h3 class="collection-title">新喬德夜市 JODD FAIRS Ratchada</h3><p class="collection-copy">夜晚來逛攤位、找小吃，感受曼谷夜市的熱鬧。</p></div>
     </article>
 
-    <article class="collection-card">
+    <article class="collection-card spot-photo-card">
       <div class="collection-photo"><img src="assets/曼谷芭達雅/maeklong.jpg" alt="美功鐵道市場" onclick="openLB(this.src)"></div>
       <div class="collection-body"><div class="collection-kicker">曼谷周邊・夜功府</div><h3 class="collection-title">美功鐵道市場</h3><p class="collection-copy">火車行經市場時，攤販與遊客會暫時讓出鐵道。看火車時跟著現場指引，站在安全位置。</p></div>
     </article>
 
-    <article class="collection-card">
+    <article class="collection-card spot-photo-card">
       <div class="collection-photo"><img src="assets/曼谷芭達雅/damnoen-saduak.jpg" alt="丹能沙朵水上市場" onclick="openLB(this.src)"></div>
       <div class="collection-body"><div class="collection-kicker">曼谷周邊・叻丕府</div><h3 class="collection-title">丹能沙朵水上市場</h3><p class="collection-copy">沿著水道看看船隻與攤販，感受水上市場的熱鬧。</p><p class="collection-copy"><small>照片：<a href="https://commons.wikimedia.org/wiki/File:Damnoen_Saduak_Floating_Market,_Damnoen_Saduak,_Thailand_(Unsplash).jpg">Wikimedia Commons</a> · CC0</small></p></div>
     </article>
 
-    <article class="collection-card">
+    <article class="collection-card spot-photo-card">
       <div class="collection-photo"><img src="assets/曼谷芭達雅/ayutthaya-buddha.jpg" alt="瑪哈泰寺樹中佛頭" onclick="openLB(this.src)"></div>
       <div class="collection-body"><div class="collection-kicker">大城・歷史遺跡</div><h3 class="collection-title">瑪哈泰寺樹中佛頭</h3><p class="collection-copy">走進大城古寺，看樹根環抱佛頭的畫面。拍照時保持尊重，也留意現場動線。</p></div>
     </article>
