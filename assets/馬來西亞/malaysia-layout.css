@@ -1,0 +1,158 @@
+/* 馬來西亞：先看介紹，再看適中大小的完整實拍照片。 */
+.yo-notes[data-destination="malaysia"] .notes-hero {
+  grid-template-columns: minmax(0, 1fr) 230px;
+}
+.yo-notes[data-destination="malaysia"] .notes-cover {
+  width: 100%;
+  max-width: 230px;
+  justify-self: end;
+}
+.yo-notes[data-destination="malaysia"] .photo-grid {
+  display: block;
+}
+.yo-notes[data-destination="malaysia"] .photo-card {
+  display: grid;
+  grid-template-columns: 126px minmax(0, 1fr);
+  align-items: center;
+  gap: 18px;
+  max-width: 470px;
+  padding: 14px;
+  box-shadow: none;
+  background: none;
+  border-color: var(--notes-line);
+}
+.yo-notes[data-destination="malaysia"] .photo-caption {
+  padding: 0;
+  font-size: 14px;
+}
+.yo-notes[data-destination="malaysia"] .photo-caption strong {
+  font-size: 16px;
+}
+.yo-notes[data-destination="malaysia"] .my-region-title {
+  color: var(--notes-accent);
+  font-size: 23px;
+  line-height: 1.5;
+  margin: 26px 0 16px;
+}
+.yo-notes[data-destination="malaysia"] .my-spots {
+  display: grid;
+  gap: 20px;
+}
+.yo-notes[data-destination="malaysia"] .my-spot-card {
+  display: block;
+  min-width: 0;
+  padding: 22px;
+}
+.yo-notes[data-destination="malaysia"] .my-spot-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.yo-notes[data-destination="malaysia"] .my-spot-heading .spot-icon {
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  font-size: 24px;
+}
+.yo-notes[data-destination="malaysia"] .my-spot-heading .spot-name {
+  margin: 0;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.yo-notes[data-destination="malaysia"] .my-location {
+  color: var(--notes-muted);
+  font-size: 14px;
+  margin: 8px 0 12px;
+}
+.yo-notes[data-destination="malaysia"] .spot-copy p + p {
+  margin-top: 12px;
+}
+.yo-notes[data-destination="malaysia"] .my-photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  width: min(100%, 464px);
+  margin: 20px auto 0;
+}
+.yo-notes[data-destination="malaysia"] .my-photo-gallery.single {
+  grid-template-columns: minmax(0, 1fr);
+  width: min(100%, 220px);
+}
+.yo-notes[data-destination="malaysia"] .my-photo-gallery.landscape {
+  grid-template-columns: minmax(0, 1fr);
+  width: min(100%, 640px);
+}
+.yo-notes[data-destination="malaysia"] .my-photo-gallery figure {
+  min-width: 0;
+  margin: 0;
+}
+.yo-notes[data-destination="malaysia"] .my-photo-gallery a {
+  display: block;
+}
+.yo-notes[data-destination="malaysia"] .my-photo-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+}
+.yo-notes[data-destination="malaysia"] .my-photo-gallery.landscape img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center bottom;
+}
+.yo-notes[data-destination="malaysia"] .my-photo-gallery figcaption {
+  color: var(--notes-muted);
+  font-size: 12px;
+  line-height: 1.7;
+  margin-top: 7px;
+}
+.yo-notes[data-destination="malaysia"] .my-sources {
+  margin-top: 26px;
+  border-block: 1px solid var(--notes-line);
+  padding: 12px 0;
+  font-size: 14px;
+}
+.yo-notes[data-destination="malaysia"] .my-sources summary {
+  min-height: 44px;
+  padding: 8px 0;
+  color: var(--notes-accent);
+  font-weight: 700;
+  cursor: pointer;
+}
+.yo-notes[data-destination="malaysia"] .my-sources p {
+  margin: 8px 0;
+}
+.yo-notes[data-destination="malaysia"] .my-sources a {
+  display: block;
+  min-height: 44px;
+  padding: 8px 0;
+  overflow-wrap: anywhere;
+  text-underline-offset: 3px;
+}
+@media (max-width: 700px) {
+  .yo-notes[data-destination="malaysia"] .notes-hero {
+    grid-template-columns: minmax(0, 1fr) clamp(96px, 30vw, 150px);
+    gap: 18px;
+  }
+}
+@media (max-width: 640px) {
+  .yo-notes[data-destination="malaysia"] .my-spot-card {
+    padding: 18px;
+  }
+  .yo-notes[data-destination="malaysia"] .my-spot-heading .spot-name {
+    font-size: 21px;
+  }
+  .yo-notes[data-destination="malaysia"] .my-photo-gallery {
+    gap: 10px;
+  }
+  .yo-notes[data-destination="malaysia"] .my-photo-gallery.single {
+    width: min(100%, 200px);
+  }
+  .yo-notes[data-destination="malaysia"] .photo-card {
+    grid-template-columns: 90px minmax(0, 1fr);
+    gap: 14px;
+    padding: 12px;
+  }
+}
